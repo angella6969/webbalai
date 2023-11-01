@@ -42,12 +42,15 @@
 
 </section><!-- End Hero -->
 
-<div class="col-lg-12" style="height: 50px; color:#fff; background: rgb(232,170,28); ">
-    <div class="row">
-        <div clas="col-xl-4" style="margin:0px 0px 20px 100px; "> Pengumuman : info </div>
-        <div clas="col-xl-8"> info </div>
+<div class="col-lg-12" style="height: 60px; color:#fff; background: rgb(232,170,28); ">
+    <div class="container">
+        <div class="row">
+            <div class="col-2" style="margin:10px 0px 10px 100px;  "> Pengumuman : </div>
+            <div class="col-8" style="margin: 10px 0px 10px 0px;" id="info-container">
+                <!-- Data dari database akan ditampilkan di sini -->
+            </div>
+        </div>
     </div>
-
 </div>
 {{--
 <!-- ======= About Section ======= -->
@@ -500,8 +503,8 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $berita->judul }}</h5>
                             <p class="card-text">{{ $berita->body }}</p>
-                            {{-- <a href="{{ route('berita.show', $product->id) }}" class="btn btn-primary">Detail</a>
-                            --}}
+                            <a href="berita/{{$berita->id}}" class="btn btn-primary">Detail</a>
+
                         </div>
                     </div>
                 </div>
@@ -979,4 +982,48 @@
 
     </div>
 </section><!-- End Contact Section --> --}}
+
+
+
+<div class="col-8 " style="margin: 10px 0px 10px 0px; color:black;" id="info-container">
+    <!-- Data dari database akan ditampilkan di sini -->
+</div>
+
+<script>
+    const infoData = @json($infoData); // Mengambil data dari PHP ke JavaScript
+
+    let currentIndex = 0;
+
+    function displayInfo() {
+        const infoContainer = document.getElementById('info-container');
+        const info = infoData[currentIndex];
+        // Membuat tautan dengan data dari database
+        const infoLink = `<a href="${info.url_pengumuman}" style=" color:white;">${info.judul}</a>`;
+        infoContainer.innerHTML = infoLink;
+        currentIndex = (currentIndex + 1) % infoData.length;
+    }
+
+    // Tampilkan data pertama saat halaman dimuat
+    displayInfo();
+
+    // Mengganti data setiap beberapa detik
+    setInterval(displayInfo, 4000); // Ubah angka ini sesuai dengan interval yang Anda inginkan (dalam milidetik).
+</script>
+
+{{-- <script>
+    const infoData = @json($infoData); // Mengambil data dari PHP ke JavaScript
+
+    let currentIndex = 0;
+
+    function displayInfo() {
+        document.getElementById('info-container').innerHTML = infoData[currentIndex].judul;
+        currentIndex = (currentIndex + 1) % infoData.length;
+    }
+
+    // Tampilkan data pertama saat halaman dimuat
+    displayInfo();
+
+    // Mengganti data setiap beberapa detik
+    setInterval(displayInfo, 5000); // Ubah angka ini sesuai dengan interval yang Anda inginkan (dalam milidetik).
+</script> --}}
 @endsection
