@@ -17,7 +17,7 @@
     scrollbar-width: none; */
 }
 
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
@@ -95,8 +95,8 @@ h6 {
     transition: all 0.5s;
     z-index: 997;
     transition: all 0.5s;
-    /* background: rgba(0, 0, 0, 0.9); */
-
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
     margin-top: 35px;
     color: #111;
 }
@@ -186,6 +186,9 @@ h6 {
         justify-content: center;
         align-items: center;
     }
+    /* header{
+        width: 10;
+    } */
 }
 
 /*--------------------------------------------------------------
@@ -333,7 +336,7 @@ h6 {
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(20, 21, 28, 0.9);
+    background: rgb(3, 15, 107);
     transition: 0.3s;
     z-index: 999;
 }
@@ -369,7 +372,7 @@ h6 {
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover > a {
-    color: #fff;
+    color: #000000;
 }
 
 .navbar-mobile .getstarted,
@@ -1581,7 +1584,7 @@ section {
     color: #404356;
     content: "/";
 }
-
+    
 @media (max-width: 768px) {
     .breadcrumbs .d-flex {
         display: block !important;
@@ -1601,7 +1604,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
     background: rgb(11, 38, 83);
-    background-image: url('/images/background/city-skiline.png');
+    background-image: url("/images/background/city-skiline.png");
     background-position: bottom;
     background-repeat: no-repeat;
     color: #fff;

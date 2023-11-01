@@ -73,7 +73,7 @@
 
 
  <script>
-     //  var mobil1 = document.querySelectorAll('.mobil')[0];
+    //   var mobil1 = document.querySelectorAll('.mobil')[0];
      var mobil2 = document.querySelectorAll('.mobil')[1];
      var mobil3 = document.querySelectorAll('.mobil')[0];
      //  var posisi1 = 0;
