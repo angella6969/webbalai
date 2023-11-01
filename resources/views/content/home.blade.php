@@ -1,5 +1,64 @@
 @extends('layout.content.main')
 @section('container')
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel carousel-fade" data-bs-ride="carousel">
+
+            <div class="carousel-item active">
+                <img src="images\image\Gambar1.jpg" style="width: 100vw; height: 100vh; object-fit: cover;" alt="Slide 1">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img src="images\image\042117600_1638344185-photo-1507525428034-b723cf961d3e.jpg"
+                    style="width: 100vw; height: 100vh; object-fit: cover;" alt="Slide 1">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <img src="images\image\dance_of_lights_by_ellysiumn_ddanutv-350t.jpg"
+                    style="width: 100vw; height: 100vh; object-fit: cover;" alt="Slide 1">
+            </div>
+
+            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+            </a>
+
+            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+            </a>
+        </div>
+        <svg class="hero-waves" style="z-index: 996;" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+            <defs>
+                <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+            </defs>
+            <g class="wave1">
+                <use xlink:href="#wave-path" x="50" y="3" fill="#030F6B">
+            </g>
+
+            <g class="wave2">
+                <use xlink:href="#wave-path" x="50" y="9" fill="#303EAB">
+            </g>
+            <g class="wave3">
+                <use xlink:href="#wave-path" x="50" y="15" fill="#7C89EB">
+            </g>
+        </svg>
+
+        <div class="col-lg-12" style="height: 10px; color:#fff; background: rgb(255, 255, 255); ">
+            <div clas="col-xl-4" style="margin:0px 0px 20px 100px; "> </div>
+
+        </div>
+
+    </section><!-- End Hero -->
+
+    <div class="col-lg-12" style="height: 50px; color:#fff; background: rgb(232,170,28); ">
+        <div class="row">
+            <div clas="col-xl-4" style="margin:0px 0px 20px 100px; "> Pengumuman : info </div>
+            <div clas="col-xl-8"> info </div>
+        </div>
+
+    </div>
     {{-- <!-- ======= About Section ======= -->
     <section id="about" class="about">
         <div class="container">
@@ -430,89 +489,52 @@
     <section id="testimonials" class="testimonials">
         <div class="container">
 
-            {{-- <div class="section-title" data-aos="zoom-out">
-                <h2>Testimonials</h2>
-                <p>What they are saying about us</p>
-            </div> --}}
+            <div class="section-title" data-aos="zoom-out">
+                <h2><strong> Berita </strong>Terkini</h2>
+                {{-- <h2>Terkini</h2> --}}
+            </div>
 
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
 
                     <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-                                rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                                risus at semper.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                            <h3>Saul Goodman</h3>
-                            <h4>Ceo &amp; Founder</h4>
+                        <div class="testimonial-item card h-100">
+                            <img src="{{ asset('images\image\Gambar1.jpg') }}" class="card-img-top"
+                                style="height: 150px; width:100%" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                </p>
+                                <a href="#" class="btn btn-primary">Detail</a>
+                            </div>
                         </div>
                     </div><!-- End testimonial item -->
 
                     <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
-                                cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
-                                legam anim culpa.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                            <h3>Sara Wilsson</h3>
-                            <h4>Designer</h4>
+                        <div class="testimonial-item card h-100">
+                            <img src="{{ asset('images\image\dance_of_lights_by_ellysiumn_ddanutv-350t.jpg') }}"
+                                class="card-img-top" style="height: 150px; width:100%" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                </p>
+                                <a href="#" class="btn btn-primary">Detail</a>
+                            </div>
                         </div>
                     </div><!-- End testimonial item -->
 
                     <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem
-                                veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint
-                                minim.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                            <h3>Jena Karlis</h3>
-                            <h4>Store Owner</h4>
+                        <div class="testimonial-item card h-100">
+                            <img src="{{ asset('images\image\Switzerland.png') }}" style="height: 150px; width:100%"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                </p>
+                                <a href="#" class="btn btn-primary">Detail</a>
+                            </div>
                         </div>
                     </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim
-                                fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem
-                                dolore labore illum veniam.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                            <h3>Matt Brandon</h3>
-                            <h4>Freelancer</h4>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
-                                veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
-                                culpa fore nisi cillum quid.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                            <h3>John Larson</h3>
-                            <h4>Entrepreneur</h4>
-                        </div>
-                    </div><!-- End testimonial item -->
-
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -523,8 +545,67 @@
     <section id="testimonials" class="testimonials">
         <div class="container">
 
-            {{-- <div class="section-title" data-aos="zoom-out">
-                <h2>Testimonials</h2>
+            <div class="section-title" data-aos="zoom-out">
+                <h2><strong> infrastruktur </strong> BBWS Serayu Opak</h2>
+                {{-- <p>What they are saying about us</p> --}}
+            </div>
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item card h-100">
+                            <img src="{{ asset('images\image\Gambar1.jpg') }}" class="card-img-top"
+                                style="height: 150px; width:100%" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                </p>
+                                <a href="#" class="btn btn-primary">Detail</a>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item card h-100">
+                            <img src="{{ asset('images\image\dance_of_lights_by_ellysiumn_ddanutv-350t.jpg') }}"
+                                class="card-img-top" style="height: 150px; width:100%" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                </p>
+                                <a href="#" class="btn btn-primary">Detail</a>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item card h-100">
+                            <img src="{{ asset('images\image\Switzerland.png') }}" style="height: 150px; width:100%"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                </p>
+                                <a href="#" class="btn btn-primary">Detail</a>
+                            </div>
+                        </div>
+                    </div><!-- End testimonial item -->
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+    </section><!-- End Testimonials Section -->
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            {{-- 
+            <div class="section-title" data-aos="zoom-out">
+                <h2><strong> infrastruktur </strong> BBWS Serayu Opak</h2>
                 <p>What they are saying about us</p>
             </div> --}}
 
@@ -532,86 +613,50 @@
                 <div class="swiper-wrapper">
 
                     <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-                                rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                                risus at semper.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                            <h3>Saul Goodman</h3>
-                            <h4>Ceo &amp; Founder</h4>
+                        <div class="testimonial-item card h-100">
+                            <img src="{{ asset('images\image\Gambar1.jpg') }}" class="card-img-top"
+                                style="height: 150px; width:100%" alt="...">
+                            {{-- <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                </p>
+                                <a href="#" class="btn btn-primary">Detail</a>
+                            </div> --}}
                         </div>
                     </div><!-- End testimonial item -->
 
                     <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
-                                cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
-                                legam anim culpa.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                            <h3>Sara Wilsson</h3>
-                            <h4>Designer</h4>
+                        <div class="testimonial-item card h-100">
+                            <img src="{{ asset('images\image\dance_of_lights_by_ellysiumn_ddanutv-350t.jpg') }}"
+                                class="card-img-top" style="height: 150px; width:100%" alt="...">
+                            {{-- <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                </p>
+                                <a href="#" class="btn btn-primary">Detail</a>
+                            </div> --}}
                         </div>
                     </div><!-- End testimonial item -->
 
                     <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem
-                                veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint
-                                minim.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                            <h3>Jena Karlis</h3>
-                            <h4>Store Owner</h4>
+                        <div class="testimonial-item card h-100">
+                            <img src="{{ asset('images\image\Switzerland.png') }}" style="height: 150px; width:100%"
+                                class="card-img-top" alt="...">
+                            {{-- <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                </p>
+                                <a href="#" class="btn btn-primary">Detail</a> --}}
+                            {{-- </div> --}}
                         </div>
                     </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim
-                                fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem
-                                dolore labore illum veniam.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                            <h3>Matt Brandon</h3>
-                            <h4>Freelancer</h4>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <p>
-                                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
-                                veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
-                                culpa fore nisi cillum quid.
-                                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                            </p>
-                            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                            <h3>John Larson</h3>
-                            <h4>Entrepreneur</h4>
-                        </div>
-                    </div><!-- End testimonial item -->
-
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
 
         </div>
     </section><!-- End Testimonials Section -->
+
 
     {{-- <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing">

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PermohonanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('content/home');
 });
+
+
+Route::resource('/dashboard', DashboardController::class);
+Route::resource('/berita', BeritaController::class);
+Route::resource('/artikel', PermohonanController::class);

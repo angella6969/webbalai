@@ -19,7 +19,7 @@
 
     @include('layout.content.header')
 
-    <!-- ======= Hero Section ======= -->
+    {{-- <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
         <div id="heroCarousel" data-bs-interval="5000" class="carousel carousel-fade" data-bs-ride="carousel">
 
@@ -60,9 +60,6 @@
             <g class="wave2">
                 <use xlink:href="#wave-path" x="50" y="9" fill="#303EAB">
             </g>
-            {{-- <g class="wave3">
-                <use xlink:href="#wave-path" x="50" y="12" fill="#fff">
-            </g> --}}
             <g class="wave3">
                 <use xlink:href="#wave-path" x="50" y="15" fill="#7C89EB">
             </g>
@@ -74,15 +71,21 @@
         </div>
 
     </section><!-- End Hero -->
-    <div class="col-lg-12" style="height: 50px; color:#fff; background: rgb(232,170,28); ">
-        <div clas="col-xl-4" style="margin:0px 0px 20px 100px; "> Pengumuman : info </div>
 
-    </div>
+    <div class="col-lg-12" style="height: 50px; color:#fff; background: rgb(232,170,28); ">
+        <div class="row">
+            <div clas="col-xl-4" style="margin:0px 0px 20px 100px; "> Pengumuman : info </div>
+            <div clas="col-xl-8"> info </div>
+        </div>
+
+    </div> --}}
+
     <main id="main">
 
         @yield('container')
 
-    </main><!-- End #main -->
+    </main>
+    <!-- End #main -->
 
     @include('layout.content.footer')
 
