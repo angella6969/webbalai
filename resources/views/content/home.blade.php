@@ -10,19 +10,6 @@
         </div>
         @endforeach
 
-        {{--
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-            <img src="images\image\042117600_1638344185-photo-1507525428034-b723cf961d3e.jpg"
-                style="width: 100vw; height: 100vh; object-fit: cover;" alt="Slide 1">
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-            <img src="images\image\dance_of_lights_by_ellysiumn_ddanutv-350t.jpg"
-                style="width: 100vw; height: 100vh; object-fit: cover;" alt="Slide 1">
-        </div> --}}
-
         <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
             <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
         </a>
@@ -505,44 +492,20 @@
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper-wrapper">
 
+                @foreach ($beritas as $berita)
                 <div class="swiper-slide">
                     <div class="testimonial-item card h-100">
-                        <img src="{{ asset('images\image\Gambar1.jpg') }}" class="card-img-top"
-                            style="height: 150px; width:100%" alt="...">
+                        <img src="{{ asset($berita->url_foto) }}" class="card-img-top" style="height: 150px; width:100%"
+                            alt="">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            </p>
-                            <a href="#" class="btn btn-primary">Detail</a>
+                            <h5 class="card-title">{{ $berita->judul }}</h5>
+                            <p class="card-text">{{ $berita->body }}</p>
+                            {{-- <a href="{{ route('berita.show', $product->id) }}" class="btn btn-primary">Detail</a>
+                            --}}
                         </div>
                     </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                    <div class="testimonial-item card h-100">
-                        <img src="{{ asset('images\image\dance_of_lights_by_ellysiumn_ddanutv-350t.jpg') }}"
-                            class="card-img-top" style="height: 150px; width:100%" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            </p>
-                            <a href="#" class="btn btn-primary">Detail</a>
-                        </div>
-                    </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                    <div class="testimonial-item card h-100">
-                        <img src="{{ asset('images\image\Switzerland.png') }}" style="height: 150px; width:100%"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            </p>
-                            <a href="#" class="btn btn-primary">Detail</a>
-                        </div>
-                    </div>
-                </div><!-- End testimonial item -->
+                </div>
+                @endforeach
             </div>
             <div class="swiper-pagination"></div>
         </div>
