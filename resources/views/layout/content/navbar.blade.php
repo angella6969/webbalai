@@ -33,25 +33,31 @@
 
         <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><a href="#">AiR(e-Rekomtek BBWS SO)</a></li>
-                <li class="dropdown"><a href="#"><span>Permohonan Informasi SDA</span> <i
-                            class="bi bi-chevron-right"></i></a>
+                <li class="dropdown"><a href="#"><span>Kalatirta</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="#">Prosedur Pelayanan</a></li>
-                        <li><a href="#">Form Permohonan</a></li>
-                        <li><a href="#">Pengajuan Keberatan</a></li>
+                        <li><a href="#">AiR(e-Rekomtek BBWS SO)</a></li>
+                        <li class="dropdown"><a href="#"><span>Permohonan Informasi SDA</span> <i
+                                    class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="#">Prosedur Pelayanan</a></li>
+                                <li><a href="#">Form Permohonan</a></li>
+                                <li><a href="#">Pengajuan Keberatan</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Perpustakaan</a></li>
                     </ul>
                 </li>
+
                 <li class="dropdown"><a href="#"><span>Data dan Informasi</span> <i
                             class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li class="dropdown"><a href="#"><span>Portal Aplikasi</span> <i
+                        <li class="dropdown"><a href="#"><span>Data Teknis</span> <i
                                     class="bi bi-chevron-right"></i></a>
-                            <ul>
+                            {{-- <ul>
                                 <li><a href="#">Aplikasi 1</a></li>
                                 <li><a href="#">Aplikasi 2</a></li>
                                 <li><a href="#">Aplikasi 3</a></li>
-                            </ul>
+                            </ul> --}}
                         </li>
                         <li class="dropdown"><a href="#"><span>Data Kinerja</span> <i
                                     class="bi bi-chevron-right"></i></a>
@@ -61,7 +67,6 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="#">Perpustakaan</a></li>
                 <li class="dropdown"><a href="#"><span>Pengaduan</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
                         <li><a href="#">Pengaduan BBWS SO</a></li>
@@ -77,7 +82,7 @@
                             class="bi bi-chevron-right"></i></a>
                     <ul>
                         <li><a href="#">Majalah</a></li>
-                        <li><a href="#">Leaflet dan Brosul</a></li>
+                        <li><a href="#">Leaflet dan Brosur</a></li>
                         <li><a href="#">Infografis</a></li>
                     </ul>
                 <li class="dropdown"><a href="#"><span>Galeri</span> <i class="bi bi-chevron-right"></i></a>
@@ -108,7 +113,7 @@
         var newMarginTop = 0;
 
         // Cek posisi scroll
-        if (window.scrollY > 100) { 
+        if (window.scrollY > 100) {
             // Terapkan margin atas baru
             scrollBox.style.marginTop = newMarginTop + 'px';
         } else {

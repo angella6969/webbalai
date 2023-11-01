@@ -17,6 +17,10 @@
     scrollbar-width: none; */
 }
 
+*{
+    margin: 0px;
+    padding: 0px;
+}
 body {
     font-family: "Open Sans", sans-serif;
     color: #444444;
@@ -1597,22 +1601,18 @@ section {
 --------------------------------------------------------------*/
 #footer {
     background: rgb(11, 38, 83);
-
+    background-image: url('/images/background/city-skiline.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
     color: #fff;
     font-size: 14px;
-    /* text-align: center; */
-    padding: 0px;
+    padding: 20px;
 }
 
 .footer2 {
-    background-image: url("/images/background/city-skiline.png");
+    /* background-image: url('/images/background/city-skiline.png'); */
     background-position: bottom;
     background-repeat: no-repeat;
-    background-color: rgb(11, 38, 83);
-    color: var(--main-putih);
-    height: 200px;
-}
-.footer3 {
     background-color: rgb(11, 38, 83);
     color: var(--main-putih);
     padding: 20px;

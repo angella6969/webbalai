@@ -33,41 +33,39 @@
              </div>
 
          </div>
-
+         <div class="row">
+             <div class="mobil"
+                 style=" 
+            width: 100px;
+            height: 100px;
+            background-image: url('../images/truck-1.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            /* margin-top: 0px; */
+            z-index:999;">
+             </div>
+             <div class="mobil"
+                 style=" 
+            width: 100px;
+            height: 100px;
+            background-image: url('../images/truck-2.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            /* padding-bottom: 20px; */
+            z-index:999;">
+             </div>
+         </div>
      </div>
 
 
 
      </div>
  </footer><!-- End Footer -->
- <div class="footer2">
-     <div class="row">
-         <div class="mobil"
-             style=" 
-       width: 100px;
-       height: 100px;
-       background-image: url('../images/truck-1.png');
-       background-size: contain;
-       background-repeat: no-repeat;
-       /* position: absolute; */
-       background-position:bottom;
-       z-index:999;">
-         </div>
-         <div class="mobil"
-             style=" 
-       width: 100px;
-       height: 100px;
-       background-image: url('../images/truck-2.png');
-       background-size: contain;
-       background-repeat: no-repeat;
-       position: absolute;
-       background-position:bottom;
-       z-index:999;">
-         </div>
-     </div>
- </div>
- <div class="copyright d-flex justify-content-center footer3">
-     Hak Cipta &copy;2023 <strong><span>Sisda Balai Besar Wilayah Sungai Serayu Opak</span></strong> | Ditjen
+ <div class="footer2"></div>
+ <div class="copyright d-flex justify-content-center footer2">
+     Hak Cipta &copy; 2023 Sisda Balai Besar Wilayah Sungai Serayu Opak | Ditjen
      Sumber
      Daya Air | Kementerian PUPR. All Rights Reserved
  </div>
@@ -82,8 +80,8 @@
      var posisi2 = window.innerWidth - 100; // Mengatur posisi awal elemen kedua
      var posisi3 = window.innerWidth - 100; // Mengatur posisi awal elemen kedua
      //  var kecepatan1 = 6;
-     var kecepatan2 = 13;
-     var kecepatan3 = 10;
+     var kecepatan2 = 2;
+     var kecepatan3 = 1;
      //  var arah1 = 1;
      var arah2 = -1; // Arah elemen kedua berlawanan dengan elemen pertama
      var arah3 = -1; // Arah elemen kedua berlawanan dengan elemen pertama
