@@ -527,47 +527,20 @@
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper-wrapper">
 
+                @foreach ($beritas as $berita)
                 <div class="swiper-slide">
                     <div class="testimonial-item card h-100">
-                        <img src="{{ asset('images\image\Gambar1.jpg') }}" class="card-img-top"
-                            style="height: 150px; width:100%" alt="...">
+                        <img src="{{ asset($berita->url_foto) }}" class="card-img-top" style="height: 150px; width:100%"
+                            alt="">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                            </p>
-                            <a href="#" class="btn btn-primary">Detail</a>
-                        </div>
-                    </div>
-                </div><!-- End testimonial item -->
+                            <h5 class="card-title">{{ $berita->judul }}</h5>
+                            <p class="card-text">{{ $berita->body }}</p>
+                            <a href="berita/{{$berita->id}}" class="btn btn-primary">Detail</a>
 
-                <div class="swiper-slide">
-                    <div class="testimonial-item card h-100">
-                        <img src="{{ asset('images\image\dance_of_lights_by_ellysiumn_ddanutv-350t.jpg') }}"
-                            class="card-img-top" style="height: 150px; width:100%" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                            </p>
-                            <a href="#" class="btn btn-primary">Detail</a>
                         </div>
                     </div>
-                </div><!-- End testimonial item -->
-
-                <div class="swiper-slide">
-                    <div class="testimonial-item card h-100">
-                        <img src="{{ asset('images\image\Switzerland.png') }}" style="height: 150px; width:100%"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk
-                            </p>
-                            <a href="#" class="btn btn-primary">Detail</a>
-                        </div>
-                    </div>
-                </div><!-- End testimonial item -->
+                </div>
+                @endforeach
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -575,27 +548,20 @@
     </div>
 </section><!-- End Testimonials Section -->
 <!-- ======= Testimonials Section ======= -->
-<section id="testimonials" class="testimonials">
+{{-- <section id="testimonials" class="testimonials">
     <div class="container">
-        {{--
+
         <div class="section-title" data-aos="zoom-out">
             <h2><strong> infrastruktur </strong> BBWS Serayu Opak</h2>
             <p>What they are saying about us</p>
-        </div> --}}
+        </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
-                    <div class="testimonial-item card h-100">
-                        <img src="{{ asset('images\image\Gambar1.jpg') }}" class="card-img-top"
-                            style="height: 150px; width:100%" alt="...">
-                        {{-- <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            </p>
-                            <a href="#" class="btn btn-primary">Detail</a>
-                        </div> --}}
+                    <div class="testimonial-item">
+                        <img src="{{ asset('images\image\Gambar1.jpg') }}" class="" style="height: 100px;" alt="...">
                     </div>
                 </div><!-- End testimonial item -->
 
@@ -603,12 +569,6 @@
                     <div class="testimonial-item card h-100">
                         <img src="{{ asset('images\image\dance_of_lights_by_ellysiumn_ddanutv-350t.jpg') }}"
                             class="card-img-top" style="height: 150px; width:100%" alt="...">
-                        {{-- <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            </p>
-                            <a href="#" class="btn btn-primary">Detail</a>
-                        </div> --}}
                     </div>
                 </div><!-- End testimonial item -->
 
@@ -616,15 +576,93 @@
                     <div class="testimonial-item card h-100">
                         <img src="{{ asset('images\image\Switzerland.png') }}" style="height: 150px; width:100%"
                             class="card-img-top" alt="...">
-                        {{-- <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            </p>
-                            <a href="#" class="btn btn-primary">Detail</a> --}}
-                            {{--
-                        </div> --}}
                     </div>
                 </div><!-- End testimonial item -->
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </div>
+</section><!-- End Testimonials Section --> --}}
+
+<section id="testimonials" class="testimonials">
+    <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+            <h2>Testimonials</h2>
+            <p>What they are saying about us</p>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+
+                    <img src="assets/img/testimonials/testimonials-1.jpg" style=" border-radius: 50%; 
+                        width: 150px; 
+                        height: 150px; " class="testimonial-img" alt="">
+
+                </div><!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum
+                            eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim
+                            culpa.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                        <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                        <h3>Sara Wilsson</h3>
+                        <h4>Designer</h4>
+                    </div>
+                </div><!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis
+                            minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                        <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                        <h3>Jena Karlis</h3>
+                        <h4>Store Owner</h4>
+                    </div>
+                </div><!-- End testimonial item -->
+
+                {{-- <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim
+                            velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum
+                            veniam.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                        <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                        <h3>Matt Brandon</h3>
+                        <h4>Freelancer</h4>
+                    </div>
+                </div><!-- End testimonial item -->
+
+                <div class="swiper-slide">
+                    <div class="testimonial-item">
+                        <p>
+                            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                            Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam
+                            enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore
+                            nisi cillum quid.
+                            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                        </p>
+                        <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+                        <h3>John Larson</h3>
+                        <h4>Entrepreneur</h4>
+                    </div>
+                </div><!-- End testimonial item --> --}}
+
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -1009,21 +1047,4 @@
     // Mengganti data setiap beberapa detik
     setInterval(displayInfo, 4000); // Ubah angka ini sesuai dengan interval yang Anda inginkan (dalam milidetik).
 </script>
-
-{{-- <script>
-    const infoData = @json($infoData); // Mengambil data dari PHP ke JavaScript
-
-    let currentIndex = 0;
-
-    function displayInfo() {
-        document.getElementById('info-container').innerHTML = infoData[currentIndex].judul;
-        currentIndex = (currentIndex + 1) % infoData.length;
-    }
-
-    // Tampilkan data pertama saat halaman dimuat
-    displayInfo();
-
-    // Mengganti data setiap beberapa detik
-    setInterval(displayInfo, 5000); // Ubah angka ini sesuai dengan interval yang Anda inginkan (dalam milidetik).
-</script> --}}
 @endsection

@@ -7,6 +7,7 @@ use App\Http\Requests\StoreHomeRequest;
 use App\Http\Requests\UpdateHomeRequest;
 use App\Models\Berita;
 use App\Models\Image;
+use App\Models\Infrastruktur;
 use App\Models\Pengumuman;
 
 class HomeController extends Controller
@@ -19,11 +20,13 @@ class HomeController extends Controller
         $image = Image::all();
         $berita = Berita::all();
         $infoData = Pengumuman::all();
+        $infrastruktur = Infrastruktur::all();
         // dd($infoData);
         return view('content.home', [
             'images' => $image,
             'beritas' => $berita,
-            'infoData' => $infoData
+            'infoData' => $infoData,
+            'infrastruktur' => $infrastruktur
         ]);
     }
 
