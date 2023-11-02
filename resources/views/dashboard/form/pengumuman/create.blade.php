@@ -23,7 +23,7 @@
                 <h5 class="card-title fw-semibold mb-4">Pengumuman</h5>
                 <div class="card">
                     <div class="card-body">
-                        <form method="post" action="" enctype="multipart/form-data">
+                        <form method="post" action="/dashboard/pengumuman/create" enctype="multipart/form-data">
                             @csrf
 
                             <div class="mb-3">
@@ -37,8 +37,8 @@
                             <div class="mb-3">
                                 <label for="Pengumuman" class="form-label">Link Pengumuman</label>
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="link pengumuman jika ada"
-                                        name="link_pengumuman" placeholder="link_pengumuman"
+                                    <input type="text" class="form-control" id="link_pengumuman jika ada"
+                                        name="link_pengumuman" placeholder="link pengumuman"
                                         value="{{ old('link_pengumuman') }}">
 
                                 </div>
@@ -51,9 +51,9 @@
                             </div>
 
                             <div class="mt-3 mb-3">
-                                <label for="TerlampirAktePendirian">File Pengumuman</label>
-                                <input type="file" class="form-control" id="TerlampirAktePendirian"
-                                    name="TerlampirAktePendirian" accept="application/pdf">
+                                <label for="dokumen">File Pengumuman</label>
+                                <input type="file" class="form-control" id="dokumen"
+                                    name="dokumen" accept="application/pdf">
                                 <h6>PDF Max 5 MB</h6>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>

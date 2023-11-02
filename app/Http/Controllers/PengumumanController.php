@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Pengumuman;
 use App\Http\Requests\StorePengumumanRequest;
 use App\Http\Requests\UpdatePengumumanRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PengumumanController extends Controller
 {
@@ -21,18 +23,34 @@ class PengumumanController extends Controller
     public function create()
     {
         // dd("ini membuat pengumuman");
-        return view('dashboard.form.pengumuman.create',[
-
-        ]);
-
+        return view('dashboard.form.pengumuman.create', []);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePengumumanRequest $request)
+    public function store(Request $request)
     {
-        dd('store');
+        $validatedData = $request->validate([
+            'pengumuman' => ['required'],
+            'link_pengumuman' => ['required'],
+            'dokumen' => ['file', 'max:5120', 'mimes:pdf'],
+
+        ]);
+        DB::beginTransaction();
+        try {
+
+            if ($request->hasFile('dokumen')) {
+                $petaPdfPath = $request->file('dokumen')->store('public/pdf');
+                $validatedData['dokumen'] = $petaPdfPath;
+            }
+            Pengumuman::create($validatedData);
+            DB::commit();
+            return redirect('/dashboard/daerah-irigasi')->with('success', 'Data berhasil disimpan.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     /**
