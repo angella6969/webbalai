@@ -32,7 +32,7 @@ class PengumumanController extends Controller
      */
     public function store(StorePengumumanRequest $request)
     {
-        //
+        dd('store');
     }
 
     /**

@@ -39,7 +39,7 @@
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="link pengumuman jika ada"
                                         name="link_pengumuman" placeholder="link_pengumuman"
-                                        value="{{ old('link_pengumuman') }}" required>
+                                        value="{{ old('link_pengumuman') }}">
 
                                 </div>
                             </div>
