@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>BBWSSO | Dashboard</title>
-    <link rel="shortcut icon" type="image/png" href="{{ asset('src') }}/assets/images/logos/favicon-16x16.png" />
+    <title>Balai Besar Wilayah Sungai Serayu Opak - DIrektorat Jendral Sumber Daya Air | Dashboard</title>
+    <link rel="shortcut icon" type="image/png" href="{{ asset('src') }}/assets/images/logos/favicon.png" />
     <link rel="stylesheet" href="{{ asset('src') }}/assets/css/styles.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css"
         integrity="sha512-DIW4FkYTOxjCqRt7oS9BFO+nVOwDL4bzukDyDtMO7crjUZhwpyrWBFroq+IqRe6VnJkTpRAS6nhDvf0w+wHmxg=="

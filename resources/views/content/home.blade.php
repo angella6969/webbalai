@@ -46,19 +46,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-2" style="margin:10px 0px 10px 100px;  "> Pengumuman : </div>
-                <div class="col-8" style="margin: 10px 0px 10px 0px;" id="info-container">
+                <div class="col-8 " style="margin: 10px 0px 10px 0px;" id="info-container">
                     <!-- Data dari database akan ditampilkan di sini -->
                 </div>
             </div>
         </div>
     </div>
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
+    <section id="" class="testimonials">
         <div class="container">
-
             <div class="section-title" data-aos="zoom-out">
                 <h2><strong> Berita </strong>Terkini</h2>
-                {{-- <h2>Terkini</h2> --}}
             </div>
 
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -66,17 +64,16 @@
 
                     @foreach ($beritas as $berita)
                         <div class="swiper-slide">
-                            <div class="testimonial-item card h-100">
-                                <img src="{{ asset($berita->url_foto) }}" class="card-img-top"
-                                    style="height: 150px; width:100%" alt="">
-                                <div class="card-body">
-                                    <a href="">
-                                        <h5 class="card-title">{{ $berita->judul }}</h5>
-                                    </a>
-                                    {{-- <p>{{ $berita->body }}</p> --}}
-                                    <p class="mt-3">{{ $berita->tanggal }}</p>
-                                    {{-- <a href="berita/{{ $berita->id }}" class="btn btn-primary">Detail</a> --}}
+                            <div class="card ">
+                                <a href=""><img src="{{ asset($berita->url_foto) }}"
+                                        class="card-img-top hover-effect-2" alt=""
+                                        style="height: 200px;object-fit: none;"></a>
 
+                                <div class="card-body">
+                                    <h3 class="font-weight-bold text-4 mb-1"><a href=""
+                                            class="link-color-dark">{{ $berita->judul }}</a></h3>
+                                    <span class="text-color-dark mb-3"><i class="far fa-clock text-color-primary"></i>
+                                        {{ $berita->tanggal }} </span>
                                 </div>
                             </div>
                         </div>
@@ -104,14 +101,16 @@
 
                     @foreach ($infrastrukturs as $infrastruktur)
                         <div class="swiper-slide">
-                            <div class="testimonial-item card h-100">
-                                <img src="{{ asset($infrastruktur->url_foto1) }}" class="card-img-top"
-                                    style="height: 150px; width:100%" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $infrastruktur->nama }}</h5>
-                                    <p class="card-text">{{ $infrastruktur->body }}</p>
-                                    {{-- <a href="berita/{{ $infrastruktur->id }}" class="btn btn-primary">Detail</a> --}}
+                            <div class="card ">
+                                <a href=""><img src="{{ asset($infrastruktur->url_foto1) }}"
+                                        class="card-img-top hover-effect-2" alt=""
+                                        style="height: 200px;object-fit: none;"></a>
 
+                                <div class="card-body">
+                                    <h3 class="font-weight-bold text-4 mb-1"><a href=""
+                                            class="link-color-dark">{{ $infrastruktur->nama }}</a></h3>
+                                    <span class="text-color-dark mb-3"><i class="far fa-clock text-color-primary"></i>
+                                        {{ $infrastruktur->tanggal }}</span>
                                 </div>
                             </div>
                         </div>
@@ -129,18 +128,26 @@
 
             <div class="section-title" data-aos="zoom-out">
                 <h2>Situs Terkait</h2>
-                {{-- <p>What they are saying about us</p> --}}
             </div>
 
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
                     @foreach ($logoTerkaits as $logoTerkait)
                         <div class="swiper-slide">
-                            <img src="{{ asset($logoTerkait->url_logo) }}"
-                                style="border-radius: 50%; width: 150px; height: 150px;" class="testimonial-img"
-                                alt="">
+                            <div class="border:none">
+                                <a href=""><img src="{{ asset($logoTerkait->url_logo) }}"
+                                        class="card-img-top hover-effect-2" alt=""
+                                        style="border-radius: 50%;  "></a>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="font-weight-bold text-4 mb-1"><a href=""
+                                        class="link-color-dark d-flex justify-content-center">{{ $logoTerkait->name }}</a>
+                                </h3>
+                            </div>
                         </div><!-- End testimonial item -->
                     @endforeach
+
+
                 </div>
                 <div class="swiper-pagination"></div>
             </div>

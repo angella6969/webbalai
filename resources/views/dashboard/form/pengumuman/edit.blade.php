@@ -30,7 +30,7 @@
                                 <label for="Pengumuman" class="form-label">Pengumuman</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="pengumuman" name="pengumuman"
-                                        placeholder="pengumuman" value="{{ old('pengumuman') }}" required>
+                                        placeholder="pengumuman" value="{{ old('pengumuman,{{$pengumuman->name}}'') }}" required>
 
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
             @endif
         });
     </script>
-    {{-- <script>
+    <script>
         // Ambil elemen-elemen yang diperlukan
         const TahunPengerjaan = document.getElementById('TahunPengerjaan');
         const inputLainnyaTahunPengerjaan = document.getElementById('inputLainnyaTahunPengerjaan');
@@ -205,5 +205,5 @@
             inputGroup.appendChild(appendDiv);
             namaContainer.appendChild(inputGroup);
         }
-    </script> --}}
+    </script>
 @endsection
