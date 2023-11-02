@@ -14,8 +14,17 @@ class BeritaController extends Controller
     public function index()
     {
         // dd("a");
-        return view('content.berita.berita',[
+        return view('content.berita.blogs',[
 
+        ]);
+    }
+    public function index2()
+    {
+        $beritas = Berita::all();
+        // dd("a");
+
+        return view('content.berita.britas',[
+            'beritas' => $beritas
         ]);
     }
 

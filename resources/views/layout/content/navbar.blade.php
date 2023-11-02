@@ -35,7 +35,7 @@
             <ul>
                 <li class="dropdown"><a href="#"><span>Kalatirta</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="#">AiR(e-Rekomtek BBWS SO)</a></li>
+                        <li><a href="http://202.169.239.20/">AiR(e-Rekomtek BBWS SO)</a></li>
                         <li class="dropdown"><a href="#"><span>Permohonan Informasi SDA</span> <i
                                     class="bi bi-chevron-right"></i></a>
                             <ul>
@@ -88,7 +88,7 @@
                 <li class="dropdown"><a href="#"><span>Galeri</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
                         <li><a href="#">Foto</a></li>
-                        <li><a href="#">Video</a></li>
+                        <li><a href="https://www.youtube.com/@bbwsserayuopak7569">Video</a></li>
                     </ul>
                 </li>
             </ul>

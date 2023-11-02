@@ -63,17 +63,28 @@
 
      </div>
  </footer><!-- End Footer -->
- <div class="footer2"></div>
+
  <div class="copyright d-flex justify-content-center footer2">
      Hak Cipta &copy; 2023 Sisda Balai Besar Wilayah Sungai Serayu Opak | Ditjen
      Sumber
      Daya Air | Kementerian PUPR. All Rights Reserved
  </div>
+ <div class="footer2">
+     <div class=" d-flex justify-content-center">
+         <a style="margin: 20px;" href="https://www.facebook.com/serayuopak/"><img src="images\icon\facebook.svg" alt=""></a>
 
+         <a style="margin: 20px;" href="https://www.instagram.com/pupr_sda_serayuopak/?hl=id"><img src="images\icon\instagram.svg"
+                 alt=""></a></li>
+         <a style="margin: 20px;" href="https://twitter.com/pupr_sda_so?lang=id"><img src="images\icon\twitter.svg" alt=""></a>
+
+         <a style="margin: 20px;" href="https://www.youtube.com/channel/UClOhOH8Ixk2dcIAS9jr2aqg"><img src="images\icon\youtube.svg"
+                 alt=""></a></li>
+     </div>
+ </div>
 
 
  <script>
-    //   var mobil1 = document.querySelectorAll('.mobil')[0];
+     //  var mobil1 = document.querySelectorAll('.mobil')[0];
      var mobil2 = document.querySelectorAll('.mobil')[1];
      var mobil3 = document.querySelectorAll('.mobil')[0];
      //  var posisi1 = 0;

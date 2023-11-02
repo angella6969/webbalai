@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dashboard;
-use App\Http\Requests\StoreDashboardRequest;
-use App\Http\Requests\UpdateDashboardRequest;
+use App\Models\Logoterkait;
+use App\Http\Requests\StoreLogoterkaitRequest;
+use App\Http\Requests\UpdateLogoterkaitRequest;
 
-class DashboardController extends Controller
+class LogoterkaitController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('dashboard.dashboard',[
-
-        ]);
+        //
     }
 
     /**
@@ -29,7 +27,7 @@ class DashboardController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreDashboardRequest $request)
+    public function store(StoreLogoterkaitRequest $request)
     {
         //
     }
@@ -37,7 +35,7 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Dashboard $dashboard)
+    public function show(Logoterkait $logoterkait)
     {
         //
     }
@@ -45,7 +43,7 @@ class DashboardController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Dashboard $dashboard)
+    public function edit(Logoterkait $logoterkait)
     {
         //
     }
@@ -53,7 +51,7 @@ class DashboardController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateDashboardRequest $request, Dashboard $dashboard)
+    public function update(UpdateLogoterkaitRequest $request, Logoterkait $logoterkait)
     {
         //
     }
@@ -61,7 +59,7 @@ class DashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Dashboard $dashboard)
+    public function destroy(Logoterkait $logoterkait)
     {
         //
     }

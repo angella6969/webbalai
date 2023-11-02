@@ -13,7 +13,6 @@ class PengumumanController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -21,7 +20,11 @@ class PengumumanController extends Controller
      */
     public function create()
     {
-        //
+        // dd("ini membuat pengumuman");
+        return view('dashboard.form.pengumuman.create',[
+
+        ]);
+
     }
 
     /**

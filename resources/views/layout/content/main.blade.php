@@ -9,7 +9,7 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <link rel="shortcut icon" type="image/png" href="{{ asset('src') }}/assets/images/logos/favicon-16x16.png" />
+    <link rel="shortcut icon" type="image/png" href="{{ asset('src') }}/assets/images/logos/favicon.png" />
 
     @include('layout.content.link')
 

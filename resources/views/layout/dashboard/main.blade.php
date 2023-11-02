@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css"
         integrity="sha512-DIW4FkYTOxjCqRt7oS9BFO+nVOwDL4bzukDyDtMO7crjUZhwpyrWBFroq+IqRe6VnJkTpRAS6nhDvf0w+wHmxg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="{{ asset('src\assets\css\animate.min.css') }}">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
         crossorigin="anonymous"></script>
 </head>
@@ -36,7 +37,7 @@
                     </div>
                 </div>
 
-                @include('layout.sidebar')
+                @include('layout.dashboard.sidebar')
             </div>
         </aside>
         <div class="body-wrapper">
@@ -51,7 +52,7 @@
                         </li>
 
                     </ul>
-                    @include('layout.navbar')
+                    @include('layout.dashboard.navbar') 
                 </nav>
             </header>
             <div class="container-fluid">
@@ -60,7 +61,7 @@
                         @yield('container')
                     </div>
                 </div>
-                @include('layout.footer')
+                @include('layout.dashboard.footer')
             </div>
         </div>
     </div>
