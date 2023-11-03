@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('body');
             $table->string('url_foto');
             $table->string('tanggal');
-            $table->string('kategori');
             $table->timestamps();
         });
     }

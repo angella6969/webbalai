@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('pengumumen', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->string('url_pengumuman');
+            $table->string('url_pengumuman')->nullable();
             $table->timestamps();
         });
     }

@@ -1,5 +1,34 @@
 @extends('layout.content.main')
 @section('container')
+    <style>
+        .info-transition {
+            transition: opacity 0.5s;
+            /* Transisi opacity selama 0.5 detik */
+            opacity: 0;
+            /* Mulai dengan elemen transparan */
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            padding: 5px 10px;
+        }
+
+        .left {
+            left: 10px;
+        }
+
+        .right {
+            right: 10px;
+        }
+    </style>
+
+
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
         <div id="heroCarousel" data-bs-interval="4000" class="carousel carousel-fade" data-bs-ride="carousel">
@@ -45,13 +74,26 @@
     <div class="col-lg-12" style="height: 60px; color:#fff; background: rgb(232,170,28); ">
         <div class="container">
             <div class="row">
-                <div class="col-2" style="margin:10px 0px 10px 100px;  "> Pengumuman : </div>
-                <div class="col-8 " style="margin: 10px 0px 10px 0px;" id="info-container">
-                    <!-- Data dari database akan ditampilkan di sini -->
+                <div class="col-2" style="margin:10px 0px 10px 100px;"> Pengumuman : </div>
+                <div style="margin: 10px 0px 10px 0px;" class="col-1">
+                    <img src="{{ asset('images/icon/chevrons-left (1).svg') }}" id="arrow-left" alt=""
+                        onclick="moveSlide(1)">
+                </div>
+                <div class="col-6">
+                    <div style="margin: 10px 0px 10px 0px;" id="info-container">
+                        <!-- Data dari database akan ditampilkan di sini -->
+                    </div>
+
+                </div>
+                <div style="margin: 10px 0px 10px 0px;" class="col-1">
+                    <img src="{{ asset('images/icon/chevrons-right (1).svg') }}" id="arrow-left" alt=""
+                        onclick="moveSlide(-1)">
                 </div>
             </div>
         </div>
     </div>
+
+
     <!-- ======= Testimonials Section ======= -->
     <section id="" class="testimonials">
         <div class="container">
@@ -128,6 +170,7 @@
 
             <div class="section-title" data-aos="zoom-out">
                 <h2>Situs Terkait</h2>
+
             </div>
 
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -162,7 +205,7 @@
         <!-- Data dari database akan ditampilkan di sini -->
     </div>
 
-    <script>
+    {{-- <script>
         const infoData = @json($infoData); // Mengambil data dari PHP ke JavaScript
 
         let currentIndex = 0;
@@ -181,5 +224,38 @@
 
         // Mengganti data setiap beberapa detik
         setInterval(displayInfo, 4000); // Ubah angka ini sesuai dengan interval yang Anda inginkan (dalam milidetik).
+    </script> --}}
+
+    <script>
+        const infoData = @json($infoData); // Mengambil data dari PHP ke JavaScript
+        let currentIndex = 0;
+
+        function displayInfo() {
+            const infoContainer = document.getElementById('info-container');
+            const info = infoData[currentIndex];
+            // Membuat tautan dengan data dari database
+            const infoLink = `<a href="${info.url_pengumuman}" style=" color:white;">${info.judul}</a>`;
+            infoContainer.classList.add('info-transition'); // Menambahkan kelas CSS untuk memicu animasi
+            setTimeout(() => {
+                infoContainer.innerHTML = infoLink;
+                infoContainer.classList.remove('info-transition'); // Menghapus kelas CSS untuk mengakhiri animasi
+                currentIndex = (currentIndex + 1) % infoData.length;
+            }, 500); // Waktu tunggu sebelum mengganti elemen (dalam milidetik)
+        }
+
+        // Tampilkan data pertama saat halaman dimuat
+        displayInfo();
+
+        // Mengganti data setiap beberapa detik
+        const interval = setInterval(displayInfo,
+            4000); // Ubah angka ini sesuai dengan interval yang Anda inginkan (dalam milidetik).
+
+        // Fungsi untuk menggeser elemen
+        function moveSlide(direction) {
+            clearInterval(interval); // Hentikan interval saat tombol panah diklik
+            currentIndex = (currentIndex + direction + infoData.length) % infoData.length;
+            displayInfo(); // Tampilkan elemen baru
+            interval = setInterval(displayInfo, 4000); // Mulai interval lagi setelah menggeser
+        }
     </script>
 @endsection

@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Pengumuman extends Model
 {
     use HasFactory;
-    protected $id;
+    protected $guarded = ['id'];
 }

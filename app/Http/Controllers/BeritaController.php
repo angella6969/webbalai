@@ -14,7 +14,7 @@ class BeritaController extends Controller
     public function index()
     {
         // dd("a");
-        return view('content.berita.blogs',[
+        return view('content.berita.index',[
 
         ]);
     }
