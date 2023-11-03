@@ -35,7 +35,7 @@
          </div>
          <div class="row">
              <div class="mobil"
-                 style=" 
+                 style="  
             width: 100px;
             height: 100px;
             background-image: url('../images/truck-1.png');

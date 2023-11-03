@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('content/home');
 // });
 Route::get('/v2', function () {
-    return view('content/visimisi');
+    return view('welcome');
 });
 
 

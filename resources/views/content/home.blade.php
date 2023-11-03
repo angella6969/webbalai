@@ -1,5 +1,5 @@
 @extends('layout.content.main')
-@section('container')
+@section('container') 
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
         <div id="heroCarousel" data-bs-interval="4000" class="carousel carousel-fade" data-bs-ride="carousel">
