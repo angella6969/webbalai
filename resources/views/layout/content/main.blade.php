@@ -18,14 +18,11 @@
 <body class="main-content">
 
     @include('layout.content.header')
-
     <main id="main">
 
         @yield('container')
 
     </main>
-    <!-- End #main -->
-
     @include('layout.content.footer')
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i

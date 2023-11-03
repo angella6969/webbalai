@@ -39,7 +39,7 @@
                     <span class="hide-menu">Menu</span>
                 </li>
 
-                @if (auth()->check() &&
+                {{-- @if (auth()->check() &&
                         auth()->user()->isAdmin())
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#" aria-expanded="false">
@@ -49,9 +49,9 @@
                             <span class="hide-menu">GIS Daerah Irigasi</span>
                         </a>
                     </li>
-                    {{-- @else
-                    <li class="btn"><a href="/login">MASUK</a></li> --}}
-                @endif
+                    @else
+                    <li class="btn"><a href="/login">MASUK</a></li>
+                @endif --}}
 
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="/dashboard/daerah-irigasi" aria-expanded="false">
@@ -61,7 +61,7 @@
                         <span class="hide-menu">Daftar</span>
                     </a>
                 </li>
-                <li class="nav-small-cap">
+                {{-- <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Kelola Daerah Irigasi</span>
                 </li>
@@ -72,7 +72,7 @@
                         </span>
                         <span class="hide-menu">Card</span>
                     </a>
-                </li>
+                </li> --}}
                 {{-- <li class="sidebar-item">
             <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
               <span>

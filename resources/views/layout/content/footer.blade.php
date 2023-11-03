@@ -1,67 +1,121 @@
  <!-- ======= Footer ======= -->
+ <style>
+     .table-striped th,
+     .table-striped td {
+         width: 33.33%;
+     }
 
+     .table-striped {
+         background-color: rgba(10, 10, 10, 0) !important;
+         padding: 16px 16px;
+         background-color: var(--bs-table-bg);
+         border-bottom-width: var(--bs-border-width);
+         -webkit-box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+         box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+     }
+ </style>
  <footer id="footer">
      <div class="container">
          <div class="row">
-             <div class="col-4">
-                 <h1>Kontak Kami</h1>
-                 <h5>Balai Besar Wilayah Sungai Serayu Opak</h5>
-                 <h5>Jl. Solo Km. 6, Ngentak, Caturtunggal, Sleman, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281
-                 </h5>
-                 <h5>Telepon & Fax
-                     Telp: (0274) 489-172
-                     Fax: (0274) 489-552</h5>
-                 <h5>Email
-                     ppid_bbwsso@pu.go.id: (Permintaan Informasi/data)
-                     so.umum@yahoo.co.id: (Persuratan)</h5>
+             <div class="col-lg-4">
+                 <h2 class="text-3 mb-3" style=" color:rgb(255, 255, 255); font-size: 18px;">
+                     Kontak Kami</h2>
+                 <div class="mb-3">
+                     <p class="mb-1" style="color: white; font-size: 14px;">
+                         <b>Balai Besar Wilayah Sungai Serayu Opak</b><br role="presentation" data-uw-rm-sr="">
+                     </p>
+                     <p style="color: white; font-size: 14px;">
+                         Jl. Solo Km. 6, Ngentak, Caturtunggal, Sleman,
+                         Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281
+                     </p>
+                     <a href="#" aria-label="call +62217228497" style="color: white; font-size: 14px;"
+                         uw-rm-vague-link-id="tel:+62217228497$call +62217228497" data-uw-rm-vglnk="">
+                         Telp: (0274) 489-172 <br>Fax: (0274) 489-552</a><br role="presentation" data-uw-rm-sr="">
+                     <a href="mailto:ppid_bbwsso@pu.go.id" style="color: white; font-size: 14px;"
+                         aria-label="send an email to ppid_bbwsso@pu.go.id"
+                         uw-rm-vague-link-id="mailto:ppid_bbwsso@pu.go.id$send an email to ppid_bbwsso@pu.go.id"
+                         data-uw-rm-vglnk="">ppid_bbwsso@pu.go.id: (Permintaan Informasi/data)</a><br
+                         role="presentation" data-uw-rm-sr="">
+                     <a href="mailto:so.umum@yahoo.co.id" style="color: white; font-size: 14px;"
+                         aria-label="send an email to so.umum@yahoo.co.id"
+                         uw-rm-vague-link-id="mailto:so.umum@yahoo.co.id$send an email to so.umum@yahoo.co.id"
+                         data-uw-rm-vglnk="">so.umum@yahoo.co.id: (Persuratan)</a><br role="presentation"
+                         data-uw-rm-sr="">
+                     <p></p>
+                     {{-- <p class="mb-1" style="color: white; font-size: 14px;">
+                       Anda juga dapat menghubungi kami dengan <a href="#"
+                           style="text-decoration: underline;">klik link ini</a>
+                   </p> --}}
+                 </div>
              </div>
-             <div class="col-4">
-                 <h1>Informasi Publik</h1>
-                 <h5>Layanan Publik BBWS SO</h5>
-                 <h5>Renstra BBBWS Serayu Opak</h5>
-                 <h5>JDIH PUPR</h5>
-                 <h5>Pola WS</h5>
-                 <h5>E-PPID PUPR</h5>
-                 <h5>Knowledge Management</h5>
+             <div class="col-lg-4 mb-4 mb-lg-0">
+                 <h2 class="text-3 mb-3" style="font-size: 18px;">Informasi Publik</h2>
+                 <ul class="">
+                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="#">Layanan Publik
+                             BBWS
+                             SO</a></li>
+                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="">Renstra BBBWS
+                             Serayu Opak </a></li>
+                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="#">JDIH PUPR </a>
+                     </li>
+                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="#">Pola WS </a></li>
+                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="#">E-PPID PUPR </a>
+                     </li>
+                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="">Knowledge
+                             Management </a></li>
+                 </ul>
              </div>
-             <div class="col-4">
-                 <h1>Statistik Pengunjung</h1>
-                 <h5>Pengunjung Online : 1 orang</h5>
-                 <h5>Pengunjung Hari ini : 1 orang</h5>
-                 <h5>Pengunjung Bulan Ini : 1 orang</h5>
-                 <h5>Total Pengunjung : 1 orang</h5>
+
+             <div class="col-lg-4 mb-4 mb-lg-0 ">
+                 <h2 class="text-3 mb-3" style="font-size: 18px;">Statistik Pengunjung</h2>
+                 <ul class="" style="padding-left: .5rem; font-size: 14px;">
+                     <li class="mb-2"><a style="color: white; " href="#">Pengunjung Online
+                     <li class="mb-2"><a style="color: white; " href="#">Pengunjung Online
+                             : 1 orang</a></li>
+                     <li class="mb-2"><a style="color: white; " href="">Pengunjung Hari
+                             ini : 1 orang</a></li>
+                     <li class="mb-2"><a style="color: white; " href="#">Pengunjung Bulan
+                             Ini : 1 orang </a>
+                     </li>
+                     <li class="mb-2"><a style="color: white; " href="#">Total Pengunjung :
+                             1 orang</a></li>
+                 </ul>
              </div>
 
          </div>
+     </div>
+     <div class="container">
          <div class="row">
              <div class="mobil"
                  style="  
             width: 100px;
             height: 100px;
-            background-image: url('../images/truck-1.png');
+            background-image: url('/images/truck-1.png');
             background-size: contain;
             background-repeat: no-repeat;
             position: absolute;
-            /* margin-top: 0px; */
             z-index:999;">
              </div>
              <div class="mobil"
                  style=" 
             width: 100px;
             height: 100px;
-            background-image: url('../images/truck-2.png');
+            background-image: url('/images/truck-2.png');
             background-size: contain;
             background-repeat: no-repeat;
             position: absolute;
-            /* padding-bottom: 20px; */
             z-index:999;">
              </div>
          </div>
      </div>
 
 
-
-     </div>
  </footer><!-- End Footer -->
 
  <div class="copyright d-flex justify-content-center footer2">
@@ -69,16 +123,16 @@
      Sumber
      Daya Air | Kementerian PUPR. All Rights Reserved
  </div>
- <div class="footer2">
+ <div class="footer2 social-links">
      <div class=" d-flex justify-content-center">
-         <a style="margin: 20px;" href="https://www.facebook.com/serayuopak/"><img src="images\icon\facebook.svg" alt=""></a>
-
-         <a style="margin: 20px;" href="https://www.instagram.com/pupr_sda_serayuopak/?hl=id"><img src="images\icon\instagram.svg"
-                 alt=""></a></li>
-         <a style="margin: 20px;" href="https://twitter.com/pupr_sda_so?lang=id"><img src="images\icon\twitter.svg" alt=""></a>
-
-         <a style="margin: 20px;" href="https://www.youtube.com/channel/UClOhOH8Ixk2dcIAS9jr2aqg"><img src="images\icon\youtube.svg"
-                 alt=""></a></li>
+         <a style="margin:20px" href="https://twitter.com/pupr_sda_so?lang=id" class="twitter"><i
+                 class="bx bxl-twitter"></i></a>
+         <a style="margin:20px" href="https://www.facebook.com/serayuopak/" class="facebook"><i
+                 class="bx bxl-facebook"></i></a>
+         <a style="margin:20px" href="https://www.instagram.com/pupr_sda_serayuopak/?hl=id" class="instagram"><i
+                 class="bx bxl-instagram"></i></a>
+         <a style="margin:20px" href="https://www.youtube.com/channel/UClOhOH8Ixk2dcIAS9jr2aqg"
+             class="google-plus"><i class="bx bxl-youtube"></i></a>
      </div>
  </div>
 

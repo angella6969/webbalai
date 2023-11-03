@@ -1,6 +1,6 @@
 <nav id="navbar" class="navbar">
     <ul>
-        <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
+        <li><a class="nav-link scrollto active" href="/">Beranda</a></li>
         <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
                 <li><a href="#">Visi dan Misi</a></li>
@@ -12,8 +12,8 @@
         </li>
         <li class="dropdown"><a href="#"><span>Berita</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><a href="#">Berita Balai</a></li>
-                <li><a href="#">Pengumuman</a></li>
+                <li><a href="/beritas">Berita Balai</a></li>
+                <li><a href="/pengumuman">Pengumuman</a></li>
                 {{-- <li><a href="#">Visi dan Misi</a></li> --}}
             </ul>
         </li>
