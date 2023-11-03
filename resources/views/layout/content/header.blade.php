@@ -12,14 +12,14 @@
              <div class="col-lg-4 col-sm-4">
                  <div class="right-icons">
                      <ul>
-                         <li><a href="https://www.facebook.com/serayuopak/"><img src="images\icon\facebook.svg"
-                                     alt=""></a></li>
+                         <li><a href="https://www.facebook.com/serayuopak/"><img
+                                     src="{{ asset('images\icon\facebook.svg') }}" alt=""></a></li>
                          <li><a href="https://www.instagram.com/pupr_sda_serayuopak/?hl=id"><img
-                                     src="images\icon\instagram.svg" alt=""></a></li>
-                         <li><a href="https://twitter.com/pupr_sda_so?lang=id"><img src="images\icon\twitter.svg"
-                                     alt=""></a></li>
+                                     src="{{ asset('images\icon\instagram.svg') }}" alt=""></a></li>
+                         <li><a href="https://twitter.com/pupr_sda_so?lang=id"><img
+                                     src="{{ asset('images\icon\twitter.svg') }}" alt=""></a></li>
                          <li><a href="https://www.youtube.com/channel/UClOhOH8Ixk2dcIAS9jr2aqg"><img
-                                     src="images\icon\youtube.svg" alt=""></a></li>
+                                     src="{{ asset('images\icon\youtube.svg') }}" alt=""></a></li>
                      </ul>
                  </div>
              </div>

@@ -97,9 +97,9 @@
     <!-- ======= Testimonials Section ======= -->
     <section id="" class="testimonials">
         <div class="container">
-            <div class="section-title" data-aos="zoom-out">
+            {{-- <div class="section-title" data-aos="zoom-out">
                 <h2><strong> Berita </strong>Terkini</h2>
-            </div>
+            </div> --}}
 
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
@@ -107,12 +107,12 @@
                     @foreach ($beritas as $berita)
                         <div class="swiper-slide">
                             <div class="card ">
-                                <a href=""><img src="{{ asset($berita->url_foto) }}"
-                                        class="card-img-top hover-effect-2" alt=""
-                                        style="height: 200px;object-fit: none;"></a>
+                                <a href="beritas/{{ $berita->slug }}"><img src="{{ asset($berita->url_foto) }}"
+                                        class="card-img-top hover-effect-2 card-img-top" alt=""
+                                        style="height: 200px;object-fit: none; border-radius: 0 0 100px 0; border-bottom: 5px solid #fbb717;"></a>
 
                                 <div class="card-body">
-                                    <h3 class="font-weight-bold text-4 mb-1"><a href=""
+                                    <h3 class="font-weight-bold text-4 mb-1"><a href="beritas/{{ $berita->slug }}"
                                             class="link-color-dark">{{ $berita->judul }}</a></h3>
                                     <span class="text-color-dark mb-3"><i class="far fa-clock text-color-primary"></i>
                                         {{ $berita->tanggal }} </span>
@@ -168,10 +168,10 @@
     <section id="testimonials" class="testimonials">
         <div class="container">
 
-            <div class="section-title" data-aos="zoom-out">
+            {{-- <div class="section-title" data-aos="zoom-out">
                 <h2>Situs Terkait</h2>
 
-            </div>
+            </div> --}}
 
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
@@ -179,23 +179,19 @@
                         <div class="swiper-slide">
                             <div class="border:none">
                                 <a href=""><img src="{{ asset($logoTerkait->url_logo) }}"
-                                        class="card-img-top hover-effect-2" alt=""
-                                        style="border-radius: 50%;  "></a>
+                                        class="card-img-top hover-effect-2 d-flex justify-content-center" alt=""
+                                        style="height: 50px; width: auto;  " ></a>
                             </div>
                             <div class="card-body">
                                 <h3 class="font-weight-bold text-4 mb-1"><a href=""
-                                        class="link-color-dark d-flex justify-content-center">{{ $logoTerkait->name }}</a>
+                                        class="link-color-dark align-content-center" style="font-size: 14px; color: rgb(11,38,83)">{{ $logoTerkait->name }}</a>
                                 </h3>
                             </div>
                         </div><!-- End testimonial item -->
                     @endforeach
-
-
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-
-
         </div>
     </section>
     <!-- End Testimonials Section -->

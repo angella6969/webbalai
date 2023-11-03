@@ -17,64 +17,73 @@
  <footer id="footer">
      <div class="container">
          <div class="row">
-             <div class="col-lg-4 mb-4 mb-lg-0">
-                 <h2 class="text-3 mb-3">Informasi Publik</h2>
-                 <ul class="">
-                     <li class="mb-2"><i class="fas fa-angle-right mr-2 ml-1"></i><a href="#">Layanan Publik BBWS
-                             SO</a></li>
-                     <li class="mb-2"><i class="fas fa-angle-right mr-2 ml-1"></i><a href="">Renstra BBBWS
-                             Serayu Opak </a></li>
-                     <li class="mb-2"><i class="fas fa-angle-right mr-2 ml-1"></i><a href="#">JDIH PUPR </a>
-                     </li>
-                     <li class="mb-2"><i class="fas fa-angle-right mr-2 ml-1"></i><a href="#">Pola WS </a></li>
-                     <li class="mb-2"><i class="fas fa-angle-right mr-2 ml-1"></i><a href="#">E-PPID PUPR </a>
-                     </li>
-                     <li class="mb-2"><i class="fas fa-angle-right mr-2 ml-1"></i><a href="">Knowledge
-                             Management </a></li>
-                 </ul>
-             </div>
              <div class="col-lg-4">
-                 <h2 class="text-3 mb-3" style="text-decoration: underline; color:rgb(196,170,28)">
+                 <h2 class="text-3 mb-3" style=" color:rgb(255, 255, 255); font-size: 18px;">
                      Kontak Kami</h2>
                  <div class="mb-3">
-                     <p class="mb-1" style="color: white;">
+                     <p class="mb-1" style="color: white; font-size: 14px;">
                          <b>Balai Besar Wilayah Sungai Serayu Opak</b><br role="presentation" data-uw-rm-sr="">
                      </p>
-                     <p style="color: white;">
+                     <p style="color: white; font-size: 14px;">
                          Jl. Solo Km. 6, Ngentak, Caturtunggal, Sleman,
                          Kabupaten Sleman, Daerah Istimewa Yogyakarta 55281
                      </p>
-                     <a href="#" aria-label="call +62217228497"
+                     <a href="#" aria-label="call +62217228497" style="color: white; font-size: 14px;"
                          uw-rm-vague-link-id="tel:+62217228497$call +62217228497" data-uw-rm-vglnk="">
                          Telp: (0274) 489-172 <br>Fax: (0274) 489-552</a><br role="presentation" data-uw-rm-sr="">
-                     <a href="mailto:ppid_bbwsso@pu.go.id" aria-label="send an email to ppid_bbwsso@pu.go.id"
+                     <a href="mailto:ppid_bbwsso@pu.go.id" style="color: white; font-size: 14px;"
+                         aria-label="send an email to ppid_bbwsso@pu.go.id"
                          uw-rm-vague-link-id="mailto:ppid_bbwsso@pu.go.id$send an email to ppid_bbwsso@pu.go.id"
                          data-uw-rm-vglnk="">ppid_bbwsso@pu.go.id: (Permintaan Informasi/data)</a><br
                          role="presentation" data-uw-rm-sr="">
-                     <a href="mailto:so.umum@yahoo.co.id" aria-label="send an email to so.umum@yahoo.co.id"
+                     <a href="mailto:so.umum@yahoo.co.id" style="color: white; font-size: 14px;"
+                         aria-label="send an email to so.umum@yahoo.co.id"
                          uw-rm-vague-link-id="mailto:so.umum@yahoo.co.id$send an email to so.umum@yahoo.co.id"
                          data-uw-rm-vglnk="">so.umum@yahoo.co.id: (Persuratan)</a><br role="presentation"
                          data-uw-rm-sr="">
                      <p></p>
-                     {{-- <p class="mb-1" style="color: white;">
-                        Anda juga dapat menghubungi kami dengan <a href="#"
-                            style="text-decoration: underline;">klik link ini</a>
-                    </p> --}}
+                     {{-- <p class="mb-1" style="color: white; font-size: 14px;">
+                       Anda juga dapat menghubungi kami dengan <a href="#"
+                           style="text-decoration: underline;">klik link ini</a>
+                   </p> --}}
                  </div>
              </div>
-             <div class="col-lg-4 mb-4 mb-lg-0 ">
-                 <!--h2 class="text-3 mb-3">Instagram #SigapMembangunNegeri</h2-->
-                 {{-- <h2 class="text-3 mb-3">#SigapMembangunNegeri</h2> --}}
-                 <h2 class="text-3 mb-3">Informasi Publik</h2>
+             <div class="col-lg-4 mb-4 mb-lg-0">
+                 <h2 class="text-3 mb-3" style="font-size: 18px;">Informasi Publik</h2>
                  <ul class="">
-                     <li class="mb-2"><i class="fas fa-angle-right mr-2 ml-1"></i><a href="#">Pengunjung Online
+                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="#">Layanan Publik
+                             BBWS
+                             SO</a></li>
+                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="">Renstra BBBWS
+                             Serayu Opak </a></li>
+                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="#">JDIH PUPR </a>
+                     </li>
+                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="#">Pola WS </a></li>
+                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="#">E-PPID PUPR </a>
+                     </li>
+                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="">Knowledge
+                             Management </a></li>
+                 </ul>
+             </div>
+
+             <div class="col-lg-4 mb-4 mb-lg-0 ">
+                 <h2 class="text-3 mb-3" style="font-size: 18px;">Statistik Pengunjung</h2>
+                 <ul class="" style="padding-left: .5rem; font-size: 14px;">
+                     <li class="mb-2"><a style="color: white; " href="#">Pengunjung Online
+                     <li class="mb-2"><a style="color: white; " href="#">Pengunjung Online
                              : 1 orang</a></li>
-                     <li class="mb-2"><i class="fas fa-angle-right mr-2 ml-1"></i><a href="">Pengunjung Hari
+                     <li class="mb-2"><a style="color: white; " href="">Pengunjung Hari
                              ini : 1 orang</a></li>
-                     <li class="mb-2"><i class="fas fa-angle-right mr-2 ml-1"></i><a href="#">Pengunjung Bulan
+                     <li class="mb-2"><a style="color: white; " href="#">Pengunjung Bulan
                              Ini : 1 orang </a>
                      </li>
-                     <li class="mb-2"><i class="fas fa-angle-right mr-2 ml-1"></i><a href="#">Total Pengunjung :
+                     <li class="mb-2"><a style="color: white; " href="#">Total Pengunjung :
                              1 orang</a></li>
                  </ul>
              </div>
@@ -87,22 +96,20 @@
                  style=" 
             width: 100px;
             height: 100px;
-            background-image: url('../images/truck-1.png');
+            background-image: url('/images/truck-1.png');
             background-size: contain;
             background-repeat: no-repeat;
             position: absolute;
-            /* margin-top: 0px; */
             z-index:999;">
              </div>
              <div class="mobil"
                  style=" 
             width: 100px;
             height: 100px;
-            background-image: url('../images/truck-2.png');
+            background-image: url('/images/truck-2.png');
             background-size: contain;
             background-repeat: no-repeat;
             position: absolute;
-            /* padding-bottom: 20px; */
             z-index:999;">
              </div>
          </div>
@@ -124,8 +131,8 @@
                  class="bx bxl-facebook"></i></a>
          <a style="margin:20px" href="https://www.instagram.com/pupr_sda_serayuopak/?hl=id" class="instagram"><i
                  class="bx bxl-instagram"></i></a>
-         <a style="margin:20px" href="https://www.youtube.com/channel/UClOhOH8Ixk2dcIAS9jr2aqg" class="google-plus"><i
-                 class="bx bxl-youtube"></i></a>
+         <a style="margin:20px" href="https://www.youtube.com/channel/UClOhOH8Ixk2dcIAS9jr2aqg"
+             class="google-plus"><i class="bx bxl-youtube"></i></a>
      </div>
  </div>
 

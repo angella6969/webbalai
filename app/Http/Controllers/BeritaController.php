@@ -13,20 +13,18 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        // dd("a");
-        return view('content.berita.index',[
-
-        ]);
-    }
-    public function index2()
-    {
-        $beritas = Berita::all();
-        // dd("a");
-
-        return view('content.berita.britas',[
+        $beritas = Berita::latest()->paginate(5);
+        return view('content.berita.britas', [
             'beritas' => $beritas
         ]);
     }
+    // public function index2()
+    // {
+    //     $beritas = Berita::latest()->paginate(5);
+    //     return view('content.berita.britas', [
+    //         'beritas' => $beritas
+    //     ]);
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -47,9 +45,18 @@ class BeritaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Berita $berita)
+    public function show(Berita $berita, $slug)
     {
-       return view('layout.perbaikan');
+        $berita = Berita::where('slug', $slug)->first();
+        // dd($berita);
+        if (!$berita) {
+            // Tambahkan logika jika berita tidak ditemukan
+            abort(404); // Contoh: Menampilkan halaman 404
+        }
+
+        return view('content.berita.brita', [
+            'berita' => $berita
+        ]);
     }
 
     /**

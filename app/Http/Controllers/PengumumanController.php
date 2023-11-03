@@ -14,11 +14,11 @@ class PengumumanController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index2()
+    public function index()
     {
-        dd('ini index');
         $pengumumans = Pengumuman::all();
-        return view('dashboard.form.pengumuman.index', [
+        // dd($pengumumans);
+        return view('content.pengumuman.pengumumans', [
             'pengumumans' => $pengumumans,
         ]);
     }

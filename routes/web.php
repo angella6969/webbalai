@@ -35,8 +35,8 @@ Route::resource('/artikel', PermohonanController::class);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
-Route::get('/beritas', [BeritaController::class, 'index2']);
-Route::get('/beritas/blog', [BeritaController::class, 'index']);
+Route::get('/beritas', [BeritaController::class, 'index']);
+Route::get('/beritas/{slug}', [BeritaController::class, 'show']);
 
 
 
@@ -44,7 +44,7 @@ Route::get('/beritas/blog', [BeritaController::class, 'index']);
 
 
 
-Route::get('/dashboard/pengumuman', [PengumumanController::class, 'index']);
+Route::get('/pengumuman', [PengumumanController::class, 'index']);
 Route::get('/dashboard/pengumuman/create', [PengumumanController::class, 'create']);
 Route::post('/dashboard/pengumuman', [PengumumanController::class, 'store']);
 Route::get('/dashboard/pengumuman/edit/{id}', [PengumumanController::class, 'edit']);
