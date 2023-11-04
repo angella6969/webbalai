@@ -29,22 +29,24 @@ Route::get('/v2', function () {
 
 
 Route::resource('/', HomeController::class);
-Route::resource('/dashboard', DashboardController::class);
+// Route::resource('/dashboard', DashboardController::class);
 Route::resource('/beritas/blog', BeritaController::class);
 Route::resource('/artikel', PermohonanController::class);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
+// Route::get('/dashboard/pengumuman/create', [PengumumanController::class, 'create']);
+// Route::post('/dashboard/pengumuman', [PengumumanController::class, 'store']);
 
 Route::get('/beritas', [BeritaController::class, 'index']);
 Route::get('/beritas/{slug}', [BeritaController::class, 'show']);
 
 
 
- 
 
 
 
-Route::get('/pengumuman', [PengumumanController::class, 'index']);
-Route::get('/dashboard/pengumuman/create', [PengumumanController::class, 'create']);
-Route::post('/dashboard/pengumuman', [PengumumanController::class, 'store']);
-Route::get('/dashboard/pengumuman/edit/{id}', [PengumumanController::class, 'edit']);
+
+Route::resource('/dashboard/pengumuman', PengumumanController::class);
+// Route::get('/dashboard/pengumuman/create', [PengumumanController::class, 'create']);
+// Route::post('/dashboard/pengumuman', [PengumumanController::class, 'store']);
+// Route::get('/dashboard/pengumuman/edit/{id}', [PengumumanController::class, 'edit']);

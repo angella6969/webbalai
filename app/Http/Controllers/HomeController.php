@@ -25,7 +25,7 @@ class HomeController extends Controller
         $logoTerkait = Logoterkait::all();
         // dd($infoData);
         // return view('content.home', [
-        return view('welcome', [
+        return view('content.home', [
             'images' => $image,
             'beritas' => $berita,
             'infoData' => $infoData,

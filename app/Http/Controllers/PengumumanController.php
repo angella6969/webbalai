@@ -29,9 +29,7 @@ class PengumumanController extends Controller
     public function create()
     {
         // dd("ini membuat pengumuman");
-        return view('dashboard.form.pengumuman.create', [
-            
-        ]);
+        return view('dashboard.form.pengumuman.create', []);
     }
 
     /**
@@ -39,11 +37,11 @@ class PengumumanController extends Controller
      */
     public function store(Request $request)
     {
+        // dd("a");
         $validatedData = $request->validate([
             'judul' => ['required'],
             'url_pengumuman' => ['nullable'],
-            'dokumen' => ['file', 'max:5120', 'mimes:pdf'],
-
+            'dokumen' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf'],
         ]);
         DB::beginTransaction();
         try {
@@ -58,7 +56,7 @@ class PengumumanController extends Controller
 
             Pengumuman::create($validatedData);
             DB::commit();
-            // return redirect('/dashboard/daerah-irigasi')->with('success', 'Data berhasil disimpan.');
+            return redirect('/dashboard/pengumuman')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
