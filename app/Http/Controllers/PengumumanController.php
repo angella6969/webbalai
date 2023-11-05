@@ -18,15 +18,15 @@ class PengumumanController extends Controller
     {
         $pengumumans = Pengumuman::latest()->paginate(10);
         // dd($pengumumans);
-        return view('content.pengumuman.pengumumans', [
+        return view('dashboard.form.pengumuman.index', [
             'pengumumans' => $pengumumans,
         ]);
     }
-    public function index2()    
+    public function index2()
     {
         $pengumumans = Pengumuman::latest()->paginate(10);
         // dd($pengumumans);
-        return view('dashboard.form.pengumuman.index', [
+        return view('content.pengumuman.pengumumans', [
             'pengumumans' => $pengumumans,
         ]);
     }
