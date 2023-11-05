@@ -47,6 +47,7 @@ Route::get('/beritas/{slug}', [BeritaController::class, 'show']);
 
 
 Route::resource('/dashboard/pengumuman', PengumumanController::class);
+Route::get('/pengumumans', [PengumumanController::class,'index2']);
 // Route::get('/dashboard/pengumuman/create', [PengumumanController::class, 'create']);
 // Route::post('/dashboard/pengumuman', [PengumumanController::class, 'store']);
 // Route::get('/dashboard/pengumuman/edit/{id}', [PengumumanController::class, 'edit']);

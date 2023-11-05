@@ -22,6 +22,14 @@ class PengumumanController extends Controller
             'pengumumans' => $pengumumans,
         ]);
     }
+    public function index2()
+    {
+        $pengumumans = Pengumuman::latest()->paginate(10);
+        // dd($pengumumans);
+        return view('content.pengumuman.pengumumans', [
+            'pengumumans' => $pengumumans,
+        ]);
+    }
 
     /**
      * Show the form for creating a new resource.
