@@ -16,17 +16,17 @@ class PengumumanController extends Controller
      */
     public function index()
     {
-        $pengumumans = Pengumuman::all();
+        $pengumumans = Pengumuman::latest()->paginate(10);
         // dd($pengumumans);
         return view('content.pengumuman.pengumumans', [
             'pengumumans' => $pengumumans,
         ]);
     }
-    public function index2()
+    public function index2()    
     {
         $pengumumans = Pengumuman::latest()->paginate(10);
         // dd($pengumumans);
-        return view('content.pengumuman.pengumumans', [
+        return view('dashboard.form.pengumuman.index', [
             'pengumumans' => $pengumumans,
         ]);
     }
@@ -45,7 +45,6 @@ class PengumumanController extends Controller
      */
     public function store(Request $request)
     {
-        // dd("a");
         $validatedData = $request->validate([
             'judul' => ['required'],
             'url_pengumuman' => ['nullable'],

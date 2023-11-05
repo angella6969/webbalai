@@ -71,21 +71,21 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title fw-semibold mb-4">Daftar Penerima P3-TGAI</h5>
+                <h5 class="card-title fw-semibold mb-4">Pengumumans</h5>
                 <form action="/dashboard/daerah-irigasi">
                     <div class="row">
-                        <div class="col-6 col-sm-12">
+                        <div class="col-12 col-sm-12">
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control "
                                     placeholder="Pencarian Berdasarkan Daerah Irigasi" name="search"
                                     value="{{ request('search') }}">
-                                <button class="btn btn-primary " type="submit" id="basic-addon2">Search</button>
+                                <button class="btn btn-primary " type="submit" id="basic-addon2"><span data-feather="search"></span></button>
                             </div>
                         </div>
                     </div>
                 </form>
                 <div class="mt-2 mb-2">
-                    <a href="/dashboard/daerah-irigasi/create" class="btn btn-info">Tambah Data</a>
+                    <a href="/dashboard/pengumuman/create" class="btn btn-info">Tambah Data</a>
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">
@@ -94,16 +94,17 @@
                                 <th scope="col">No</th>
                                 <th scope="col">Judul </th>
                                 <th scope="col">Url</th>
+                                <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($pengumumans as $pengumuman)
                                 <tr style="text-align: center;">
                                     <td> {{ $loop->iteration }}</td>
-                                    <td> {{ $penerima->judul }}</td>
-                                    <td> {{ $penerima->url_pengumuman }}</td>
+                                    <td> {{ $pengumuman->judul }}</td>
+                                    <td> {{ $pengumuman->url_pengumuman }}</td>
 
-                                    <td style="display: flex; flex-wrap: wrap;">
+                                    <td >
                                         {{-- <button class="btn badge bg-info border-0 show-DI-modal common-button-style"
                                             data-id="{{ $penerima->id }}"
                                             data-daerah_irigasi_id="{{ $penerima->daerahIrigasi->nama }}"
@@ -123,18 +124,18 @@
                                             data-dokumentasi_pdf="{{ $penerima->dokumentasi_pdf }}">
                                             <span data-feather="eye"></span> Detail
                                         </button> --}}
-                                        <a href="/dashboard/update/perkembangan-daerah-irigasi/{{ $penerima->id }}"
+                                        <a href="/dashboard/update/perkembangan-daerah-irigasi/{{ $pengumuman->id }}"
                                             class="btn btn-secondary common-button-style">Progres</a>
-                                        <a href="/dashboard/daerah-irigasi/{{ $penerima->id }}/edit"
+                                        <a href="/dashboard/daerah-irigasi/{{ $pengumuman->id }}/edit"
                                             class="badge bg-warning border-0 common-button-style"><span data-feather="edit">
                                             </span>Edit</a>
 
-                                        <form action="/dashboard/daerah-irigasi/{{ $penerima->id }}" class="d-inline "
+                                        <form action="/dashboard/daerah-irigasi/{{ $pengumuman->id }}" class="d-inline "
                                             method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn badge bg-danger border-0 show-DI-modal common-button-style"
-                                                onclick="return confirm('Yakin Ingin Menghapus Data yang berhubungan dengan? {{ $penerima->DaerahIrigasi->nama }}')"><span
+                                                onclick="return confirm('Yakin Ingin Menghapus Data yang berhubungan dengan? {{ $pengumuman->judul }}')"><span
                                                     data-feather="file-minus"></span> Hapus</button>
                                         </form>
                                     </td>
@@ -160,7 +161,7 @@
                                         <th scope="col">Desa</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
-                                </thead>
+                                </thead> 
                                 <tbody>
                                     @foreach ($penerimas as $penerima)
                                         <tr style="text-align: center;">
@@ -215,7 +216,7 @@
             </div>
         </div>
     </div>
-
+{{-- 
 
 
 
@@ -295,7 +296,7 @@ left: 0;">
         }
 
         animasi();
-    </script>
+    </script> --}}
 
     <div class="modal fade" id="progresModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
@@ -318,9 +319,9 @@ left: 0;">
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+    {{-- <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script> --}}
 
-    <script>
+    {{-- <script>
         $(document).ready(function() {
             // Ketika tombol "Tampilkan Data" di klik
             $('.show-DI-modal').on('click', function() {
@@ -420,7 +421,7 @@ left: 0;">
                 $('#progresModal').modal('show');
             });
         });
-    </script>
+    </script> --}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use App\Http\Requests\StoreBeritaRequest;
 use App\Http\Requests\UpdateBeritaRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rules\Unique;
 
 class BeritaController extends Controller
 {
@@ -39,7 +41,27 @@ class BeritaController extends Controller
      */
     public function store(StoreBeritaRequest $request)
     {
-        //
+        $validatedData = $request->validate([
+            'judul' => ['required'],
+            'slug' => ['required', 'Unique:Berita'],
+            'body' => ['required'],
+            'url_foto' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf'],
+        ]);
+        DB::beginTransaction();
+        try {
+
+            if ($request->hasFile('url_foto')) {
+                $petaPdfPath = $request->file('url_foto')->store('public/pdf');
+                $validatedData['url_foto'] = $petaPdfPath;
+            }
+
+            Berita::create($validatedData);
+            DB::commit();
+            return redirect('/dashboard/beritas')->with('success', 'Data berhasil disimpan.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     /**
@@ -78,8 +100,15 @@ class BeritaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Berita $berita)
+    public function destroy(string $id)
     {
-        //
+        // dd("ini route delete");
+        $Berita = Berita::findOrFail($id);
+        try {
+            $Berita->delete();
+            return redirect()->back()->with('success', 'Berhasil Menghapus Data');
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
     }
 }
