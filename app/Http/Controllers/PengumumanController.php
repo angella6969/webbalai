@@ -8,6 +8,9 @@ use App\Http\Requests\UpdatePengumumanRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\URL;
+
 
 class PengumumanController extends Controller
 {
@@ -129,7 +132,7 @@ class PengumumanController extends Controller
         }
     }
 
-    /**
+    /** 
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)

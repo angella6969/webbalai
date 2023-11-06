@@ -29,7 +29,6 @@
     </style>
 
 
-    <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
         <div id="heroCarousel" data-bs-interval="4000" class="carousel carousel-fade" data-bs-ride="carousel">
 
@@ -71,7 +70,7 @@
 
         </div>
 
-    </section><!-- End Hero -->
+    </section>
 
     <div class="col-lg-12" style="height: 60px; color:#fff; background: rgb(232,170,28); ">
         <div class="container">
@@ -96,7 +95,6 @@
     </div>
 
 
-    <!-- ======= Testimonials Section ======= -->
     <section id="" class="testimonials">
         <div class="container">
             {{-- <div class="section-title" data-aos="zoom-out">
@@ -128,16 +126,13 @@
 
         </div>
     </section>
-    <!-- End Testimonials Section -->
 
 
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
+    <section id="testimonials" class="testimonials" style="background-color:rgba(145, 145, 133,0.2)">
         <div class="container">
 
             <div class="section-title" data-aos="zoom-out">
                 <h2><strong> infrastruktur </strong> BBWS Serayu Opak</h2>
-                {{-- <p>What they are saying about us</p> --}}
             </div>
 
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -145,7 +140,7 @@
 
                     @foreach ($infrastrukturs as $infrastruktur)
                         <div class="swiper-slide">
-                            <div class="card ">
+                            <div class="card">
                                 <a href=""><img src="{{ asset($infrastruktur->url_foto1) }}"
                                         class="card-img-top hover-effect-2" alt=""
                                         style="height: 200px;object-fit: none;"></a>
@@ -162,10 +157,8 @@
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-
         </div>
     </section>
-    <!-- End Testimonials Section -->
 
     <section id="testimonials" class="testimonials">
         <div class="container">
@@ -182,11 +175,12 @@
                             <div class="border:none">
                                 <a href=""><img src="{{ asset($logoTerkait->url_logo) }}"
                                         class="card-img-top hover-effect-2 d-flex justify-content-center" alt=""
-                                        style="height: 50px; width: auto;  " ></a>
+                                        style="height: 50px; width: auto;  "></a>
                             </div>
                             <div class="card-body">
                                 <h3 class="font-weight-bold text-4 mb-1"><a href=""
-                                        class="link-color-dark align-content-center" style="font-size: 14px; color: rgb(11,38,83)">{{ $logoTerkait->name }}</a>
+                                        class="link-color-dark align-content-center"
+                                        style="font-size: 14px; color: rgb(11,38,83)">{{ $logoTerkait->name }}</a>
                                 </h3>
                             </div>
                         </div><!-- End testimonial item -->

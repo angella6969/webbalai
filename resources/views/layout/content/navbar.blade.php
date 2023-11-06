@@ -3,7 +3,7 @@
         <li><a class="nav-link scrollto active" href="/">Beranda</a></li>
         <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><a href="#">Visi dan Misi</a></li>
+                <li><a href="/visi-misi">Visi dan Misi</a></li>
                 <li><a href="#">Sejarah</a></li>
                 <li><a href="#">Fungsi dan Tugas</a></li>
                 <li><a href="#">Struktur Organisasi</a></li>
@@ -13,7 +13,7 @@
         <li class="dropdown"><a href="#"><span>Berita</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
                 <li><a href="/beritas">Berita Balai</a></li>
-                <li><a href="/pengumuman">Pengumuman</a></li>
+                <li><a href="/pengumumans">Pengumuman</a></li>
                 {{-- <li><a href="#">Visi dan Misi</a></li> --}}
             </ul>
         </li>
@@ -27,14 +27,25 @@
                         <li><a href="#">Pola WS dan RPSDA</a></li>
                     </ul>
                 </li>
+                <li class="dropdown"><a href="#"><span>Infrastruktur</span> <i
+                            class="bi bi-chevron-right"></i></a>
+                    <ul>
+                        <li><a href="#">Bendungan</a></li>
+                        <li><a href="#">Bendung</a></li>
+                        <li><a href="#">Embung</a></li>
+                        <li><a href="#">Irigasi</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Agenda Kegiatan</a></li>
             </ul>
         </li>
 
         <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li class="dropdown"><a href="#"><span>Kalatirta</span> <i class="bi bi-chevron-right"></i></a>
-                    <ul>
+                <li><a href="#">Prosedur Pelayanan</a></li>
+                <li><a href="#">KALATIRTA</a></li>
+                {{-- <li class="dropdown"><a href="#"><span>Kalatirta</span> <i class="bi bi-chevron-right"></i></a> --}}
+                    {{-- <ul>
                         <li><a href="http://202.169.239.20/">AiR(e-Rekomtek BBWS SO)</a></li>
                         <li class="dropdown"><a href="#"><span>Permohonan Informasi SDA</span> <i
                                     class="bi bi-chevron-right"></i></a>
@@ -45,8 +56,8 @@
                             </ul>
                         </li>
                         <li><a href="#">Perpustakaan</a></li>
-                    </ul>
-                </li>
+                    </ul> --}}
+                {{-- </li> --}}
 
                 <li class="dropdown"><a href="#"><span>Data dan Informasi</span> <i
                             class="bi bi-chevron-right"></i></a>

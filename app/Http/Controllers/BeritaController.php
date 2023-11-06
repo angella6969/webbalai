@@ -16,24 +16,31 @@ class BeritaController extends Controller
     public function index()
     {
         $beritas = Berita::latest()->paginate(5);
+        // $a = Berita::pluck('url_foto');
+        // $b = substr($a, 1, 5);
+        // dd($b);
         return view('content.berita.britas', [
             'beritas' => $beritas
         ]);
     }
-    // public function index2()
-    // {
-    //     $beritas = Berita::latest()->paginate(5);
-    //     return view('content.berita.britas', [
-    //         'beritas' => $beritas
-    //     ]);
-    // }
+    public function index2()
+    {
+        // dd('ini index2');
+        $beritas = Berita::latest()->paginate(5);
+        return view('dashboard.form.berita.index2', [
+            'beritas' => $beritas
+        ]);
+    }
 
-    /**
+    /** public\storage\images\BqxS4gVaEVDrc80MR48DFbsELfY5u7H48a0SNMfZ.jpg
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        // dd('ini adalah create');
+        return view('dashboard.form.berita.create',[
+
+        ]);
     }
 
     /**
@@ -41,9 +48,10 @@ class BeritaController extends Controller
      */
     public function store(StoreBeritaRequest $request)
     {
+        // dd('ini adalah store');
         $validatedData = $request->validate([
             'judul' => ['required'],
-            'slug' => ['required', 'Unique:Berita'],
+            'slug' => ['required', 'Unique:Beritas'],
             'body' => ['required'],
             'url_foto' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf'],
         ]);
@@ -51,13 +59,13 @@ class BeritaController extends Controller
         try {
 
             if ($request->hasFile('url_foto')) {
-                $petaPdfPath = $request->file('url_foto')->store('public/pdf');
+                $petaPdfPath = $request->file('url_foto')->store('images');
                 $validatedData['url_foto'] = $petaPdfPath;
             }
 
             Berita::create($validatedData);
             DB::commit();
-            return redirect('/dashboard/beritas')->with('success', 'Data berhasil disimpan.');
+            return redirect('/dashboard/beritas/index')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -67,9 +75,10 @@ class BeritaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Berita $berita, $slug)
+    public function show(Berita $berita, $slug) 
     {
         $berita = Berita::where('slug', $slug)->first();
+        $beritas = Berita::all();
         // dd($berita);
         if (!$berita) {
             // Tambahkan logika jika berita tidak ditemukan
@@ -77,7 +86,8 @@ class BeritaController extends Controller
         }
 
         return view('content.berita.brita', [
-            'berita' => $berita
+            'berita' => $berita,
+            'beritas' => $beritas
         ]);
     }
 

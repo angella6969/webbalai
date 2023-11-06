@@ -2,21 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Infrastruktur;
-use App\Http\Requests\StoreInfrastrukturRequest;
-use App\Http\Requests\UpdateInfrastrukturRequest;
+use App\Models\Informasi_publik;
+use App\Http\Requests\StoreInformasi_publikRequest;
+use App\Http\Requests\UpdateInformasi_publikRequest;
 
-class InfrastrukturController extends Controller
+class InformasiPublikController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $infrastruktur = Infrastruktur::all();
-        return view('dashboard.form.infrastruktur.index', [
-            'infrastrukturs' => $infrastruktur,
-        ]);
+        //
     }
 
     /**
@@ -30,7 +27,7 @@ class InfrastrukturController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreInfrastrukturRequest $request)
+    public function store(StoreInformasi_publikRequest $request)
     {
         //
     }
@@ -38,7 +35,7 @@ class InfrastrukturController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Infrastruktur $infrastruktur)
+    public function show(Informasi_publik $informasi_publik)
     {
         //
     }
@@ -46,7 +43,7 @@ class InfrastrukturController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Infrastruktur $infrastruktur)
+    public function edit(Informasi_publik $informasi_publik)
     {
         //
     }
@@ -54,7 +51,7 @@ class InfrastrukturController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateInfrastrukturRequest $request, Infrastruktur $infrastruktur)
+    public function update(UpdateInformasi_publikRequest $request, Informasi_publik $informasi_publik)
     {
         //
     }
@@ -62,7 +59,7 @@ class InfrastrukturController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Infrastruktur $infrastruktur)
+    public function destroy(Informasi_publik $informasi_publik)
     {
         //
     }

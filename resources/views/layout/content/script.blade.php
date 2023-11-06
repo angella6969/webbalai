@@ -9,6 +9,7 @@
     <!-- Template Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    {{-- <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script> --}}
     <script>
         feather.replace();
     </script>

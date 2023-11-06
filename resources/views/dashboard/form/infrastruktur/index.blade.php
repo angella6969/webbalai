@@ -46,18 +46,18 @@
         }
 
         /* @media (max-width: 768px) {
-                                                                                    td {
-                                                                                        display: block;
-                                                                                        text-align: center;
-                                                                                    }
+                                                                                        td {
+                                                                                            display: block;
+                                                                                            text-align: center;
+                                                                                        }
 
-                                                                                    td button,
-                                                                                    td a,
-                                                                                    td form {
-                                                                                        width: 100%;
-                                                                                        margin: 5px 0;
-                                                                                    }
-                                                                                } */
+                                                                                        td button,
+                                                                                        td a,
+                                                                                        td form {
+                                                                                            width: 100%;
+                                                                                            margin: 5px 0;
+                                                                                        }
+                                                                                    } */
         .common-button-style {
             width: 100px;
             /* Atur lebar sesuai kebutuhan Anda */
@@ -71,13 +71,13 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title fw-semibold mb-4">Pengumumans</h5>
-                <form action="/dashboard/daerah-irigasi">
+                <h5 class="card-title fw-semibold mb-4">Infrastruktur</h5>
+                <form action="/dashboard/infrastruktur/create">
                     <div class="row">
                         <div class="col-12 col-sm-12">
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control "
-                                    placeholder="Pencarian Berdasarkan Daerah Irigasi" name="search"
+                                    placeholder="..." name="search"
                                     value="{{ request('search') }}">
                                 <button class="btn btn-primary " type="submit" id="basic-addon2"><span
                                         data-feather="search"></span></button>
@@ -86,44 +86,43 @@
                     </div>
                 </form>
                 <div class="mt-2 mb-2">
-                    <a href="/dashboard/pengumuman/create" class="btn btn-info">Tambah Data</a>
+                    <a href="/dashboard/beritas/create" class="btn btn-info">Tambah Infrastruktur</a>
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr style="text-align: center;">
                                 <th scope="col">No</th>
-                                <th scope="col">Judul </th>
-                                <th scope="col">Url</th>
-                                <th scope="col">Action</th>
+                                <th scope="col">Nama </th>
+                                <th scope="col">Jenis</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($pengumumans as $pengumuman)
+                            @foreach ($infrastrukturs as $infrastruktur)
                                 <tr style="text-align: center;">
                                     <td> {{ $loop->iteration }}</td>
-                                    <td> {{ $pengumuman->judul }}</td>
-                                    <td> {{ $pengumuman->url_pengumuman }}</td>
+                                    <td> {{ $infrastruktur->nama }}</td>
+                                    <td> {{ $infrastruktur->jenis }}</td>
 
-                                    <td>
-                                        <button class="btn badge bg-info show-DI-modal" data-id="{{ $pengumuman->id }}"
-                                            data-judul="{{ $pengumuman->judul }}"
-                                            data-url_pengumuman="{{ $pengumuman->url_pengumuman }}">
+                                    {{-- <td>
+                                        <button class="btn badge bg-info show-DI-modal" data-id="{{ $berita->id }}"
+                                            data-judul="{{ $berita->judul }}"
+                                            data-url_berita="{{ $berita->url_berita }}">
                                             <span data-feather="eye"></span>
                                         </button>
-                                        <a href="/dashboard/pengumuman/{{ $pengumuman->id }}/edit"
+                                        <a href="/dashboard/berita/{{ $berita->id }}/edit"
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
 
-                                        <form action="/dashboard/pengumuman/{{ $pengumuman->id }}" class="d-inline "
+                                        <form action="/dashboard/berita/{{ $berita->id }}" class="d-inline "
                                             method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn badge bg-danger show-DI-modal "
-                                                onclick="return confirm('Yakin Ingin Menghapus Data yang berhubungan dengan? {{ $pengumuman->judul }}')"><span
+                                                onclick="return confirm('Yakin Ingin Menghapus Data yang berhubungan dengan? {{ $berita->judul }}')"><span
                                                     data-feather="file-minus"></span> </button>
                                         </form>
-                                    </td>
+                                    </td> --}}
                                 </tr>
                             @endforeach
                         </tbody>
@@ -201,89 +200,7 @@
             </div>
         </div>
     </div>
-    {{-- 
-
-
-
-    <div class="mobil"
-        style=" 
-width: 100px;
-height: 100px;
-background-image: url('../images/truck-3.png');
-background-size: contain;
-background-repeat: no-repeat;
-position: absolute;
-bottom: 60px;
-left: 0;">
-    </div>
-    <div class="mobil"
-        style=" 
-width: 100px;
-height: 100px;
-background-image: url('../images/truck-2.png');
-background-size: contain;
-background-repeat: no-repeat;
-position: absolute;
-bottom: 0px;
-left: 0;">
-    </div>
-    <div class="mobil"
-        style=" 
-width: 100px;
-height: 100px;
-background-image: url('../images/truck-1.png');
-background-size: contain;
-background-repeat: no-repeat;
-position: absolute;
-bottom: 15px;
-left: 0;">
-    </div>
-    <script>
-        var mobil1 = document.querySelectorAll('.mobil')[0];
-        var mobil2 = document.querySelectorAll('.mobil')[1];
-        var mobil3 = document.querySelectorAll('.mobil')[2];
-        var posisi1 = 0;
-        var posisi2 = window.innerWidth - 100; // Mengatur posisi awal elemen kedua
-        var posisi3 = window.innerWidth - 100; // Mengatur posisi awal elemen kedua
-        var kecepatan1 = 2;
-        var kecepatan2 = 3;
-        var kecepatan3 = 1;
-        var arah1 = 1;
-        var arah2 = -1; // Arah elemen kedua berlawanan dengan elemen pertama
-        var arah3 = -1; // Arah elemen kedua berlawanan dengan elemen pertama
-
-        function animasi() {
-            posisi1 += kecepatan1 * arah1;
-            posisi2 += kecepatan2 * arah2;
-            posisi3 += kecepatan3 * arah3;
-            mobil1.style.left = posisi1 + "px";
-            mobil2.style.left = posisi2 + "px";
-            mobil3.style.left = posisi3 + "px";
-
-            // Memantulkan elemen pertama saat mencapai batas tertentu
-            if (posisi1 >= window.innerWidth - mobil1.offsetWidth || posisi1 <= 0) {
-                arah1 = -arah1;
-                mobil1.style.transform = 'scaleX(' + arah1 + ')';
-            }
-
-            // Memantulkan elemen kedua saat mencapai batas tertentu
-            if (posisi2 >= window.innerWidth - mobil2.offsetWidth || posisi2 <= 0) {
-                arah2 = -arah2;
-                mobil2.style.transform = 'scaleX(' + -arah2 + ')';
-            }
-
-            if (posisi3 >= window.innerWidth - mobil3.offsetWidth || posisi3 <= 0) {
-                arah3 = -arah3;
-                mobil3.style.transform = 'scaleX(' + -arah3 + ')';
-            }
-
-            requestAnimationFrame(animasi);
-        }
-
-        animasi();
-    </script> --}}
-
-    <div class="modal fade" id="progresModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {{-- <div class="modal fade" id="progresModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
@@ -299,14 +216,13 @@ left: 0;">
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    {{-- <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script> --}}
 
-    <script>
+    {{-- <script>
         $(document).ready(function() {
             // Ketika tombol "Tampilkan Data" di klik
             $('.show-DI-modal').on('click', function() {
@@ -349,7 +265,7 @@ left: 0;">
                 $('#progresModal').modal('show');
             });
         });
-    </script>
+    </script> --}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
