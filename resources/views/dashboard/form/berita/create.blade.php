@@ -44,11 +44,15 @@
                         </div>
                         <div class="mb-3">
                             <label for="body" class="form-label">body</label>
-                            <div class="input-group">
+                            <input id="body" type="hidden" name="body">
+                            <trix-editor input="body"></trix-editor>
+
+
+                            {{-- <div class="input-group">
                                 <input type="text" class="form-control" id="body" name="body" placeholder="body"
                                     value="{{ old('body') }}" required>
 
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="separator">
                             <br>
@@ -148,6 +152,11 @@ judul.addEventListener('input', function() {
     .then(data => slug.value = data.slug);
 });
 
+
+
+document.addEventListener('trix-file-accept'. function (e) {
+    e.preventDefault();
+})
 </script>
 
 {{-- <script>
