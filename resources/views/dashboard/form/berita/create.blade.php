@@ -1,87 +1,87 @@
 @extends('layout.dashboard.main')
 @section('container')
-    <style>
-        .card {
-            max-width: 100%;
-            overflow-x: auto;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.);
-            transition: box-shadow 0.3s ease;
-        }
+<style>
+    .card {
+        max-width: 100%;
+        overflow-x: auto;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.);
+        transition: box-shadow 0.3s ease;
+    }
 
-        .card:hover {
-            box-shadow: 0 8px 12px rgba(230, 138, 38, 1);
-        }
+    .card:hover {
+        box-shadow: 0 8px 12px rgba(230, 138, 38, 1);
+    }
 
-        .line {
-            border-top: 1px solid rgba(230, 138, 38, 1);
-            margin: 10px 0;
-        }
-    </style>
-    <div class="container-fluid">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title fw-semibold mb-4">Berita</h5>
-                <div class="card">
-                    <div class="card-body">
-                        <form method="post" action="/dashboard/beritas/store" enctype="multipart/form-data">
-                            @csrf
+    .line {
+        border-top: 1px solid rgba(230, 138, 38, 1);
+        margin: 10px 0;
+    }
+</style>
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title fw-semibold mb-4">Berita</h5>
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" action="/dashboard/beritas/store" enctype="multipart/form-data">
+                        @csrf
 
-                            <div class="mb-3">
-                                <label for="judul" class="form-label">judul</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="judul" name="judul"
-                                        placeholder="judul" value="{{ old('judul') }}" required>
+                        <div class="mb-3">
+                            <label for="judul" class="form-label">judul</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="judul" name="judul" placeholder="judul"
+                                    value="{{ old('judul') }}" required>
 
-                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="slug" class="form-label">slug</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="slug" name="slug"
-                                        placeholder="slug" value="{{ old('slug') }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="slug" class="form-label">slug</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="slug" name="slug" placeholder="slug"
+                                    value="{{ old('slug') }}" required>
 
-                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="body" class="form-label">body</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="body" name="body"
-                                        placeholder="body" value="{{ old('body') }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="body" class="form-label">body</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="body" name="body" placeholder="body"
+                                    value="{{ old('body') }}" required>
 
-                                </div>
                             </div>
-                            <div class="separator">
-                                <br>
-                                <p class="d-flex justify-content-center">Dokumen Pendukunng</p>
-                                <div class="line"></div>
+                        </div>
+                        <div class="separator">
+                            <br>
+                            <p class="d-flex justify-content-center">Dokumen Pendukunng</p>
+                            <div class="line"></div>
+                        </div>
+
+                        {{-- <div class="mb-3">
+                            <label for="Pengumuman" class="form-label">Link</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="url_pengumuman" name="url_pengumuman"
+                                    placeholder="link pengumuman  jika ada" value="{{ old('url_pengumuman') }}">
+
                             </div>
-
-                            {{-- <div class="mb-3">
-                                <label for="Pengumuman" class="form-label">Link</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="url_pengumuman" name="url_pengumuman"
-                                        placeholder="link pengumuman  jika ada" value="{{ old('url_pengumuman') }}">
-
-                                </div>
-                            </div> --}}
+                        </div> --}}
 
 
 
-                            <div class="mt-3 mb-3">
-                                <label for="url_foto">Foto</label>
-                                <input type="file" class="form-control" id="url_foto" name="url_foto"
-                                    accept="image/*, image/png, image/gif, application/pdf">
-                                <h6>PDF Max 5 MB</h6>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
+                        <div class="mt-3 mb-3">
+                            <label for="url_foto">Foto</label>
+                            <input type="file" class="form-control" id="url_foto" name="url_foto"
+                                accept="image/*, image/png, image/gif, application/pdf">
+                            <h6>PDF Max 5 MB</h6>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    {{-- <div>
+{{-- <div>
     <div class="owl-item" style="width: 305.356px; margin-right: 30px;" tabindex="-1" aria-hidden="true">
         <div class="appear-animation animated fadeInLeftShorter appear-animation-visible"
             data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="400" style="animation-delay: 400ms;">
@@ -104,8 +104,8 @@
         </div>
     </div>
 </div> --}}
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
             @if (Session::has('success'))
                 iziToast.success({
                     title: 'Success',
@@ -121,8 +121,18 @@
                 });
             @endif
         });
-    </script>
-    {{-- <script>
+</script>
+<script>
+    const judul = document.querySelector('#judul');
+    const slug = document.querySelector('#slug');
+
+   judul.addEventListener('change',function(){
+    fetch('/dashboard/beritas/checkSlug?judul =' + judul.value)
+    .then(response => response.json())
+    .then(data => slug.value = data.slug)
+   });
+</script>
+{{-- <script>
     // Ambil elemen-elemen yang diperlukan
         const TahunPengerjaan = document.getElementById('TahunPengerjaan');
         const inputLainnyaTahunPengerjaan = document.getElementById('inputLainnyaTahunPengerjaan');
@@ -224,8 +234,8 @@
         }
 </script> --}}
 
-    {{-- <script>
-        document.addEventListener('DOMContentLoaded', function() {
+{{-- <script>
+    document.addEventListener('DOMContentLoaded', function() {
             const urlPengumumanInput = document.getElementById('url_pengumuman');
             const dokumenInput = document.getElementById('dokumen');
 
@@ -245,5 +255,5 @@
                 }
             });
         });
-    </script> --}}
+</script> --}}
 @endsection

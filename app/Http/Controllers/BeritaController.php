@@ -7,6 +7,8 @@ use App\Http\Requests\StoreBeritaRequest;
 use App\Http\Requests\UpdateBeritaRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rules\Unique;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Http\Request;
 
 class BeritaController extends Controller
 {
@@ -128,5 +130,10 @@ class BeritaController extends Controller
         } catch (\Exception $e) {
             return back()->with('error', $e->getMessage());
         }
+    }
+    public function checkSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Berita::class, 'slug', $request->judul);
+        return response()->json(['slug' => $slug]);
     }
 }
