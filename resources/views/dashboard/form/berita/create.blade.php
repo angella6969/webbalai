@@ -35,10 +35,10 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="slug" class="form-label">slug</label>
+                            {{-- <label for="slug" class="form-label">slug</label> --}}
                             <div class="input-group">
-                                <input type="text" class="form-control" id="slug" name="slug" placeholder="slug"
-                                    value="{{ old('slug') }}" required>
+                                <input type="text" class="form-control" disabled id="slug" name="slug"
+                                    placeholder="slug" value="{{ old('slug') }}" required>
 
                             </div>
                         </div>
@@ -124,14 +124,32 @@
 </script>
 <script>
     const judul = document.querySelector('#judul');
-    const slug = document.querySelector('#slug');
+const slug = document.querySelector('#slug');
 
-   judul.addEventListener('change',function(){
-    fetch('/dashboard/beritas/checkSlug?judul =' + judul.value)
+judul.addEventListener('input', function() {
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    const judulValue = judul.value;
+
+    // Jika judul kosong, clear input slug
+    if (judulValue === '') {
+        slug.value = '';
+        return; // Keluar dari event handler
+    }
+
+    fetch('/dashboard/beritas/checkSlug', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': csrfToken,
+        },
+        body: JSON.stringify({ judul: judulValue }),
+    })
     .then(response => response.json())
-    .then(data => slug.value = data.slug)
-   });
+    .then(data => slug.value = data.slug);
+});
+
 </script>
+
 {{-- <script>
     // Ambil elemen-elemen yang diperlukan
         const TahunPengerjaan = document.getElementById('TahunPengerjaan');

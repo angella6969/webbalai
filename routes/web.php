@@ -49,7 +49,7 @@ Route::get('/beritas/{slug}', [BeritaController::class, 'show']);
 Route::get('/dashboard/beritas/index', [BeritaController::class, 'index2']);
 Route::get('/dashboard/beritas/create', [BeritaController::class, 'create']);
 Route::post('/dashboard/beritas/store', [BeritaController::class, 'store']);
-Route::get('/dashboard/beritas/checkSlug', [BeritaController::class, 'checkSlug']);
+Route::post('/dashboard/beritas/checkSlug', [BeritaController::class, 'checkSlug']);
 
 
 
