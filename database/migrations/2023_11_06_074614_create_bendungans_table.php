@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('bendungans', function (Blueprint $table) {
             $table->id();
+            $table->string('lokasi');
+            $table->string('tipe_bendungan');
+            $table->string('tinggi_puncak_bendungan');
+            $table->string('luas');
             $table->timestamps();
         });
     }

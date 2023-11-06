@@ -9,7 +9,7 @@
                     <article class="entry entry-single">
 
                         <div class="entry-img d-flex justify-content-center">
-                            <img src="{{ asset($berita->url_foto) }}" alt="" class="img-fluid"
+                            <img src="{{ asset('storage/' . substr($berita->url_foto,6)) }}" alt="" class="img-fluid"
                                 style="border-radius: 5px">
                         </div>
 
@@ -39,7 +39,7 @@
                                 <div class="post-item clearfix">
                                     <a href="{{ $berita->slug }}"><img
                                             style=" border-radius: 15px 2px 15px 2px; border-bottom:3px solid #fbb717 !important;"
-                                            src="{{ asset($berita->url_foto) }}" alt=""></a>
+                                            src="{{ asset('storage/' . substr($berita->url_foto,6)) }}" alt=""></a>
                                     <h4><a href="{{ $berita->slug }}">{{ $berita->judul }}</a>
                                     </h4>
                                     <time datetime="2020-01-01"><i class="bi bi-clock"></i> {{ $berita->created_at }}</time>

@@ -16,9 +16,13 @@ class BeritaController extends Controller
     public function index()
     {
         $beritas = Berita::latest()->paginate(5);
-        // $a = Berita::pluck('url_foto');
-        // $b = substr($a, 1, 5);
-        // dd($b);
+        $beritas->transform(function ($berita) {
+            $berita->url_foto = substr($berita->url_foto, 6);
+            return $berita;
+        });
+
+        // dd($beritas);
+
         return view('content.berita.britas', [
             'beritas' => $beritas
         ]);
@@ -38,9 +42,7 @@ class BeritaController extends Controller
     public function create()
     {
         // dd('ini adalah create');
-        return view('dashboard.form.berita.create',[
-
-        ]);
+        return view('dashboard.form.berita.create', []);
     }
 
     /**
@@ -59,7 +61,7 @@ class BeritaController extends Controller
         try {
 
             if ($request->hasFile('url_foto')) {
-                $petaPdfPath = $request->file('url_foto')->store('images');
+                $petaPdfPath = $request->file('url_foto')->store('public/images');
                 $validatedData['url_foto'] = $petaPdfPath;
             }
 
@@ -75,13 +77,19 @@ class BeritaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Berita $berita, $slug) 
+    public function show(Berita $berita, $slug)
     {
         $berita = Berita::where('slug', $slug)->first();
-        $beritas = Berita::all();
         // dd($berita);
+
+        $beritas = Berita::all();
+
+        // $beritas->transform(function ($berita) {
+        //     $berita->url_foto = substr($berita->url_foto, 6);
+        //     return $berita;
+        // });
+
         if (!$berita) {
-            // Tambahkan logika jika berita tidak ditemukan
             abort(404); // Contoh: Menampilkan halaman 404
         }
 
