@@ -13,7 +13,10 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+        $images = Image::all();
+        return view('dashboard.form.fotoberanda.index', [
+            'images' => $images
+        ]);
     }
 
     /**

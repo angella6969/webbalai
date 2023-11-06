@@ -3,6 +3,7 @@
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\InfrastrukturController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PermohonanController;
@@ -54,6 +55,7 @@ Route::post('/dashboard/beritas/store', [BeritaController::class, 'store']);
 Route::get('/dashboard/infrastruktur/index', [InfrastrukturController::class, 'index']);
 Route::get('/dashboard/infrastruktur/create', [InfrastrukturController::class, 'create']);
 
+Route::get('/dashboard/gambar-depan', [ImageController::class, 'index']);
 
 
 

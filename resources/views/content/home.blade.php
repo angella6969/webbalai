@@ -107,7 +107,8 @@
                     @foreach ($beritas as $berita)
                         <div class="swiper-slide">
                             <div class="card ">
-                                <a href="beritas/{{ $berita->slug }}"><img src="{{ asset($berita->url_foto) }}"
+                                <a href="beritas/{{ $berita->slug }}"><img
+                                        src="{{ asset('storage/' . substr($berita->url_foto, 6)) }}"
                                         class="card-img-top hover-effect-2 card-img-top" alt=""
                                         style="height: 200px;object-fit: none; border-radius: 0 0 100px 0; border-bottom: 5px solid #fbb717;"></a>
 
