@@ -17,7 +17,8 @@ class BendunganController extends Controller
     }
     public function index2()
     {
-        $bendungan = Bendungan::latest();
+        $bendungan = Bendungan::latest()->get();
+        // dd($bendungan);
         return view('content.infrastruktur.bendungan.bendungans', [
             'bendungans' => $bendungan,
         ]);

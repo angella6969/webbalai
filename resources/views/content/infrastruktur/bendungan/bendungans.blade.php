@@ -1,4 +1,4 @@
-@extends('layout.content.main') 
+@extends('layout.content.main')
 @section('container')
     <!-- ======= Blog Single Section ======= -->
     <section class="" data-plugin-image-background="" data-plugin-options=""
@@ -26,20 +26,20 @@
                     <div class="col-lg-4 entries" style="margin-top:20px">
                         <article class="entry entry-single">
                             <div class="entry-img d-flex justify-content-center">
-                                {{-- <img src="{{ asset('storage/' . substr($berita->url_foto,6)) }}" alt="" class="img-fluid"
-                            style="border-radius: 5px"> --}}
-                                <img src="{{ asset('images\image\struktur_organisasi\Bendungan_Sermo-1.jpg') }}"
-                                    alt="" class="" style=" width: 150vw; height: 100%;">
+                                <img src="{{ asset('storage/' . substr($bendungan->url_foto1, 6)) }}" alt=""
+                                    class="img-fluid" style="border-radius: 5px">
+                                {{-- <img src="{{ asset('images\image\struktur_organisasi\Bendungan_Sermo-1.jpg') }}"
+                                    alt="" class="" style=" width: 150vw; height: 100%;"> --}}
                             </div>
 
                             <h1 class="entry-title">
-                                Bendungan_Sermo-1
+                                {{ $bendungan->nama }}
                             </h1>
 
                             <div class="entry-meta">
                                 <ul>
-                                    {{-- <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="">{{ $berita->created_at }}</time></a></li> --}}
-                                    tgl 12-12-12
+                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a
+                                            href="">{{ $bendungan->created_at }}</time></a></li>
                                 </ul>
                             </div>
                             <div class="entry-content "> </div>
