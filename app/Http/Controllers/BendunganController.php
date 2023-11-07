@@ -67,14 +67,26 @@ class BendunganController extends Controller
         DB::beginTransaction();
         try {
 
-            if ($request->hasFile('url_foto')) {
-                $petaPdfPath = $request->file('url_foto')->store('public/beritas/images');
-                $validatedData['url_foto'] = $petaPdfPath;
+            if ($request->hasFile('url_foto1')) {
+                $petaPdfPath = $request->file('url_foto1')->store('public/infrastruktur/images/bendungan');
+                $validatedData['url_foto1'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto2')) {
+                $petaPdfPath = $request->file('url_foto2')->store('public/infrastruktur/images/bendungan');
+                $validatedData['url_foto2'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto3')) {
+                $petaPdfPath = $request->file('url_foto3')->store('public/infrastruktur/images/bendungan');
+                $validatedData['url_foto3'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto4')) {
+                $petaPdfPath = $request->file('url_foto4')->store('public/infrastruktur/images/bendungan');
+                $validatedData['url_foto4'] = $petaPdfPath;
             }
 
             Bendungan::create($validatedData);
             DB::commit();
-            return redirect('/dashboard/beritas/index')->with('success', 'Data berhasil disimpan.');
+            return redirect('/dashboard/infrastruktur/bendungan')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
