@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rules\Unique;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BeritaController extends Controller
 {
@@ -18,13 +19,6 @@ class BeritaController extends Controller
     public function index()
     {
         $beritas = Berita::latest()->paginate(5);
-        $beritas->transform(function ($berita) {
-            $berita->url_foto = substr($berita->url_foto, 6);
-            return $berita;
-        });
-
-        // dd($beritas);
-
         return view('content.berita.britas', [
             'beritas' => $beritas
         ]);
@@ -52,18 +46,18 @@ class BeritaController extends Controller
      */
     public function store(StoreBeritaRequest $request)
     {
-        // dd('ini adalah store');
         $validatedData = $request->validate([
             'judul' => ['required'],
             'slug' => ['required', 'Unique:Beritas'],
             'body' => ['required'],
-            'url_foto' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf'],
+            'url_foto' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
         ]);
+        // dd($validatedData['body']);
         DB::beginTransaction();
         try {
 
             if ($request->hasFile('url_foto')) {
-                $petaPdfPath = $request->file('url_foto')->store('public/images');
+                $petaPdfPath = $request->file('url_foto')->store('public/beritas/images');
                 $validatedData['url_foto'] = $petaPdfPath;
             }
 
@@ -82,17 +76,10 @@ class BeritaController extends Controller
     public function show(Berita $berita, $slug)
     {
         $berita = Berita::where('slug', $slug)->first();
-        // dd($berita);
-
-        $beritas = Berita::all();
-
-        // $beritas->transform(function ($berita) {
-        //     $berita->url_foto = substr($berita->url_foto, 6);
-        //     return $berita;
-        // });
+        $beritas = Berita::latest()->get();
 
         if (!$berita) {
-            abort(404); // Contoh: Menampilkan halaman 404
+            abort(404);
         }
 
         return view('content.berita.brita', [
@@ -104,17 +91,52 @@ class BeritaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Berita $berita)
+    public function edit(string $id)
     {
-        //
+        $berita = Berita::findOrFail($id);
+        // dd($berita);
+        return view('dashboard.form.berita.edit', [
+            'berita' => $berita,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBeritaRequest $request, Berita $berita)
+    public function update(UpdateBeritaRequest $request, Berita $berita, string $id)
     {
-        //
+        $berita = Berita::findOrFail($id);
+        $rules = [
+            'judul' => ['required'],
+            // 'slug' => ['required', 'Unique:Beritas'],
+            'body' => ['required'],
+            'url_foto' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf'],
+        ];
+
+        if ($request->slug != $berita->slug) {
+            $rules['slug'] = ['required', 'Unique:Beritas'];
+        }
+
+        $validatedData = $request->validate($rules);
+
+        DB::beginTransaction();
+        try {
+
+            if ($request->hasFile('url_foto')) {
+                if ($berita->url_foto != null) {
+                    Storage::delete($berita->url_foto);
+                }
+                $petaPdfPath = $request->file('url_foto')->store('public/beritas/images');
+                $validatedData['url_foto'] = $petaPdfPath;
+            }
+
+            Berita::where('id', $id)->update($validatedData);
+            DB::commit();
+            return redirect('/dashboard/beritas/index')->with('success', 'Data berhasil disimpan.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     /**
@@ -133,6 +155,7 @@ class BeritaController extends Controller
     }
     public function checkSlug(Request $request)
     {
+        // dd('as');
         $slug = SlugService::createSlug(Berita::class, 'slug', $request->judul);
         return response()->json(['slug' => $slug]);
     }

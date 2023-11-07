@@ -103,7 +103,6 @@
 
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
-
                     @foreach ($beritas as $berita)
                         <div class="swiper-slide">
                             <div class="card ">
@@ -122,9 +121,13 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="swiper-pagination"></div>
-            </div>
+                {{-- <div class="swiper-pagination"></div> --}}
 
+                <div class="col d-flex justify-content-center mt-3" >
+                    <a href="/beritas" class="btn btn-rounded btn-4 text-0 font-weight-semibold" style="background-color: rgb(3,15,107); color:#fff">Indeks
+                        Berita</a>
+                </div>
+            </div>
         </div>
     </section>
 

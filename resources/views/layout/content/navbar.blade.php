@@ -1,12 +1,13 @@
 <nav id="navbar" class="navbar">
     <ul>
-        <li><a class="nav-link scrollto active" href="/">Beranda</a></li>
+        <li><a class="nav-link scrollto active" href="/"><span data-feather="home">
+                </span></a></li>
         <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><a href="/visi-misi">Visi dan Misi</a></li>
                 <li><a href="#">Sejarah</a></li>
+                <li><a href="/profil/visi-misi">Visi dan Misi</a></li>
                 <li><a href="#">Fungsi dan Tugas</a></li>
-                <li><a href="#">Struktur Organisasi</a></li>
+                <li><a href="/profil/struktur-organisasi">Struktur Organisasi</a></li>
                 <li><a href="#">Kontak</a></li>
             </ul>
         </li>
@@ -14,75 +15,51 @@
             <ul>
                 <li><a href="/beritas">Berita Balai</a></li>
                 <li><a href="/pengumumans">Pengumuman</a></li>
-                {{-- <li><a href="#">Visi dan Misi</a></li> --}}
+                <li><a href="#">Agenda Kegiatan</a></li>
             </ul>
         </li>
-        <li class="dropdown"><a href="#"><span>Informasi Publik</span> <i class="bi bi-chevron-down"></i></a>
+        <li class="dropdown"><a href="#"><span>Info Publik</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><a href="#">PPID BBWS Serayu Opak</a></li>
-                <li><a href="#">Daftar Informasi Publik</a></li>
+                <li><a href="#">PPID BBWS SO</a></li>
+                {{-- <li><a href="#">Daftar Informasi Publik</a></li> --}}
+                <li class="dropdown"><a href="#"><span>Daftar Informasi Publik</span> <i
+                            class="bi bi-chevron-right"></i></a>
+                    <ul>
+                        <li><a href="#">Informasi Berkala</a></li>
+                        <li><a href="#">Informasi Setiap Saat </a></li>
+                        <li><a href="#">Informasi Serta Merta</a></li>
+                    </ul>
+                </li>
                 <li class="dropdown"><a href="#"><span>Perencanaan</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
                         <li><a href="#">Rencana Strategis</a></li>
                         <li><a href="#">Pola WS dan RPSDA</a></li>
                     </ul>
                 </li>
+                <li class="dropdown"><a href="#"><span>Kinerja</span> <i class="bi bi-chevron-right"></i></a>
+                    <ul>
+                        <li><a href="#">LAKIP</a></li>
+                    </ul>
+                </li>
                 <li class="dropdown"><a href="#"><span>Infrastruktur</span> <i
                             class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="#">Bendungan</a></li>
-                        <li><a href="#">Bendung</a></li>
-                        <li><a href="#">Embung</a></li>
-                        <li><a href="#">Irigasi</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Agenda Kegiatan</a></li>
-            </ul>
-        </li>
-
-        <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-                <li><a href="#">Prosedur Pelayanan</a></li>
-                <li><a href="#">KALATIRTA</a></li>
-                {{-- <li class="dropdown"><a href="#"><span>Kalatirta</span> <i class="bi bi-chevron-right"></i></a> --}}
-                    {{-- <ul>
-                        <li><a href="http://202.169.239.20/">AiR(e-Rekomtek BBWS SO)</a></li>
-                        <li class="dropdown"><a href="#"><span>Permohonan Informasi SDA</span> <i
+                        <li class="dropdown"><a href="#"><span>Informasi</span> <i
                                     class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="#">Prosedur Pelayanan</a></li>
-                                <li><a href="#">Form Permohonan</a></li>
-                                <li><a href="#">Pengajuan Keberatan</a></li>
+                                <li><a href="#">Bendungan</a></li>
+                                <li><a href="#">Bendung</a></li>
+                                <li><a href="#">Embung</a></li>
+                                <li><a href="#">Irigasi</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Perpustakaan</a></li>
-                    </ul> --}}
-                {{-- </li> --}}
-
-                <li class="dropdown"><a href="#"><span>Data dan Informasi</span> <i
-                            class="bi bi-chevron-right"></i></a>
-                    <ul>
-                        <li class="dropdown"><a href="#"><span>Data Teknis</span> <i
-                                    class="bi bi-chevron-right"></i></a>
-                            {{-- <ul>
-                                <li><a href="#">Aplikasi 1</a></li>
-                                <li><a href="#">Aplikasi 2</a></li>
-                                <li><a href="#">Aplikasi 3</a></li>
-                            </ul> --}}
-                        </li>
-                        <li class="dropdown"><a href="#"><span>Data Kinerja</span> <i
-                                    class="bi bi-chevron-right"></i></a>
+                        <li class="dropdown"><a href="#"><span>Data</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="#">LAKIP</a></li>
+                                <li><a href="#">aplikasi 1</a></li>
+                                <li><a href="#">aplikasi 2</a></li>
+                                <li><a href="#">aplikasi 3</a></li>
                             </ul>
                         </li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#"><span>Pengaduan</span> <i class="bi bi-chevron-right"></i></a>
-                    <ul>
-                        <li><a href="#">Pengaduan BBWS SO</a></li>
-                        <li><a href="#">Pengaduan PUPR</a></li>
-                        <li><a href="#">Lapor</a></li>
                     </ul>
                 </li>
             </ul>
@@ -104,8 +81,40 @@
                 </li>
             </ul>
         </li>
+        <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+                <li class="dropdown"><a href="#"><span>Terpadu</span> <i class="bi bi-chevron-right"></i></a>
+                    <ul>
+                        <li><a href="#">Prosedur Pelayanan</a></li>
+                        <li><a href="#">KALATIRTA</a></li>
+                    </ul>
+                </li>
+
+                {{-- <li class="dropdown"><a href="#"><span>Data dan Informasi</span> <i
+                            class="bi bi-chevron-right"></i></a>
+                    <ul>
+                        <li class="dropdown"><a href="#"><span>Data Teknis</span> <i
+                                    class="bi bi-chevron-right"></i></a>
+                        </li>
+                        <li class="dropdown"><a href="#"><span>Data Kinerja</span> <i
+                                    class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="#">LAKIP</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li> --}}
+                <li class="dropdown"><a href="#"><span>Pengaduan</span> <i class="bi bi-chevron-right"></i></a>
+                    <ul>
+                        <li><a href="#">Pengaduan Balai</a></li>
+                        <li><a href="#">Pengaduan PUPR</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
         <div class="input-group">
-            <input type="text" class="form-control" name="keyword" id="s" style="width: 200px; height:30px ;"
+            <input type="text" class="form-control" name="keyword" id="s" style="width: 200px; height:30px ; font-size: .8rem"
                 placeholder="Cari..." required="" aria-label="cari..." data-uw-rm-form="fx">
             </span>
         </div>

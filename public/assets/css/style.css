@@ -1639,7 +1639,7 @@ section {
 
 #footer p {
     font-size: 15;
-    font-style: italic;
+    /* font-style: italic; */
     padding: 0;
     margin: 0 0 40px 0;
 }
@@ -2216,7 +2216,33 @@ section {
     z-index: 999;
 } */
 
-.card-img-top{
-    border-top-left-radius:calc(0.25rem - 1px);
-    border-top-right-radius:calc(0.25rem - 1px);
+.card-img-top {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.background-element {
+    /* background-image: url("gambar-anda.jpg"); */
+    background-size: cover;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto; /* Set tinggi elemen sesuai kebutuhan */
+    width: 70vw; /* Set lebar elemen sesuai kebutuhan */
+}
+.image-container {
+    position: relative;
+}
+.background-element.active {
+    display: block;
+}
+@media (max-width: 768px) {
+    .background-element {
+        /* background-image: url("gambar-anda.jpg"); */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: auto; /* Set tinggi elemen sesuai kebutuhan */
+        width: 80vw; /* Set lebar elemen sesuai kebutuhan */
+    }
 }

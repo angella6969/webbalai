@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BendunganController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
@@ -7,6 +8,9 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\InfrastrukturController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PermohonanController;
+use App\Http\Controllers\StrukturOrganisasiController;
+use App\Http\Controllers\VisiMisiController;
+use App\Models\Bendungan;
 use App\Models\Berita;
 use App\Models\Dashboard;
 use Illuminate\Support\Facades\Route;
@@ -28,8 +32,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/v2', function () {
     return view('welcome');
 });
-Route::get('/visi-misi', function () {
-    return view('content.visimisi');
+Route::get('/under-construction', function () {
+    return view('content.Construction');
 });
 
 
@@ -49,7 +53,10 @@ Route::get('/beritas/{slug}', [BeritaController::class, 'show']);
 Route::get('/dashboard/beritas/index', [BeritaController::class, 'index2']);
 Route::get('/dashboard/beritas/create', [BeritaController::class, 'create']);
 Route::post('/dashboard/beritas/store', [BeritaController::class, 'store']);
-Route::post('/dashboard/beritas/checkSlug', [BeritaController::class, 'checkSlug']);
+Route::get('/dashboard/beritas/{id}/edit', [BeritaController::class, 'edit']);
+Route::post('/dashboard/beritas/{id}', [BeritaController::class, 'update']);
+
+Route::get('/dashboard/beritas/checkSlug', [BeritaController::class, 'checkSlug']);
 
 
 
@@ -68,3 +75,15 @@ Route::get('pengumumans', [PengumumanController::class, 'index2']);
 // Route::get('/dashboard/pengumuman/create', [PengumumanController::class, 'create']);
 // Route::post('/dashboard/pengumuman', [PengumumanController::class, 'store']);
 // Route::get('/dashboard/pengumuman/edit/{id}', [PengumumanController::class, 'edit']);
+
+
+
+
+Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 'index']);
+Route::get('/profil/visi-misi', [VisiMisiController::class, 'index']);
+
+
+Route::get('/informasi-publik/infrastruktur', [BendunganController::class, 'index']);
+Route::get('/informasi-publik/infrastruktur/bendungans', [BendunganController::class, 'index2']);
+
+

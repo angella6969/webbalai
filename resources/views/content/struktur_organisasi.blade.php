@@ -1,12 +1,26 @@
 @extends('layout.content.main')
 @section('container')
+    <style>
+        .image-container {
+            white-space: nowrap;
+            overflow-x: auto;
+        }
+
+        .button {
+            display: inline-block;
+        }
+
+        .image-element.hidden {
+            display: none;
+        }
+    </style>
     <section class="" data-plugin-image-background="" data-plugin-options=""
         style="background-color:rgba(3,15,107,0.2) ;background-size: cover; background-position: center center; background-repeat: no-repeat;">
         <div class="container"><br>
             <div class="row align-items-center ">
                 <div class="col-md-8 text-left">
                     <span class="tob-sub-title text-color-light d-block">PROFIL</span>
-                    <h1 class="font-weight-bold text-color-light">Visi dan Misi</h1>
+                    <h1 class="font-weight-bold text-color-light">Struktur Organisasi</h1>
                 </div>
                 <div class="col-md-4">
                     <ul class="breadcrumb justify-content-start text-color-light justify-content-md-end">
@@ -258,105 +272,165 @@
                         </header>
                         <header class="blog-post-header mt-3 mb-3" style="position: relative; overflow: hidden;">
                             <h1 class="font-weight-bold text-color-primary mb-3"
-                                style="line-height: 1.2; margin-right: 0px; margin-left: 0px;" role="heading"
-                                aria-level="2" data-uw-rm-heading="level">Visi dan Misi</h1>
-                            <h4 class="text-center mt-5 mb-5"
-                                style="line-height: 1.2; margin-right: 0px; margin-left: 0px;" data-uw-rm-heading="level"
-                                role="heading" aria-level="3">Sebagaimana ditetapkan pada Peraturan Menteri PUPR Nomor
-                                23/PRT/M/2020 tentang Rencana Strategis Kementerian PUPR 2020-2024, visi Kementerian
-                                Pekerjaan Umum dan Perumahan Rakyat (PUPR) adalah sebagai berikut:</h4>
+                                style="line-height: 1.2; margin-right: 0px; margin-left: 0px;" role="heading" aria-level="2"
+                                data-uw-rm-heading="level">Hukum Pembentukan
+                                Balai Besar Wilayah Sungai Serayu Opak</h1>
+                            <h6 class="text-center mt-5 mb-5" style="line-height: 1.2; margin-right: 0px; margin-left: 0px;"
+                                data-uw-rm-heading="level" role="heading" aria-level="3">Permen PUPR No. 15/PRT/M/2015
+                                tentang organisasi dan Tata kerja Kementerian Pekerjaan Umum dan Perumahan Rakyat:
+
+                                “Menyelenggarakan perumusan dan pelaksanaan kebijakan di bidang pengelolaan sumber daya air
+                                sesuai dengan ketentuan perundang-undangan”</h6>
+                            <h6 class="text-center mt-5 mb-5" style="line-height: 1.2; margin-right: 0px; margin-left: 0px;"
+                                data-uw-rm-heading="level" role="heading" aria-level="3">Permen PUPR No. 34/2015 tentang UPT
+                                di lingkungan Kementerian Pekerjaan Umum dan Perumahan Rakyat:
+
+                                “UPT di lingkungan Kementerian Pekerjaan Umum dan Perumahan Rakyat berupa Balai Besar, Balai
+                                atau Loka”</h6>
                         </header>
                         <h2 class="text-center mb-4 mt-4" style="line-height: 1.2; margin-right: 0px; margin-left: 0px;">
-                            <strong>“Kementerian Pekerjaan Umum dan Perumahan Rakyat yang Andal, Responsif, Inovatif dan
-                                Profesional dalam Pelayanan Kepada Presiden dan Wakil Presiden untuk Mewujudkan Visi dan
-                                Misi Presiden dan Wakil Presiden”</strong>
+                            <strong>Struktur Organisasi
+                                Balai Besar Wilayah Sungai Serayu Opak</strong>
                         </h2>
-                        <p class="mb-4" style="line-height: 1.9; margin-right: 0px; margin-left: 0px;"><span
-                                style="font-size: 18px;">Pencapaian visi tersebut dilaksanakan melalui pelaksanaan misi
-                                Presiden dan Wakil Presiden,
-                                sebagai berikut:</span></p>
-                        <h2>Visi</h2>
-                        <ol class="mb-3 mt-3" style="font-family: &quot;Open Sans&quot;, sans-serif;">
-                            <p>
-                                1. Memberikan dukungan teknis dan administratif serta analisis yang cepat, akurat, dan
-                                responsif kepada Presiden dan Wakil Presiden dalam pengambilan dan pelaksanaan kebijakan
-                                pembangunan serta penyelenggaraan infrastruktur Pekerjaan Umum dan Perumahan Rakyat.
-                            </p>
+                        {{-- <div class="row">
+                            <div class="container">
+                                <div>
+                                    <img class="background-element" src="{{ asset('images\image\struktur_organisasi\STRUKTUR-ORGANISASI-BBWSSO.jpg') }}"
+                                        alt="">
+                                    <img class="background-element" src="{{ asset('images\image\struktur_organisasi\2.-Satker-Balai-2021-2048x1393.jpg') }}"
+                                        alt="">
+                                    <img class="background-element" src="{{ asset('images\image\struktur_organisasi\3.-SNVT-PJSA-2021-2048x1393.jpg') }}"
+                                        alt="">
+                                    <img class="background-element" src="{{ asset('images\image\struktur_organisasi\4.-SNVT-PJPA-2021-2048x1393.jpg') }}"
+                                        alt="">
+                                    <img class="background-element" src="{{ asset('images\image\struktur_organisasi\5.-Satker-OP-2021-2048x1393.jpg') }}"
+                                        alt="">
+                                    <img class="background-element" src="{{ asset('images\image\struktur_organisasi\6.-Satker-Pembangunan-Bendungan-2021-2048x1393.jpg') }}"
+                                        alt="">
+                                    <img class="background-element" src="{{ asset('images\image\struktur_organisasi\7.-Satker-Pengadaan-Tanah-2021-2048x1393.jpg') }}"
+                                        alt="">
+                                </div>
+                            </div>
+                        </div> --}}
+                        {{-- <table class="table">
+                            <thead>
+                                <tr><button class="btn btn-light" onclick="toggleImage(0)">BBWS</button></tr>
+                                <tr><button class="btn btn-light" onclick="toggleImage(1)">PJSA 2021</button></tr>
+                                <tr><button class="btn btn-light" onclick="toggleImage(2)">Satker Balai 2021</button></tr>
+                                <tr><button class="btn btn-light" onclick="toggleImage(3)">PJPA 2021</button></tr>
+                                <tr><button class="btn btn-light" onclick="toggleImage(4)">Satker OP 2021</button></tr>
+                                <tr><button class="btn btn-light" onclick="toggleImage(5)">Satker Bendungan 2021</button>
+                                </tr>
+                                <tr><button class="btn btn-light"
+                                        onclick="toggleImage(6)">Satker-Pengadaan-Tanah-2021</button></tr>
+                            </thead>
+                            <tbody>
 
-                            <p>
-                                2. Memberikan dukungan teknis dan administratif kepada Presiden dalam menyelenggarakan
-                                pembangunan infrastruktur sumber daya air, konektivitas, perumahan dan permukiman dalam
-                                suatu pengembangan infrastruktur wilayah yang terpadu.
-                            </p>
+                                <td>
+                                    <img class="image-element background-element"
+                                        src="{{ asset('images\image\struktur_organisasi\STRUKTUR-ORGANISASI-BBWSSO.jpg') }}"
+                                        alt="">
+                                </td>
+                                <td>
+                                    <img class="image-element background-element"
+                                        src="{{ asset('images\image\struktur_organisasi\2.-Satker-Balai-2021-2048x1393.jpg') }}"
+                                        alt="">
+                                </td>
+                                <td>
+                                    <img class="image-element background-element"
+                                        src="{{ asset('images\image\struktur_organisasi\3.-SNVT-PJSA-2021-2048x1393.jpg') }}"
+                                        alt="">
+                                </td>
+                                <td>
+                                    <img class="image-element background-element"
+                                        src="{{ asset('images\image\struktur_organisasi\4.-SNVT-PJPA-2021-2048x1393.jpg') }}"
+                                        alt="">
+                                </td>
+                                <td>
+                                    <img class="image-element background-element"
+                                        src="{{ asset('images\image\struktur_organisasi\5.-Satker-OP-2021-2048x1393.jpg') }}"
+                                        alt="">
+                                </td>
+                                <td>
+                                    <img class="image-element background-element"
+                                        src="{{ asset('images\image\struktur_organisasi\6.-Satker-Pembangunan-Bendungan-2021-2048x1393.jpg') }}"
+                                        alt="">
+                                </td>
+                                <td>
+                                    <img class="image-element background-element"
+                                        src="{{ asset('images\image\struktur_organisasi\7.-Satker-Pengadaan-Tanah-2021-2048x1393.jpg') }}"
+                                        alt="">
+                                </td>
+                            </tbody>
+                        </table> --}}
+                        <div class="image-container d-flex justify-content-center mb-3">
+                            <button class="btn btn-light" onclick="toggleImage(0)">BBWS</button>
+                            <button class="btn btn-light" onclick="toggleImage(1)">Satker Balai 2021</button>
+                            <button class="btn btn-light" onclick="toggleImage(2)">PJSA 2021</button>
+                            <button class="btn btn-light" onclick="toggleImage(3)">PJPA 2021</button>
+                            <button class="btn btn-light" onclick="toggleImage(4)">Satker OP 2021</button>
+                            <button class="btn btn-light" onclick="toggleImage(5)">Satker Bendungan 2021</button>
+                            <button class="btn btn-light" onclick="toggleImage(6)">Satker Pengadaan Tanah 2021</button>
+                        </div>
 
-                            <p>
-                                3. Menyelenggarakan pelayanan yang efektif dan efisien di bidang tata kelola, perencanaan,
-                                pengawasan, informasi, dan hubungan kelembagaan.
-                            </p>
-
-                            <p>
-                                4. Meningkatkan kualitas sumber daya manusia, penyelenggaraan jasa konstruksi, dan
-                                pembiayaan infrastruktur dalam mendukung penyelenggaraan infrastruktur Pekerjaan Umum dan
-                                Perumahan Rakyat.
-                            </p>
-
-                        </ol>
-                        <h2>Misi</h2>
-                        <ol class="mb-3 mt-3" style="font-family: &quot;Open Sans&quot;, sans-serif;">
-                            <p>Direktorat Jenderal
-                                Sumber Daya Air, sebagai bagian Kementerian Pekerjaan Umum dan Perumahan Rakyat mendukung
-                                pencapaian visi kementerian melalui pencapaian misi ke-2, yaitu: “Memberikan dukungan teknis
-                                dan administratif kepada Presiden dalam menyelenggarakan pembangunan infrastruktur sumber
-                                daya air, konektivitas, perumahan dan permukiman dalam suatu pengembangan infrastruktur
-                                wilayah yang terpadu.”</p>
-                        </ol>
-                        <h2>Tujuan</h2>
-                        <ol class="mb-3 mt-3" style="font-family: &quot;Open Sans&quot;, sans-serif;">
-                            <p>Guna mendukung pencapaian visi dan misi, tujuan Kementerian PUPR 2020-2024 diformulasikan
-                                sebagai berikut:</span><br /><span style="color: #000000;">1. Peningkatan ketersediaan dan
-                                    kemudahan akses serta efisiensi pemanfaatan air untuk memenuhi kebutuhan domestik,
-                                    peningkatan produktivitas pertanian, pengembangan energi, industri dan sektor ekonomi
-                                    unggulan, serta konservasi dan pengurangan risiko/kerentanan bencana
-                                    alam.</span><br /><span style="color: #000000;">2. Peningkatan kelancaran konektivitas
-                                    dan akses jalan yang lebih merata bagi peningkatan pelayanan sistem logistik nasional
-                                    yang lebih efisien dan penguatan daya saing.</span><br /><span
-                                    style="color: #000000;">3. Peningkatan pemenuhan kebutuhan perumahan dan infrastruktur
-                                    permukiman yang layak dan aman menuju terwujudnya smart living, dengan pemanfaatan dan
-                                    pengelolaan yang partisipatif untuk meningkatkan kualitas hidup
-                                    masyarakat.</span><br /><span style="color: #000000;">4. Peningkatan pembinaan SDM
-                                    untuk pemenuhan kebutuhan SDM Vokasional bidang konstruksi yang kompeten dan
-                                    profesional.</span><br /><span style="color: #000000;">5. Peningkatan penyelenggaraan
-                                    pembangunan infrastruktur yang efektif, bersih dan</span><br /><span
-                                    style="color: #000000;">terpercaya yang didukung oleh SDM Aparatur yang berkinerja
-                                    tinggi.</span></p>
-                            <hr />
-                            <p style="text-align: left;"><span style="color: #000000;">Untuk mewujudkan visi, misi, tujuan
-                                    dan sasaran strategis Kementerian PUPR tahun 2020-2024, Direktorat Jenderal Sumber Daya
-                                    Air menjabarkan visi Kementerian PUPR tersebut ke dalam tujuan dan sasaran program dan
-                                    kegiatan sesuai dengan peran, tugas dan fungsinya sebagaimana diatur oleh peraturan
-                                    perundang-undangan. Penjabaran visi dan misi tersebut juga mempertimbangkan pencapaian
-                                    pembangunan terkait bidang Sumber Daya Air 2015-2019, potensi dan permasalahan,
-                                    tantangan utama pembangunan yang dihadapi lima tahun ke depan serta sasaran utama dan
-                                    arah kebijakan pembangunan nasional dalam RPJMN tahun 2020-2024.</span></p>
-                            <hr />
-                            <p style="text-align: left;"><span style="color: #000000;">Tujuan Direktorat Jenderal Sumber
-                                    Daya Air 2020-2024 sebagai berikut:</span><br /><span style="color: #000000;">1.Tujuan
-                                    1: Menyelenggarakan pembangunan infrastruktur sumber daya air untuk mendukung pencapaian
-                                    target infrastruktur pelayanan dasar dalam rangka memperkuat ketahanan ekonomi untuk
-                                    pertumbuhan yang berkualitas.</span><br /><span style="color: #000000;">2.Tujuan 2:
-                                    Menyelenggarakan tata kelola pengelolaan SDA yang terpadu dan berkelanjutan untuk
-                                    pengelolaan air tanah dan air baku berkelanjutan, infrastruktur ketahanan bencana, serta
-                                    waduk multiguna dan modernisasi irigasi, dalam rangka penyediaan infrastruktur pelayanan
-                                    dasar.</span><br /><span style="color: #000000;">3.Tujuan 3: Menyelenggarakan tata
-                                    kelola sumber daya organisasi Direktorat Jenderal SDA yang meliputi: sumber daya
-                                    manusia, sarana prasarana pendukung, pengendalian dan pengawasan, serta sumber daya yang
-                                    lainnya untuk meningkatkan kehandalan infrastruktur pekerjaan umum dan perumahan rakyat
-                                    bidang sumber daya air yang efektif, efiesien, transparan dan akuntabel.</span></p>
-                            </p>
-                        </ol>
+                        <div class="image-container">
+                            <img class="image-element background-element" data-index="0"
+                                src="{{ asset('images\image\struktur_organisasi\STRUKTUR-ORGANISASI-BBWSSO.jpg') }}"
+                                alt="">
+                            <img class="image-element background-element" data-index="1"
+                                src="{{ asset('images\image\struktur_organisasi\2.-Satker-Balai-2021-2048x1393.jpg') }}"
+                                alt="">
+                            <img class="image-element background-element" data-index="2"
+                                src="{{ asset('images\image\struktur_organisasi\3.-SNVT-PJSA-2021-2048x1393.jpg') }}"
+                                alt="">
+                            <img class="image-element background-element" data-index="3"
+                                src="{{ asset('images\image\struktur_organisasi\4.-SNVT-PJPA-2021-2048x1393.jpg') }}"
+                                alt="">
+                            <img class="image-element background-element" data-index="4"
+                                src="{{ asset('images\image\struktur_organisasi\5.-Satker-OP-2021-2048x1393.jpg') }}"
+                                alt="">
+                            <img class="image-element background-element" data-index="5"
+                                src="{{ asset('images\image\struktur_organisasi\6.-Satker-Pembangunan-Bendungan-2021-2048x1393.jpg') }}"
+                                alt="">
+                            <img class="image-element background-element" data-index="6"
+                                src="{{ asset('images\image\struktur_organisasi\7.-Satker-Pengadaan-Tanah-2021-2048x1393.jpg') }}"
+                                alt="">
+                        </div>
                     </article>
                 </div>
             </div>
         </div>
     </section>
+    {{-- <script>
+        function toggleImage(index) {
+            var images = document.querySelectorAll('.image-element');
+            images.forEach(function(image, i) {
+                if (i === index) {
+                    image.classList.toggle('active');
+                } else {
+                    image.classList.remove('active');
+                }
+            });
+        }
+    </script> --}}
+    <script>
+        function toggleImage(index) {
+            var images = document.querySelectorAll('.image-element');
+            images.forEach(function(image) {
+                var dataIndex = image.getAttribute('data-index');
+                if (dataIndex == index) {
+                    image.classList.remove('hidden');
+                    localStorage.setItem('activeImageIndex', index);
+                } else {
+                    image.classList.add('hidden');
+                }
+            });
+        }
+
+        // Check for stored active image index
+        var storedIndex = localStorage.getItem('activeImageIndex');
+        if (storedIndex !== null) {
+            toggleImage(parseInt(storedIndex));
+        }
+    </script>
 @endsection

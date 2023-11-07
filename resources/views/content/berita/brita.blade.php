@@ -19,14 +19,13 @@
 
                         <div class="entry-meta">
                             <ul>
-                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href=""><time
-                                            datetime="2020-01-01">{{ $berita->tanggal }}</time></a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="">{{ $berita->created_at }}</time></a></li>
                             </ul>
                         </div>
 
                         <div class="entry-content">
                             <p>
-                                {{ $berita->body }}
+                                {!! $berita->body !!}
                             </p>
                         </div>
                     </article>
@@ -52,3 +51,4 @@
         </div>
     </section>
 @endsection
+

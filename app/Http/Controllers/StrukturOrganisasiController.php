@@ -2,22 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Bendungan;
-use App\Http\Requests\StoreBendunganRequest;
-use App\Http\Requests\UpdateBendunganRequest;
+use App\Models\Struktur_organisasi;
+use App\Http\Requests\StoreStruktur_organisasiRequest;
+use App\Http\Requests\UpdateStruktur_organisasiRequest;
 
-class BendunganController extends Controller
+class StrukturOrganisasiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('content.infrastruktur.bendungan.bendungan',[]);
-    }
-    public function index2()
-    {
-        return view('content.infrastruktur.bendungan.bendungans',[]);
+       return view('content.struktur_organisasi',[]);
     }
 
     /**
@@ -31,7 +27,7 @@ class BendunganController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBendunganRequest $request)
+    public function store(StoreStruktur_organisasiRequest $request)
     {
         //
     }
@@ -39,7 +35,7 @@ class BendunganController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Bendungan $bendungan)
+    public function show(Struktur_organisasi $struktur_organisasi)
     {
         //
     }
@@ -47,7 +43,7 @@ class BendunganController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Bendungan $bendungan)
+    public function edit(Struktur_organisasi $struktur_organisasi)
     {
         //
     }
@@ -55,7 +51,7 @@ class BendunganController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBendunganRequest $request, Bendungan $bendungan)
+    public function update(UpdateStruktur_organisasiRequest $request, Struktur_organisasi $struktur_organisasi)
     {
         //
     }
@@ -63,7 +59,7 @@ class BendunganController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Bendungan $bendungan)
+    public function destroy(Struktur_organisasi $struktur_organisasi)
     {
         //
     }

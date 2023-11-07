@@ -23,15 +23,13 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">Berita</h5>
-                {{-- <div class="card"> --}}
-                {{-- <div class="card-body"> --}}
-                <form method="post" action="/dashboard/beritas/store" enctype="multipart/form-data">
+                <form method="post" action="/dashboard/beritas/{{ $berita->id }}" enctype="multipart/form-data">
                     @csrf
                     <div class="mt-3">
                         <label for="judul" class="form-label">judul</label>
                         <div class="input-group">
                             <input type="text" class="form-control" id="judul" name="judul" placeholder="judul"
-                                value="{{ old('judul') }}" required>
+                                value="{{ old('judul', $berita->judul) }}" required>
 
                         </div>
                     </div>
@@ -39,20 +37,21 @@
                     <div class="mb-3">
                         <div class="input-group">
                             <input type="text" class="form-control" readonly id="slug" name="slug"
-                                placeholder="slug" value="{{ old('slug') }}" required>
+                                placeholder="slug" value="{{ old('slug', $berita->slug) }}" required>
                         </div>
                     </div>
+
                     <div class="mb-3">
                         <div style="z-index: 999">
-                            <textarea id="body" name="body" style="width: 100px;" value="{{ old('body') }}"></textarea>
+                            <textarea id="body" name="body" style="width: 100px;">{{ old('body', $berita->body) }}</textarea>
                         </div>
                     </div>
+
                     <div class="separator">
                         <br>
                         <p class="d-flex justify-content-center">Dokumen Pendukunng</p>
                         <div class="line"></div>
                     </div>
-
 
                     <div class="mt-3 mb-3">
                         <label for="url_foto">Foto</label>
@@ -60,10 +59,9 @@
                             accept="image/*, image/png, image/gif, application/pdf">
                         <h6>PDF Max 5 MB</h6>
                     </div>
+
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-                {{-- </div> --}}
-                {{-- </div> --}}
             </div>
         </div>
     </div>
@@ -98,7 +96,6 @@
                 console.log(error);
             });
     </script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             @if (Session::has('success'))
@@ -117,7 +114,6 @@
             @endif
         });
     </script>
-
     <script>
         const judul = document.querySelector('#judul');
         const slug = document.querySelector('#slug');
