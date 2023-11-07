@@ -88,6 +88,10 @@ Route::get('/profil/visi-misi', [VisiMisiController::class, 'index']);
 Route::get('/informasi-publik/infrastruk/turbendungans/{slug}', [BendunganController::class, 'index']);
 Route::get('/informasi-publik/infrastruktur/bendungans', [BendunganController::class, 'index2']);
 
+Route::get('/dashboard/infrastruktur/bendungans/create', [BendunganController::class, 'create']);
+Route::get('/dashboard/infrastruktur/bendungans/checkSlug', [BendunganController::class, 'checkSlug']);
+Route::post('/dashboard/infrastruktur/bendungans', [BendunganController::class, 'store']);
+
 
 
 
