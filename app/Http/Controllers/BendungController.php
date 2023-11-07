@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Embung;
-use App\Http\Requests\StoreEmbungRequest;
-use App\Http\Requests\UpdateEmbungRequest;
+use App\Models\Bendung;
+use App\Http\Requests\StoreBendungRequest;
+use App\Http\Requests\UpdateBendungRequest;
 
-class EmbungController extends Controller
+class BendungController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +17,10 @@ class EmbungController extends Controller
     }
     public function index2()
     {
-        $embung = Embung::latest()->get();
-        // dd($embungan);
-        return view('content.infrastruktur.embung.embungs', [
-            'embungs' => $embung,
+        $bendung = Bendung::latest()->get();
+        // dd($bendungan);
+        return view('content.infrastruktur.bendung.bendungs', [
+            'bendungs' => $bendung,
         ]);
     }
 
@@ -35,7 +35,7 @@ class EmbungController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreEmbungRequest $request)
+    public function store(StoreBendungRequest $request)
     {
         //
     }
@@ -43,7 +43,7 @@ class EmbungController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Embung $embung)
+    public function show(Bendung $bendung)
     {
         //
     }
@@ -51,7 +51,7 @@ class EmbungController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Embung $embung)
+    public function edit(Bendung $bendung)
     {
         //
     }
@@ -59,7 +59,7 @@ class EmbungController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateEmbungRequest $request, Embung $embung)
+    public function update(UpdateBendungRequest $request, Bendung $bendung)
     {
         //
     }
@@ -67,7 +67,7 @@ class EmbungController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Embung $embung)
+    public function destroy(Bendung $bendung)
     {
         //
     }

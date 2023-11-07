@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\BendunganController;
+use App\Http\Controllers\BendungController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EmbungController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\InfrastrukturController;
@@ -87,4 +89,11 @@ Route::get('/informasi-publik/infrastruk/turbendungans/{slug}', [BendunganContro
 Route::get('/informasi-publik/infrastruktur/bendungans', [BendunganController::class, 'index2']);
 
 
-  
+
+
+Route::get('/informasi-publik/infrastruktur/bendungs', [BendungController::class, 'index2']);
+
+
+
+
+Route::get('/informasi-publik/infrastruktur/embungs', [EmbungController::class, 'index2']);
