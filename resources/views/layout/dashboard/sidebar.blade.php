@@ -8,6 +8,17 @@
         .dropdown li:hover .submenu {
             display: block;
         }
+
+        /* CSS untuk mengatur tampilan dropdown */
+        .sidebar-item ul {
+            display: none;
+            /* Sembunyikan submenu awalnya */
+        }
+
+        .sidebar-item:hover ul {
+            display: block;
+            /* Tampilkan submenu saat item utama dihover */
+        }
     </style>
     <!-- Sidebar scroll-->
     <div>
@@ -24,7 +35,7 @@
             <ul id="sidebarnav">
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Home</span>
+                    <span class="hide-menu">Beranda</span>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="/dashboard" aria-expanded="false">
@@ -40,7 +51,7 @@
                 </li>
 
                 {{-- @if (auth()->check() &&
-                        auth()->user()->isAdmin())
+    auth()->user()->isAdmin())
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#" aria-expanded="false">
                             <span>
@@ -54,65 +65,103 @@
                 @endif --}}
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="/dashboard/daerah-irigasi" aria-expanded="false">
+                    <a class="sidebar-link" href="/dashboard/beritas/index" aria-expanded="false">
                         <span>
-                            <i class="ti ti-article"></i>
+                            {{-- <i class="ti ti-article"></i> --}}
                         </span>
-                        <span class="hide-menu">Daftar</span>
+                        <span class="hide-menu">Berita</span>
                     </a>
                 </li>
-                {{-- <li class="nav-small-cap">
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/dashboard/pengumuman" aria-expanded="false">
+                        <span>
+                            {{-- <i class="ti ti-article"></i> --}}
+                        </span>
+                        <span class="hide-menu">Pengumuman</span>
+                    </a>
+                </li>
+                <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Kelola Daerah Irigasi</span>
+                    <span class="hide-menu">Infrastruktur</span>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="#" aria-expanded="false">
                         <span>
-                            <i class="ti ti-cards"></i>
+                            {{-- <i class="ti ti-cards"></i> --}}
                         </span>
-                        <span class="hide-menu">Card</span>
+                        <span class="hide-menu">Bendungan</span>
                     </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="#" aria-expanded="false">
+                        <span>
+                            {{-- <i class="ti ti-file-description"></i> --}}
+                        </span>
+                        <span class="hide-menu">Bendung</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="#" aria-expanded="false">
+                        <span>
+                            {{-- <i class="ti ti-typography"></i> --}}
+                        </span>
+                        <span class="hide-menu">Embung</span>
+                    </a>
+                </li>
+                
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="#" aria-expanded="false">
+                        <span>
+                            {{-- <i class="ti ti-typography"></i> --}}
+                        </span>
+                        <span class="hide-menu">Irigasi</span>
+                    </a>
+                    <ul>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="#">Daerah Irigasi 1</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="#">Daerah Irigasi 2</a>
+                        </li>
+                        <!-- Tambahkan submenu lainnya sesuai kebutuhan -->
+                    </ul>
+                </li>
+
+                {{-- <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown button
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div> --}}
+                {{-- <li class="nav-small-cap">
+                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                    <span class="hide-menu">AUTH</span>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-login"></i>
+                        </span>
+                        <span class="hide-menu">Login</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-user-plus"></i>
+                        </span>
+                        <span class="hide-menu">Register</span>
+                    </a>
+                </li>
+                <li class="nav-small-cap">
+                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                    <span class="hide-menu">EXTRA</span>
                 </li> --}}
-                {{-- <li class="sidebar-item">
-            <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
-              <span>
-                <i class="ti ti-file-description"></i>
-              </span>
-              <span class="hide-menu">Forms</span>
-            </a>
-          </li> --}}
-                {{-- <li class="sidebar-item">
-            <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
-              <span>
-                <i class="ti ti-typography"></i>
-              </span>
-              <span class="hide-menu">Typography</span>
-            </a>
-          </li> --}}
-                {{-- <li class="nav-small-cap">
-            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-            <span class="hide-menu">AUTH</span>
-          </li> --}}
-                {{-- <li class="sidebar-item">
-            <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
-              <span>
-                <i class="ti ti-login"></i>
-              </span>
-              <span class="hide-menu">Login</span>
-            </a>
-          </li> --}}
-                {{-- <li class="sidebar-item">
-            <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
-              <span>
-                <i class="ti ti-user-plus"></i>
-              </span>
-              <span class="hide-menu">Register</span>
-            </a>
-          </li> --}}
-                {{-- <li class="nav-small-cap">
-            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-            <span class="hide-menu">EXTRA</span>
-          </li> --}}
                 {{-- <li class="sidebar-item">
             <a class="sidebar-link" href="./icon-tabler.html" aria-expanded="false">
               <span>

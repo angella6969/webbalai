@@ -13,7 +13,15 @@ class BendunganController extends Controller
      */
     public function index()
     {
-        //
+        return view('content.infrastruktur.bendungan.bendungan', []);
+    }
+    public function index2()
+    {
+        $bendungan = Bendungan::latest()->get();
+        // dd($bendungan);
+        return view('content.infrastruktur.bendungan.bendungans', [
+            'bendungans' => $bendungan,
+        ]);
     }
 
     /**
@@ -35,9 +43,9 @@ class BendunganController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Bendungan $bendungan)
+    public function show(Bendungan $bendungan, string $slug)
     {
-        //
+        
     }
 
     /**

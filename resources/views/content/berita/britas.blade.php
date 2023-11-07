@@ -31,7 +31,7 @@
                             <article class="entry">
                                 <div class="entry-img d-flex justify-content-center">
                                     {{-- public\storage\images\8Dt0RmXD49WMzdO5DM7iaQBeqoUHD4YYYuHxcEWP.png --}}
-                                    <img src="{{ asset('storage/' . $berita->url_foto) }}" alt=""
+                                    <img src="{{ asset('storage/' . substr($berita->url_foto,6)) }}" alt=""
                                         style="height: 300px; border-radius: 10px" class="card-img-top hover-effect-2">
                                 </div>
                                 <label for="">
@@ -71,7 +71,7 @@
                                 <div class="post-item clearfix">
                                     <a href="beritas/{{ $berita->slug }}"><img
                                             style="border-radius: 15px 2px 15px 2px; border-bottom:3px solid #fbb717 !important;"
-                                            src="{{ asset('storage/' . $berita->url_foto) }}" alt=""></a>
+                                            src="{{ asset('storage/' . substr($berita->url_foto,6)) }}" alt=""></a>
                                     <h4><a href="beritas/{{ $berita->slug }}">{{ $berita->judul }}</a>
                                     </h4>
                                     <time datetime="2020-01-01"><i class="bi bi-clock"></i>

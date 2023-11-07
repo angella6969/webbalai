@@ -49,8 +49,10 @@
                  </div>
              </div>
              <div class="col-lg-4 mb-4 mb-lg-0">
-                 <h2 class="text-3 mb-3" style="font-size: 18px;">Informasi Publik</h2>
+                 <h2 class="text-3 mb-3" style="font-size: 18px;">Tautan</h2>
                  <ul class="">
+                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="#">Sitemap</a></li>
                      <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
                              href="#">Layanan Publik
                              BBWS

@@ -109,7 +109,7 @@
                                             data-url_berita="{{ $berita->url_berita }}">
                                             <span data-feather="eye"></span>
                                         </button>
-                                        <a href="/dashboard/berita/{{ $berita->id }}/edit"
+                                        <a href="/dashboard/beritas/{{ $berita->id }}/edit"
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
 
