@@ -43,9 +43,9 @@ class BendunganController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Bendungan $bendungan)
+    public function show(Bendungan $bendungan, string $slug)
     {
-        //
+        
     }
 
     /**
