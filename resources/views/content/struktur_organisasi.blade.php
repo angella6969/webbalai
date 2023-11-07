@@ -26,7 +26,6 @@
                     <ul class="breadcrumb justify-content-start text-color-light justify-content-md-end">
                         <li><a class="text-color-light" href="/">Beranda</a> / <a href=""
                                 class="active">Profil</a></li>
-                        {{-- <li class="active"> Profil</li> --}}
                     </ul>
                 </div>
             </div>

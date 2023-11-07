@@ -83,7 +83,8 @@ Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 
 Route::get('/profil/visi-misi', [VisiMisiController::class, 'index']);
 
 
-Route::get('/informasi-publik/infrastruktur', [BendunganController::class, 'index']);
+Route::get('/informasi-publik/infrastruk/turbendungans/{slug}', [BendunganController::class, 'index']);
 Route::get('/informasi-publik/infrastruktur/bendungans', [BendunganController::class, 'index2']);
 
 
+  

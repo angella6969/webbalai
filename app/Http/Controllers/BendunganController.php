@@ -13,11 +13,14 @@ class BendunganController extends Controller
      */
     public function index()
     {
-        return view('content.infrastruktur.bendungan.bendungan',[]);
+        return view('content.infrastruktur.bendungan.bendungan', []);
     }
     public function index2()
     {
-        return view('content.infrastruktur.bendungan.bendungans',[]);
+        $bendungan = Bendungan::latest();
+        return view('content.infrastruktur.bendungan.bendungans', [
+            'bendungans' => $bendungan,
+        ]);
     }
 
     /**

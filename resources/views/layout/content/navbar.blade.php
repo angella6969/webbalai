@@ -47,7 +47,7 @@
                         <li class="dropdown"><a href="#"><span>Informasi</span> <i
                                     class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="#">Bendungan</a></li>
+                                <li><a href="/informasi-publik/infrastruktur/bendungans">Bendungan</a></li>
                                 <li><a href="#">Bendung</a></li>
                                 <li><a href="#">Embung</a></li>
                                 <li><a href="#">Irigasi</a></li>
@@ -87,6 +87,7 @@
                     <ul>
                         <li><a href="#">Prosedur Pelayanan</a></li>
                         <li><a href="#">KALATIRTA</a></li>
+                        <li><a href="#">Perpustakaan Online</a></li>
                     </ul>
                 </li>
 
