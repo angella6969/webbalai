@@ -154,9 +154,9 @@ judul.addEventListener('input', function() {
 
 
 
-document.addEventListener('trix-file-accept'. function (e) {
+document.addEventListener('trix-file-accept', function (e) {
     e.preventDefault();
-})
+});
 </script>
 
 {{-- <script>
