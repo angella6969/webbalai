@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Daftar_informasi_publik;
 use App\Http\Requests\StoreDaftar_informasi_publikRequest;
 use App\Http\Requests\UpdateDaftar_informasi_publikRequest;
+use Illuminate\Support\Facades\DB;
 
 class DaftarInformasiPublikController extends Controller
 {
@@ -36,11 +37,34 @@ class DaftarInformasiPublikController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resource in storage. 
      */
     public function store(StoreDaftar_informasi_publikRequest $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => ['required'],
+            'jenis' => ['required'],
+            'link' => ['nullable'],
+            'url_file' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf','nullable'],
+        ]);
+        DB::beginTransaction();
+        try {
+
+            if ($request->hasFile('url_file')) {
+                $petaPdfPath = $request->file('url_file')->store('public/pdf');
+                $validatedData['url_file'] = $petaPdfPath;
+
+                // Jika dokumen terisi, set url_pengumuman menjadi nilai dokumen
+                $validatedData['link'] = $petaPdfPath;
+            }
+
+            Daftar_informasi_publik::create($validatedData);
+            DB::commit();
+            return redirect('/dashboard/daftar-informasi-publik')->with('success', 'Data berhasil disimpan.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     /**

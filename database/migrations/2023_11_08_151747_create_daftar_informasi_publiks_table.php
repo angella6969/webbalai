@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('daftar_informasi_publiks', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('url_file');
+            $table->string('url_file')->nullable();
             $table->string('jenis');
             $table->timestamps();
         });

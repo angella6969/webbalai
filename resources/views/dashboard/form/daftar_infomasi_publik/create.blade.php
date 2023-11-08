@@ -46,9 +46,18 @@
                     <div class="separator">
                         <br>
                         <p class="d-flex justify-content-center">Dokumen Pendukunng</p>
+                        {{-- <p class="d-flex justify-content-center">Pilih Salah satu : Link / Dokumen</p> --}}
                         <div class="line"></div>
                     </div>
 
+                    {{-- <div class="mb-3">
+                        <label for="link" class="form-label">Link</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="link" name="link"
+                                placeholder="link jika ada" value="{{ old('link') }}">
+
+                        </div>
+                    </div> --}}
 
                     <div class="mt-3 mb-3">
                         <label for="url_file">PDF</label>
@@ -114,7 +123,7 @@
             @endif
         });
     </script>
-
+{{-- 
     <script>
         const nama = document.querySelector('#nama');
         const slug = document.querySelector('#slug');
@@ -123,6 +132,29 @@
             fetch('/dashboard/infrastruktur/bendungans/checkSlug?nama=' + nama.value)
                 .then(response => response.json())
                 .then(data => slug.value = data.slug)
+        });
+    </script> --}}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const linkInput = document.getElementById('link');
+            const fileInput = document.getElementById('url_file');
+
+            linkInput.addEventListener('input', function() {
+                if (linkInput.value.trim() !== '') {
+                    fileInput.disabled = true;
+                } else {
+                    fileInput.disabled = false;
+                }
+            });
+
+            fileInput.addEventListener('input', function() {
+                if (fileInput.files.length > 0) {
+                    linkInput.disabled = true;
+                } else {
+                    linkInput.disabled = false;
+                }
+            });
         });
     </script>
 @endsection

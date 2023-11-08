@@ -87,16 +87,22 @@
                             <div class="paragraf-container">
                                 <table class="table table-striped table-responsive active">
                                     <thead>
-                                        <th>No.</th>
-                                        <th>Informasi yang wajib tersedia Setiap Saat</th>
-                                        <th>Tautan</th>
+                                        <th colspan="1">No.</th>
+                                        <th colspan="2">Informasi yang wajib tersedia Setiap Saat</th>
+                                        <th colspan="2">Tautan</th>
+                                        <th></th>
                                     </thead>
                                     <tbody data-index="0">
                                         @foreach ($informasis->where('jenis', 'serta') as $key => $informasi)
                                             <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $informasi->nama }}</td>
-                                                <td>
+                                                <td colspan="1">{{ $loop->iteration }}</td>
+                                                <td colspan="2">{{ $informasi->nama }}</td>
+                                                <td colspan="1">
+                                                    {{-- @if (strpos({{ $informasi->url_file }}, 'https://') === 0 || strpos({{ $informasi->url_file }}, 'http://') === 0)
+                                                        {
+                                                        <a href="{{ $informasi->url_file }}"></a>
+                                                        }
+                                                    @endif --}}
                                                     <a href="{{ asset('storage/' . substr($informasi->url_file, 7)) }}"
                                                         class="paragraf-a">
                                                         <img src="{{ asset('images/icon/download (1).svg') }}"
@@ -106,7 +112,7 @@
                                             </tr>
                                         @endforeach
                                     </tbody>
-                                   
+
                                 </table>
                                 <table class="table table-striped table-responsive">
                                     <thead>
@@ -129,7 +135,7 @@
                                             </tr>
                                         @endforeach
                                     </tbody>
-                                   
+
                                 </table>
                                 <table class="table table-striped table-responsive">
                                     <thead>
@@ -152,7 +158,7 @@
                                             </tr>
                                         @endforeach
                                     </tbody>
-                                   
+
                                 </table>
                             </div>
                         </div>
