@@ -26,7 +26,7 @@ class HomeController extends Controller
         // dd($infoData);
         // return view('content.home', [
         return view('content.home', [
-            'images' => $image,
+            'images' => $image, 
             'beritas' => $berita,
             'infoData' => $infoData,
             'infrastrukturs' => $infrastruktur,

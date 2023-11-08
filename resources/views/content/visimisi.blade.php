@@ -10,9 +10,8 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="breadcrumb justify-content-start text-color-light justify-content-md-end">
-                        <li><a class="text-color-light" href="/">Beranda</a> / <a href=""
-                                class="active">Profil</a></li>
-                        {{-- <li class="active"> Profil</li> --}}
+                        <li><a class="text-color-light" style="color: black" href="/">Beranda</a> / <a href=""
+                                style="color: black" class="active">Profil</a></li>
                     </ul>
                 </div>
             </div>
@@ -258,11 +257,11 @@
                         </header>
                         <header class="blog-post-header mt-3 mb-3" style="position: relative; overflow: hidden;">
                             <h1 class="font-weight-bold text-color-primary mb-3"
-                                style="line-height: 1.2; margin-right: 0px; margin-left: 0px;" role="heading"
-                                aria-level="2" data-uw-rm-heading="level">Visi dan Misi</h1>
-                            <h4 class="text-center mt-5 mb-5"
-                                style="line-height: 1.2; margin-right: 0px; margin-left: 0px;" data-uw-rm-heading="level"
-                                role="heading" aria-level="3">Sebagaimana ditetapkan pada Peraturan Menteri PUPR Nomor
+                                style="line-height: 1.2; margin-right: 0px; margin-left: 0px;" role="heading" aria-level="2"
+                                data-uw-rm-heading="level">Visi dan Misi</h1>
+                            <h4 class="text-center mt-5 mb-5" style="line-height: 1.2; margin-right: 0px; margin-left: 0px;"
+                                data-uw-rm-heading="level" role="heading" aria-level="3">Sebagaimana ditetapkan pada
+                                Peraturan Menteri PUPR Nomor
                                 23/PRT/M/2020 tentang Rencana Strategis Kementerian PUPR 2020-2024, visi Kementerian
                                 Pekerjaan Umum dan Perumahan Rakyat (PUPR) adalah sebagai berikut:</h4>
                         </header>

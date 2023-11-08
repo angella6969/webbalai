@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Embung;
 use App\Http\Requests\StoreEmbungRequest;
 use App\Http\Requests\UpdateEmbungRequest;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Http\Request;
 
 class EmbungController extends Controller
 {
@@ -13,7 +15,10 @@ class EmbungController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.form.infrastruktur.embung.index', [
+            'embungs' => Embung::latest()->Get(),
+
+        ]);
     }
     public function index2()
     {
@@ -29,7 +34,7 @@ class EmbungController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.form.infrastruktur.embung.create', []);
     }
 
     /**
@@ -43,9 +48,17 @@ class EmbungController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Embung $embung)
+    public function show(Embung $embung,string $slug)
     {
-        //
+        $embung = Embung::where('slug', $slug)->first();
+
+        if (!$embung) {
+            abort(404);
+        }
+
+        return view('content.infrastruktur.embung.embung', [
+            'embung' => $embung,
+        ]);
     }
 
     /**
@@ -70,5 +83,10 @@ class EmbungController extends Controller
     public function destroy(Embung $embung)
     {
         //
+    }
+    public function checkSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Bendungan::class, 'slug', $request->nama);
+        return response()->json(['slug' => $slug]);
     }
 }

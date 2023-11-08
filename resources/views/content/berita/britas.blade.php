@@ -8,8 +8,8 @@
                 <h2>Berita Terbaru</h2>
 
                 <ol>
-                    <li><a href="/">Beranda</a></li>
-                    <li>Berita</li>
+                    <li><a  style="color: black" href="/">Beranda</a></li>
+                    <li style="color: black" >Berita</li>
                 </ol>
             </div>
 

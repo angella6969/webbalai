@@ -85,7 +85,7 @@
                     <span class="hide-menu">Infrastruktur</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="#" aria-expanded="false">
+                    <a class="sidebar-link" href="/dashboard/infrastruktur/bendungans" aria-expanded="false">
                         <span>
                             {{-- <i class="ti ti-cards"></i> --}}
                         </span>
@@ -93,7 +93,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="#" aria-expanded="false">
+                    <a class="sidebar-link" href="/dashboard/infrastruktur/bendungs" aria-expanded="false">
                         <span>
                             {{-- <i class="ti ti-file-description"></i> --}}
                         </span>
@@ -101,7 +101,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="#" aria-expanded="false">
+                    <a class="sidebar-link" href="/dashboard/infrastruktur/embungs" aria-expanded="false">
                         <span>
                             {{-- <i class="ti ti-typography"></i> --}}
                         </span>

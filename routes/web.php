@@ -8,9 +8,11 @@ use App\Http\Controllers\EmbungController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\InfrastrukturController;
+use App\Http\Controllers\IrigasiController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PermohonanController;
 use App\Http\Controllers\StrukturOrganisasiController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\VisiMisiController;
 use App\Models\Bendungan;
 use App\Models\Berita;
@@ -34,10 +36,20 @@ use Illuminate\Support\Facades\Route;
 Route::get('/v2', function () {
     return view('welcome');
 });
-Route::get('/under-construction', function () {
+Route::get('/under-Maintenance', function () {
     return view('content.Construction');
 });
+Route::get('/profil/kontak', function () {
+    return view('content.kontak');
+});
+Route::get('/profil/fungsi-dan-tugas', function () {
+    return view('content.tugas_dan_fungsi');
+});
 
+
+Route::get('/login', [UserController::class, 'index'])->middleware('guest')->name('login');
+Route::post('/login', [UserController::class, 'authenticate']);
+Route::post('/logout', [UserController::class, 'logout']);
 
 
 Route::resource('/', HomeController::class);
@@ -72,11 +84,6 @@ Route::get('/dashboard/gambar-depan', [ImageController::class, 'index']);
 Route::resource('/dashboard/pengumuman', PengumumanController::class);
 Route::get('pengumumans', [PengumumanController::class, 'index2']);
 
-// Route::resource('/dashboard/pengumuman', Berita::class);
-
-// Route::get('/dashboard/pengumuman/create', [PengumumanController::class, 'create']);
-// Route::post('/dashboard/pengumuman', [PengumumanController::class, 'store']);
-// Route::get('/dashboard/pengumuman/edit/{id}', [PengumumanController::class, 'edit']);
 
 
 
@@ -85,8 +92,13 @@ Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 
 Route::get('/profil/visi-misi', [VisiMisiController::class, 'index']);
 
 
-Route::get('/informasi-publik/infrastruk/turbendungans/{slug}', [BendunganController::class, 'show']);
+
+
+
+
+Route::get('/informasi-publik/infrastruk/bendungans/{slug}', [BendunganController::class, 'show']);
 Route::get('/informasi-publik/infrastruktur/bendungans', [BendunganController::class, 'index2']);
+
 
 Route::get('/dashboard/infrastruktur/bendungans/create', [BendunganController::class, 'create']);
 Route::get('/dashboard/infrastruktur/bendungans/checkSlug', [BendunganController::class, 'checkSlug']);
@@ -96,9 +108,46 @@ Route::get('/dashboard/infrastruktur/bendungans', [BendunganController::class, '
 
 
 
+
+
+
+Route::get('/informasi-publik/infrastruktur/bendungs/{slug}', [BendungController::class, 'show']);
 Route::get('/informasi-publik/infrastruktur/bendungs', [BendungController::class, 'index2']);
 
 
+Route::get('/dashboard/infrastruktur/bendungs/create', [BendungController::class, 'create']);
+Route::get('/dashboard/infrastruktur/bendungs/checkSlug', [BendungController::class, 'checkSlug']);
+Route::get('/dashboard/infrastruktur/bendungs', [BendungController::class, 'index']);
 
 
+
+
+
+
+
+
+
+
+Route::get('/informasi-publik/infrastruktur/embungs/{slug}', [EmbungController::class, 'show']);
 Route::get('/informasi-publik/infrastruktur/embungs', [EmbungController::class, 'index2']);
+
+
+Route::get('/dashboard/infrastruktur/embungs/checkSlug', [EmbungController::class, 'checkSlug']);
+Route::get('/dashboard/infrastruktur/embungs', [EmbungController::class, 'index']);
+Route::get('/dashboard/infrastruktur/embungs/create', [EmbungController::class, 'create']);
+
+
+
+
+
+
+
+
+
+Route::get('/informasi-publik/infrastruktur/irigasis/{slug}', [IrigasiController::class, 'show']);
+Route::get('/informasi-publik/infrastruktur/irigasis', [IrigasiController::class, 'index2']);
+
+
+Route::get('/dashboard/infrastruktur/irigasi/checkSlug', [IrigasiController::class, 'checkSlug']);
+Route::get('/dashboard/infrastruktur/irigasis', [IrigasiController::class, 'index']);
+Route::get('/dashboard/infrastruktur/irigasis/create', [IrigasiController::class, 'create']);

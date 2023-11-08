@@ -1,13 +1,13 @@
 @extends('layout.content.main')
 @section('container')
 <!-- ======= Blog Single Section ======= -->
-<section class="" data-plugin-image-background="" data-plugin-options=""
+<section 
     style="background-color:rgba(3,15,107,0.2) ;background-size: cover; background-position: center center; background-repeat: no-repeat;">
     <div class="container"><br>
         <div class="row align-items-center ">
             <div class="col-md-8 text-left">
                 <span class="tob-sub-title text-color-light d-block">Infrastruktur</span>
-                <h1 class="font-weight-bold text-color-light">Bendungan</h1>
+                <h1 class="font-weight-bold text-color-light">Embung</h1>
             </div>
             <div class="col-md-4">
                 <ul class="breadcrumb justify-content-start text-color-light justify-content-md-end">

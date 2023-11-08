@@ -4,41 +4,39 @@
                 </span></a></li>
         <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><a href="#">Sejarah</a></li>
+                <li><a href="/under-Maintenance">Sejarah</a></li>
                 <li><a href="/profil/visi-misi">Visi dan Misi</a></li>
-                <li><a href="#">Fungsi dan Tugas</a></li>
+                <li><a href="/profil/fungsi-dan-tugas">Fungsi dan Tugas</a></li>
                 <li><a href="/profil/struktur-organisasi">Struktur Organisasi</a></li>
-                <li><a href="#">Kontak</a></li>
+                <li><a href="/profil/kontak">Kontak</a></li>
             </ul>
         </li>
         <li class="dropdown"><a href="#"><span>Berita</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
                 <li><a href="/beritas">Berita Balai</a></li>
                 <li><a href="/pengumumans">Pengumuman</a></li>
-                <li><a href="#">Agenda Kegiatan</a></li>
+                <li><a href="/under-Maintenance">Agenda Kegiatan</a></li>
             </ul>
         </li>
         <li class="dropdown"><a href="#"><span>Info Publik</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><a href="#">PPID BBWS SO</a></li>
-                {{-- <li><a href="#">Daftar Informasi Publik</a></li> --}}
                 <li class="dropdown"><a href="#"><span>Daftar Informasi Publik</span> <i
                             class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="#">Informasi Berkala</a></li>
-                        <li><a href="#">Informasi Setiap Saat </a></li>
-                        <li><a href="#">Informasi Serta Merta</a></li>
+                        <li><a href="/under-Maintenance">Informasi Berkala</a></li>
+                        <li><a href="/under-Maintenance">Informasi Setiap Saat </a></li>
+                        <li><a href="/under-Maintenance">Informasi Serta Merta</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"><span>Perencanaan</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="#">Rencana Strategis</a></li>
-                        <li><a href="#">Pola WS dan RPSDA</a></li>
+                        <li><a href="/under-Maintenance">Rencana Strategis</a></li>
+                        <li><a href="/under-Maintenance">Pola WS dan RPSDA</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"><span>Kinerja</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="#">LAKIP</a></li>
+                        <li><a href="/under-Maintenance">LAKIP</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"><span>Infrastruktur</span> <i
@@ -48,16 +46,16 @@
                                     class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <li><a href="/informasi-publik/infrastruktur/bendungans">Bendungan</a></li>
-                                <li><a href="#">Bendung</a></li>
-                                <li><a href="#">Embung</a></li>
-                                <li><a href="#">Irigasi</a></li>
+                                <li><a href="/informasi-publik/infrastruktur/bendungs">Bendung</a></li>
+                                <li><a href="/informasi-publik/infrastruktur/embungs">Embung</a></li>
+                                <li><a href="/under-Maintenance">Irigasi</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#"><span>Data</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="#">aplikasi 1</a></li>
-                                <li><a href="#">aplikasi 2</a></li>
-                                <li><a href="#">aplikasi 3</a></li>
+                                <li><a href="/under-Maintenance">aplikasi 1</a></li>
+                                <li><a href="/under-Maintenance">aplikasi 2</a></li>
+                                <li><a href="/under-Maintenance">aplikasi 3</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -69,13 +67,13 @@
                 <li class="dropdown"><a href="#"><span>Media Informasi</span> <i
                             class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="#">Majalah</a></li>
-                        <li><a href="#">Leaflet dan Brosur</a></li>
-                        <li><a href="#">Infografis</a></li>
+                        <li><a href="/under-Maintenance">Majalah</a></li>
+                        <li><a href="/under-Maintenance">Leaflet dan Brosur</a></li>
+                        <li><a href="/under-Maintenance">Infografis</a></li>
                     </ul>
                 <li class="dropdown"><a href="#"><span>Galeri</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="#">Foto</a></li>
+                        <li><a href="/under-Maintenance">Foto</a></li>
                         <li><a href="https://www.youtube.com/@bbwsserayuopak7569">Video</a></li>
                     </ul>
                 </li>
@@ -83,45 +81,33 @@
         </li>
         <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li class="dropdown"><a href="#"><span>Terpadu</span> <i class="bi bi-chevron-right"></i></a>
+
+                <li class="dropdown"><a href="#"><span>PPID BBWS SO</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="#">Prosedur Pelayanan</a></li>
-                        <li><a href="#">KALATIRTA</a></li>
-                        <li><a href="#">Perpustakaan Online</a></li>
+                        <li><a href="/under-Maintenance">Profil</a></li>
+                        <li><a href="/under-Maintenance">Prosedur Pelayanan</a></li>
+                        <li><a href="/under-Maintenance">KALATIRTA</a></li>
                     </ul>
                 </li>
-
-                {{-- <li class="dropdown"><a href="#"><span>Data dan Informasi</span> <i
-                            class="bi bi-chevron-right"></i></a>
-                    <ul>
-                        <li class="dropdown"><a href="#"><span>Data Teknis</span> <i
-                                    class="bi bi-chevron-right"></i></a>
-                        </li>
-                        <li class="dropdown"><a href="#"><span>Data Kinerja</span> <i
-                                    class="bi bi-chevron-right"></i></a>
-                            <ul>
-                                <li><a href="#">LAKIP</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li> --}}
+                <li><a href="#">Perpustakaan Online</a></li>
                 <li class="dropdown"><a href="#"><span>Pengaduan</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="#">Pengaduan Balai</a></li>
-                        <li><a href="#">Pengaduan PUPR</a></li>
+                        <li><a href="/under-Maintenance">Pengaduan Balai</a></li>
+                        <li><a href="/under-Maintenance">Pengaduan PUPR</a></li>
                     </ul>
                 </li>
             </ul>
         </li>
 
         <div class="input-group">
-            <input type="text" class="form-control" name="keyword" id="s" style="width: 200px; height:30px ; font-size: .8rem"
-                placeholder="Cari..." required="" aria-label="cari..." data-uw-rm-form="fx">
+            <input type="text" class="form-control" name="keyword" id="s"
+                style="width: 200px; height:30px ; font-size: .8rem" placeholder="Cari..." required=""
+                aria-label="cari..." data-uw-rm-form="fx">
             </span>
         </div>
     </ul>
     <i class="bi bi-list mobile-nav-toggle"></i>
-</nav><!-- .navbar -->
+</nav>
 
 
 <script>

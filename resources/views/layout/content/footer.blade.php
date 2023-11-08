@@ -14,7 +14,7 @@
          box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
      }
  </style>
- <footer id="footer">
+ <footer id="footer"> 
      <div class="container">
          <div class="row">
              <div class="col-lg-4">
@@ -71,6 +71,8 @@
                      <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
                              href="">Knowledge
                              Management </a></li>
+                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="">AiR (Rekomtek BBWS SO) </a></li>
                  </ul>
              </div>
 

@@ -1,47 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction</title>
+@extends('layout.content.main')
+@section('container')
     <style>
         body {
-            background-color: #f2f2f2;
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
+            background-color: #f2f2f2;
         }
 
-        .container {
+        .maintenance-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
             background-color: #ffffff;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            max-width: 400px;
-            margin: 0 auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 100px;
+            margin-bottom: 60px;
         }
 
         h1 {
-            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
 
         p {
-            color: #666;
-        }
-
-        .construction-image {
-            max-width: 100%;
+            font-size: 16px;
         }
     </style>
-</head>
 
-<body>
-    <div class="container">
-        <h1>Under Construction</h1>
-        <p>Sorry, this page is currently under construction. We're working hard to bring you something awesome.</p>
-        <img class="construction-image" src="construction-image.jpg" alt="Under Construction" />
+    <div class="maintenance-container" style="text-align: center;">
+        <h1>Website Dalam Perbaikan</h1>
+        <p>Kami saat ini sedang melakukan perbaikan pada situs web kami untuk memberikan pengalaman yang lebih baik. Silakan
+            cek kembali nanti.</p>
     </div>
-</body>
-
-</html>
+@endsection

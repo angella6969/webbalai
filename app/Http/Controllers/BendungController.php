@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Bendung;
 use App\Http\Requests\StoreBendungRequest;
 use App\Http\Requests\UpdateBendungRequest;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Http\Request;
 
 class BendungController extends Controller
 {
@@ -13,7 +15,10 @@ class BendungController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.form.infrastruktur.bendung.index', [
+            'bendungs' => Bendung::latest()->Get(),
+
+        ]);
     }
     public function index2()
     {
@@ -29,7 +34,7 @@ class BendungController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.form.infrastruktur.bendung.create', []);
     }
 
     /**
@@ -43,9 +48,17 @@ class BendungController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Bendung $bendung)
+    public function show(Bendung $bendung, string $slug)
     {
-        //
+        $bendung = Bendung::where('slug', $slug)->first();
+
+        if (!$bendung) {
+            abort(404);
+        }
+
+        return view('content.infrastruktur.bendung.bendung', [
+            'bendung' => $bendung,
+        ]);
     }
 
     /**
@@ -70,5 +83,10 @@ class BendungController extends Controller
     public function destroy(Bendung $bendung)
     {
         //
+    }
+    public function checkSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Bendungan::class, 'slug', $request->nama);
+        return response()->json(['slug' => $slug]);
     }
 }

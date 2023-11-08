@@ -1,7 +1,6 @@
 @extends('layout.content.main')
 @section('container')
-    <!-- ======= Blog Single Section ======= -->
-    <section class="" data-plugin-image-background="" data-plugin-options=""
+    <section 
         style="background-color:rgba(3,15,107,0.2) ;background-size: cover; background-position: center center; background-repeat: no-repeat;">
         <div class="container"><br>
             <div class="row align-items-center ">

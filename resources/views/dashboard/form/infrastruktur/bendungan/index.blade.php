@@ -69,10 +69,10 @@
     </style>
 
     <div class="container-fluid">
-        <div class="card">
+        <div class="card"> 
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-4">Infrastruktur</h5>
-                <form action="/dashboard/infrastruktur/create">
+                <form action="/dashboard/infrastruktur/bendungans">
                     <div class="row">
                         <div class="col-12 col-sm-12">
                             <div class="input-group mb-3">
@@ -86,7 +86,7 @@
                     </div>
                 </form>
                 <div class="mt-2 mb-2">
-                    <a href="/dashboard/beritas/create" class="btn btn-info">Tambah Infrastruktur</a>
+                    <a href="/dashboard/infrastruktur/bendungans/create" class="btn btn-info">Tambah Infrastruktur</a>
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">
@@ -98,11 +98,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($infrastrukturs as $infrastruktur)
+                            @foreach ($bendungans as $bendungan)
                                 <tr style="text-align: center;">
                                     <td> {{ $loop->iteration }}</td>
-                                    <td> {{ $infrastruktur->nama }}</td>
-                                    <td> {{ $infrastruktur->jenis }}</td>
+                                    {{-- <td> {{ $bendungan->nama }}</td> --}}
+                                    {{-- <td> {{ $bendungan->jenis }}</td> --}}
 
                                     {{-- <td>
                                         <button class="btn badge bg-info show-DI-modal" data-id="{{ $berita->id }}"

@@ -16,12 +16,13 @@ class BendunganController extends Controller
      */
     public function index()
     {
-        return view('content.infrastruktur.bendungan.bendungan', []);
+        return view('dashboard.form.infrastruktur.bendungan.index', [
+            'bendungans' => Bendungan::latest()->Get(),
+        ]);
     }
     public function index2()
     {
         $bendungan = Bendungan::latest()->get();
-        // dd($bendungan);
         return view('content.infrastruktur.bendungan.bendungans', [
             'bendungans' => $bendungan,
         ]);
@@ -98,6 +99,17 @@ class BendunganController extends Controller
      */
     public function show(Bendungan $bendungan, string $slug)
     {
+        // dd('show bendungan');
+        $bendungan = Bendungan::where('slug', $slug)->first();
+
+        if (!$bendungan) {
+            abort(404);
+        }
+
+        return view('content.infrastruktur.bendungan.bendungan', [
+            'bendungan' => $bendungan,
+            // 'beritas' => $beritas
+        ]);
     }
 
     /**
@@ -119,9 +131,15 @@ class BendunganController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Bendungan $bendungan)
+    public function destroy(string $id)
     {
-        //
+        $bendungan = Bendungan::findOrFail($id);
+        try {
+            $bendungan->delete();
+            return redirect()->back()->with('success', 'Berhasil Menghapus Data');
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
     }
     public function checkSlug(Request $request)
     {
