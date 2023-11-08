@@ -108,7 +108,7 @@
                         <span class="hide-menu">Embung</span>
                     </a>
                 </li>
-                
+
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="#" aria-expanded="false">
                         <span>
@@ -126,6 +126,20 @@
                         <!-- Tambahkan submenu lainnya sesuai kebutuhan -->
                     </ul>
                 </li>
+
+                <li class="nav-small-cap">
+                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                    <span class="hide-menu">Daftar Informasi Publik</span>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/dashboard/infrastruktur/bendungans" aria-expanded="false">
+                        <span>
+                            {{-- <i class="ti ti-cards"></i> --}}
+                        </span>
+                        <span class="hide-menu">Informasi Publik</span>
+                    </a>
+                </li>
+
 
                 {{-- <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"

@@ -23,7 +23,8 @@
         .btn {
             margin: 5px;
             background-color: rgba(255, 201, 40, 0.8);
-
+            width: 20%;
+            padding: 10px 20px;
         }
 
         @media (max-width: 768px) {
@@ -34,11 +35,11 @@
         }
 
         .btn:hover {
-            background-color: rgba(53,71,1190.8);
+            background-color: rgba(53, 71, 1190.8);
             color: #fff;
         }
     </style>
-    <section class="" data-plugin-image-background="" data-plugin-options=""
+    <section 
         style="background-color:rgba(3,15,107,0.2) ;background-size: cover; background-position: center center; background-repeat: no-repeat;">
         <div class="container"><br>
             <div class="row align-items-center ">
@@ -296,3 +297,4 @@
         }
     </script>
 @endsection
+

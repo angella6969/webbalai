@@ -14,7 +14,7 @@
          box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
      }
  </style>
- <footer id="footer"> 
+ <footer id="footer">
      <div class="container">
          <div class="row">
              <div class="col-lg-4">
@@ -58,21 +58,21 @@
                              BBWS
                              SO</a></li>
                      <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="">AiR (Rekomtek BBWS SO) </a></li>
+                     {{-- <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
                              href="">Renstra BBBWS
-                             Serayu Opak </a></li>
-                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
-                             href="#">JDIH PUPR </a>
-                     </li>
-                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
-                             href="#">Pola WS </a></li>
+                             Serayu Opak </a></li> --}}
                      <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
                              href="#">E-PPID PUPR </a>
                      </li>
                      <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="#">JDIH PUPR </a>
+                     </li>
+                     {{-- <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
+                             href="#">Pola WS </a></li> --}}
+                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
                              href="">Knowledge
                              Management </a></li>
-                     <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
-                             href="">AiR (Rekomtek BBWS SO) </a></li>
                  </ul>
              </div>
 
@@ -129,13 +129,13 @@
  </div>
  <div class="footer2 social-links">
      <div class=" d-flex justify-content-center">
-         <a style="margin:20px" href="https://twitter.com/pupr_sda_so?lang=id" class="twitter"><i
+         <a style="margin:20px; font-size: 24px;" href="https://twitter.com/pupr_sda_so?lang=id" class="twitter"><i
                  class="bx bxl-twitter"></i></a>
-         <a style="margin:20px" href="https://www.facebook.com/serayuopak/" class="facebook"><i
+         <a style="margin:20px; font-size: 24px;" href="https://www.facebook.com/serayuopak/" class="facebook"><i
                  class="bx bxl-facebook"></i></a>
-         <a style="margin:20px" href="https://www.instagram.com/pupr_sda_serayuopak/?hl=id" class="instagram"><i
-                 class="bx bxl-instagram"></i></a>
-         <a style="margin:20px" href="https://www.youtube.com/channel/UClOhOH8Ixk2dcIAS9jr2aqg"
+         <a style="margin:20px; font-size: 24px;" href="https://www.instagram.com/pupr_sda_serayuopak/?hl=id"
+             class="instagram"><i class="bx bxl-instagram"></i></a>
+         <a style="margin:20px; font-size: 24px;" href="https://www.youtube.com/channel/UClOhOH8Ixk2dcIAS9jr2aqg"
              class="google-plus"><i class="bx bxl-youtube"></i></a>
      </div>
  </div>

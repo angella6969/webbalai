@@ -3,6 +3,7 @@
 use App\Http\Controllers\BendunganController;
 use App\Http\Controllers\BendungController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DaftarInformasiPublikController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmbungController;
 use App\Http\Controllers\HomeController;
@@ -36,7 +37,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/v2', function () {
     return view('welcome');
 });
-Route::get('/under-Maintenance', function () {
+Route::get('/under-Maintenance', function () { 
     return view('content.Construction');
 });
 Route::get('/profil/kontak', function () {
@@ -45,6 +46,10 @@ Route::get('/profil/kontak', function () {
 Route::get('/profil/fungsi-dan-tugas', function () {
     return view('content.tugas_dan_fungsi');
 });
+
+// Route::get('/info-public/daftar-informasi-publik', function () {
+//     return view('content.daftar_informasi_publik.daftar_informasi');
+// });
 
 
 Route::get('/login', [UserController::class, 'index'])->middleware('guest')->name('login');
@@ -151,3 +156,17 @@ Route::get('/informasi-publik/infrastruktur/irigasis', [IrigasiController::class
 Route::get('/dashboard/infrastruktur/irigasi/checkSlug', [IrigasiController::class, 'checkSlug']);
 Route::get('/dashboard/infrastruktur/irigasis', [IrigasiController::class, 'index']);
 Route::get('/dashboard/infrastruktur/irigasis/create', [IrigasiController::class, 'create']);
+
+
+
+
+
+
+
+
+Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index']);
+
+
+Route::get('/dashboard/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2']);
+Route::get('/dashboard/daftar-informasi-publik/create', [DaftarInformasiPublikController::class, 'create']);
+Route::post('/dashboard/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'store']);

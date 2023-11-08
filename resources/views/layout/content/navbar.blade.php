@@ -20,14 +20,7 @@
         </li>
         <li class="dropdown"><a href="#"><span>Info Publik</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li class="dropdown"><a href="#"><span>Daftar Informasi Publik</span> <i
-                            class="bi bi-chevron-right"></i></a>
-                    <ul>
-                        <li><a href="/under-Maintenance">Informasi Berkala</a></li>
-                        <li><a href="/under-Maintenance">Informasi Setiap Saat </a></li>
-                        <li><a href="/under-Maintenance">Informasi Serta Merta</a></li>
-                    </ul>
-                </li>
+                <li><a href="/info-public/daftar-informasi-publik">Daftar Informasi Publik</a></li>
                 <li class="dropdown"><a href="#"><span>Perencanaan</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
                         <li><a href="/under-Maintenance">Rencana Strategis</a></li>
