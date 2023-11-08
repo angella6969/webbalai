@@ -18,6 +18,7 @@ use App\Http\Controllers\VisiMisiController;
 use App\Models\Bendungan;
 use App\Models\Berita;
 use App\Models\Dashboard;
+use App\Models\Image;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,7 +61,7 @@ Route::post('/logout', [UserController::class, 'logout']);
 Route::resource('/', HomeController::class);
 // Route::resource('/dashboard', DashboardController::class);
 // Route::resource('/beritas/blog', BeritaController::class);
-Route::resource('/artikel', PermohonanController::class);
+// Route::resource('/artikel', PermohonanController::class);
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 // Route::get('/dashboard/pengumuman/create', [PengumumanController::class, 'create']);
@@ -170,3 +171,14 @@ Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikControl
 Route::get('/dashboard/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2']);
 Route::get('/dashboard/daftar-informasi-publik/create', [DaftarInformasiPublikController::class, 'create']);
 Route::post('/dashboard/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'store']);
+
+
+
+
+
+
+
+
+Route::post('/dashboard/foto-beranda', [Image::class, 'index']);
+
+

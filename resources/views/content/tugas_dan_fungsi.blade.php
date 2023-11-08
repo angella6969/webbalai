@@ -38,8 +38,13 @@
             background-color: rgba(53, 71, 1190.8);
             color: #fff;
         }
+
+        .btn.active-button {
+            background-color: rgba(53, 71, 1190.8);
+            color: white;
+        }
     </style>
-    <section 
+    <section
         style="background-color:rgba(3,15,107,0.2) ;background-size: cover; background-position: center center; background-repeat: no-repeat;">
         <div class="container"><br>
             <div class="row align-items-center ">
@@ -277,7 +282,7 @@
         </div>
     </section>
 
-    <script>
+    {{-- <script>
         function toggleImage(index) {
             var images = document.querySelectorAll('.image-container ul li');
             images.forEach(function(image, i) {
@@ -295,6 +300,34 @@
         if (storedIndex !== null) {
             toggleImage(parseInt(storedIndex));
         }
+    </script> --}}
+    <script>
+        function toggleImage(index) {
+            var images = document.querySelectorAll('.image-container ul li');
+            images.forEach(function(image, i) {
+                if (i === index) {
+                    image.classList.add('active');
+                } else {
+                    image.classList.remove('active');
+                }
+            });
+
+            // Mengubah warna tombol yang aktif
+            var buttons = document.querySelectorAll('.btn');
+            buttons.forEach(function(button, i) {
+                if (i === index) {
+                    button.classList.add('active-button');
+                } else {
+                    button.classList.remove('active-button');
+                }
+            });
+
+            localStorage.setItem('activeImageIndex', index);
+        }
+
+        var storedIndex = localStorage.getItem('activeImageIndex');
+        if (storedIndex !== null) {
+            toggleImage(parseInt(storedIndex));
+        }
     </script>
 @endsection
-

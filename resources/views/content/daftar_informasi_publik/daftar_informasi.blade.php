@@ -44,6 +44,11 @@
             background-color: rgba(53, 71, 119, 0.8);
             color: #fff;
         }
+
+        .btn.active-button {
+    background-color: rgba(53, 71, 119, 0.8);
+    color: white;
+}
     </style>
     <section
         style="background-color:rgba(3,15,107,0.2) ;background-size: cover; background-position: center center; background-repeat: no-repeat;">
@@ -78,13 +83,14 @@
                                 data-uw-rm-heading="level">Daftar Informasi Balai Besar Wilayah Sungai Serayu Opak</h1>
                         </header>
 
-                        <div class="btn-group">
+                        <div class="btn-group" role="group">
                             <button class="btn btn-light" onclick="toggleImage(0)">Informasi Serta Merta</button>
                             <button class="btn btn-light" onclick="toggleImage(1)">Informasi Setiap Saat</button>
                             <button class="btn btn-light" onclick="toggleImage(2)">Informasi Berkala</button>
                         </div>
                         <div class="container">
                             <div class="paragraf-container">
+                               
                                 <table class="table table-striped table-responsive active">
                                     <thead>
                                         <th colspan="1">No.</th>
@@ -116,16 +122,17 @@
                                 </table>
                                 <table class="table table-striped table-responsive">
                                     <thead>
-                                        <th>No.</th>
-                                        <th>Informasi yang wajib tersedia Setiap Saat</th>
-                                        <th>Tautan</th>
+                                        <th colspan="1">No.</th>
+                                        <th colspan="2">Informasi yang wajib tersedia Setiap Saat</th>
+                                        <th colspan="2">Tautan</th>
+                                        <th></th>
                                     </thead>
-                                    <tbody data-index="2">
-                                        @foreach ($informasis->where('jenis', 'setiap-saat') as $key => $informasi)
+                                    <tbody data-index="0">
+                                        @foreach ($informasis->where('jenis', 'serta') as $key => $informasi)
                                             <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $informasi->nama }}</td>
-                                                <td>
+                                                <td colspan="1">{{ $loop->iteration }}</td>
+                                                <td colspan="2">{{ $informasi->nama }}</td>
+                                                <td colspan="1">
                                                     <a href="{{ asset('storage/' . substr($informasi->url_file, 7)) }}"
                                                         class="paragraf-a">
                                                         <img src="{{ asset('images/icon/download (1).svg') }}"
@@ -139,16 +146,17 @@
                                 </table>
                                 <table class="table table-striped table-responsive">
                                     <thead>
-                                        <th>No.</th>
-                                        <th>Informasi yang wajib tersedia Setiap Saat</th>
-                                        <th>Tautan</th>
+                                        <th colspan="1">No.</th>
+                                        <th colspan="2">Informasi yang wajib tersedia Setiap Saat</th>
+                                        <th colspan="2">Tautan</th>
+                                        <th></th>
                                     </thead>
                                     <tbody data-index="0">
-                                        @foreach ($informasis->where('jenis', 'berkala') as $key => $informasi)
+                                        @foreach ($informasis->where('jenis', 'serta') as $key => $informasi)
                                             <tr>
-                                                <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $informasi->nama }}</td>
-                                                <td>
+                                                <td colspan="1">{{ $loop->iteration }}</td>
+                                                <td colspan="2">{{ $informasi->nama }}</td>
+                                                <td colspan="1">
                                                     <a href="{{ asset('storage/' . substr($informasi->url_file, 7)) }}"
                                                         class="paragraf-a">
                                                         <img src="{{ asset('images/icon/download (1).svg') }}"
@@ -169,26 +177,53 @@
     </section>
 
     <script>
-        function toggleImage(index) {
-            var tables = document.querySelectorAll('.paragraf-container table');
-            var tbodyElements = document.querySelectorAll('.paragraf-container tbody');
+        // function toggleImage(index) {
+        //     var tables = document.querySelectorAll('.paragraf-container table');
+        //     var tbodyElements = document.querySelectorAll('.paragraf-container tbody');
 
-            tables.forEach(function(table, i) {
-                if (i === index) {
-                    table.classList.add('active');
-                    tbodyElements[i].classList.add('active');
-                    localStorage.setItem('activeImageIndex', index);
+        //     tables.forEach(function(table, i) {
+        //         if (i === index) {
+        //             table.classList.add('active');
+        //             tbodyElements[i].classList.add('active');
+        //             localStorage.setItem('activeImageIndex', index);
+        //         } else {
+        //             table.classList.remove('active');
+        //             tbodyElements[i].classList.remove('active');
+        //         }
+        //     });
+        // }
+
+        // // Check for stored active image index
+        // var storedIndex = localStorage.getItem('activeImageIndex');
+        // if (storedIndex !== null) {
+        //     toggleImage(parseInt(storedIndex));
+        // }
+
+        function toggleImage(index) {
+    var tables = document.querySelectorAll('.paragraf-container table');
+    var tbodyElements = document.querySelectorAll('.paragraf-container tbody');
+
+    tables.forEach(function(table, i) {
+        if (i === index) {
+            table.classList.add('active');
+            tbodyElements[i].classList.add('active');
+            localStorage.setItem('activeImageIndex', index);
+
+            // Mengubah kelas tombol yang aktif
+            var buttons = document.querySelectorAll('.btn');
+            buttons.forEach(function (button, j) {
+                if (j === index) {
+                    button.classList.add('active-button');
                 } else {
-                    table.classList.remove('active');
-                    tbodyElements[i].classList.remove('active');
+                    button.classList.remove('active-button');
                 }
             });
+        } else {
+            table.classList.remove('active');
+            tbodyElements[i].classList.remove('active');
         }
+    });
+}
 
-        // Check for stored active image index
-        var storedIndex = localStorage.getItem('activeImageIndex');
-        if (storedIndex !== null) {
-            toggleImage(parseInt(storedIndex));
-        }
     </script>
 @endsection
