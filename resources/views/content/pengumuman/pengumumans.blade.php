@@ -26,14 +26,15 @@
                         <article class="entry" style="margin-bottom: 5px !important; padding-bottom: 5px !important;">
                             <div>
                                 <table>
-                                    <tr><a href="pengumuman/{{ $pengumuman->slug }}">{{ $pengumuman->judul }}</a></tr>
+                                    <tr><a href="{{ asset('storage/' . substr($pengumuman->url_pengumuman, 6)) }}">{{ $pengumuman->judul }}</a></tr>
+                                    {{-- <tr><a href="pengumuman/{{ $pengumuman->slug }}">{{ $pengumuman->judul }}</a></tr> --}}
                                 </table>
                             </div>
                             <label for="">
                                 <p style="font-size: 10px"> <i class="bi bi-clock"></i> {{ $pengumuman->created_at }}</p>
                             </label>
                         </article>
-                    @endforeach
+                    @endforeach 
                 </div>
             </div>
             {{ $pengumumans->links() }}

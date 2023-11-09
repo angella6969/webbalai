@@ -9,7 +9,7 @@ use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class BendunganController extends Controller
+class BendunganController extends Controller 
 {
     /**
      * Display a listing of the resource.
@@ -102,7 +102,7 @@ class BendunganController extends Controller
         // dd('show bendungan');
         $bendungan = Bendungan::where('slug', $slug)->first();
 
-        if (!$bendungan) {
+        if (!$bendungan) { 
             abort(404);
         }
 

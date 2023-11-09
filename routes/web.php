@@ -8,6 +8,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmbungController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\InfografisController;
 use App\Http\Controllers\InfrastrukturController;
 use App\Http\Controllers\IrigasiController;
 use App\Http\Controllers\PengumumanController;
@@ -194,3 +195,6 @@ Route::get('/dashboard/situs-terkait', [SitusterkaitController::class, 'index'])
 Route::post('/dashboard/situs-terkait', [SitusterkaitController::class, 'store']);
 
 
+
+Route::get('/media/media-informasi/', [InfografisController::class, 'index2']);
+Route::get('/media/media-informasi/{jenis}/{slug}', [InfografisController::class, 'show']);
