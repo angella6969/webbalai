@@ -282,25 +282,6 @@
         </div>
     </section>
 
-    {{-- <script>
-        function toggleImage(index) {
-            var images = document.querySelectorAll('.image-container ul li');
-            images.forEach(function(image, i) {
-                if (i === index) {
-                    image.classList.add('active');
-                    localStorage.setItem('activeImageIndex', index);
-                } else {
-                    image.classList.remove('active');
-                }
-            });
-        }
-
-        // Check for stored active image index
-        var storedIndex = localStorage.getItem('activeImageIndex');
-        if (storedIndex !== null) {
-            toggleImage(parseInt(storedIndex));
-        }
-    </script> --}}
     <script>
         function toggleImage(index) {
             var images = document.querySelectorAll('.image-container ul li');

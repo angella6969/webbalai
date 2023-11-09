@@ -77,8 +77,8 @@
 
                 <li class="dropdown"><a href="#"><span>PPID BBWS SO</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="/under-Maintenance">Profil</a></li>
-                        <li><a href="/under-Maintenance">Prosedur Pelayanan</a></li>
+                        <li><a href="/layanan/ppid-bbws-so/profil">Profil</a></li>
+                        <li><a href="/layanan/ppid-bbws-so/prosedur_pelayanan">Prosedur Pelayanan</a></li>
                         <li><a href="/under-Maintenance">KALATIRTA</a></li>
                     </ul>
                 </li>

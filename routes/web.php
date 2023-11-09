@@ -52,6 +52,12 @@ Route::get('/profil/fungsi-dan-tugas', function () {
 Route::get('/profil/main-map', function () {
     return view('content.mainmap');
 });
+Route::get('/layanan/ppid-bbws-so/profil', function () {
+    return view('content.layanan.profil_ppid');
+});
+Route::get('/layanan/ppid-bbws-so/prosedur_pelayanan', function () {
+    return view('content.layanan.prosedur_pelayanan');
+});
 
 // Route::get('/info-public/daftar-informasi-publik', function () {
 //     return view('content.daftar_informasi_publik.daftar_informasi');
