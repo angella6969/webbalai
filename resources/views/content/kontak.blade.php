@@ -28,7 +28,7 @@
     </section>
 
     <div class="container mt-3 mb-3" id="map"></div>
-    <div class="container">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row" style="padding: 20px">
             <div class="col-lg-4">
                 <ul>

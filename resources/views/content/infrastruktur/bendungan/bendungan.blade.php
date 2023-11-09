@@ -19,7 +19,7 @@
     </section>
     <section id="" class="blog">
         <div class="container" data-aos="fade-up">
-            <div class="row">
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-12 entries" style="margin-top:20px">
                     <article class="entry entry-single">
                         <div class="entry-img d-flex justify-content-center">

@@ -70,7 +70,7 @@
                         <header class="blog-post-header mt-3 mb-3">
 
                         </header>
-                        <header class="blog-post-header mt-3 mb-3" style="position: relative; overflow: hidden;">
+                        <header data-aos="fade-up" data-aos-delay="100"class="blog-post-header mt-3 mb-3" style="position: relative; overflow: hidden;">
                             <h1 class="font-weight-bold text-color-primary mb-3"
                                 style="line-height: 1.2; margin-right: 0px; margin-left: 0px;" role="heading" aria-level="2"
                                 data-uw-rm-heading="level">Tugas dan Fungsi</h1>
@@ -85,78 +85,12 @@
                                 air tanah, air baku, serta pengelolaan drainase utama perkotaan</h6>
 
                         </header>
-                        {{-- <h6 class=" mb-4 mt-4" style="line-height: 1.2; margin-right: 0px; margin-left: 0px;">
-                            <p> Dalam melaksanakan tugas sebagaimana dimaksud, Balai Besar Wilayah Sungai Serayu Opak
-                                menyelenggarakan fungsi; </p>
-
-                            <p> <i data-feather="chevron-right"></i> penyusunan program pengelolaan sumber daya air dan
-                                rencana kegiatan pengelolaan sumber daya air pada wilayah sungai;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> pemantauan dan evaluasi penyelenggaraan atau penerapan
-                                pola pengelolaan sumber daya air dan rencana pengelolaan sumber daya air;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> penyusunan studi kelayakan dan perencanaan teknis atau
-                                desain pengembangan sumber daya air;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> pelaksanaan pengadaan barang dan jasa sesuai dengan
-                                ketentuan peraturan perundang-undangan;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> pelaksanaan sistem manajemen keselamatan dan kesehatan
-                                kerja;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> pengelolaan sumber daya air yang meliputi konservasi
-                                sumber daya air, pendayagunaan sumber daya air, dan pengendalian daya rusak air pada wilayah
-                                sungai;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> pengelolaan drainase utama perkotaan;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> pengelolaan sistem hidrologi;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> pengelolaan sistem informasi sumber daya air;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> pelaksanaan operasi dan pemeliharaan sumber daya air
-                                pada wilayah sungai;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> pelaksanaan pemberian bimbingan teknis pengelolaan
-                                sumber daya air yang menjadi kewenangan provinsi dan kabupaten/kota;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> penyusunan dan penyiapan rekomendasi teknis dalam
-                                pemberian izin penggunaan sumber daya air pada wilayah sungai;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> penyusunan dan penyiapan saran teknis untuk pengalihan
-                                alur sungai dan pemanfaatan bekas sungai;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> penyusunan dan pelaksanaan kajian penetapan garis
-                                sempadan sungai, garis sempadan danau, garis sempadan situ, dan garis sempadan jaringan
-                                irigasi;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> fasilitasi kegiatan tim koordinasi pengelolaan sumber
-                                daya air pada wilayah sungai;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> pemberdayaan masyarakat dalam pengelolaan sumber daya
-                                air;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> pelaksanaan penyusunan laporan akuntansi keuangan dan
-                                akuntansi barang milik negara selaku unit akuntansi wilayah;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> pelaksanaan pemungutan, penerimaan, dan penggunaan
-                                biaya jasa pengelolaan sumber daya air sesuai dengan ketentuan peraturan perundang-undangan;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> pelaksanaan urusan tata usaha dan rumah tangga balai
-                                serta komunikasi publik;
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> penyusunan perjanjian kinerja dan laporan kinerja
-                                balai; dan
-                            </p>
-                            <p> <i data-feather="chevron-right"></i> pelaksanaan pemantauan dan pengawasan penggunaan sumber
-                                daya air dan penyidikan tindak pidana bidang sumber daya air.</p>
-                            </p>
-                        </h6> --}}
-                        <h6 class="mb-4 mt-4">
+                    
+                        <h6 class="mb-4 mt-4" data-aos="fade-up" data-aos-delay="100">
                             Dalam melaksanakan tugas sebagaimana dimaksud, Balai Besar Wilayah Sungai Serayu Opak
                             menyelenggarakan fungsi:
 
-                            <ul>
+                            <ul data-aos="fade-up" data-aos-delay="100" style="text-align: justify">
                                 <li><i data-feather="chevron-right"></i> Penyusunan program pengelolaan sumber daya air dan
                                     rencana kegiatan pengelolaan sumber daya air pada wilayah sungai;</li>
                                 <li><i data-feather="chevron-right"></i> Pemantauan dan evaluasi penyelenggaraan atau
@@ -201,8 +135,8 @@
                                     sumber daya air dan penyidikan tindak pidana bidang sumber daya air.</li>
                             </ul>
                         </h6>
-                        <h1 class="mt-3 mb-3">Profil Organisasi</h1>
-                        <div class="btn-group d-flex justify-content-center mb-3">
+                        <h1 class="mt-3 mb-3 text-center" style="padding-top: 50px" data-aos="fade-up" data-aos-delay="100">Profil Organisasi</h1>
+                        <div class="btn-group d-flex justify-content-center mb-3" data-aos="fade-up" data-aos-delay="100">
                             <button class="btn btn-light" onclick="toggleImage(0)">Bagian Umum dan Tata Usaha</button>
                             <button class="btn btn-light" onclick="toggleImage(1)">Bidang Keterpaduan Pembangunan
                                 Infrastruktur Sumber Daya Air</button>
@@ -213,9 +147,9 @@
                             <button class="btn btn-light" onclick="toggleImage(4)">Bidang Operasi Dan Pemeliharaan</button>
                         </div>
 
-                        <div class="image-container container">
+                        <div class="image-container container" data-aos="fade-up" data-aos-delay="100" style="text-align: justify">
                             <ul>
-                                <li class="active" data-index="0">Bagian Umum dan Tata Usaha mempunyai tugas melaksanakan
+                                <li class="active" data-index="0"><p>Bagian Umum dan Tata Usaha mempunyai tugas melaksanakan
                                     urusan administrasi kepegawaian, organisasi, dan tata laksana, pelaksanaan pembinaan
                                     pegawai, pelaksanaan fasilitasi kegiatan reformasi birokrasi di balai, penyusunan
                                     rencana dan pengelolaan urusan kas dan perbendaharaan, administrasi dan akuntansi
@@ -225,7 +159,7 @@
                                     pelaksanaan komunikasi publik dan hukum, penatausahaan, pengelolaan, administrasi, dan
                                     akuntansi barang milik negara, pengamanan fisik barang milik negara, pengelolaan
                                     kekayaan negara lainnya, koordinasi kegiatan terkait penanganan bencana, serta
-                                    koordinasi administrasi penerapan sistem pengendalian intern balai besar.</li>
+                                    koordinasi administrasi penerapan sistem pengendalian intern balai besar.</p></li>
                                 <li data-index="1">Bidang Keterpaduan Pembangunan Infrastruktur Sumber Daya Air mempunyai
                                     tugas melaksanakan penyusunan keterpaduan pola, program dan rencana kegiatan pengelolaan
                                     sumber daya air, analisis dan evaluasi kelayakan program dan kegiatan pengelolaan sumber

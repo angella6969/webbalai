@@ -91,7 +91,7 @@
                     <img src="{{ asset('images/icon/chevrons-right (1).svg') }}" id="arrow-left" alt=""
                         onclick="moveSlide(-1)">
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
 

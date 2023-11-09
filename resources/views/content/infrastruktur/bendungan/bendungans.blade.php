@@ -21,7 +21,7 @@
     </section>
     <section id="" class="blog">
         <div class="container" data-aos="fade-up">
-            <div class="row">
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
                 @foreach ($bendungans as $bendungan)
                     <div class="col-lg-4 entries" style="margin-top:20px">
                         <article class="entry entry-single">

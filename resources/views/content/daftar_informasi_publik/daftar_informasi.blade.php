@@ -69,7 +69,7 @@
     </section>
 
     <section class="section section-height-3">
-        <div class="container">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row">
                 <!-- main content-->
                 <div class="col-md-12 col-lg-12 order-1 mb-5 mb-md-0">

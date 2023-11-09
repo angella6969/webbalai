@@ -62,7 +62,7 @@
                     <ul>
                         <li><a href="/under-Maintenance">Majalah</a></li>
                         <li><a href="/under-Maintenance">Leaflet dan Brosur</a></li>
-                        <li><a href="/under-Maintenance">Infografis</a></li>
+                        <li><a href="/media/media-informasi/">Infografis</a></li>
                     </ul>
                 <li class="dropdown"><a href="#"><span>Galeri</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
