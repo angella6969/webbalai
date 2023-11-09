@@ -40,7 +40,7 @@
                                 <h2 class="entry-title">
                                     <a href="beritas/{{ $berita->slug }}">{{ $berita->judul }}</a>
                                 </h2>
-                                @php
+                                {{-- @php
                                     $body = $berita->body;
                                     $pattern = '/^(.*?[.!?])\s+(.*?[.!?])/';
                                     if (preg_match($pattern, $body, $matches)) {
@@ -48,11 +48,12 @@
                                     } else {
                                         $duaKalimatPertama = $body;
                                     }
-                                @endphp
+                                @endphp --}}
                                 <div class="entry-content">
                                     <p>
                                         <a href="beritas/{{ $berita->slug }}" style="color: #343434">
-                                            {{ $duaKalimatPertama }}</a>
+                                            {{ Str::limit(strip_tags($berita->body), 300) }}
+                                        </a>
                                     </p>
                                     {{-- <div class="read-more">
                                         <a href="beritas/{{ $berita->slug }}">Selengkapnya</a>

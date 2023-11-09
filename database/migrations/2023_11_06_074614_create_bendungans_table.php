@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('lokasi');
             $table->string('nama');
-            $table->string('wilaya_sungai');
+            $table->string('wilaya_sungai'); 
             $table->string('daerah_sliran_sungai');
             $table->string('tahun_mulai_pembangunan');
             $table->string('tahun_selesai_pembangunan');
@@ -28,7 +28,8 @@ return new class extends Migration
             $table->string('volume_tampung_total');
             $table->string('irigasi');
             $table->string('slug');
-            $table->string('body');
+            $table->longText('body');
+            $table->string('jenis')->default('bendungans');
             $table->string('url_foto1');
             $table->string('url_foto2');
             $table->string('url_foto3');

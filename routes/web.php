@@ -12,6 +12,7 @@ use App\Http\Controllers\InfrastrukturController;
 use App\Http\Controllers\IrigasiController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PermohonanController;
+use App\Http\Controllers\SitusterkaitController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VisiMisiController;
@@ -38,7 +39,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/v2', function () {
     return view('welcome');
 });
-Route::get('/under-Maintenance', function () { 
+Route::get('/under-Maintenance', function () {
     return view('content.Construction');
 });
 Route::get('/profil/kontak', function () {
@@ -46,6 +47,10 @@ Route::get('/profil/kontak', function () {
 });
 Route::get('/profil/fungsi-dan-tugas', function () {
     return view('content.tugas_dan_fungsi');
+});
+
+Route::get('/profil/main-map', function () {
+    return view('content.mainmap');
 });
 
 // Route::get('/info-public/daftar-informasi-publik', function () {
@@ -102,7 +107,7 @@ Route::get('/profil/visi-misi', [VisiMisiController::class, 'index']);
 
 
 
-Route::get('/informasi-publik/infrastruk/bendungans/{slug}', [BendunganController::class, 'show']);
+Route::get('/informasi-publik/infrastruktur/bendungans/{slug}', [BendunganController::class, 'show']);
 Route::get('/informasi-publik/infrastruktur/bendungans', [BendunganController::class, 'index2']);
 
 
@@ -124,13 +129,6 @@ Route::get('/informasi-publik/infrastruktur/bendungs', [BendungController::class
 Route::get('/dashboard/infrastruktur/bendungs/create', [BendungController::class, 'create']);
 Route::get('/dashboard/infrastruktur/bendungs/checkSlug', [BendungController::class, 'checkSlug']);
 Route::get('/dashboard/infrastruktur/bendungs', [BendungController::class, 'index']);
-
-
-
-
-
-
-
 
 
 
@@ -179,6 +177,14 @@ Route::post('/dashboard/daftar-informasi-publik', [DaftarInformasiPublikControll
 
 
 
-Route::post('/dashboard/foto-beranda', [Image::class, 'index']);
+Route::get('/dashboard/foto-beranda', [ImageController::class, 'index']);
+Route::post('/dashboard/foto-beranda', [ImageController::class, 'store']);
+Route::get('/dashboard/foto-beranda/create', [ImageController::class, 'create']);
+
+
+
+Route::get('/dashboard/situs-terkait/create', [SitusterkaitController::class, 'create']);
+Route::get('/dashboard/situs-terkait', [SitusterkaitController::class, 'index']);
+Route::post('/dashboard/situs-terkait', [SitusterkaitController::class, 'store']);
 
 

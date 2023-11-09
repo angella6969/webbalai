@@ -37,18 +37,18 @@
                             <div class="separator">
                                 <br>
                                 <p class="d-flex justify-content-center">Dokumen Pendukunng</p>
-                                <p class="d-flex justify-content-center">Pilih Salah satu : Link / Dokumen</p>
+                                {{-- <p class="d-flex justify-content-center">Pilih Salah satu : Link / Dokumen</p> --}}
                                 <div class="line"></div>
                             </div>
 
-                            <div class="mb-3">
+                            {{-- <div class="mb-3">
                                 <label for="Pengumuman" class="form-label">Link</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="url_pengumuman" name="url_pengumuman"
                                         placeholder="link pengumuman  jika ada" value="{{ old('url_pengumuman') }}">
 
                                 </div>
-                            </div>
+                            </div> --}}
 
 
 

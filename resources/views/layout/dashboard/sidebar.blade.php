@@ -47,7 +47,7 @@
                 </li>
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Menu</span>
+                    <span class="hide-menu">Beranda</span>
                 </li>
 
                 {{-- @if (auth()->check() &&
@@ -65,6 +65,18 @@
                 @endif --}}
 
                 <li class="sidebar-item">
+                    <a class="sidebar-link" href="/dashboard/foto-beranda" aria-expanded="false">
+                        <span>
+                            {{-- <i class="ti ti-article"></i> --}}
+                        </span>
+                        <span class="hide-menu">Foto Beranda</span>
+                    </a>
+                </li>
+                <li class="nav-small-cap">
+                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                    <span class="hide-menu">Menu</span>
+                </li>
+                <li class="sidebar-item">
                     <a class="sidebar-link" href="/dashboard/beritas/index" aria-expanded="false">
                         <span>
                             {{-- <i class="ti ti-article"></i> --}}
@@ -80,8 +92,16 @@
                         <span class="hide-menu">Pengumuman</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/dashboard/situs-terkait" aria-expanded="false">
+                        <span>
+                            {{-- <i class="ti ti-article"></i> --}}
+                        </span>
+                        <span class="hide-menu">Situs Terkait</span>
+                    </a>
+                </li>
                 <li class="nav-small-cap">
-                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                    {{-- <i class="ti ti-dots nav-small-cap-icon fs-4"></i> --}}
                     <span class="hide-menu">Infrastruktur</span>
                 </li>
                 <li class="sidebar-item">
@@ -109,26 +129,28 @@
                     </a>
                 </li>
 
-                <li class="sidebar-item">
+                {{-- <li class="sidebar-item">
                     <a class="sidebar-link" href="#" aria-expanded="false">
                         <span>
-                            {{-- <i class="ti ti-typography"></i> --}}
+                            <i class="ti ti-typography"></i>
                         </span>
-                        <span class="hide-menu">Irigasi</span>
+                        <span class="hide-menu">Infrastruktur</span>
                     </a>
                     <ul>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="#">Daerah Irigasi 1</a>
+                            <a class="sidebar-link" href="/dashboard/infrastruktur/bendungans">Bendungan</a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="#">Daerah Irigasi 2</a>
+                            <a class="sidebar-link" href="/dashboard/infrastruktur/bendungs">Bendung</a>
                         </li>
-                        <!-- Tambahkan submenu lainnya sesuai kebutuhan -->
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="/dashboard/infrastruktur/embungs">Embung</a>
+                        </li>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li class="nav-small-cap">
-                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i> 
+                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Daftar Informasi Publik</span>
                 </li>
                 <li class="sidebar-item">

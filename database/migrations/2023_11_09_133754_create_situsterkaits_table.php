@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('bendungs', function (Blueprint $table) {
+        Schema::create('situsterkaits', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('lokasi');
-            $table->string('tahun_pembangunan');
-            $table->string('jenis')->default('bendungs');
-
+            $table->string('url_situs');
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('bendungs');
+        Schema::dropIfExists('situsterkaits');
     }
 };

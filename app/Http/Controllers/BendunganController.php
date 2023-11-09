@@ -59,12 +59,12 @@ class BendunganController extends Controller
             "irigasi" => ['required'],
             "body" => ['required'],
             'slug' => ['required', 'unique:Bendungans'],
-            'url_foto1' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto2' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto3' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto4' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto1' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto2' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto3' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto4' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
         ]);
-        // dd($validatedData['body']);
+        dd($validatedData['body']);
         DB::beginTransaction();
         try {
 

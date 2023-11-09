@@ -50,9 +50,10 @@ class EmbungController extends Controller
      */
     public function show(Embung $embung,string $slug)
     {
+        // dd('awd');
         $embung = Embung::where('slug', $slug)->first();
 
-        if (!$embung) {
+        if (!$embung) { 
             abort(404);
         }
 

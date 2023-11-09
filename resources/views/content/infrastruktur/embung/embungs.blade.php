@@ -26,11 +26,11 @@
                     <div class="col-lg-4 entries" style="margin-top:20px">
                         <article class="entry entry-single">
                             <div class="entry-img d-flex justify-content-center">
-                                <img src="{{ asset('storage/' . substr($embung->url_foto1, 6)) }}" alt=""
-                                    class="img-fluid" style="border-radius: 5px">
-                                {{-- <img src="{{ asset('images\image\struktur_organisasi\embung_Sermo-1.jpg') }}"
-                                    alt="" class="" style=" width: 150vw; height: 100%;"> --}}
-                            </div>
+                                <a href="/informasi-publik/infrastruktur/embungs/{{ $embung->slug }}"> <img
+                                        src="{{ asset('storage/' . substr($embung->url_foto1, 6)) }}" alt=""
+                                        class="img-fluid" style="border-radius: 5px"></a>
+                            </div> 
+
 
                             <h1 class="entry-title">
                                 {{ $embung->nama }}

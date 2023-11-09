@@ -101,8 +101,8 @@
                             @foreach ($embungs as $embung)
                                 <tr style="text-align: center;">
                                     <td> {{ $loop->iteration }}</td>
-                                    {{-- <td> {{ $embung->nama }}</td>
-                                    <td> {{ $embung->jenis }}</td> --}}
+                                    <td> {{ $embung->nama }}</td>
+                                    <td> {{ $embung->jenis }}</td>
 
                                     {{-- <td>
                                         <button class="btn badge bg-info show-DI-modal" data-id="{{ $berita->id }}"

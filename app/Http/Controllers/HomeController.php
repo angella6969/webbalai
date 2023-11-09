@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Home;
 use App\Http\Requests\StoreHomeRequest;
 use App\Http\Requests\UpdateHomeRequest;
+use App\Models\Bendung;
+use App\Models\Bendungan;
 use App\Models\Berita;
+use App\Models\Embung;
 use App\Models\Image;
 use App\Models\Infrastruktur;
 use App\Models\Logoterkait;
 use App\Models\Pengumuman;
+use App\Models\Situsterkait;
 
 class HomeController extends Controller
 {
@@ -21,15 +25,18 @@ class HomeController extends Controller
         $image = Image::all();
         $berita = Berita::all();
         $infoData = Pengumuman::all();
-        $infrastruktur = Infrastruktur::all();
-        $logoTerkait = Logoterkait::all();
-        // dd($infoData);
-        // return view('content.home', [
+        // $infrastruktur = Infrastruktur::all();
+        $logoTerkait = Situsterkait::all();
+
+        $bendungans = Bendungan::all();
+        $embungs = Embung::all();
+        $bendungs = Bendung::all();
+        $data = $bendungans->merge($embungs)->merge($bendungs);
         return view('content.home', [
-            'images' => $image, 
+            'images' => $image,
             'beritas' => $berita,
             'infoData' => $infoData,
-            'infrastrukturs' => $infrastruktur,
+            'infrastrukturs' => $data,
             'logoTerkaits' => $logoTerkait
         ]);
     }

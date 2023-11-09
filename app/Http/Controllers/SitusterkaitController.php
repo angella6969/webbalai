@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Image;
-use App\Http\Requests\StoreImageRequest;
-use App\Http\Requests\UpdateImageRequest;
+use App\Models\Situsterkait;
+use App\Http\Requests\StoreSitusterkaitRequest;
+use App\Http\Requests\UpdateSitusterkaitRequest;
 use Illuminate\Support\Facades\DB;
 
-class ImageController extends Controller
+class SitusterkaitController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $images = Image::all();
-        return view('dashboard.form.fotoberanda.index', [
-            'images' => $images
+        $situss = Situsterkait::all();
+        return view('dashboard.form.situsterkait.index', [
+            'situss' => $situss
         ]);
     }
 
@@ -25,26 +25,28 @@ class ImageController extends Controller
      */
     public function create()
     {
-        return view('dashboard.form.fotoberanda.create');
+        return view('dashboard.form.situsterkait.create');
+
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreImageRequest $request)
+    public function store(StoreSitusterkaitRequest $request)
     {
         $validatedData = $request->validate([
-            'image' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif', 'nullable'],
+            'image' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,image/svg+xml', 'nullable'],
+            'url_situs'=>['required']
         ]);
         DB::beginTransaction();
         try {
             if ($request->hasFile('image')) {
-                $petaPdfPath = $request->file('image')->store('public/images/foto-beranda');
+                $petaPdfPath = $request->file('image')->store('public/images/situs-terkait');
                 $validatedData['image'] = $petaPdfPath;
             }
-            Image::create($validatedData);
+            Situsterkait::create($validatedData);
             DB::commit();
-            return redirect('/dashboard/foto-beranda')->with('success', 'Data berhasil disimpan.');
+            return redirect('/dashboard/situs-terkait')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -54,7 +56,7 @@ class ImageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Image $image)
+    public function show(Situsterkait $situsterkait)
     {
         //
     }
@@ -62,7 +64,7 @@ class ImageController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Image $image)
+    public function edit(Situsterkait $situsterkait)
     {
         //
     }
@@ -70,7 +72,7 @@ class ImageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateImageRequest $request, Image $image)
+    public function update(UpdateSitusterkaitRequest $request, Situsterkait $situsterkait)
     {
         //
     }
@@ -78,7 +80,7 @@ class ImageController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Image $image)
+    public function destroy(Situsterkait $situsterkait)
     {
         //
     }

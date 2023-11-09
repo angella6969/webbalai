@@ -34,7 +34,8 @@
 
             @foreach ($images as $image)
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                    <img src="{{ $image->image }}" style="width: 100vw; height: 100vh; object-fit: cover;" alt="Slide">
+                    <img src="{{ asset('storage/' . substr($image->image, 6)) }}"
+                        style="width: 100vw; height: 100vh; object-fit: cover;" alt="Slide">
                 </div>
             @endforeach
 
@@ -123,8 +124,9 @@
                 </div>
                 {{-- <div class="swiper-pagination"></div> --}}
 
-                <div class="col d-flex justify-content-center mt-3" >
-                    <a href="/beritas" class="btn btn-rounded btn-4 text-0 font-weight-semibold" style="background-color: rgb(3,15,107); color:#fff">Indeks
+                <div class="col d-flex justify-content-center mt-3">
+                    <a href="/beritas" class="btn btn-rounded btn-4 text-0 font-weight-semibold"
+                        style="background-color: rgb(3,15,107); color:#fff">Indeks
                         Berita</a>
                 </div>
             </div>
@@ -145,7 +147,9 @@
                     @foreach ($infrastrukturs as $infrastruktur)
                         <div class="swiper-slide">
                             <div class="card">
-                                <a href=""><img src="{{ asset($infrastruktur->url_foto1) }}"
+                                <a
+                                    href="/informasi-publik/infrastruktur/{{ $infrastruktur->jenis }}/{{ $infrastruktur->slug }}"><img
+                                        src="{{ asset('storage/' . substr($infrastruktur->url_foto1, 6)) }}"
                                         class="card-img-top hover-effect-2" alt=""
                                         style="height: 200px;object-fit: none;"></a>
 
@@ -177,9 +181,10 @@
                     @foreach ($logoTerkaits as $logoTerkait)
                         <div class="swiper-slide">
                             <div class="border:none">
-                                <a href=""><img src="{{ asset($logoTerkait->url_logo) }}"
+                                <a href="{{ $logoTerkait->url_situs }}"><img
+                                        src="{{ asset('storage/' . substr($logoTerkait->image, 6)) }}"
                                         class="card-img-top hover-effect-2 d-flex justify-content-center" alt=""
-                                        style="height: 50px; width: auto;  "></a>
+                                        style="height: 100px; width: auto;  "></a>
                             </div>
                             <div class="card-body">
                                 <h3 class="font-weight-bold text-4 mb-1"><a href=""
@@ -230,7 +235,7 @@
             const infoContainer = document.getElementById('info-container');
             const info = infoData[currentIndex];
             // Membuat tautan dengan data dari database
-            const infoLink = `<a href="${info.url_pengumuman}" style=" color:white;">${info.judul}</a>`;
+            const infoLink = `<a href="${'storage/'+info.url_pengumuman.substr(7)}" style="color:white;">${info.judul}</a>`;
             infoContainer.classList.add('info-transition'); // Menambahkan kelas CSS untuk memicu animasi
             setTimeout(() => {
                 infoContainer.innerHTML = infoLink;

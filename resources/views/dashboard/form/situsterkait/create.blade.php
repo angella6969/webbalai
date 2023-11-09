@@ -22,48 +22,18 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title fw-semibold mb-3">Daftar Foto Beranda</h5>
-                <form method="post" action="/dashboard/foto-beranda" enctype="multipart/form-data">
+                <h5 class="card-title fw-semibold mb-3">Daftar Situs Terkait</h5>
+                <form method="post" action="/dashboard/situs-terkait" enctype="multipart/form-data">
                     @csrf
-                    {{-- <div class="mt-3">
-                        <label for="judul" class="form-label">Informasi Publik</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="nama"
-                                value="{{ old('nama') }}" required>
-                        </div>
-                    </div> --}}
-                    {{-- <div class="mt-3">
-                        <label for="jenis" class="form-label">Informasi Publik</label>
-                        <select class="form-select" aria-label="Default select example" name="jenis" id="jenis">
-                            <option selected value="">Kategori Informasi</option>
-                            <option value="serta">Serta Merta</option>
-                            <option value="setiap-saat">Setiap Saat</option>
-                            <option value="berkala">Berkala</option>
-                        </select>
-                    </div> --}}
-                    {{-- <div class="separator">
-                        <br>
-                        <p class="d-flex justify-content-center">Dokumen Pendukunng</p>
-                        <p class="d-flex justify-content-center">Pilih Salah satu : Link / Dokumen</p>
-                        <div class="line"></div>
-                    </div> --}}
 
-                    {{-- <div class="mb-3">
-                        <label for="link" class="form-label">Link</label>
+                    <div class="mb-3">
+                        <label for="url_situs" class="form-label">Link</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" id="link" name="link"
-                                placeholder="link jika ada" value="{{ old('link') }}">
+                            <input type="text" class="form-control" id="url_situs" name="url_situs"
+                                placeholder="url situs jika ada" value="{{ old('url_situs') }}">
 
                         </div>
-                    </div> --}}
-
-                    {{-- <div class="mt-3 mb-3">
-                        <label for="url_file">PDF</label>
-                        <input type="file" class="form-control" id="url_file" name="url_file"
-                            accept="image/*, image/png, image/gif, application/pdf">
-                        <h6>PDF Max 5 MB</h6>
-                    </div> --}}
-
+                    </div>
 
                     <div class="mt-3 mb-3">
                         <label for="image">Foto Beranda</label>

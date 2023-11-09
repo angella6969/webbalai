@@ -26,11 +26,10 @@
                     <div class="col-lg-4 entries" style="margin-top:20px">
                         <article class="entry entry-single">
                             <div class="entry-img d-flex justify-content-center">
-                                <img src="{{ asset('storage/' . substr($bendungan->url_foto1, 6)) }}" alt=""
-                                    class="img-fluid" style="border-radius: 5px">
-                                {{-- <img src="{{ asset('images\image\struktur_organisasi\Bendungan_Sermo-1.jpg') }}"
-                                    alt="" class="" style=" width: 150vw; height: 100%;"> --}}
-                            </div>
+                                <a href="/informasi-publik/infrastruk/bendungans/{{ $bendungan->slug }}"> <img
+                                        src="{{ asset('storage/' . substr($bendungan->url_foto1, 6)) }}" alt=""
+                                        class="img-fluid" style="border-radius: 5px"></a>
+                            </div> 
 
                             <h1 class="entry-title">
                                 {{ $bendungan->nama }}
@@ -38,8 +37,8 @@
 
                             <div class="entry-meta">
                                 <ul>
-                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a
-                                            href="">{{ $bendungan->created_at }}</time></a></li>
+                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i>
+                                        {{ $bendungan->created_at }}</li>
                                 </ul>
                             </div>
                             <div class="entry-content "> </div>
