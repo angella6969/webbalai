@@ -132,7 +132,9 @@
                 console.log(error);
             });
 </script>
-<script>
+<x-notif />
+
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function() {
             @if (Session::has('success'))
                 iziToast.success({
@@ -149,7 +151,7 @@
                 });
             @endif
         });
-</script>
+</script> --}}
 <script>
     const judul = document.querySelector('#judul');
         const slug = document.querySelector('#slug');

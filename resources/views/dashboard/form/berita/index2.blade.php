@@ -113,7 +113,7 @@
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function() {
 
             @if (Session::has('success'))
@@ -131,5 +131,7 @@
                 });
             @endif
         });
-</script>
+</script> --}}
+<x-notif />
+
 @endsection

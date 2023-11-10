@@ -42,7 +42,7 @@
                     @if ($situsterkaits->image)
                     <img src="{{ asset('storage/' . substr($situsterkaits->image,6)) }}"
                         class="img-preview img-fluid mb-3 col-sm-5 d-block">
-                  @else
+                    @else
                     <img class="img-preview img-fluid mb-3 col-sm-5">
                     @endif
 
@@ -109,8 +109,9 @@
                 console.log(error);
             });
 </script>
+<x-notif />
 
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function() {
             @if (Session::has('success'))
                 iziToast.success({
@@ -127,7 +128,7 @@
                 });
             @endif
         });
-</script>
+</script> --}}
 {{--
 <script>
     const nama = document.querySelector('#nama');

@@ -136,7 +136,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard/infrastruktur/index', [InfrastrukturController::class, 'index']);
     Route::get('/dashboard/infrastruktur/create', [InfrastrukturController::class, 'create']);
 
-    Route::get('/dashboard/gambar-depan', [ImageController::class, 'index']);
+    // Route::get('/dashboard/gambar-depan', [ImageController::class, 'index']);
 
 
 

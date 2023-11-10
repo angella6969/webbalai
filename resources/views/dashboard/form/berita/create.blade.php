@@ -34,13 +34,13 @@
                                     value="{{ old('judul') }}" required>
                             </div>
                         </div>
-
-                        <div class="mb-3">
+                        <x-slug />
+                        {{-- <div class="mb-3">
                             <div class="input-group">
-                                <input type="text" class="form-control" hidden readonly id="slug" name="slug"
+                                <input type="text" class="form-control" readonly id="slug" name="slug"
                                     placeholder="slug" value="{{ old('slug') }}" required>
                             </div>
-                        </div>
+                        </div> --}}
                         {{-- <div class="mb-3">
                             <div style="z-index: 999">
                                 <textarea id="body" name="body" style="width: 100px;"
@@ -101,6 +101,8 @@
             }
         }
 </script>
+
+<x-notif />
 {{-- <script>
     ClassicEditor
             .create(document.querySelector('#body'), {
@@ -133,7 +135,7 @@
             }); 
 </script> --}}
 
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function() {
             @if (Session::has('success'))
                 iziToast.success({
@@ -150,7 +152,7 @@
                 });
             @endif
         });
-</script>
+</script> --}}
 
 <script>
     const judul = document.querySelector('#judul');

@@ -215,8 +215,9 @@
                 console.log(error);
             });
 </script> --}}
+<x-notif />
 
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function() {
             @if (Session::has('success'))
                 iziToast.success({
@@ -233,7 +234,7 @@
                 });
             @endif
         });
-</script>
+</script> --}}
 
 <script>
     const nama = document.querySelector('#nama');

@@ -36,7 +36,7 @@
                         </div>
                         <div class="mt-3">
                             <label for="jenis" class="form-label">Informasi Publik</label>
-                            <select class="form-select" aria-label="Default select example" name="jenis" id="jenis">
+                            <select class="form-select" aria-label="Default select example" name="jenis" id="jenis" required>
                                 <option selected value="">Kategori Informasi</option>
                                 <option value="serta">Serta Merta</option>
                                 <option value="setiap-saat">Setiap Saat</option>
@@ -62,19 +62,20 @@
                         <div class="mt-3 mb-3">
                             <label for="url_file">PDF</label>
                             <input type="file" class="form-control" id="url_file" name="url_file"
-                                accept="image/*, image/png, image/gif, application/pdf">
+                                accept=" application/pdf">
                             <h6>PDF Max 5 MB</h6>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
-                    {{--
+                    {{-- 
                 </div> --}}
                 {{-- </div> --}}
         </div>
     </div>
 </div>
+<x-notif />
 
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function() {
             @if (Session::has('success'))
                 iziToast.success({
@@ -91,7 +92,7 @@
                 });
             @endif
         });
-</script>
+</script> --}}
 {{--
 <script>
     const nama = document.querySelector('#nama');
