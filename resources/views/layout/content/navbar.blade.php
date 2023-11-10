@@ -57,13 +57,17 @@
         </li>
         <li class="dropdown"><a href="#"><span>Media</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li class="dropdown"><a href="/media/media-informasi/"><span>Media Informasi</span> <i
+                <li><a href="/media/media-informasi/">Media Informasi</a></li>
+
+                {{-- <li class="dropdown"><a href="/media/media-informasi/"><span>Media Informasi</span> <i
                             class="bi bi-chevron-right"></i></a>
                     <ul>
                         <li><a href="/under-Maintenance">Majalah</a></li>
                         <li><a href="/under-Maintenance">Leaflet dan Brosur</a></li>
                         <li><a href="#">Infografis</a></li>
                     </ul>
+                </li> --}}
+
                 <li class="dropdown"><a href="#"><span>Galeri</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
                         <li><a href="/under-Maintenance">Foto</a></li>

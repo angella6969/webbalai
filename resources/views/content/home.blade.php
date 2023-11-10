@@ -26,19 +26,19 @@
         .right {
             right: 10px;
         }
-
-        .card-img-top {
+        .card-img-top1 {
             max-width: 80%;
             height: auto;
             margin: 0 auto;
         }
 
-        .multiple-items1 .swiper-slide img {
+        .multiple-items1 .swiper-slide1 img {
             height: 100px;
             width: auto;
             display: block;
             margin: 0 auto;
         }
+       
     </style>
 
 
@@ -189,10 +189,10 @@
  
             </div> --}}
 
-        <div class="multiple-items1 card-img-top" id="multiple-items1" data-aos="fade-up" data-aos-delay="100">
+        <div class="multiple-items1 card-img-top1" id="multiple-items1" data-aos="fade-up" data-aos-delay="100">
             {{-- <div class="swiper-wrapper"> --}}
             @foreach ($logoTerkaits as $logoTerkait)
-                <div class="swiper-slide">
+                <div class="swiper-slide1">
                     <div class="border:none">
                         <a href="{{ $logoTerkait->url_situs }}"><img
                                 src="{{ asset('storage/' . substr($logoTerkait->image, 6)) }}"

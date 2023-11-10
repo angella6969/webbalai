@@ -21,6 +21,7 @@
     <section id="" class="blog">
         <div class="container" data-aos="fade-up">
             <div class="row">
+                {{-- <div></div> --}}
                 @foreach ($medias as $media)
                     <div class="col-lg-4 entries" style="margin-top:20px">
                         <article class="entry entry-single">
