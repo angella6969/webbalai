@@ -108,7 +108,7 @@ class ImageController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(String $id)
-    {
+    { 
         $image = Image::findOrFail($id);
         try {
             $image->delete();

@@ -12,7 +12,7 @@ class DaftarInformasiPublikController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index2()
     {
         $informasis = Daftar_informasi_publik::latest()->get();
         // dd( $informasis);
@@ -24,7 +24,7 @@ class DaftarInformasiPublikController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function index2()
+    public function index()
     {
         $informasis = Daftar_informasi_publik::latest()->get();
         return view('dashboard.form.daftar_infomasi_publik.index', [

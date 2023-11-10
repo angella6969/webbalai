@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('situsterkaits', function (Blueprint $table) {
             $table->id();
-            $table->string('url_situs');
-            $table->string('image');
+            $table->string('url_situs')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

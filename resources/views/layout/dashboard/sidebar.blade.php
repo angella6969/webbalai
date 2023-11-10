@@ -77,7 +77,7 @@
                     <span class="hide-menu">Menu</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="/dashboard/beritas/index" aria-expanded="false">
+                    <a class="sidebar-link" href="/dashboard/beritas/" aria-expanded="false">
                         <span>
                             {{-- <i class="ti ti-article"></i> --}}
                         </span>

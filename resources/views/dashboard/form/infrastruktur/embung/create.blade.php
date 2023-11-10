@@ -138,12 +138,14 @@
                                     placeholder="irigasi" value="{{ old('irigasi') }}" required>
                             </div>
                         </div>
-                        <div class="mb-3">
+                        <x-ck />
+
+                        {{-- <div class="mb-3">
                             <div style="z-index: 999">
                                 <textarea id="body" name="body" style="width: 100px;"
                                     value="{{ old('body') }}"></textarea>
                             </div>
-                        </div>
+                        </div> --}}
                         <div class="separator">
                             <br>
                             <p class="d-flex justify-content-center">Dokumen Pendukunng</p>
@@ -183,7 +185,7 @@
         </div>
     </div>
 </div>
-<script>
+{{-- <script>
     ClassicEditor
             .create(document.querySelector('#body'), {
                 toolbar: ['heading', '|', 'bold', 'italic', 'numberedList', 'insertTable', 'blockQuote', 'redo', '|',
@@ -213,7 +215,7 @@
             .catch(error => {
                 console.log(error);
             });
-</script>
+</script> --}}
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

@@ -16,16 +16,15 @@ class BeritaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index2()
     {
         $beritas = Berita::latest()->paginate(5);
         return view('content.berita.britas', [
             'beritas' => $beritas
         ]);
     }
-    public function index2()
+    public function index()
     {
-        // dd('ini index2');
         $beritas = Berita::latest()->paginate(5);
         return view('dashboard.form.berita.index2', [
             'beritas' => $beritas
@@ -63,7 +62,7 @@ class BeritaController extends Controller
 
             Berita::create($validatedData);
             DB::commit();
-            return redirect('/dashboard/beritas/index')->with('success', 'Data berhasil disimpan.');
+            return redirect('/dashboard/beritas/')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -103,14 +102,15 @@ class BeritaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBeritaRequest $request, Berita $berita, string $id)
+    public function update(UpdateBeritaRequest $request,  string $id)
     {
+        // dd($request);
         $berita = Berita::findOrFail($id);
         $rules = [
             'judul' => ['required'],
             // 'slug' => ['required', 'Unique:Beritas'],
             'body' => ['required'],
-            'url_foto' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf'],
+            'url_foto' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif'],
         ];
 
         if ($request->slug != $berita->slug) {
@@ -132,7 +132,7 @@ class BeritaController extends Controller
 
             Berita::where('id', $id)->update($validatedData);
             DB::commit();
-            return redirect('/dashboard/beritas/index')->with('success', 'Data berhasil disimpan.');
+            return redirect('/dashboard/beritas/')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());

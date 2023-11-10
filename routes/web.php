@@ -92,7 +92,7 @@ Route::get('/informasi-publik/infrastruktur/embungs', [EmbungController::class, 
 Route::get('/informasi-publik/infrastruktur/irigasis/{slug}', [IrigasiController::class, 'show']);
 Route::get('/informasi-publik/infrastruktur/irigasis', [IrigasiController::class, 'index2']);
 
-Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index']);
+Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2']);
 
 Route::get('/media/media-informasi/', [InfografisController::class, 'index2']);
 Route::get('/media/media-informasi/{jenis}/{slug}', [InfografisController::class, 'show']);
@@ -107,7 +107,7 @@ Route::resource('/', HomeController::class);
 // Route::resource('/beritas/blog', BeritaController::class);
 // Route::resource('/artikel', PermohonanController::class);
 
-Route::get('/beritas', [BeritaController::class, 'index']);
+Route::get('/beritas', [BeritaController::class, 'index2']);
 Route::get('/beritas/{slug}', [BeritaController::class, 'show']);
 
 Route::middleware(['auth'])->group(function () {
@@ -118,11 +118,16 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-    Route::get('/dashboard/beritas/index', [BeritaController::class, 'index2']);
-    Route::get('/dashboard/beritas/create', [BeritaController::class, 'create']);
-    Route::post('/dashboard/beritas/store', [BeritaController::class, 'store']);
-    Route::get('/dashboard/beritas/{id}/edit', [BeritaController::class, 'edit']);
-    Route::post('/dashboard/beritas/{id}', [BeritaController::class, 'update']);
+    // Route::get('/dashboard/beritas/', [BeritaController::class, 'index']);
+    // Route::get('/dashboard/beritas/create', [BeritaController::class, 'create']);
+    // Route::post('/dashboard/beritas/', [BeritaController::class, 'store']);
+    // Route::get('/dashboard/beritas/{id}/edit', [BeritaController::class, 'edit']);
+    // Route::post('/dashboard/beritas/{id}', [BeritaController::class, 'update']);
+    // Route::delete('/dashboard/beritas/{id}', [BeritaController::class, 'destroy']);
+
+    Route::resource('/dashboard/beritas', BeritaController::class)->except(['show']);
+
+
 
     Route::get('/dashboard/beritas/checkSlug', [BeritaController::class, 'checkSlug']);
 
@@ -135,10 +140,14 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-    Route::get('/dashboard/infrastruktur/bendungans/create', [BendunganController::class, 'create']);
     Route::get('/dashboard/infrastruktur/bendungans/checkSlug', [BendunganController::class, 'checkSlug']);
-    Route::post('/dashboard/infrastruktur/bendungans', [BendunganController::class, 'store']);
-    Route::get('/dashboard/infrastruktur/bendungans', [BendunganController::class, 'index']);
+    // Route::get('/dashboard/infrastruktur/bendungans/create', [BendunganController::class, 'create']);
+    // Route::post('/dashboard/infrastruktur/bendungans', [BendunganController::class, 'store']);
+    // Route::get('/dashboard/infrastruktur/bendungans', [BendunganController::class, 'index']);
+
+
+    Route::resource('/dashboard/infrastruktur/bendungans', BendunganController::class)->except(['show']);
+
 
 
     Route::get('/dashboard/infrastruktur/bendungs/create', [BendungController::class, 'create']);
@@ -164,10 +173,11 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-    Route::get('/dashboard/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2']);
-    Route::get('/dashboard/daftar-informasi-publik/create', [DaftarInformasiPublikController::class, 'create']);
-    Route::post('/dashboard/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'store']);
+    // Route::get('/dashboard/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2']);
+    // Route::get('/dashboard/daftar-informasi-publik/create', [DaftarInformasiPublikController::class, 'create']);
+    // Route::post('/dashboard/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'store']);
 
+    Route::resource('/dashboard/daftar-informasi-publik', DaftarInformasiPublikController::class)->except(['show']);
 
 
 
@@ -181,17 +191,19 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/dashboard/foto-beranda', ImageController::class)->except(['show']);
 
 
-    Route::get('/dashboard/situs-terkait/create', [SitusterkaitController::class, 'create']);
-    Route::get('/dashboard/situs-terkait', [SitusterkaitController::class, 'index']);
-    Route::post('/dashboard/situs-terkait', [SitusterkaitController::class, 'store']);
+    // Route::get('/dashboard/situs-terkait/create', [SitusterkaitController::class, 'create']);
+    // Route::get('/dashboard/situs-terkait', [SitusterkaitController::class, 'index']);
+    // Route::post('/dashboard/situs-terkait', [SitusterkaitController::class, 'store']);
+
+    Route::resource('/dashboard/situs-terkait', SitusterkaitController::class)->except(['show']);
 
 
 
-    Route::get('/dashboard/media/media-informasi/', [InfografisController::class, 'index']);
-    Route::get('/dashboard/media/media-informasi/{id}/edit', [InfografisController::class, 'edit']);
-    Route::post('/dashboard/media/media-informasi', [InfografisController::class, 'store']);
-    Route::get('/dashboard/media/media-informasi/create', [InfografisController::class, 'create']);
-    Route::delete('/dashboard/media/media-informasi/{id}', [InfografisController::class, 'destroy']);
+    // Route::get('/dashboard/media/media-informasi/', [InfografisController::class, 'index']);
+    // Route::get('/dashboard/media/media-informasi/{id}/edit', [InfografisController::class, 'edit']);
+    // Route::post('/dashboard/media/media-informasi', [InfografisController::class, 'store']);
+    // Route::get('/dashboard/media/media-informasi/create', [InfografisController::class, 'create']);
+    // Route::delete('/dashboard/media/media-informasi/{id}', [InfografisController::class, 'destroy']);
 
-    // Route::resource('/dashboard/media/media-informasi/', InfografisController::class)->except(['show']);
+    Route::resource('/dashboard/media/media-informasi/', InfografisController::class)->except(['show']);
 });

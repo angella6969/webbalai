@@ -22,63 +22,40 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title fw-semibold mb-3">Berita</h5>
-            <form method="POST" action="/dashboard/beritas/{{ $berita->id }}" enctype="multipart/form-data">
+            <h5 class="card-title fw-semibold mb-3">update Situs Terkait</h5>
+            <form method="post" action="/dashboard/situs-terkait" enctype="multipart/form-data">
                 @csrf
-                @method('PUT')
-
-                <div class="mt-3">
-                    <label for="judul" class="form-label">judul</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="judul" name="judul" placeholder="judul"
-                            value="{{ old('judul', $berita->judul) }}" required>
-
-                    </div>
-                </div>
 
                 <div class="mb-3">
+                    <label for="url_situs" class="form-label">Link</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" hidden readonly id="slug" name="slug" placeholder="slug"
-                            value="{{ old('slug', $berita->slug) }}" required>
-                    </div>
-                </div>
+                        <input type="text" class="form-control" id="url_situs" name="url_situs"
+                            placeholder="url situs jika ada" value="{{ old('url_situs',$situsterkaits->url_situs) }}">
 
-                <div class="mb-3">
-                    <div style="z-index: 999">
-                        <textarea id="body" name="body"
-                            style="width: 100px;">{{ old('body', $berita->body) }}</textarea>
                     </div>
-                </div>
-
-                <div class="separator">
-                    <br>
-                    <p class="d-flex justify-content-center">Dokumen Pendukunng</p>
-                    <div class="line"></div>
                 </div>
 
                 <div class="mt-3 mb-3">
-                    <label for="url_foto">Foto Beranda</label>
-                    <input type="hidden" name="oldImage" id="oldImage" value="{{ $berita->url_foto }}">
+                    <label for="image">Foto Beranda</label>
+                    <input type="hidden" name="oldImage" id="oldImage" value="{{ $situsterkaits->image }}">
 
-                    @if ($berita->url_foto)
-                    <img src="{{ asset('storage/' . substr($berita->url_foto,6)) }}"
+                    @if ($situsterkaits->image)
+                    <img src="{{ asset('storage/' . substr($situsterkaits->image,6)) }}"
                         class="img-preview img-fluid mb-3 col-sm-5 d-block">
-                    @else
+                  @else
                     <img class="img-preview img-fluid mb-3 col-sm-5">
                     @endif
 
-                    {{-- <img class="img-preview img-fluid mb-3 col-sm-5"> --}}
-                    <input type="file" class="form-control @error('url_foto') is-invalid @enderror" id="url_foto"
-                        onchange="previewImage()" name="url_foto" accept="image/*, image/png, image/gif">
+                    <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
+                        onchange="previewImage()" name="image" accept="image/*, image/png, image/gif">
                     <h6>Photo Max 5 MB</h6>
 
-                    @if ($errors->has('url_foto'))
+                    @if ($errors->has('image'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('url_foto') }}</strong>
+                        <strong>{{ $errors->first('image') }}</strong>
                     </span>
                     @endif
                 </div>
-
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
@@ -87,7 +64,7 @@
 <script>
     function previewImage() {
 
-            const image = document.querySelector('#url_foto');
+            const image = document.querySelector('#image');
             const imgPreview = document.querySelector('.img-preview');
 
             imgPreview.style.display = 'block';
@@ -132,6 +109,7 @@
                 console.log(error);
             });
 </script>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
             @if (Session::has('success'))
@@ -150,14 +128,38 @@
             @endif
         });
 </script>
+{{--
 <script>
-    const judul = document.querySelector('#judul');
+    const nama = document.querySelector('#nama');
         const slug = document.querySelector('#slug');
 
-        judul.addEventListener('change', function() {
-            fetch('/dashboard/beritas/checkSlug?judul=' + judul.value)
+        nama.addEventListener('change', function() {
+            fetch('/dashboard/infrastruktur/bendungans/checkSlug?nama=' + nama.value)
                 .then(response => response.json())
                 .then(data => slug.value = data.slug)
+        });
+</script> --}}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+            const linkInput = document.getElementById('link');
+            const fileInput = document.getElementById('url_file');
+
+            linkInput.addEventListener('input', function() {
+                if (linkInput.value.trim() !== '') {
+                    fileInput.disabled = true;
+                } else {
+                    fileInput.disabled = false;
+                }
+            });
+
+            fileInput.addEventListener('input', function() {
+                if (fileInput.files.length > 0) {
+                    linkInput.disabled = true;
+                } else {
+                    linkInput.disabled = false;
+                }
+            });
         });
 </script>
 @endsection

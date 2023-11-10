@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->string('slug')->unique();
-            $table->LONGTEXT('body');
+            $table->LONGTEXT('body')->nullable();
             $table->string('url_foto')->nullable();
             $table->timestamps();
         });
