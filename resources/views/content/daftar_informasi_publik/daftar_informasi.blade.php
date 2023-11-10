@@ -132,8 +132,8 @@
                                         <th colspan="2">Tautan</th>
                                         <th></th>
                                     </thead>
-                                    <tbody data-index="0">
-                                        @foreach ($informasis->where('jenis', 'serta') as $key => $informasi)
+                                    <tbody data-index="1">
+                                        @foreach ($informasis->where('jenis', 'setiap-saat') as $key => $informasi)
                                             <tr>
                                                 <td colspan="1">{{ $loop->iteration }}</td>
                                                 <td colspan="2">{{ $informasi->nama }}</td>
@@ -161,8 +161,8 @@
                                         <th colspan="2">Tautan</th>
                                         <th></th>
                                     </thead>
-                                    <tbody data-index="0">
-                                        @foreach ($informasis->where('jenis', 'serta') as $key => $informasi)
+                                    <tbody data-index="2">
+                                        @foreach ($informasis->where('jenis', 'berkala') as $key => $informasi)
                                             <tr>
                                                 <td colspan="1">{{ $loop->iteration }}</td>
                                                 <td colspan="2">{{ $informasi->nama }}</td>

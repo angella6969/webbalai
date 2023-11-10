@@ -38,7 +38,7 @@
                         <label for="jenis" class="form-label">Informasi Publik</label>
                         <select class="form-select" aria-label="Default select example" name="jenis" id="jenis">
                             <option selected value="">Kategori Informasi</option>
-                            <option value="serta">Serta Merta</option>
+                            <option value="serta">Serta Merta</option> 
                             <option value="setiap-saat">Setiap Saat</option>
                             <option value="berkala">Berkala</option>
                         </select>

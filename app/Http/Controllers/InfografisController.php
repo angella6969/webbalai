@@ -105,14 +105,20 @@ class InfografisController extends Controller
     public function update(UpdateInfografisRequest $request, Infografis $infografis)
     {
         //
-    }
+    } 
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Infografis $infografis)
+    public function destroy(string $id)
     {
-        //
+        $infografis = Infografis::findOrFail($id);
+        try {
+            $infografis->delete();
+            return redirect()->back()->with('success', 'Berhasil Menghapus Data');
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
     }
     public function checkSlug(Request $request)
     {

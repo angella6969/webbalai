@@ -107,7 +107,8 @@ Route::resource('/', HomeController::class);
 // Route::resource('/beritas/blog', BeritaController::class);
 // Route::resource('/artikel', PermohonanController::class);
 
-
+Route::get('/beritas', [BeritaController::class, 'index']);
+Route::get('/beritas/{slug}', [BeritaController::class, 'show']);
 
 Route::middleware(['auth'])->group(function () {
 
@@ -115,8 +116,7 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/dashboard/pengumuman/create', [PengumumanController::class, 'create']);
     // Route::post('/dashboard/pengumuman', [PengumumanController::class, 'store']);
 
-    Route::get('/beritas', [BeritaController::class, 'index']);
-    Route::get('/beritas/{slug}', [BeritaController::class, 'show']);
+
 
     Route::get('/dashboard/beritas/index', [BeritaController::class, 'index2']);
     Route::get('/dashboard/beritas/create', [BeritaController::class, 'create']);
@@ -187,10 +187,11 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-    // Route::get('/dashboard/media/media-informasi/', [InfografisController::class, 'index']);
-    // Route::get('/dashboard/media/media-informasi/{id}/edit', [InfografisController::class, 'edit']);
-    // Route::post('/dashboard/media/media-informasi', [InfografisController::class, 'store']);
-    // Route::get('/dashboard/media/media-informasi/create', [InfografisController::class, 'create']);
+    Route::get('/dashboard/media/media-informasi/', [InfografisController::class, 'index']);
+    Route::get('/dashboard/media/media-informasi/{id}/edit', [InfografisController::class, 'edit']);
+    Route::post('/dashboard/media/media-informasi', [InfografisController::class, 'store']);
+    Route::get('/dashboard/media/media-informasi/create', [InfografisController::class, 'create']);
+    Route::delete('/dashboard/media/media-informasi/{id}', [InfografisController::class, 'destroy']);
 
-    Route::resource('/dashboard/media/media-informasi/', InfografisController::class)->except(['show']);
+    // Route::resource('/dashboard/media/media-informasi/', InfografisController::class)->except(['show']);
 });

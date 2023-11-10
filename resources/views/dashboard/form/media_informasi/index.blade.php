@@ -76,7 +76,7 @@
                                 <th scope="col">Image</th>
                                 <th scope="col">Action</th>
                             </tr>
-                        </thead> 
+                        </thead>
                         <tbody>
                             @foreach ($Infografiss as $Infografis)
                                 <tr style="text-align: center;">
@@ -86,11 +86,6 @@
                                             src={{ asset('storage/' . substr($Infografis->url_foto1, 6)) }} alt="">
                                     </td>
                                     <td>
-                                        {{-- <button class="btn badge bg-info show-DI-modal" data-id="{{ $pengumuman->id }}"
-                                            data-judul="{{ $pengumuman->judul }}"
-                                            data-url_pengumuman="{{ $pengumuman->url_pengumuman }}">
-                                            <span data-feather="eye"></span>
-                                        </button> --}}
                                         <a href="/dashboard/media/media-informasi/{{ $Infografis->id }}/edit"
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
@@ -113,73 +108,10 @@
         </div>
     </div>
 
-    <div class="modal fade" id="progresModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Detail</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="progresModalBody">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    {{-- <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script> --}}
 
-    <script>
-        $(document).ready(function() {
-            // Ketika tombol "Tampilkan Data" di klik
-            $('.show-DI-modal').on('click', function() {
-                // Ambil data dari atribut data
-                var id = $(this).data('id');
-                var url_pengumuman = $(this).data('url_pengumuman');
-                // var Kabupaten = $(this).data('kabupaten');
-                // var Kecamatan = $(this).data('kecamatan');
-                // var Desa = $(this).data('desa');
-                // var names = $(this).data('names');
-                // var terbangun = $(this).data('terbangun');
-                // var belum_terbangun = $(this).data('belum_terbangun');
-                // var irigasiDesaBelumTerbangun = $(this).data('IrigasiDesaBelumTerbangun');
-                // var pola = $(this).data('pola');
-                // var jenis = $(this).data('jenis');
-                // var mendapatkan = $(this).data('mendapatkan');
-                // var tahun = $(this).data('tahun');
-                // var peta_pdf = $(this).data('peta_pdf');
-                // var jaringan_pdf = $(this).data('jaringan_pdf');
-                // var dokumentasi_pdf = $(this).data('dokumentasi_pdf');
-                // // Tampilkan data dalam modal dengan tabel horizontal
-                // var originalString = peta_pdf;
-                // var trimmedString = originalString.substring(6);
-                // console.log(trimmedString);
 
-                $('#progresModalBody').html(`
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>ID</th>
-                            <td>${id}</td>
-                        </tr>
-                        <tr>
-                            <th>Judul</th>
-                            <td>${url_pengumuman}</td>
-                        </tr>
-                    </table>
-                `);
-
-                // Tampilkan modal
-                $('#progresModal').modal('show');
-            });
-        });
-    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 

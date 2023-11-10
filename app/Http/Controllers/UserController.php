@@ -35,6 +35,6 @@ class UserController extends Controller
         auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/newhome');
+        return redirect('/');
     }
 }
