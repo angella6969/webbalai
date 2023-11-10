@@ -22,12 +22,22 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title fw-semibold mb-3">Daftar Foto Beranda</h5>
-                <form method="post" action="/dashboard/foto-beranda" enctype="multipart/form-data">
+                <h5 class="card-title fw-semibold mb-3">Edit Foto Beranda</h5>
+                <form method="post" action="/dashboard/foto-beranda/{{$image->id}}" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="mt-3 mb-3">
                         <label for="image">Foto Beranda</label>
-                        <img class="img-preview img-fluid mb-3 col-sm-5">
+                        <input type="hidden" name="oldImage" id="oldImage" value="{{ $image->image }}">
+
+                        @if ($image->image)
+                            <img src="{{ asset('storage/' . substr($image->image,6)) }}"
+                                class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                        @else
+                            <img class="img-preview img-fluid mb-3 col-sm-5">
+                        @endif
+
+                        {{-- <img class="img-preview img-fluid mb-3 col-sm-5"> --}}
                         <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
                             onchange="previewImage()" name="image" accept="image/*, image/png, image/gif">
                         <h6>Photo Max 5 MB</h6>

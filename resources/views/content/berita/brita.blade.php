@@ -1,6 +1,19 @@
 @extends('layout.content.main')
 @section('container')
-    <!-- ======= Blog Single Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Berita Terbaru</h2>
+
+                <ol>
+                    <li><a style="color: black" href="/">Beranda</a></li>
+                    <li style="color: black">Berita</li>
+                </ol>
+            </div>
+
+        </div>
+    </section>
     <section id="" class="blog">
         <div class="container" data-aos="fade-up">
             <div class="row">
@@ -9,8 +22,8 @@
                     <article class="entry entry-single">
 
                         <div class="entry-img d-flex justify-content-center">
-                            <img src="{{ asset('storage/' . substr($berita->url_foto,6)) }}" alt="" class="img-fluid"
-                                style="border-radius: 5px">
+                            <img src="{{ asset('storage/' . substr($berita->url_foto, 6)) }}" alt=""
+                                class="img-fluid" style="border-radius: 5px">
                         </div>
 
                         <h2 class="entry-title">
@@ -19,7 +32,8 @@
 
                         <div class="entry-meta">
                             <ul>
-                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="">{{ $berita->created_at }}</time></a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a
+                                        href="">{{ $berita->created_at }}</time></a></li>
                             </ul>
                         </div>
 
@@ -38,7 +52,7 @@
                                 <div class="post-item clearfix">
                                     <a href="{{ $berita->slug }}"><img
                                             style=" border-radius: 15px 2px 15px 2px; border-bottom:3px solid #fbb717 !important;"
-                                            src="{{ asset('storage/' . substr($berita->url_foto,6)) }}" alt=""></a>
+                                            src="{{ asset('storage/' . substr($berita->url_foto, 6)) }}" alt=""></a>
                                     <h4><a href="{{ $berita->slug }}">{{ $berita->judul }}</a>
                                     </h4>
                                     <time datetime="2020-01-01"><i class="bi bi-clock"></i> {{ $berita->created_at }}</time>
@@ -51,4 +65,3 @@
         </div>
     </section>
 @endsection
-

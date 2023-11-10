@@ -32,7 +32,7 @@ class PengumumanController extends Controller
         return view('content.pengumuman.pengumumans', [
             'pengumumans' => $pengumumans,
         ]);
-    }
+    } 
 
     /**
      * Show the form for creating a new resource.

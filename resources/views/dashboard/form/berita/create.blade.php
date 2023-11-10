@@ -54,11 +54,25 @@
                     </div>
 
 
-                    <div class="mt-3 mb-3">
+                    {{-- <div class="mt-3 mb-3">
                         <label for="url_foto">Foto</label>
                         <input type="file" class="form-control" id="url_foto" name="url_foto"
                             accept="image/*, image/png, image/gif, application/pdf">
                         <h6>PDF Max 5 MB</h6>
+                    </div> --}}
+
+                    <div class="mt-3 mb-3">
+                        <label for="url_foto">Foto Beranda</label>
+                        <img  class="img-preview img-fluid mb-3 col-sm-5">
+                        <input type="file" class="form-control @error('url_foto') is-invalid @enderror" id="url_foto"
+                            onchange="previewImage()" name="url_foto" accept="image/*, image/png, image/gif,image/sml+svg">
+                        <h6>Photo Max 5 MB</h6>
+
+                        @if ($errors->has('url_foto'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('url_foto') }}</strong>
+                            </span>
+                        @endif
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -67,6 +81,23 @@
             </div>
         </div>
     </div>
+    <script>
+        function previewImage() {
+
+            const image = document.querySelector('#url_foto');
+            const imgPreview = document.querySelector('.img-preview');
+
+            imgPreview.style.display = 'block';
+
+            const oFReader = new FileReader();
+
+            oFReader.readAsDataURL(image.files[0]);
+
+            oFReader.onload = function(oFREvent) {
+                imgPreview.src = oFREvent.target.result;
+            }
+        }
+    </script>
     <script>
         ClassicEditor
             .create(document.querySelector('#body'), {
@@ -96,7 +127,7 @@
             })
             .catch(error => {
                 console.log(error);
-            });
+            }); 
     </script>
 
     <script>

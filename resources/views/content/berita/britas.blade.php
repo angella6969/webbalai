@@ -15,15 +15,13 @@
 
     </div>
 </section>
-<!-- End Blog Section -->
 
-<!-- ======= Blog Section ======= -->
 <section id="blog" class="blog">
     <div class="container" data-aos="fade-up">
         <div class="row">
             <div class="col-lg-8 entries">
                 @php
-                $today = now()->toDateString(); // Mendapatkan tanggal hari ini dalam format Y-m-d
+                $today = now()->toDateString(); 
                 @endphp
 
                 @foreach ($beritas as $berita)

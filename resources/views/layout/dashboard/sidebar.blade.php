@@ -33,10 +33,10 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
             <ul id="sidebarnav">
-                <li class="nav-small-cap">
+                {{-- <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Beranda</span>
-                </li>
+                </li> --}}
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="/dashboard" aria-expanded="false">
                         <span>
@@ -161,7 +161,18 @@
                         <span class="hide-menu">Informasi Publik</span>
                     </a>
                 </li>
-
+                <li class="nav-small-cap">
+                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                    <span class="hide-menu">Media Informasi</span>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/dashboard/media/media-informasi" aria-expanded="false">
+                        <span>
+                            {{-- <i class="ti ti-cards"></i> --}}
+                        </span>
+                        <span class="hide-menu">Infografis</span>
+                    </a>
+                </li>
 
                 {{-- <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"

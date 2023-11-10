@@ -57,12 +57,12 @@
         </li>
         <li class="dropdown"><a href="#"><span>Media</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li class="dropdown"><a href="#"><span>Media Informasi</span> <i
+                <li class="dropdown"><a href="/media/media-informasi/"><span>Media Informasi</span> <i
                             class="bi bi-chevron-right"></i></a>
                     <ul>
                         <li><a href="/under-Maintenance">Majalah</a></li>
                         <li><a href="/under-Maintenance">Leaflet dan Brosur</a></li>
-                        <li><a href="/media/media-informasi/">Infografis</a></li>
+                        <li><a href="#">Infografis</a></li>
                     </ul>
                 <li class="dropdown"><a href="#"><span>Galeri</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
@@ -79,7 +79,7 @@
                     <ul>
                         <li><a href="/layanan/ppid-bbws-so/profil">Profil</a></li>
                         <li><a href="/layanan/ppid-bbws-so/prosedur_pelayanan">Prosedur Pelayanan</a></li>
-                        <li><a href="/under-Maintenance">KALATIRTA</a></li>
+                        <li><a href="/kalatirta-so">KALATIRTA</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Perpustakaan Online</a></li>

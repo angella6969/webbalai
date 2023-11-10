@@ -26,6 +26,19 @@
         .right {
             right: 10px;
         }
+
+        .card-img-top {
+            max-width: 80%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .multiple-items1 .swiper-slide img {
+            height: 100px;
+            width: auto;
+            display: block;
+            margin: 0 auto;
+        }
     </style>
 
 
@@ -91,7 +104,7 @@
                     <img src="{{ asset('images/icon/chevrons-right (1).svg') }}" id="arrow-left" alt=""
                         onclick="moveSlide(-1)">
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
 
@@ -168,64 +181,105 @@
         </div>
     </section>
 
-    <section id="testimonials" class="testimonials">
-        <div class="container">
+    <section id="" class="testimonials">
+        {{-- <div class="container"> --}}
 
-            {{-- <div class="section-title" data-aos="zoom-out">
+        {{-- <div class="section-title" data-aos="zoom-out">
                 <h2>Situs Terkait</h2>
-
+ 
             </div> --}}
 
-            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                <div class="swiper-wrapper">
-                    @foreach ($logoTerkaits as $logoTerkait)
-                        <div class="swiper-slide">
-                            <div class="border:none">
-                                <a href="{{ $logoTerkait->url_situs }}"><img
-                                        src="{{ asset('storage/' . substr($logoTerkait->image, 6)) }}"
-                                        class="card-img-top hover-effect-2 d-flex justify-content-center" alt=""
-                                        style="height: 100px; width: auto;  "></a>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="font-weight-bold text-4 mb-1"><a href=""
-                                        class="link-color-dark align-content-center"
-                                        style="font-size: 14px; color: rgb(11,38,83)">{{ $logoTerkait->name }}</a>
-                                </h3>
-                            </div>
-                        </div><!-- End testimonial item -->
-                    @endforeach
-                </div>
-                <div class="swiper-pagination"></div>
+        <div class="multiple-items1 card-img-top" id="multiple-items1" data-aos="fade-up" data-aos-delay="100">
+            {{-- <div class="swiper-wrapper"> --}}
+            @foreach ($logoTerkaits as $logoTerkait)
+                <div class="swiper-slide">
+                    <div class="border:none">
+                        <a href="{{ $logoTerkait->url_situs }}"><img
+                                src="{{ asset('storage/' . substr($logoTerkait->image, 6)) }}"
+                                class="card-img-top hover-effect-2 d-flex justify-content-center" alt=""></a>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="font-weight-bold text-4 mb-1"><a href=""
+                                class="link-color-dark align-content-center"
+                                style="font-size: 14px; color: rgb(11,38,83)">{{ $logoTerkait->name }}</a>
+                        </h3>
+                    </div>
+                </div><!-- End testimonial item -->
+            @endforeach
+            {{-- </div> --}}
+            <div class="swiper-pagination"></div>
+        </div>
+        {{-- </div> --}}
+    </section>
+
+
+
+
+
+    {{-- <div class="col-8 " style="margin: 10px 0px 10px 0px; color:black;" id="info-container">
+        <!-- Data dari database akan ditampilkan di sini -->
+    </div> --}}
+
+    {{-- <div class="row">
+        <div class="container">
+            <div class="multiple-items1" id="multiple-items1">
+                @foreach ($logoTerkaits as $logoTerkait)
+                    <div class="swiper-slide">
+                        <div class="border:none">
+                            <a href="{{ $logoTerkait->url_situs }}"><img
+                                    src="{{ asset('storage/' . substr($logoTerkait->image, 6)) }}"
+                                    class="card-img-top hover-effect-2 d-flex justify-content-center" alt=""
+                                    style="height: 100px; width: auto;  "></a>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="font-weight-bold text-4 mb-1"><a href=""
+                                    class="link-color-dark align-content-center"
+                                    style="font-size: 14px; color: rgb(11,38,83)">{{ $logoTerkait->name }}</a>
+                            </h3>
+                        </div>
+                    </div><!-- End testimonial item -->
+                @endforeach
             </div>
         </div>
-    </section>
-    <!-- End Testimonials Section -->
+    </div> --}}
+    <!-- Pastikan anda telah memuatkan jQuery terlebih dahulu -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
+    <!-- Pastikan anda telah memuatkan Slick Carousel selepas jQuery -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-    <div class="col-8 " style="margin: 10px 0px 10px 0px; color:black;" id="info-container">
-        <!-- Data dari database akan ditampilkan di sini -->
-    </div>
-
-    {{-- <script>
-        const infoData = @json($infoData); // Mengambil data dari PHP ke JavaScript
-
-        let currentIndex = 0;
-
-        function displayInfo() {
-            const infoContainer = document.getElementById('info-container');
-            const info = infoData[currentIndex];
-            // Membuat tautan dengan data dari database
-            const infoLink = `<a href="${info.url_pengumuman}" style=" color:white;">${info.judul}</a>`;
-            infoContainer.innerHTML = infoLink;
-            currentIndex = (currentIndex + 1) % infoData.length;
-        }
-
-        // Tampilkan data pertama saat halaman dimuat
-        displayInfo();
-
-        // Mengganti data setiap beberapa detik
-        setInterval(displayInfo, 4000); // Ubah angka ini sesuai dengan interval yang Anda inginkan (dalam milidetik).
-    </script> --}}
+    <!-- Skrip Anda -->
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            $('.multiple-items1').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplay: true,
+                arrows: false,
+                autoplaySpeed: 1000,
+                responsive: [{
+                        breakpoint: 1024, // Jumlah pixel lebar layar sebelum slider berubah menjadi tiga item
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            infinite: true,
+                        }
+                    },
+                    {
+                        breakpoint: 768, // Jumlah pixel lebar layar sebelum slider berubah menjadi dua item
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                    // Tambahkan opsi responsif lainnya sesuai kebutuhan
+                ]
+            });
+        });
+    </script>
 
     <script>
         const infoData = @json($infoData); // Mengambil data dari PHP ke JavaScript

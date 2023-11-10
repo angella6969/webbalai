@@ -93,8 +93,8 @@
                                     class="image-element background-element "
                                     src="{{ asset('images\image\kalatirta\SOP Kalatirta.jpg') }}" alt=""></div>
 
-                            <div class="iframe-container image-container">
-                                <iframe class="image-element background-element hidden" data-index="1"
+                            <div class="iframe-container">
+                                <iframe class="image-element background-element" data-index="1"
                                     src="https://www.youtube.com/embed/YSJTEl0VIcQ" frameborder="0"
                                     allowfullscreen></iframe>
                             </div>

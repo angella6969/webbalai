@@ -25,7 +25,6 @@ class HomeController extends Controller
         $image = Image::all();
         $berita = Berita::all();
         $infoData = Pengumuman::all();
-        // $infrastruktur = Infrastruktur::all();
         $logoTerkait = Situsterkait::all();
 
         $bendungans = Bendungan::all();

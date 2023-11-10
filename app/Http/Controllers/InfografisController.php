@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Infografis;
 use App\Http\Requests\StoreInfografisRequest;
 use App\Http\Requests\UpdateInfografisRequest;
+use Illuminate\Support\Facades\DB;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Http\Request;
 
 class InfografisController extends Controller
 {
@@ -13,7 +16,7 @@ class InfografisController extends Controller
      */
     public function index()
     {
-        return view('dashboard.form.infrastruktur.bendungan.index', [
+        return view('dashboard.form.media_informasi.index', [
             'Infografiss' => Infografis::latest()->Get(),
         ]);
     }
@@ -30,7 +33,7 @@ class InfografisController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.form.media_informasi.create', []);
     }
 
     /**
@@ -38,15 +41,45 @@ class InfografisController extends Controller
      */
     public function store(StoreInfografisRequest $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => ['required'],
+            'slug' => ['required'],
+            'jenis' => ['required'],
+            'url_foto1' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,image/svg+xml', 'nullable'],
+            'url_foto2' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,image/svg+xml', 'nullable'],
+            'url_foto3' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,image/svg+xml', 'nullable'],
+        ]);
+        // dd($validatedData);
+        DB::beginTransaction();
+        try {
+            if ($request->hasFile('url_foto1')) {
+                $petaPdfPath = $request->file('url_foto1')->store('public/images/media-informasi');
+                $validatedData['url_foto1'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto2')) {
+                $petaPdfPath = $request->file('url_foto2')->store('public/images/media-informasi');
+                $validatedData['url_foto2'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto3')) {
+                $petaPdfPath = $request->file('url_foto3')->store('public/images/media-informasi');
+                $validatedData['url_foto3'] = $petaPdfPath;
+            }
+            Infografis::create($validatedData);
+            DB::commit();
+            return redirect('/dashboard/media/media-informasi')->with('success', 'Data berhasil disimpan.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Infografis $infografis, string $slug)
+    public function show(Infografis $infografis, string $jenis, $slug)
     {
-        $Infografis = Infografis::where('slug', $slug)->first();
+        $Infografis = Infografis::where('slug', $slug)->where('jenis', $jenis)->firstOrFail();
+        // dd($Infografis);
 
         if (!$Infografis) {
             abort(404);
@@ -54,7 +87,6 @@ class InfografisController extends Controller
 
         return view('content.media.media', [
             'Infografis' => $Infografis,
-            // 'beritas' => $beritas
         ]);
     }
 
@@ -64,7 +96,7 @@ class InfografisController extends Controller
      */
     public function edit(Infografis $infografis)
     {
-        //
+        dd("edit");
     }
 
     /**
@@ -81,5 +113,10 @@ class InfografisController extends Controller
     public function destroy(Infografis $infografis)
     {
         //
+    }
+    public function checkSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Bendungan::class, 'slug', $request->nama);
+        return response()->json(['slug' => $slug]);
     }
 }

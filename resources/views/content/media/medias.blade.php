@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> 
     <section id="" class="blog">
         <div class="container" data-aos="fade-up">
             <div class="row">
@@ -32,6 +32,7 @@
                             </a>
                             <h1 class="entry-title">
                                 {{ $media->nama }}
+                                <h6>{{ $media->jenis }}</h6>
                             </h1>
 
                             <div class="entry-meta">

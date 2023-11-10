@@ -59,7 +59,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-4">Foto Beranda</h5>
-                <form action="/dashboard/foto-beranda">
+                {{-- <form action="/dashboard/foto-beranda">
                     <div class="row">
                         <div class="col-12 col-sm-12">
                             <div class="input-group mb-3">
@@ -70,7 +70,7 @@
                             </div>
                         </div>
                     </div>
-                </form>
+                </form> --}}
                 <div class="mt-2 mb-2">
                     <a href="/dashboard/foto-beranda/create" class="btn btn-info">Tambah Foto</a>
                 </div>
@@ -87,28 +87,22 @@
                             @foreach ($images as $image)
                                 <tr style="text-align: center;">
                                     <td> {{ $loop->iteration }}</td>
-                                    <td> <img style="height: 150px" src={{ asset('storage/' .substr($image->image,6)) }} alt=""></td>
-                                    {{-- <td> {{ $images->jenis }}</td> --}}
-
-                                    {{-- <td>
-                                        <button class="btn badge bg-info show-DI-modal" data-id="{{ $berita->id }}"
-                                            data-judul="{{ $berita->judul }}"
-                                            data-url_berita="{{ $berita->url_berita }}">
-                                            <span data-feather="eye"></span>
-                                        </button>
-                                        <a href="/dashboard/berita/{{ $berita->id }}/edit"
+                                    <td> <img style="height: 150px" src={{ asset('storage/' . substr($image->image, 6)) }}
+                                            alt=""></td>
+                                    <td>
+                                        <a href="/dashboard/foto-beranda/{{ $image->id }}/edit"
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
 
-                                        <form action="/dashboard/berita/{{ $berita->id }}" class="d-inline "
+                                        <form action="/dashboard/foto-beranda/{{ $image->id }}" class="d-inline "
                                             method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn badge bg-danger show-DI-modal "
-                                                onclick="return confirm('Yakin Ingin Menghapus Data yang berhubungan dengan? {{ $berita->judul }}')"><span
+                                                onclick="return confirm('Yakin Ingin Menghapus Data yang berhubungan dengan? {{ $image->judul }}')"><span
                                                     data-feather="file-minus"></span> </button>
                                         </form>
-                                    </td> --}}
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

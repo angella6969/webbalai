@@ -158,7 +158,7 @@
                     <h3>Portal Layanan Publik Terpadu BBWS Serayu Opak</h3>
                     <a href="#layanan" class="btn-to-main">Akses Layanan</a>
                 </div>
-                <div class="img-fluid"> 
+                <div class="img-fluid">
                     <img src="{{ asset('kalatirta') }}/images/kal-logo3.png" class="animated-pic" alt="">
                 </div>
             </div>
@@ -247,7 +247,7 @@
                         <p>Permohonan Rekomendasi Teknis</p>
                     </div>
                     <div class="col icon-box">
-                        <a href="{{ url('formdata') }}">
+                        <a href="#">
                             <svg class="icon">
                                 <use xlink:href="#data"></use>
                             </svg>

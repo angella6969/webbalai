@@ -1,6 +1,6 @@
 @extends('layout.content.main')
 @section('container')
-    <section 
+    <section
         style="background-color:rgba(3,15,107,0.2) ;background-size: cover; background-position: center center; background-repeat: no-repeat;">
         <div class="container"><br>
             <div class="row align-items-center ">
@@ -24,11 +24,12 @@
                 @foreach ($bendungs as $bendung)
                     <div class="col-lg-4 entries" style="margin-top:20px">
                         <article class="entry entry-single">
-                           <a href="/informasi-publik/infrastruktur/bendungs/{{$bendung->slug}}"> <div class="entry-img d-flex justify-content-center">
-                            <img src="{{ asset('storage/' . substr($bendung->url_foto1, 6)) }}" alt=""
-                                class="img-fluid" style="border-radius: 5px">
-                        </div>
-</a>
+                            <a href="/informasi-publik/infrastruktur/bendungs/{{ $bendung->slug }}">
+                                <div class="entry-img d-flex justify-content-center">
+                                    <img src="{{ asset('storage/' . substr($bendung->url_foto1, 6)) }}" alt=""
+                                        class="img-fluid" style="border-radius: 5px">
+                                </div>
+                            </a>
                             <h1 class="entry-title">
                                 {{ $bendung->nama }}
                             </h1>
