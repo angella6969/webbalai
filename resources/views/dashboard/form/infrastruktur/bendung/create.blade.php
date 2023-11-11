@@ -6,24 +6,14 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-3">Infrastruktur Bendung</h5>
-            <form method="post" action="/dashboard/infrastruktur/bendung" enctype="multipart/form-data">
+            <form method="post" action="/dashboard/infrastruktur/bendungs" enctype="multipart/form-data">
                 @csrf
 
                 <x-input nama="nama" judul="Nama" nilai="" />
                 <x-slug judul="nama" nilai="" />
 
                 <x-input nama="lokasi" judul="Lokasi" nilai="" />
-                <x-input nama="wilaya_sungai" judul="Wilaya Sungai" nilai="" />
-                <x-input nama="daerah_sliran_sungai" judul="daerah_sliran_sungai " nilai="" />
-                <x-input nama="tahun_mulai_pembangunan" judul="tahun_mulai_pembangunan " nilai="" />
-                <x-input nama="tahun_selesai_pembangunan" judul="tahun_selesai_pembangunan " nilai="" />
-                <x-input nama="tipe_bendungan" judul="tipe_bendungan " nilai="" />
-                <x-input nama="tinggi_dasar_sungai" judul="tinggi_dasar_sungai " nilai="" />
-                <x-input nama="panjang_puncak" judul="panjang_puncak " nilai="" />
-                <x-input nama="lebar_puncak" judul="lebar_puncak " nilai="" />
-                <x-input nama="elevasi_puncak" judul="elevasi_puncak " nilai="" />
-                <x-input nama="volume_tampung_normal" judul="volume_tampung_normal " nilai="" />
-                <x-input nama="volume_tampung_total" judul="volume_tampung_total " nilai="" />
+                <x-input nama="tahun_pembangunan" judul="tahun_mulai_pembangunan " nilai="" />
 
                 <x-ck body="body" nilai="" />
 

@@ -162,8 +162,11 @@ Route::middleware(['auth'])->group(function () {
 
 
     Route::get('/dashboard/infrastruktur/embungs/checkSlug', [EmbungController::class, 'checkSlug']);
-    Route::get('/dashboard/infrastruktur/embungs', [EmbungController::class, 'index']);
-    Route::get('/dashboard/infrastruktur/embungs/create', [EmbungController::class, 'create']);
+    // Route::get('/dashboard/infrastruktur/embungs', [EmbungController::class, 'index']);
+    // Route::get('/dashboard/infrastruktur/embungs/create', [EmbungController::class, 'create']);
+
+    Route::resource('/dashboard/infrastruktur/embungs', EmbungController::class)->except(['show']);
+
 
 
 

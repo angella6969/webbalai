@@ -43,7 +43,6 @@ class BendunganController extends Controller
      */
     public function store(StoreBendunganRequest $request)
     {
-        // dd($request->all());
         $validatedData = $request->validate([
             "nama" => ['required'],
             "lokasi" => ['required'],
@@ -212,6 +211,20 @@ class BendunganController extends Controller
     {
         $bendungan = Bendungan::findOrFail($id);
         try {
+
+            if ($bendungan->url_foto1) {
+                Storage::delete($bendungan->url_foto1);
+            }
+            if ($bendungan->url_foto2) {
+                Storage::delete($bendungan->url_foto2);
+            }
+            if ($bendungan->url_foto3) {
+                Storage::delete($bendungan->url_foto3);
+            }
+            if ($bendungan->url_foto4) {
+                Storage::delete($bendungan->url_foto4);
+            }
+
             $bendungan->delete();
             return redirect()->back()->with('success', 'Berhasil Menghapus Data');
         } catch (\Exception $e) {

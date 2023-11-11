@@ -110,7 +110,7 @@ class BeritaController extends Controller
         $berita = Berita::findOrFail($id);
         $rules = [
             'judul' => ['required'],
-            // 'slug' => ['required', 'Unique:Beritas'],
+            // 'slug' => ['required', 'Unique:Beritas'], 
             'body' => ['required'],
             'url_foto' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif'],
         ];

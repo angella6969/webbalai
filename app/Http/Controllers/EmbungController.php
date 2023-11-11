@@ -7,6 +7,9 @@ use App\Http\Requests\StoreEmbungRequest;
 use App\Http\Requests\UpdateEmbungRequest;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+
 
 class EmbungController extends Controller
 {
@@ -42,18 +45,61 @@ class EmbungController extends Controller
      */
     public function store(StoreEmbungRequest $request)
     {
-        //
+        $validatedData = $request->validate([
+            "nama" => ['required'],
+            "lokasi" => ['required'],
+            "volume_tampung" => ['required'],
+            "luas_genangan" => ['required'],
+            "tahun_pembangunan" => ['required'],
+            "volume_tampung" => ['required'],
+            "body" => ['required'],
+            'slug' => ['required', 'unique:Embungs'],
+            'url_foto1' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto2' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto3' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto4' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+        ]);
+
+
+        DB::beginTransaction();
+        try {
+
+            if ($request->hasFile('url_foto1')) {
+                $petaPdfPath = $request->file('url_foto1')->store('public/infrastruktur/images/embung');
+                $validatedData['url_foto1'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto2')) {
+                $petaPdfPath = $request->file('url_foto2')->store('public/infrastruktur/images/embung');
+                $validatedData['url_foto2'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto3')) {
+                $petaPdfPath = $request->file('url_foto3')->store('public/infrastruktur/images/embung');
+                $validatedData['url_foto3'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto4')) {
+                $petaPdfPath = $request->file('url_foto4')->store('public/infrastruktur/images/embung');
+                $validatedData['url_foto4'] = $petaPdfPath;
+            }
+
+            Embung::create($validatedData);
+
+            DB::commit();
+            return redirect('/dashboard/infrastruktur/embungs')->with('success', 'Data berhasil disimpan.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Embung $embung,string $slug)
+    public function show(Embung $embung, string $slug)
     {
         // dd('awd');
         $embung = Embung::where('slug', $slug)->first();
 
-        if (!$embung) { 
+        if (!$embung) {
             abort(404);
         }
 
@@ -65,17 +111,81 @@ class EmbungController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Embung $embung)
+    public function edit(string $id)
     {
-        //
+        $embung = Embung::findOrFail($id);
+        return view('dashboard.form.infrastruktur.embung.edit', [
+            'embung' => $embung
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateEmbungRequest $request, Embung $embung)
+    public function update(UpdateEmbungRequest $request, string $id)
     {
-        //
+        $embung = Embung::findOrFail($id);
+
+        $rules = [
+            "nama" => ['required'],
+            "lokasi" => ['required'],
+            "volume_tampung" => ['required'],
+            "luas_genangan" => ['required'],
+            "tahun_pembangunan" => ['required'],
+            "volume_tampung" => ['required'],
+            "body" => ['required'],
+            'url_foto1' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto2' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto3' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto4' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+        ];
+
+        if ($request->slug != $embung->slug) {
+            $rules['slug'] = ['required', 'Unique:Embungs'];
+        }
+
+        $validatedData = $request->validate($rules);
+        DB::beginTransaction();
+        try {
+
+            if ($request->hasFile('url_foto1')) {
+                if ($embung->url_foto1 != null) {
+                    Storage::delete($embung->url_foto1);
+                }
+                $petaPdfPath = $request->file('url_foto1')->store('public/infrastruktur/images/embung');
+                $validatedData['url_foto1'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto2')) {
+                if ($embung->url_foto1 != null) {
+                    Storage::delete($embung->url_foto1);
+                }
+                $petaPdfPath = $request->file('url_foto2')->store('public/infrastruktur/images/embung');
+                $validatedData['url_foto2'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto3')) {
+                if ($embung->url_foto1 != null) {
+                    Storage::delete($embung->url_foto1);
+                }
+                $petaPdfPath = $request->file('url_foto3')->store('public/infrastruktur/images/embung');
+                $validatedData['url_foto3'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto4')) {
+                if ($embung->url_foto1 != null) {
+                    Storage::delete($embung->url_foto1);
+                }
+                $petaPdfPath = $request->file('url_foto4')->store('public/infrastruktur/images/embung');
+                $validatedData['url_foto4'] = $petaPdfPath;
+            }
+
+            Embung::where('id', $id)->update($validatedData);
+
+            DB::commit();
+
+            return redirect('/dashboard/infrastruktur/embungs')->with('success', 'Data berhasil disimpan.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     /**
