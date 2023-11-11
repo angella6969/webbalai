@@ -1,14 +1,16 @@
 @extends('layout.dashboard.main')
 @section('container')
-{{-- <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script> --}}
+<script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
 <link rel="stylesheet" href="{{ asset('css\myCss.css') }}">
 
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-3">Infrastruktur bendungan</h5>
-            <form method="post" action="/dashboard/infrastruktur/bendungans" enctype="multipart/form-data">
+            <form method="post" action="/dashboard/infrastruktur/bendungans/{{ $bendungan->id }}"
+                enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
 
                 <x-input nama="nama" judul="Nama" nilai="{{ $bendungan->nama }}" />
                 <x-slug judul="nama" nilai="{{ $bendungan->slug }}" />
@@ -32,7 +34,12 @@
                 <x-input nama="volume_tampung_total" judul="volume_tampung_total "
                     nilai="{{ $bendungan->volume_tampung_total }}" />
 
-                <x-ck body="body" nilai="" />
+                <div class="mb-3">
+                    <div style="z-index: 999">
+                        <textarea id="body" name="body" style="width: 100px;"
+                            hidden>{{ old('body', $bendungan->body) }}</textarea>
+                    </div>
+                </div>
 
                 <x-garis />
 
@@ -48,5 +55,35 @@
 </div>
 
 <x-notif />
-
+<script>
+    ClassicEditor
+            .create(document.querySelector('#body'), {
+                toolbar: ['heading', '|', 'bold', 'italic', 'numberedList', 'insertTable', 'blockQuote', 'redo', '|',
+                    'undo'
+                ],
+                heading: {
+                    options: [{
+                            model: 'paragraph',
+                            title: 'Paragraph',
+                            class: 'ck-heading_paragraph'
+                        },
+                        {
+                            model: 'heading1',
+                            view: 'h1',
+                            title: 'Heading 1',
+                            class: 'ck-heading_heading1'
+                        },
+                        {
+                            model: 'heading2',
+                            view: 'h2',
+                            title: 'Heading 2',
+                            class: 'ck-heading_heading2'
+                        }
+                    ]
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
+</script>
 @endsection

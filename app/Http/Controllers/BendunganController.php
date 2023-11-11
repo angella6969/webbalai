@@ -9,8 +9,9 @@ use App\Models\Bendung;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
-class BendunganController extends Controller 
+class BendunganController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -60,10 +61,10 @@ class BendunganController extends Controller
             // "irigasi" => ['required'],
             "body" => ['required'],
             'slug' => ['required', 'unique:Bendungans'],
-            // 'url_foto1' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            // 'url_foto2' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            // 'url_foto3' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            // 'url_foto4' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto1' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto2' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto3' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto4' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
         ]);
         DB::beginTransaction();
         try {
@@ -84,7 +85,7 @@ class BendunganController extends Controller
                 $petaPdfPath = $request->file('url_foto4')->store('public/infrastruktur/images/bendungan');
                 $validatedData['url_foto4'] = $petaPdfPath;
             }
-            
+
             Bendungan::create($validatedData);
             DB::commit();
             // dd( $validatedData);
@@ -103,7 +104,7 @@ class BendunganController extends Controller
         // dd('show bendungan');
         $bendungan = Bendungan::where('slug', $slug)->first();
 
-        if (!$bendungan) { 
+        if (!$bendungan) {
             abort(404);
         }
 
@@ -122,15 +123,86 @@ class BendunganController extends Controller
         return view('dashboard.form.infrastruktur.bendungan.edit', [
             "bendungan" =>  $bendungan
         ]);
-
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBendunganRequest $request, Bendungan $bendungan)
+    public function update(UpdateBendunganRequest $request, string $id)
     {
-        //
+
+        $bendungan = Bendungan::findOrFail($id);
+        // dd($bendungan);
+        $rules = [
+            "nama" => ['required'],
+            "lokasi" => ['required'],
+            "wilaya_sungai" => ['required'],
+            "daerah_sliran_sungai" => ['required'],
+            "tahun_mulai_pembangunan" => ['required'],
+            "tahun_selesai_pembangunan" => ['required'],
+            "tipe_bendungan" => ['required'],
+            "tinggi_dasar_sungai" => ['required'],
+            "panjang_puncak" => ['required'],
+            "lebar_puncak" => ['required'],
+            "elevasi_puncak" => ['required'],
+            "volume_tampung_normal" => ['required'],
+            "volume_tampung_total" => ['required'],
+            "body" => ['required'],
+            'url_foto1' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto2' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto3' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto4' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+        ];
+
+
+        if ($request->slug != $bendungan->slug) {
+            $rules['slug'] = ['required', 'Unique:Bendungans'];
+        }
+        $validatedData = $request->validate($rules);
+
+        // dd($validatedData);
+
+        DB::beginTransaction();
+        try {
+
+            if ($request->hasFile('url_foto1')) {
+                if ($bendungan->url_foto1 != null) {
+                    Storage::delete($bendungan->url_foto1);
+                }
+                $petaPdfPath = $request->file('url_foto1')->store('public/infrastruktur/images/bendungan');
+                $validatedData['url_foto1'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto2')) {
+                if ($bendungan->url_foto2 != null) {
+                    Storage::delete($bendungan->url_foto2);
+                }
+                $petaPdfPath = $request->file('url_foto2')->store('public/infrastruktur/images/bendungan');
+                $validatedData['url_foto2'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto3')) {
+                if ($bendungan->url_foto3 != null) {
+                    Storage::delete($bendungan->url_foto3);
+                }
+                $petaPdfPath = $request->file('url_foto3')->store('public/infrastruktur/images/bendungan');
+                $validatedData['url_foto3'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto4')) {
+                if ($bendungan->url_foto4 != null) {
+                    Storage::delete($bendungan->url_foto4);
+                }
+                $petaPdfPath = $request->file('url_foto4')->store('public/infrastruktur/images/bendungan');
+                $validatedData['url_foto4'] = $petaPdfPath;
+            }
+
+            Bendungan::where('id', $id)->update($validatedData);
+
+            DB::commit();
+            // dd($validatedData);
+            return redirect('/dashboard/infrastruktur/bendungans')->with('success', 'Data berhasil disimpan.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     /**

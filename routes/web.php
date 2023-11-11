@@ -149,10 +149,13 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/dashboard/infrastruktur/bendungans', BendunganController::class)->except(['show']);
 
 
-
-    Route::get('/dashboard/infrastruktur/bendungs/create', [BendungController::class, 'create']);
     Route::get('/dashboard/infrastruktur/bendungs/checkSlug', [BendungController::class, 'checkSlug']);
-    Route::get('/dashboard/infrastruktur/bendungs', [BendungController::class, 'index']);
+
+    // Route::get('/dashboard/infrastruktur/bendungs/create', [BendungController::class, 'create']);
+    // Route::get('/dashboard/infrastruktur/bendungs', [BendungController::class, 'index']);
+
+    Route::resource('/dashboard/infrastruktur/bendungs', BendungController::class)->except(['show']);
+
 
     Route::resource('/dashboard/pengumuman', PengumumanController::class);
 

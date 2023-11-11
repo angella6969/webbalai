@@ -122,7 +122,7 @@ class BeritaController extends Controller
         $validatedData = $request->validate($rules);
 
         DB::beginTransaction();
-        try {
+        try { 
 
             if ($request->hasFile('url_foto')) {
                 if ($berita->url_foto != null) {
