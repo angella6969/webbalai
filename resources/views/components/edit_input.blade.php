@@ -2,7 +2,7 @@
     <label for="{{ $nama }}" class="form-label">{{ $judul }}</label>
     <div class="input-group">
         <input type="text" class="form-control @error($nama) is-invalid @enderror" id="{{ $nama }}" name="{{ $nama }}"
-            placeholder="{{ $judul }}" value="{{ old($nama, $nilai) }}" required>
+            placeholder="{{ $judul }}" value="{{ old($nama, $value) }}" required>
 
         @error($nama)
         <span class="invalid-feedback" role="alert">

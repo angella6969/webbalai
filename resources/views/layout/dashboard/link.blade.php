@@ -9,3 +9,4 @@
 <link rel="stylesheet" href="{{ asset('src') }}/assets/css/styles.min.css" />
 
 <link href="https://cdn.jsdelivr.net/npm/selectize@0.12.6/dist/css/selectize.min.css" rel="stylesheet">
+{{-- <link rel="stylesheet" href="{{ asset('css/myCss.css') }}"> --}}

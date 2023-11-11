@@ -103,23 +103,20 @@
                             <td> {{ $bendungan->nama }}</td>
                             <td> {{ $bendungan->jenis }}</td>
 
-                            {{-- <td>
-                                <button class="btn badge bg-info show-DI-modal" data-id="{{ $berita->id }}"
-                                    data-judul="{{ $berita->judul }}" data-url_berita="{{ $berita->url_berita }}">
-                                    <span data-feather="eye"></span>
-                                </button>
-                                <a href="/dashboard/berita/{{ $berita->id }}/edit" class="bg badge bg-warning"><span
-                                        data-feather="edit">
+                            <td>
+                                <a href="/dashboard/infrastruktur/bendungans/{{ $bendungan->id }}/edit"
+                                    class="bg badge bg-warning"><span data-feather="edit">
                                     </span></a>
 
-                                <form action="/dashboard/berita/{{ $berita->id }}" class="d-inline " method="POST">
+                                <form action="/dashboard/infrastruktur/bendungans/{{ $bendungan->id }}" class="d-inline "
+                                    method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn badge bg-danger show-DI-modal "
-                                        onclick="return confirm('Yakin Ingin Menghapus Data yang berhubungan dengan? {{ $berita->judul }}')"><span
+                                        onclick="return confirm('Yakin Ingin Menghapus Data yang berhubungan dengan? {{ $bendungan->judul }}')"><span
                                             data-feather="file-minus"></span> </button>
                                 </form>
-                            </td> --}}
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

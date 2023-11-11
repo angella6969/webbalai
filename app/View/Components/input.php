@@ -11,9 +11,13 @@ class input extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $nama, $judul, $nilai;
+
+    public function __construct($nama, $judul, $nilai)
     {
-        //
+        $this->nama = $nama;
+        $this->judul = $judul;
+        $this->nilai = $nilai;
     }
 
     /**

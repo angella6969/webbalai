@@ -45,6 +45,8 @@ class BeritaController extends Controller
      */
     public function store(StoreBeritaRequest $request)
     {
+        // dd($request);
+
         $validatedData = $request->validate([
             'judul' => ['required'],
             'slug' => ['required', 'Unique:Beritas'],

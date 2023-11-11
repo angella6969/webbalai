@@ -6,16 +6,17 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ck extends Component
+class edit_input extends Component
 {
     /**
      * Create a new component instance.
      */
-    public $body, $nilai;
-    public function __construct($body, $nilai)
+    public $nama, $judul, $value;
+    public function __construct($nama, $judul,$value)
     {
-        $this->body = $body;
-        $this->nilai = $nilai;
+        $this->nama = $nama;
+        $this->judul = $judul;
+        $this->value = $value;
     }
 
     /**
@@ -23,6 +24,6 @@ class ck extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.ck');
+        return view('components.edit_input');
     }
 }

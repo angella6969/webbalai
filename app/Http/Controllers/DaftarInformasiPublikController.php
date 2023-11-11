@@ -41,6 +41,8 @@ class DaftarInformasiPublikController extends Controller
      */
     public function store(StoreDaftar_informasi_publikRequest $request)
     {
+        dd($request);
+
         $validatedData = $request->validate([
             'nama' => ['required'],
             'jenis' => ['required'],

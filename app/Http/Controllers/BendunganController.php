@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bendungan;
 use App\Http\Requests\StoreBendunganRequest;
 use App\Http\Requests\UpdateBendunganRequest;
+use App\Models\Bendung;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -41,7 +42,7 @@ class BendunganController extends Controller
      */
     public function store(StoreBendunganRequest $request)
     {
-        // dd($request->input());
+        // dd($request->all());
         $validatedData = $request->validate([
             "nama" => ['required'],
             "lokasi" => ['required'],
@@ -56,15 +57,14 @@ class BendunganController extends Controller
             "elevasi_puncak" => ['required'],
             "volume_tampung_normal" => ['required'],
             "volume_tampung_total" => ['required'],
-            "irigasi" => ['required'],
+            // "irigasi" => ['required'],
             "body" => ['required'],
             'slug' => ['required', 'unique:Bendungans'],
-            'url_foto1' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto2' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto3' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto4' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            // 'url_foto1' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            // 'url_foto2' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            // 'url_foto3' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            // 'url_foto4' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
         ]);
-        dd($validatedData['body']);
         DB::beginTransaction();
         try {
 
@@ -84,10 +84,11 @@ class BendunganController extends Controller
                 $petaPdfPath = $request->file('url_foto4')->store('public/infrastruktur/images/bendungan');
                 $validatedData['url_foto4'] = $petaPdfPath;
             }
-
+            
             Bendungan::create($validatedData);
             DB::commit();
-            return redirect('/dashboard/infrastruktur/bendungan')->with('success', 'Data berhasil disimpan.');
+            // dd( $validatedData);
+            return redirect('/dashboard/infrastruktur/bendungans')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -115,9 +116,13 @@ class BendunganController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Bendungan $bendungan)
+    public function edit(string $id)
     {
-        //
+        $bendungan = Bendungan::findOrfail($id);
+        return view('dashboard.form.infrastruktur.bendungan.edit', [
+            "bendungan" =>  $bendungan
+        ]);
+
     }
 
     /**

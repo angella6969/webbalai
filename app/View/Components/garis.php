@@ -6,16 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ck extends Component
+class garis extends Component
 {
     /**
      * Create a new component instance.
      */
-    public $body, $nilai;
-    public function __construct($body, $nilai)
+    public function __construct()
     {
-        $this->body = $body;
-        $this->nilai = $nilai;
+        //
     }
 
     /**
@@ -23,6 +21,6 @@ class ck extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.ck');
+        return view('components.garis');
     }
 }

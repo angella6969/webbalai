@@ -6,15 +6,16 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ck extends Component
+class i_img extends Component
 {
     /**
      * Create a new component instance.
      */
-    public $body, $nilai;
-    public function __construct($body, $nilai)
+    public $nama, $judul, $nilai;
+    public function __construct($nama, $judul, $nilai)
     {
-        $this->body = $body;
+        $this->nama = $nama;
+        $this->judul = $judul;
         $this->nilai = $nilai;
     }
 
@@ -23,6 +24,6 @@ class ck extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.ck');
+        return view('components.i_img');
     }
 }
