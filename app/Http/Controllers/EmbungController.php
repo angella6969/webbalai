@@ -191,9 +191,29 @@ class EmbungController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Embung $embung)
+    public function destroy(string $id)
     {
-        //
+        $embung = Embung::findOrFail($id);
+        try {
+
+            if ($embung->url_foto1) {
+                Storage::delete($embung->url_foto1);
+            }
+            if ($embung->url_foto2) {
+                Storage::delete($embung->url_foto2);
+            }
+            if ($embung->url_foto3) {
+                Storage::delete($embung->url_foto3);
+            }
+            if ($embung->url_foto4) {
+                Storage::delete($embung->url_foto4);
+            }
+
+            $embung->delete();
+            return redirect()->back()->with('success', 'Berhasil Menghapus Data');
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
     }
     public function checkSlug(Request $request)
     {

@@ -110,7 +110,7 @@
                                     class="bg badge bg-warning"><span data-feather="edit">
                                     </span></a>
 
-                                <form action="/dashboard/infrastruktur/embungs{{ $embung->id }}" class="d-inline "
+                                <form action="/dashboard/infrastruktur/embungs/{{ $embung->id }}" class="d-inline "
                                     method="POST">
                                     @csrf
                                     @method('DELETE')
