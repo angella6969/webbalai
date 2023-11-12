@@ -125,7 +125,6 @@ Route::middleware(['auth'])->group(function () {
     // Route::post('/dashboard/beritas/{id}', [BeritaController::class, 'update']);
     // Route::delete('/dashboard/beritas/{id}', [BeritaController::class, 'destroy']);
 
-    Route::resource('/dashboard/beritas', BeritaController::class)->except(['show']);
 
 
 
@@ -133,8 +132,8 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-    Route::get('/dashboard/infrastruktur/index', [InfrastrukturController::class, 'index']);
-    Route::get('/dashboard/infrastruktur/create', [InfrastrukturController::class, 'create']);
+    // Route::get('/dashboard/infrastruktur/index', [InfrastrukturController::class, 'index']);
+    // Route::get('/dashboard/infrastruktur/create', [InfrastrukturController::class, 'create']);
 
     // Route::get('/dashboard/gambar-depan', [ImageController::class, 'index']);
 
@@ -146,7 +145,6 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/dashboard/infrastruktur/bendungans', [BendunganController::class, 'index']);
 
 
-    Route::resource('/dashboard/infrastruktur/bendungans', BendunganController::class)->except(['show']);
 
 
     Route::get('/dashboard/infrastruktur/bendungs/checkSlug', [BendungController::class, 'checkSlug']);
@@ -154,10 +152,8 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/dashboard/infrastruktur/bendungs/create', [BendungController::class, 'create']);
     // Route::get('/dashboard/infrastruktur/bendungs', [BendungController::class, 'index']);
 
-    Route::resource('/dashboard/infrastruktur/bendungs', BendungController::class)->except(['show']);
 
 
-    Route::resource('/dashboard/pengumuman', PengumumanController::class);
 
 
 
@@ -165,7 +161,6 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/dashboard/infrastruktur/embungs', [EmbungController::class, 'index']);
     // Route::get('/dashboard/infrastruktur/embungs/create', [EmbungController::class, 'create']);
 
-    Route::resource('/dashboard/infrastruktur/embungs', EmbungController::class)->except(['show']);
 
 
 
@@ -183,7 +178,6 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/dashboard/daftar-informasi-publik/create', [DaftarInformasiPublikController::class, 'create']);
     // Route::post('/dashboard/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'store']);
 
-    Route::resource('/dashboard/daftar-informasi-publik', DaftarInformasiPublikController::class)->except(['show']);
 
 
 
@@ -194,14 +188,12 @@ Route::middleware(['auth'])->group(function () {
     // Route::post('/dashboard/foto-beranda/{id}', [ImageController::class, 'update']);
     // Route::delete('/dashboard/foto-beranda/{id}', [ImageController::class, 'destroy']);
 
-    Route::resource('/dashboard/foto-beranda', ImageController::class)->except(['show']);
 
 
     // Route::get('/dashboard/situs-terkait/create', [SitusterkaitController::class, 'create']);
     // Route::get('/dashboard/situs-terkait', [SitusterkaitController::class, 'index']);
     // Route::post('/dashboard/situs-terkait', [SitusterkaitController::class, 'store']);
 
-    Route::resource('/dashboard/situs-terkait', SitusterkaitController::class)->except(['show']);
 
 
 
@@ -211,5 +203,18 @@ Route::middleware(['auth'])->group(function () {
     // Route::get('/dashboard/media/media-informasi/create', [InfografisController::class, 'create']);
     // Route::delete('/dashboard/media/media-informasi/{id}', [InfografisController::class, 'destroy']);
 
-    Route::resource('/dashboard/media/media-informasi/', InfografisController::class)->except(['show']);
+    Route::middleware(['AdminSisda'])->group(function () {
+        Route::resource('/dashboard/infrastruktur/embungs', EmbungController::class)->except(['show']);
+        Route::resource('/dashboard/situs-terkait', SitusterkaitController::class)->except(['show']);
+        Route::resource('/dashboard/infrastruktur/bendungs', BendungController::class)->except(['show']);
+        Route::resource('/dashboard/infrastruktur/bendungans', BendunganController::class)->except(['show']);
+    });
+
+    Route::middleware(['Admin'])->group(function () {
+        Route::resource('/dashboard/foto-beranda', ImageController::class)->except(['show']);
+        Route::resource('/dashboard/daftar-informasi-publik', DaftarInformasiPublikController::class)->except(['show']);
+        Route::resource('/dashboard/beritas', BeritaController::class)->except(['show']);
+        Route::resource('/dashboard/pengumuman', PengumumanController::class);
+        Route::resource('/dashboard/media/media-informasi/', InfografisController::class)->except(['show']);
+    });
 });

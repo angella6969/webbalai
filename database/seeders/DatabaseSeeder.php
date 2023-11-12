@@ -24,11 +24,24 @@ class DatabaseSeeder extends Seeder
         // ]);
         User::create([
             'name' => 'Super Admin',
-            'email' => 'superadmin@yahoo.com',
+            'email' => 'superadmin@gmail.com',
             'password' => Hash::make('123456'),
             'role_id' => '1',
             'status' => 'active',
-
+        ]);
+        User::create([
+            'name' => 'Admin PPID',
+            'email' => 'adminppid@gmail.com',
+            'password' => Hash::make('123456'),
+            'role_id' => '2',
+            'status' => 'active',
+        ]);
+        User::create([
+            'name' => 'Admin Sisda',
+            'email' => 'adminsisda@gmail.com',
+            'password' => Hash::make('123456'),
+            'role_id' => '3',
+            'status' => 'active',
         ]);
         Role::create([
             'name' => 'Super Admin',
@@ -37,7 +50,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin',
         ]);
         role::create([
-            'name' => 'Client',
+            'name' => 'Admin Sisda',
         ]);
     }
 }
