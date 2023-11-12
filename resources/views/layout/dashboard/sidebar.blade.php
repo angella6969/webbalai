@@ -41,7 +41,7 @@
                         <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
-                @can('Admin','SuperAdmin')
+                @can('Admin')
 
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -107,8 +107,12 @@
                     </a>
                 </li>
                 @endcan
-                @can('AdminSisda','SuperAdmin')
 
+                @can('AdminSisda')
+                <li class="nav-small-cap">
+                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                    <span class="hide-menu">Situs</span>
+                </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link {{ Request::is('dashboard/situs-terkait*') ? 'active' : '' }}"
                         href="/dashboard/situs-terkait" aria-expanded="false">
@@ -150,8 +154,6 @@
                     </a>
                 </li>
                 @endcan
-
-
             </ul>
         </nav>
     </div>
