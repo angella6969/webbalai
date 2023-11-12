@@ -25,7 +25,7 @@
             <h5 class="card-title fw-semibold mb-3">Infrastruktur bendungan</h5>
             {{-- <div class="card"> --}}
                 {{-- <div class="card-body"> --}}
-                    <form method="post" action="/dashboard/infrastruktur/bendungan" enctype="multipart/form-data">
+                    <form method="post" action="/dashboard/infrastruktur/irigasis" enctype="multipart/form-data">
                         @csrf
                         <div class="mt-3">
                             <label for="judul" class="form-label">Nama</label>

@@ -13,7 +13,7 @@
                 @csrf
                 @method('PUT')
                 <x-input nama="nama" judul="Nama" nilai="{{ $embung->nama }}" />
-                <x-slug judul="nama" nilai="{{ $embung->slug }}" />
+                <x-slug judul="nama" nilai="{{ $embung->slug }}" rute="infrastruktur/embungs" />
 
                 <x-input nama="lokasi" judul="Lokasi" nilai="{{ $embung->lokasi }}" />
                 <x-input nama="volume_tampung" judul="volume_tampung" nilai="{{ $embung->volume_tampung }}" />

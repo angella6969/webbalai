@@ -13,7 +13,7 @@
                 @method('PUT')
 
                 <x-input nama="nama" judul="Nama" nilai="{{ $bendungan->nama }}" />
-                <x-slug judul="nama" nilai="{{ $bendungan->slug }}" />
+                <x-slug judul="nama" nilai="{{ $bendungan->slug }}" rute="infrastruktur/bendungans" />
 
                 <x-input nama="lokasi" judul="Lokasi" nilai="{{ $bendungan->lokasi }}" />
                 <x-input nama="wilaya_sungai" judul="Wilaya Sungai" nilai="{{ $bendungan->wilaya_sungai }}" />

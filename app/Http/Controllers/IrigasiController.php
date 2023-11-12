@@ -86,7 +86,7 @@ class IrigasiController extends Controller
     }
     public function checkSlug(Request $request)
     {
-        $slug = SlugService::createSlug(Bendungan::class, 'slug', $request->nama);
+        $slug = SlugService::createSlug(Irigasi::class, 'slug', $request->nama);
         return response()->json(['slug' => $slug]);
     }
 }

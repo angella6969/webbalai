@@ -110,104 +110,22 @@ Route::resource('/', HomeController::class);
 Route::get('/beritas', [BeritaController::class, 'index2']);
 Route::get('/beritas/{slug}', [BeritaController::class, 'show']);
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function () { 
 
     Route::get('/dashboard', [DashboardController::class, 'index']);
-    // Route::get('/dashboard/pengumuman/create', [PengumumanController::class, 'create']);
-    // Route::post('/dashboard/pengumuman', [PengumumanController::class, 'store']);
-
-
-
-    // Route::get('/dashboard/beritas/', [BeritaController::class, 'index']);
-    // Route::get('/dashboard/beritas/create', [BeritaController::class, 'create']);
-    // Route::post('/dashboard/beritas/', [BeritaController::class, 'store']);
-    // Route::get('/dashboard/beritas/{id}/edit', [BeritaController::class, 'edit']);
-    // Route::post('/dashboard/beritas/{id}', [BeritaController::class, 'update']);
-    // Route::delete('/dashboard/beritas/{id}', [BeritaController::class, 'destroy']);
-
-
-
 
     Route::get('/dashboard/beritas/checkSlug', [BeritaController::class, 'checkSlug']);
-
-
-
-    // Route::get('/dashboard/infrastruktur/index', [InfrastrukturController::class, 'index']);
-    // Route::get('/dashboard/infrastruktur/create', [InfrastrukturController::class, 'create']);
-
-    // Route::get('/dashboard/gambar-depan', [ImageController::class, 'index']);
-
-
-
     Route::get('/dashboard/infrastruktur/bendungans/checkSlug', [BendunganController::class, 'checkSlug']);
-    // Route::get('/dashboard/infrastruktur/bendungans/create', [BendunganController::class, 'create']);
-    // Route::post('/dashboard/infrastruktur/bendungans', [BendunganController::class, 'store']);
-    // Route::get('/dashboard/infrastruktur/bendungans', [BendunganController::class, 'index']);
-
-
-
-
     Route::get('/dashboard/infrastruktur/bendungs/checkSlug', [BendungController::class, 'checkSlug']);
-
-    // Route::get('/dashboard/infrastruktur/bendungs/create', [BendungController::class, 'create']);
-    // Route::get('/dashboard/infrastruktur/bendungs', [BendungController::class, 'index']);
-
-
-
-
-
-
-    Route::get('/dashboard/infrastruktur/embungs/checkSlug', [EmbungController::class, 'checkSlug']);
-    // Route::get('/dashboard/infrastruktur/embungs', [EmbungController::class, 'index']);
-    // Route::get('/dashboard/infrastruktur/embungs/create', [EmbungController::class, 'create']);
-
-
-
-
-
-
     Route::get('/dashboard/infrastruktur/irigasi/checkSlug', [IrigasiController::class, 'checkSlug']);
-    Route::get('/dashboard/infrastruktur/irigasis', [IrigasiController::class, 'index']);
-    Route::get('/dashboard/infrastruktur/irigasis/create', [IrigasiController::class, 'create']);
-
-
-
-
-
-    // Route::get('/dashboard/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2']);
-    // Route::get('/dashboard/daftar-informasi-publik/create', [DaftarInformasiPublikController::class, 'create']);
-    // Route::post('/dashboard/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'store']);
-
-
-
-
-    // Route::get('/dashboard/foto-beranda', [ImageController::class, 'index']);
-    // Route::post('/dashboard/foto-beranda', [ImageController::class, 'store']);
-    // Route::get('/dashboard/foto-beranda/create', [ImageController::class, 'create']);
-    // Route::get('/dashboard/foto-beranda/{id}/edit', [ImageController::class, 'edit']);
-    // Route::post('/dashboard/foto-beranda/{id}', [ImageController::class, 'update']);
-    // Route::delete('/dashboard/foto-beranda/{id}', [ImageController::class, 'destroy']);
-
-
-
-    // Route::get('/dashboard/situs-terkait/create', [SitusterkaitController::class, 'create']);
-    // Route::get('/dashboard/situs-terkait', [SitusterkaitController::class, 'index']);
-    // Route::post('/dashboard/situs-terkait', [SitusterkaitController::class, 'store']);
-
-
-
-
-    // Route::get('/dashboard/media/media-informasi/', [InfografisController::class, 'index']);
-    // Route::get('/dashboard/media/media-informasi/{id}/edit', [InfografisController::class, 'edit']);
-    // Route::post('/dashboard/media/media-informasi', [InfografisController::class, 'store']);
-    // Route::get('/dashboard/media/media-informasi/create', [InfografisController::class, 'create']);
-    // Route::delete('/dashboard/media/media-informasi/{id}', [InfografisController::class, 'destroy']);
+    Route::get('/dashboard/infrastruktur/embungs/checkSlug', [EmbungController::class, 'checkSlug']);
 
     Route::middleware(['AdminSisda'])->group(function () {
         Route::resource('/dashboard/infrastruktur/embungs', EmbungController::class)->except(['show']);
         Route::resource('/dashboard/situs-terkait', SitusterkaitController::class)->except(['show']);
         Route::resource('/dashboard/infrastruktur/bendungs', BendungController::class)->except(['show']);
         Route::resource('/dashboard/infrastruktur/bendungans', BendunganController::class)->except(['show']);
+        Route::resource('/dashboard/infrastruktur/irigasis', IrigasiController::class)->except(['show']);
     });
 
     Route::middleware(['Admin'])->group(function () {

@@ -217,7 +217,7 @@ class EmbungController extends Controller
     }
     public function checkSlug(Request $request)
     {
-        $slug = SlugService::createSlug(Bendungan::class, 'slug', $request->nama);
+        $slug = SlugService::createSlug(Embung::class, 'slug', $request->nama);
         return response()->json(['slug' => $slug]);
     }
 }

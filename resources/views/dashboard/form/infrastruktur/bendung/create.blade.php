@@ -10,8 +10,8 @@
                 @csrf
 
                 <x-input nama="nama" judul="Nama" nilai="" />
-                <x-slug judul="nama" nilai="" />
-
+                <x-slug judul="nama" nilai="" rute="infrastruktur/bendungs" />
+ 
                 <x-input nama="lokasi" judul="Lokasi" nilai="" />
                 <x-input nama="tahun_pembangunan" judul="tahun_mulai_pembangunan " nilai="" />
 

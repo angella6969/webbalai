@@ -10,7 +10,7 @@
     const slug = document.querySelector('#slug');
 
     judul.addEventListener('change', function() {
-        fetch('/dashboard/beritas/checkSlug?judul=' + judul.value)
+        fetch('/dashboard/{{ $rute }}/checkSlug?{{ $judul }}=' + judul.value)
             .then(response => response.json())
             .then(data => slug.value = data.slug)
     });

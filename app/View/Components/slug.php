@@ -11,12 +11,13 @@ class slug extends Component
     /**
      * Create a new component instance.
      */
-    public $judul,$nilai;
+    public $judul,$nilai,$rute;
 
-    public function __construct($judul,$nilai)
+    public function __construct($judul,$nilai,$rute)
     {
         $this->judul = $judul;
         $this->nilai = $nilai;
+        $this->rute = $rute;
 
     }
 

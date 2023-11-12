@@ -9,10 +9,10 @@
             <form method="post" action="/dashboard/beritas/" enctype="multipart/form-data">
                 @csrf
                 <x-input nama="judul" judul="judul" nilai="" />
-                <x-slug judul="judul" nilai="" />
+                <x-slug judul="judul" nilai="" rute="beritas" />
                 <x-ck body="body" nilai="" />
                 <x-garis />
-                <x-i_img nama="url_foto" judul="Foto Berita" nilai=""  />
+                <x-i_img nama="url_foto" judul="Foto Berita" nilai="" />
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>

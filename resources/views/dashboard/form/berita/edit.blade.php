@@ -13,7 +13,7 @@
                 @method('PUT')
 
                 <x-input nama="judul" judul="judul" nilai="{{ $berita->judul }}" />
-                <x-slug judul="judul" nilai="{{ $berita->slug }}" />
+                <x-slug judul="judul" nilai="{{ $berita->slug }}" rute="beritas"/>
 
                 <div class="mb-3">
                     <div style="z-index: 999">
