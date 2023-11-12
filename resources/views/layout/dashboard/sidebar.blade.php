@@ -95,7 +95,7 @@
                 </li>
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Media Informasi</span>
+                    <span class="hide-menu">Media </span>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link {{ Request::is('dashboard/media/media-informasi*') ? 'active' : '' }}"
@@ -103,7 +103,7 @@
                         <span>
                             {{-- <i class="ti ti-cards"></i> --}}
                         </span>
-                        <span class="hide-menu">Infografis</span>
+                        <span class="hide-menu">Media Informasi</span>
                     </a>
                 </li>
                 @endcan

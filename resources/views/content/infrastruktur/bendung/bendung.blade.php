@@ -28,7 +28,7 @@
                                 class="" style=" width: 150vw; height: 100%;">
                         </div>
 
-                        <h1 class="entry-title mt-3">
+                        <h1 class="entry-title mt-3" >
                             <p>{{ $bendung->nama }}</p>
                         </h1>
 
