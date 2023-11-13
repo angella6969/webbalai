@@ -71,7 +71,7 @@ Route::get('/layanan/ppid-bbws-so/prosedur_pelayanan', function () {
 
 
 
-Route::middleware('throttle:150,1')->group(function () {
+Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function () {
 
     Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('struktur-organisasi');
     Route::get('/profil/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi');
