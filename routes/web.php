@@ -6,6 +6,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DaftarInformasiPublikController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmbungController;
+use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\InfografisController;
@@ -100,6 +101,9 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::get('/media/media-informasi/', [InfografisController::class, 'index2']);
     Route::get('/media/media-informasi/{jenis}/{slug}', [InfografisController::class, 'show']);
 
+    Route::get('/media/galeri/videos', [GaleryController::class, 'index2']);
+
+
     Route::get('/login', [UserController::class, 'index'])->middleware('guest')->name('login');
     Route::post('/login', [UserController::class, 'authenticate']);
     Route::post('/logout', [UserController::class, 'logout']);
@@ -128,6 +132,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
             Route::resource('/dashboard/infrastruktur/bendungs', BendungController::class)->except(['show']);
             Route::resource('/dashboard/infrastruktur/bendungans', BendunganController::class)->except(['show']);
             Route::resource('/dashboard/infrastruktur/irigasis', IrigasiController::class)->except(['show']);
+            Route::resource('/dashboard/galeri/video', GaleryController::class)->except(['show']);
         });
 
         Route::middleware(['Admin'])->group(function () {
