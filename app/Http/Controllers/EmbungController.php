@@ -65,19 +65,19 @@ class EmbungController extends Controller
         try {
 
             if ($request->hasFile('url_foto1')) {
-                $petaPdfPath = $request->file('url_foto1')->store('public/infrastruktur/images/embung');
+                $petaPdfPath = $request->file('url_foto1')->store('public/images/infrastruktur/embung');
                 $validatedData['url_foto1'] = $petaPdfPath;
             }
             if ($request->hasFile('url_foto2')) {
-                $petaPdfPath = $request->file('url_foto2')->store('public/infrastruktur/images/embung');
+                $petaPdfPath = $request->file('url_foto2')->store('public/images/infrastruktur/embung');
                 $validatedData['url_foto2'] = $petaPdfPath;
             }
             if ($request->hasFile('url_foto3')) {
-                $petaPdfPath = $request->file('url_foto3')->store('public/infrastruktur/images/embung');
+                $petaPdfPath = $request->file('url_foto3')->store('public/images/infrastruktur/embung');
                 $validatedData['url_foto3'] = $petaPdfPath;
             }
             if ($request->hasFile('url_foto4')) {
-                $petaPdfPath = $request->file('url_foto4')->store('public/infrastruktur/images/embung');
+                $petaPdfPath = $request->file('url_foto4')->store('public/images/infrastruktur/embung');
                 $validatedData['url_foto4'] = $petaPdfPath;
             }
 
@@ -152,28 +152,28 @@ class EmbungController extends Controller
                 if ($embung->url_foto1 != null) {
                     Storage::delete($embung->url_foto1);
                 }
-                $petaPdfPath = $request->file('url_foto1')->store('public/infrastruktur/images/embung');
+                $petaPdfPath = $request->file('url_foto1')->store('public/images/infrastruktur/embung');
                 $validatedData['url_foto1'] = $petaPdfPath;
             }
             if ($request->hasFile('url_foto2')) {
                 if ($embung->url_foto1 != null) {
                     Storage::delete($embung->url_foto1);
                 }
-                $petaPdfPath = $request->file('url_foto2')->store('public/infrastruktur/images/embung');
+                $petaPdfPath = $request->file('url_foto2')->store('public/images/infrastruktur/embung');
                 $validatedData['url_foto2'] = $petaPdfPath;
             }
             if ($request->hasFile('url_foto3')) {
                 if ($embung->url_foto1 != null) {
                     Storage::delete($embung->url_foto1);
                 }
-                $petaPdfPath = $request->file('url_foto3')->store('public/infrastruktur/images/embung');
+                $petaPdfPath = $request->file('url_foto3')->store('public/images/infrastruktur/embung');
                 $validatedData['url_foto3'] = $petaPdfPath;
             }
             if ($request->hasFile('url_foto4')) {
                 if ($embung->url_foto1 != null) {
                     Storage::delete($embung->url_foto1);
                 }
-                $petaPdfPath = $request->file('url_foto4')->store('public/infrastruktur/images/embung');
+                $petaPdfPath = $request->file('url_foto4')->store('public/images/infrastruktur/embung');
                 $validatedData['url_foto4'] = $petaPdfPath;
             }
 

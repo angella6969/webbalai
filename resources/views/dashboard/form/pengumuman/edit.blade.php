@@ -1,22 +1,7 @@
 @extends('layout.dashboard.main')
 @section('container')
-<style>
-    .card {
-        max-width: 100%;
-        overflow-x: auto;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.);
-        transition: box-shadow 0.3s ease;
-    }
+<link rel="stylesheet" href="{{ asset('css\myCss.css') }}">
 
-    .card:hover {
-        box-shadow: 0 8px 12px rgba(230, 138, 38, 1);
-    }
-
-    .line {
-        border-top: 1px solid rgba(230, 138, 38, 1);
-        margin: 10px 0;
-    }
-</style>
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">

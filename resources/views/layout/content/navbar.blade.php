@@ -14,7 +14,7 @@
         <li class="dropdown"><a href="#"><span>Berita</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
                 <li><a href="/beritas">Berita Balai</a></li>
-                <li><a href="/pengumumans">Pengumuman</a></li>
+                <li><a href="{{ route('pengumuman') }}">Pengumuman</a></li>
                 <li><a href="/under-Maintenance">Agenda Kegiatan</a></li>
             </ul>
         </li>
@@ -23,13 +23,13 @@
                 <li><a href="/info-public/daftar-informasi-publik">Daftar Informasi Publik</a></li>
                 <li class="dropdown"><a href="#"><span>Perencanaan</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="/under-Maintenance">Rencana Strategis</a></li>
-                        <li><a href="/under-Maintenance">Pola WS dan RPSDA</a></li>
+                        <li><a href="/informasi-publik/perencanaan/rencana-strategis">Rencana Strategis</a></li>
+                        <li><a href="/informasi-publik/perencanaan/pola-ws-dan-rpsda">Pola WS dan RPSDA</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"><span>Kinerja</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="/under-Maintenance">LAKIP</a></li>
+                        <li><a href="/informasi-publik/kinerja/lakip">LAKIP</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"><span>Infrastruktur</span> <i

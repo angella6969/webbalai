@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
-class BendunganController extends Controller
+class BendunganController extends Controller 
 {
     /**
      * Display a listing of the resource.
@@ -69,19 +69,19 @@ class BendunganController extends Controller
         try {
 
             if ($request->hasFile('url_foto1')) {
-                $petaPdfPath = $request->file('url_foto1')->store('public/infrastruktur/images/bendungan');
+                $petaPdfPath = $request->file('url_foto1')->store('public/images/infrastruktur/bendungan');
                 $validatedData['url_foto1'] = $petaPdfPath;
             }
             if ($request->hasFile('url_foto2')) {
-                $petaPdfPath = $request->file('url_foto2')->store('public/infrastruktur/images/bendungan');
+                $petaPdfPath = $request->file('url_foto2')->store('public/images/infrastruktur/bendungan');
                 $validatedData['url_foto2'] = $petaPdfPath;
             }
             if ($request->hasFile('url_foto3')) {
-                $petaPdfPath = $request->file('url_foto3')->store('public/infrastruktur/images/bendungan');
+                $petaPdfPath = $request->file('url_foto3')->store('public/images/infrastruktur/bendungan');
                 $validatedData['url_foto3'] = $petaPdfPath;
             }
             if ($request->hasFile('url_foto4')) {
-                $petaPdfPath = $request->file('url_foto4')->store('public/infrastruktur/images/bendungan');
+                $petaPdfPath = $request->file('url_foto4')->store('public/images/infrastruktur/bendungan');
                 $validatedData['url_foto4'] = $petaPdfPath;
             }
 
@@ -168,28 +168,28 @@ class BendunganController extends Controller
                 if ($bendungan->url_foto1 != null) {
                     Storage::delete($bendungan->url_foto1);
                 }
-                $petaPdfPath = $request->file('url_foto1')->store('public/infrastruktur/images/bendungan');
+                $petaPdfPath = $request->file('url_foto1')->store('public/images/infrastruktur/bendungan');
                 $validatedData['url_foto1'] = $petaPdfPath;
             }
             if ($request->hasFile('url_foto2')) {
                 if ($bendungan->url_foto2 != null) {
                     Storage::delete($bendungan->url_foto2);
                 }
-                $petaPdfPath = $request->file('url_foto2')->store('public/infrastruktur/images/bendungan');
+                $petaPdfPath = $request->file('url_foto2')->store('public/images/infrastruktur/bendungan');
                 $validatedData['url_foto2'] = $petaPdfPath;
             }
             if ($request->hasFile('url_foto3')) {
                 if ($bendungan->url_foto3 != null) {
                     Storage::delete($bendungan->url_foto3);
                 }
-                $petaPdfPath = $request->file('url_foto3')->store('public/infrastruktur/images/bendungan');
+                $petaPdfPath = $request->file('url_foto3')->store('public/images/infrastruktur/bendungan');
                 $validatedData['url_foto3'] = $petaPdfPath;
             }
             if ($request->hasFile('url_foto4')) {
                 if ($bendungan->url_foto4 != null) {
                     Storage::delete($bendungan->url_foto4);
                 }
-                $petaPdfPath = $request->file('url_foto4')->store('public/infrastruktur/images/bendungan');
+                $petaPdfPath = $request->file('url_foto4')->store('public/images/infrastruktur/bendungan');
                 $validatedData['url_foto4'] = $petaPdfPath;
             }
 

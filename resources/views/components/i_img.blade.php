@@ -2,10 +2,10 @@
 <input type="hidden" name="oldImage" id="oldImage" value="{{ $nilai }}">
 
 @if ($nilai)
-<img src="{{ asset('storage/' . substr($nilai, 6)) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block"
-    id="img-preview-{{ $nama }}">
+    <img src="{{ asset('storage/' . substr($nilai, 6)) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block"
+        id="img-preview-{{ $nama }}">
 @else
-<img class="img-preview img-fluid mb-3 col-sm-5" id="img-preview-{{ $nama }}">
+    <img class="img-preview img-fluid mb-3 col-sm-5" id="img-preview-{{ $nama }}">
 @endif
 
 <input type="file" class="form-control @error('$nama') is-invalid @enderror" id="{{ $nama }}"

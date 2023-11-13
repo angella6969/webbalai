@@ -57,7 +57,7 @@ class PengumumanController extends Controller
         try {
 
             if ($request->hasFile('dokumen')) {
-                $petaPdfPath = $request->file('dokumen')->store('public/pdf');
+                $petaPdfPath = $request->file('dokumen')->store('public/pdf/pengumuman');
                 $validatedData['dokumen'] = $petaPdfPath;
 
                 // Jika dokumen terisi, set url_pengumuman menjadi nilai dokumen
@@ -116,7 +116,7 @@ class PengumumanController extends Controller
                 if ($pengumuman->dokumen != null) {
                     Storage::delete($pengumuman->dokumen);
                 }
-                $petaPdfPath = $request->file('dokumen')->store('public/pdf');
+                $petaPdfPath = $request->file('dokumen')->store('public/pdf/pengumuman');
                 $validatedData['dokumen'] = $petaPdfPath;
 
                 // Jika dokumen terisi, set url_pengumuman menjadi nilai dokumen

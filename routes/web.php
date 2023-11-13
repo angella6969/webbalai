@@ -11,8 +11,11 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\InfografisController;
 use App\Http\Controllers\InfrastrukturController;
 use App\Http\Controllers\IrigasiController;
+use App\Http\Controllers\LakipController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PermohonanController;
+use App\Http\Controllers\RencanaStrategisController;
+use App\Http\Controllers\RpsdaController;
 use App\Http\Controllers\SitusterkaitController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\UserController;
@@ -21,6 +24,7 @@ use App\Models\Bendungan;
 use App\Models\Berita;
 use App\Models\Dashboard;
 use App\Models\Image;
+use App\Models\Lakip;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,24 +67,22 @@ Route::get('/layanan/ppid-bbws-so/prosedur_pelayanan', function () {
     return view('content.layanan.prosedur_pelayanan');
 });
 
-// Route::get('/info-public/daftar-informasi-publik', function () {
-//     return view('content.daftar_informasi_publik.daftar_informasi');
-// });
 
 
 
 
 
 
-Route::get('pengumumans', [PengumumanController::class, 'index2']);
 
+Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('struktur-organisasi');
+Route::get('/profil/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi');
 
-Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 'index']);
-Route::get('/profil/visi-misi', [VisiMisiController::class, 'index']);
+Route::get('/informasi-publik/infrastruktur/bendungans/{slug}', [BendunganController::class, 'show'])->name('bendungan');
+Route::get('/informasi-publik/infrastruktur/bendungans', [BendunganController::class, 'index2'])->name('bendung');
 
-Route::get('/informasi-publik/infrastruktur/bendungans/{slug}', [BendunganController::class, 'show']);
-Route::get('/informasi-publik/infrastruktur/bendungans', [BendunganController::class, 'index2']);
-
+Route::get('/informasi-publik/perencanaan/rencana-strategis', [RencanaStrategisController::class, 'index2']);
+Route::get('/informasi-publik/perencanaan/pola-ws-dan-rpsda', [RpsdaController::class, 'index2']);
+Route::get('/informasi-publik/kinerja/lakip', [LakipController::class, 'index2']);
 
 Route::get('/informasi-publik/infrastruktur/bendungs/{slug}', [BendungController::class, 'show']);
 Route::get('/informasi-publik/infrastruktur/bendungs', [BendungController::class, 'index2']);
@@ -94,6 +96,8 @@ Route::get('/informasi-publik/infrastruktur/irigasis', [IrigasiController::class
 
 Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2']);
 
+
+
 Route::get('/media/media-informasi/', [InfografisController::class, 'index2']);
 Route::get('/media/media-informasi/{jenis}/{slug}', [InfografisController::class, 'show']);
 
@@ -103,14 +107,13 @@ Route::post('/logout', [UserController::class, 'logout']);
 
 
 Route::resource('/', HomeController::class);
-// Route::resource('/dashboard', DashboardController::class);
-// Route::resource('/beritas/blog', BeritaController::class);
-// Route::resource('/artikel', PermohonanController::class);
 
 Route::get('/beritas', [BeritaController::class, 'index2']);
 Route::get('/beritas/{slug}', [BeritaController::class, 'show']);
+Route::get('/pengumumans', [PengumumanController::class, 'index2'])->name('pengumuman');
 
-Route::middleware(['auth'])->group(function () { 
+
+Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index']);
 
@@ -133,6 +136,9 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('/dashboard/daftar-informasi-publik', DaftarInformasiPublikController::class)->except(['show']);
         Route::resource('/dashboard/beritas', BeritaController::class)->except(['show']);
         Route::resource('/dashboard/pengumuman', PengumumanController::class);
-        Route::resource('/dashboard/media/media-informasi/', InfografisController::class)->except(['show']);
+        Route::resource('/dashboard/media/media-informasi', InfografisController::class)->except(['show']);
+        Route::resource('/dashboard/perencanaan/pola-ws-dan-rpsda', RpsdaController::class)->except(['show']);
+        Route::resource('/dashboard/perencanaan/rencana-strategis', RencanaStrategisController::class)->except(['show']);
+        Route::resource('/dashboard/kinerja/lakip', LakipController::class)->except(['show']);
     });
 });

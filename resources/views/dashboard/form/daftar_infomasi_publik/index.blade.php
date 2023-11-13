@@ -53,7 +53,7 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title fw-semibold mb-4">Infrastruktur</h5>
+            <h5 class="card-title fw-semibold mb-4">Daftar Informasi Publik</h5>
             <form action="/dashboard/infrastruktur/bendungs">
                 <div class="row">
                     <div class="col-12 col-sm-12">

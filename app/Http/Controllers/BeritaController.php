@@ -58,7 +58,7 @@ class BeritaController extends Controller
         try {
 
             if ($request->hasFile('url_foto')) {
-                $petaPdfPath = $request->file('url_foto')->store('public/beritas/images');
+                $petaPdfPath = $request->file('url_foto')->store('public/images/beritas');
                 $validatedData['url_foto'] = $petaPdfPath;
             }
 
@@ -128,7 +128,7 @@ class BeritaController extends Controller
                 if ($berita->url_foto != null) {
                     Storage::delete($berita->url_foto);
                 }
-                $petaPdfPath = $request->file('url_foto')->store('public/beritas/images');
+                $petaPdfPath = $request->file('url_foto')->store('public/images/beritas');
                 $validatedData['url_foto'] = $petaPdfPath;
             }
 

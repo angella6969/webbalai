@@ -4,34 +4,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
     <style>
-        .dot {
-            width: 10px;
-            height: 10px;
-            background-color: #000;
-            border-radius: 50%;
-        }
-
-        .square {
-            width: 10px;
-            /* Set the desired width */
-            height: 10px;
-            /* Set the desired height */
-            background-color: #000;
-            /* Set the desired background color */
-        }
-
-        .dot-hollow {
-            width: 10px;
-            /* Lebar ikon */
-            height: 10px;
-            /* Tinggi ikon */
-            background-color: transparent;
-            /* Warna latar belakang transparan */
-            border: 1px solid #000;
-            /* Garis tepi hitam */
-            border-radius: 50%;
-            /* Membuatnya berbentuk lingkaran */
-        }
+       
 
         .pading-1 {
             padding-left: 20px;

@@ -25,21 +25,21 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'Super Admin',
             'email' => 'superadmin@gmail.com',
-            'password' => Hash::make('123456'),
+            'password' => Hash::make('super@dmin2023'),
             'role_id' => '1',
             'status' => 'active',
         ]);
         User::create([
             'name' => 'Admin PPID',
             'email' => 'adminppid@gmail.com',
-            'password' => Hash::make('123456'),
+            'password' => Hash::make('adminppid@2023'),
             'role_id' => '2',
             'status' => 'active',
         ]);
         User::create([
             'name' => 'Admin Sisda',
             'email' => 'adminsisda@gmail.com',
-            'password' => Hash::make('123456'),
+            'password' => Hash::make('adminsisda@2023'),
             'role_id' => '3',
             'status' => 'active',
         ]);
@@ -47,7 +47,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Super Admin',
         ]);
         role::create([
-            'name' => 'Admin',
+            'name' => 'Admin PPID',
         ]);
         role::create([
             'name' => 'Admin Sisda',
