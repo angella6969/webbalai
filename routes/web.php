@@ -71,74 +71,74 @@ Route::get('/layanan/ppid-bbws-so/prosedur_pelayanan', function () {
 
 
 
+Route::middleware('throttle:150,1')->group(function () {
+
+    Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('struktur-organisasi');
+    Route::get('/profil/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi');
+
+    Route::get('/informasi-publik/infrastruktur/bendungans/{slug}', [BendunganController::class, 'show'])->name('bendungan');
+    Route::get('/informasi-publik/infrastruktur/bendungans', [BendunganController::class, 'index2'])->name('bendung');
+
+    Route::get('/informasi-publik/perencanaan/rencana-strategis', [RencanaStrategisController::class, 'index2']);
+    Route::get('/informasi-publik/perencanaan/pola-ws-dan-rpsda', [RpsdaController::class, 'index2']);
+    Route::get('/informasi-publik/kinerja/lakip', [LakipController::class, 'index2']);
+
+    Route::get('/informasi-publik/infrastruktur/bendungs/{slug}', [BendungController::class, 'show']);
+    Route::get('/informasi-publik/infrastruktur/bendungs', [BendungController::class, 'index2']);
+
+    Route::get('/informasi-publik/infrastruktur/embungs/{slug}', [EmbungController::class, 'show']);
+    Route::get('/informasi-publik/infrastruktur/embungs', [EmbungController::class, 'index2']);
+
+
+    Route::get('/informasi-publik/infrastruktur/irigasis/{slug}', [IrigasiController::class, 'show']);
+    Route::get('/informasi-publik/infrastruktur/irigasis', [IrigasiController::class, 'index2']);
+
+    Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2']);
 
 
 
-Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('struktur-organisasi');
-Route::get('/profil/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi');
+    Route::get('/media/media-informasi/', [InfografisController::class, 'index2']);
+    Route::get('/media/media-informasi/{jenis}/{slug}', [InfografisController::class, 'show']);
 
-Route::get('/informasi-publik/infrastruktur/bendungans/{slug}', [BendunganController::class, 'show'])->name('bendungan');
-Route::get('/informasi-publik/infrastruktur/bendungans', [BendunganController::class, 'index2'])->name('bendung');
-
-Route::get('/informasi-publik/perencanaan/rencana-strategis', [RencanaStrategisController::class, 'index2']);
-Route::get('/informasi-publik/perencanaan/pola-ws-dan-rpsda', [RpsdaController::class, 'index2']);
-Route::get('/informasi-publik/kinerja/lakip', [LakipController::class, 'index2']);
-
-Route::get('/informasi-publik/infrastruktur/bendungs/{slug}', [BendungController::class, 'show']);
-Route::get('/informasi-publik/infrastruktur/bendungs', [BendungController::class, 'index2']);
-
-Route::get('/informasi-publik/infrastruktur/embungs/{slug}', [EmbungController::class, 'show']);
-Route::get('/informasi-publik/infrastruktur/embungs', [EmbungController::class, 'index2']);
+    Route::get('/login', [UserController::class, 'index'])->middleware('guest')->name('login');
+    Route::post('/login', [UserController::class, 'authenticate']);
+    Route::post('/logout', [UserController::class, 'logout']);
 
 
-Route::get('/informasi-publik/infrastruktur/irigasis/{slug}', [IrigasiController::class, 'show']);
-Route::get('/informasi-publik/infrastruktur/irigasis', [IrigasiController::class, 'index2']);
+    Route::resource('/', HomeController::class);
 
-Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2']);
-
-
-
-Route::get('/media/media-informasi/', [InfografisController::class, 'index2']);
-Route::get('/media/media-informasi/{jenis}/{slug}', [InfografisController::class, 'show']);
-
-Route::get('/login', [UserController::class, 'index'])->middleware('guest')->name('login');
-Route::post('/login', [UserController::class, 'authenticate']);
-Route::post('/logout', [UserController::class, 'logout']);
+    Route::get('/beritas', [BeritaController::class, 'index2']);
+    Route::get('/beritas/{slug}', [BeritaController::class, 'show']);
+    Route::get('/pengumumans', [PengumumanController::class, 'index2'])->name('pengumuman');
 
 
-Route::resource('/', HomeController::class);
+    Route::middleware(['auth'])->group(function () {
 
-Route::get('/beritas', [BeritaController::class, 'index2']);
-Route::get('/beritas/{slug}', [BeritaController::class, 'show']);
-Route::get('/pengumumans', [PengumumanController::class, 'index2'])->name('pengumuman');
+        Route::get('/dashboard', [DashboardController::class, 'index']);
 
+        Route::get('/dashboard/beritas/checkSlug', [BeritaController::class, 'checkSlug']);
+        Route::get('/dashboard/infrastruktur/bendungans/checkSlug', [BendunganController::class, 'checkSlug']);
+        Route::get('/dashboard/infrastruktur/bendungs/checkSlug', [BendungController::class, 'checkSlug']);
+        Route::get('/dashboard/infrastruktur/irigasi/checkSlug', [IrigasiController::class, 'checkSlug']);
+        Route::get('/dashboard/infrastruktur/embungs/checkSlug', [EmbungController::class, 'checkSlug']);
 
-Route::middleware(['auth'])->group(function () {
+        Route::middleware(['AdminSisda'])->group(function () {
+            Route::resource('/dashboard/infrastruktur/embungs', EmbungController::class)->except(['show']);
+            Route::resource('/dashboard/situs-terkait', SitusterkaitController::class)->except(['show']);
+            Route::resource('/dashboard/infrastruktur/bendungs', BendungController::class)->except(['show']);
+            Route::resource('/dashboard/infrastruktur/bendungans', BendunganController::class)->except(['show']);
+            Route::resource('/dashboard/infrastruktur/irigasis', IrigasiController::class)->except(['show']);
+        });
 
-    Route::get('/dashboard', [DashboardController::class, 'index']);
-
-    Route::get('/dashboard/beritas/checkSlug', [BeritaController::class, 'checkSlug']);
-    Route::get('/dashboard/infrastruktur/bendungans/checkSlug', [BendunganController::class, 'checkSlug']);
-    Route::get('/dashboard/infrastruktur/bendungs/checkSlug', [BendungController::class, 'checkSlug']);
-    Route::get('/dashboard/infrastruktur/irigasi/checkSlug', [IrigasiController::class, 'checkSlug']);
-    Route::get('/dashboard/infrastruktur/embungs/checkSlug', [EmbungController::class, 'checkSlug']);
-
-    Route::middleware(['AdminSisda'])->group(function () {
-        Route::resource('/dashboard/infrastruktur/embungs', EmbungController::class)->except(['show']);
-        Route::resource('/dashboard/situs-terkait', SitusterkaitController::class)->except(['show']);
-        Route::resource('/dashboard/infrastruktur/bendungs', BendungController::class)->except(['show']);
-        Route::resource('/dashboard/infrastruktur/bendungans', BendunganController::class)->except(['show']);
-        Route::resource('/dashboard/infrastruktur/irigasis', IrigasiController::class)->except(['show']);
-    });
-
-    Route::middleware(['Admin'])->group(function () {
-        Route::resource('/dashboard/foto-beranda', ImageController::class)->except(['show']);
-        Route::resource('/dashboard/daftar-informasi-publik', DaftarInformasiPublikController::class)->except(['show']);
-        Route::resource('/dashboard/beritas', BeritaController::class)->except(['show']);
-        Route::resource('/dashboard/pengumuman', PengumumanController::class);
-        Route::resource('/dashboard/media/media-informasi', InfografisController::class)->except(['show']);
-        Route::resource('/dashboard/perencanaan/pola-ws-dan-rpsda', RpsdaController::class)->except(['show']);
-        Route::resource('/dashboard/perencanaan/rencana-strategis', RencanaStrategisController::class)->except(['show']);
-        Route::resource('/dashboard/kinerja/lakip', LakipController::class)->except(['show']);
+        Route::middleware(['Admin'])->group(function () {
+            Route::resource('/dashboard/foto-beranda', ImageController::class)->except(['show']);
+            Route::resource('/dashboard/daftar-informasi-publik', DaftarInformasiPublikController::class)->except(['show']);
+            Route::resource('/dashboard/beritas', BeritaController::class)->except(['show']);
+            Route::resource('/dashboard/pengumuman', PengumumanController::class);
+            Route::resource('/dashboard/media/media-informasi', InfografisController::class)->except(['show']);
+            Route::resource('/dashboard/perencanaan/pola-ws-dan-rpsda', RpsdaController::class)->except(['show']);
+            Route::resource('/dashboard/perencanaan/rencana-strategis', RencanaStrategisController::class)->except(['show']);
+            Route::resource('/dashboard/kinerja/lakip', LakipController::class)->except(['show']);
+        });
     });
 });

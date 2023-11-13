@@ -124,8 +124,8 @@
                                         style="height: 200px;object-fit: none; border-radius: 0 0 100px 0; border-bottom: 5px solid #fbb717;"></a>
 
                                 <div class="card-body">
-                                    <h3 class="font-weight-bold text-4 mb-1"><a href="beritas/{{ $berita->slug }}"
-                                            class="link-color-dark">{{ $berita->judul }}</a></h3>
+                                    <h6 class="font-weight-bold text-4 mb-1"><a href="beritas/{{ $berita->slug }}"
+                                            class="link-color-dark">{{ $berita->judul }}</a></h6>
                                     <span class="text-color-dark mb-3"><i class="far fa-clock text-color-primary"></i>
                                         {{ $berita->tanggal }} </span>
                                 </div>
@@ -165,8 +165,8 @@
                                         style="height: 200px;object-fit: none;"></a>
 
                                 <div class="card-body">
-                                    <h3 class="font-weight-bold text-4 mb-1"><a href=""
-                                            class="link-color-dark">{{ $infrastruktur->nama }}</a></h3>
+                                    <h5 class="d-flex justify-content-center text-4 mb-1"><a href=""
+                                            class="link-color-dark">{{ $infrastruktur->nama }}</a></h5>
                                     <span class="text-color-dark mb-3"><i class="far fa-clock text-color-primary"></i>
                                         {{ $infrastruktur->tanggal }}</span>
                                 </div>
@@ -215,7 +215,6 @@
 
 
 
-
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -226,8 +225,8 @@
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
             $('.multiple-items1').slick({
-                slidesToShow: 5,
-                slidesToScroll: 1,
+                slidesToShow: 4,
+                slidesToScroll: 4,
                 autoplay: true,
                 arrows: false,
                 autoplaySpeed: 1000,
