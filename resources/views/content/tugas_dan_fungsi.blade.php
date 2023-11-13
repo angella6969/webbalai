@@ -91,47 +91,47 @@
                             menyelenggarakan fungsi:
 
                             <ul data-aos="fade-up" data-aos-delay="100" style="text-align: justify">
-                                <li><i data-feather="chevron-right"></i> Penyusunan program pengelolaan sumber daya air dan
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Penyusunan program pengelolaan sumber daya air dan
                                     rencana kegiatan pengelolaan sumber daya air pada wilayah sungai;</li>
-                                <li><i data-feather="chevron-right"></i> Pemantauan dan evaluasi penyelenggaraan atau
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Pemantauan dan evaluasi penyelenggaraan atau
                                     penerapan pola pengelolaan sumber daya air dan rencana pengelolaan sumber daya air;</li>
-                                <li><i data-feather="chevron-right"></i> Penyusunan studi kelayakan dan perencanaan teknis
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Penyusunan studi kelayakan dan perencanaan teknis
                                     atau desain pengembangan sumber daya air;</li>
-                                <li><i data-feather="chevron-right"></i> Pelaksanaan pengadaan barang dan jasa sesuai dengan
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Pelaksanaan pengadaan barang dan jasa sesuai dengan
                                     ketentuan peraturan perundang-undangan;</li>
-                                <li><i data-feather="chevron-right"></i> Pelaksanaan sistem manajemen keselamatan dan
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Pelaksanaan sistem manajemen keselamatan dan
                                     kesehatan kerja;</li>
-                                <li><i data-feather="chevron-right"></i> Pengelolaan sumber daya air yang meliputi
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Pengelolaan sumber daya air yang meliputi
                                     konservasi sumber daya air, pendayagunaan sumber daya air, dan pengendalian daya rusak
                                     air pada wilayah sungai;</li>
-                                <li><i data-feather="chevron-right"></i> Pengelolaan drainase utama perkotaan;</li>
-                                <li><i data-feather="chevron-right"></i> Pengelolaan sistem hidrologi;</li>
-                                <li><i data-feather="chevron-right"></i> Pengelolaan sistem informasi sumber daya air;</li>
-                                <li><i data-feather="chevron-right"></i> Pelaksanaan operasi dan pemeliharaan sumber daya
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Pengelolaan drainase utama perkotaan;</li>
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Pengelolaan sistem hidrologi;</li>
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Pengelolaan sistem informasi sumber daya air;</li>
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Pelaksanaan operasi dan pemeliharaan sumber daya
                                     air pada wilayah sungai;</li>
-                                <li><i data-feather="chevron-right"></i> Pelaksanaan pemberian bimbingan teknis pengelolaan
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Pelaksanaan pemberian bimbingan teknis pengelolaan
                                     sumber daya air yang menjadi kewenangan provinsi dan kabupaten/kota;</li>
-                                <li><i data-feather="chevron-right"></i> Penyusunan dan penyiapan rekomendasi teknis dalam
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Penyusunan dan penyiapan rekomendasi teknis dalam
                                     pemberian izin penggunaan sumber daya air pada wilayah sungai;</li>
-                                <li><i data-feather="chevron-right"></i> Penyusunan dan penyiapan saran teknis untuk
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Penyusunan dan penyiapan saran teknis untuk
                                     pengalihan alur sungai dan pemanfaatan bekas sungai;</li>
-                                <li><i data-feather="chevron-right"></i> Penyusunan dan pelaksanaan kajian penetapan garis
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Penyusunan dan pelaksanaan kajian penetapan garis
                                     sempadan sungai, garis sempadan danau, garis sempadan situ, dan garis sempadan jaringan
                                     irigasi;</li>
-                                <li><i data-feather="chevron-right"></i> Fasilitasi kegiatan tim koordinasi pengelolaan
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Fasilitasi kegiatan tim koordinasi pengelolaan
                                     sumber daya air pada wilayah sungai;</li>
-                                <li><i data-feather="chevron-right"></i> Pemberdayaan masyarakat dalam pengelolaan sumber
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Pemberdayaan masyarakat dalam pengelolaan sumber
                                     daya air;</li>
-                                <li><i data-feather="chevron-right"></i> Pelaksanaan penyusunan laporan akuntansi keuangan
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Pelaksanaan penyusunan laporan akuntansi keuangan
                                     dan akuntansi barang milik negara selaku unit akuntansi wilayah;</li>
-                                <li><i data-feather="chevron-right"></i> Pelaksanaan pemungutan, penerimaan, dan penggunaan
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Pelaksanaan pemungutan, penerimaan, dan penggunaan
                                     biaya jasa pengelolaan sumber daya air sesuai dengan ketentuan peraturan
                                     perundang-undangan;</li>
-                                <li><i data-feather="chevron-right"></i> Pelaksanaan urusan tata usaha dan rumah tangga
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Pelaksanaan urusan tata usaha dan rumah tangga
                                     balai serta komunikasi publik;</li>
-                                <li><i data-feather="chevron-right"></i> Penyusunan perjanjian kinerja dan laporan kinerja
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Penyusunan perjanjian kinerja dan laporan kinerja
                                     balai; dan</li>
-                                <li><i data-feather="chevron-right"></i> Pelaksanaan pemantauan dan pengawasan penggunaan
+                                <li data-aos="fade-up" data-aos-delay="100"><i data-feather="chevron-right"></i> Pelaksanaan pemantauan dan pengawasan penggunaan
                                     sumber daya air dan penyidikan tindak pidana bidang sumber daya air.</li>
                             </ul>
                         </h6>

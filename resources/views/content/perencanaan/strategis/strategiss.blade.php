@@ -22,7 +22,7 @@
         <div class="container" data-aos="fade-up">
             <div class="row">
                 <label for="">
-                    <h1>Rencana Strategis BBWS Serayu Opak</h1>
+                    <h1 class="text-center mt-3 mb-3">Rencana Strategis BBWS Serayu Opak</h1>
                 </label>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">
