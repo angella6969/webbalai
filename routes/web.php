@@ -5,6 +5,7 @@ use App\Http\Controllers\BendungController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DaftarInformasiPublikController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\EmbungController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\HomeController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\InfografisController;
 use App\Http\Controllers\InfrastrukturController;
 use App\Http\Controllers\IrigasiController;
+use App\Http\Controllers\KalatirtaController;
 use App\Http\Controllers\LakipController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PermohonanController;
@@ -26,6 +28,7 @@ use App\Models\Berita;
 use App\Models\Dashboard;
 use App\Models\Image;
 use App\Models\Lakip;
+use App\Models\Pengajuan_keberatan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,9 +45,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('content/home');
 // });
-Route::get('/kalatirta-so', function () {
-    return view('kalatirta.index');
-});
+// Route::get('/kalatirta-so', function () {
+//     return view('kalatirta.index');
+// });
 Route::get('/v2', function () {
     return view('welcome');
 });
@@ -73,6 +76,10 @@ Route::get('/layanan/ppid-bbws-so/prosedur_pelayanan', function () {
 
 
 Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function () {
+
+    Route::get('/kalatirta-so', [KalatirtaController::class, 'index2']);
+    Route::get('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'create']);
+    Route::post('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'store']);
 
     Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('struktur-organisasi');
     Route::get('/profil/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi');
@@ -115,6 +122,8 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::get('/beritas/{slug}', [BeritaController::class, 'show']);
     Route::get('/pengumumans', [PengumumanController::class, 'index2'])->name('pengumuman');
 
+    Route::get('/email', [EmailController::class, 'index']);
+
 
     Route::middleware(['auth'])->group(function () {
 
@@ -144,6 +153,8 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
             Route::resource('/dashboard/perencanaan/pola-ws-dan-rpsda', RpsdaController::class)->except(['show']);
             Route::resource('/dashboard/perencanaan/rencana-strategis', RencanaStrategisController::class)->except(['show']);
             Route::resource('/dashboard/kinerja/lakip', LakipController::class)->except(['show']);
+            Route::resource('/dashboard/kalatirta-so', KalatirtaController::class)->except(['create','store']);
+            Route::resource('/dashboard/kalatirta-so/pengajuan-keberatan', Pengajuan_keberatanController::class)->except(['create','store']);
         });
-    });
+    }); 
 });

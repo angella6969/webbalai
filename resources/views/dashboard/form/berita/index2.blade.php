@@ -61,25 +61,6 @@
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-{{-- <script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-            @if (Session::has('success'))
-                iziToast.success({
-                    title: 'Success',
-                    message: '{{ Session::get('success') }}',
-                    position: 'bottomRight',
-                });
-            @endif
-            @if (Session::has('fail'))
-                iziToast.warning({
-                    title: 'Warning',
-                    message: '{{ Session::get('fail') }}',
-                    position: 'bottomRight',
-                });
-            @endif
-        });
-</script> --}}
 <x-notif />
 
 @endsection

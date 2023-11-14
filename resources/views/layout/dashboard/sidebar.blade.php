@@ -56,6 +56,29 @@
                             <span class="hide-menu">Foto Beranda</span>
                         </a>
                     </li>
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">Pelayanan</span>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link {{ Request::is('dashboard/kalatirta-so*') ? 'active' : '' }}"
+                            href="/dashboard/kalatirta-so" aria-expanded="false">
+                            <span>
+                                {{-- <i class="ti ti-article"></i> --}}
+                            </span>
+                            <span class="hide-menu">Permintaan Data</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link {{ Request::is('dashboard/kalatirta-so/pengajuan-keberatan*') ? 'active' : '' }}"
+                            href="/dashboard/kalatirta-so/pengajuan-keberatan" aria-expanded="false">
+                            <span>
+                                {{-- <i class="ti ti-article"></i> --}}
+                            </span>
+                            <span class="hide-menu">Pengajuan Keberatan</span>
+                        </a>
+                    </li>
 
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -135,6 +158,26 @@
                 @endcan
 
                 @can('AdminSisda')
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">Galeri</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link {{ Request::is('dashboard/galeri/video*') ? 'active' : '' }}"
+                            href="/dashboard/galeri/video" aria-expanded="false">
+                            <span>
+                                {{-- <i class="ti ti-article"></i> --}}
+                            </span>
+                            <span class="hide-menu">video</span>
+                        </a>
+                        <a class="sidebar-link {{ Request::is('dashboard/galeri/foto*') ? 'active' : '' }}"
+                            href="/dashboard/galeri/foto" aria-expanded="false">
+                            <span>
+                                {{-- <i class="ti ti-article"></i> --}}
+                            </span>
+                            <span class="hide-menu">foto</span>
+                        </a>
+                    </li>
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                         <span class="hide-menu">Situs</span>

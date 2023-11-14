@@ -10,6 +10,9 @@ use Illuminate\Validation\Rules\Unique;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
+use App\Notifications\NewDataNotification;
+use App\Models\User;
 
 class BeritaController extends Controller
 {
@@ -46,7 +49,6 @@ class BeritaController extends Controller
     public function store(StoreBeritaRequest $request)
     {
         // dd($request);
-
         $validatedData = $request->validate([
             'judul' => ['required'],
             'slug' => ['required', 'Unique:Beritas'],
@@ -63,6 +65,9 @@ class BeritaController extends Controller
             }
 
             Berita::create($validatedData);
+            $user = Auth::user();
+            // $user->notify(new NewDataNotification());
+            // $user->notify(new NewDataNotification());
             DB::commit();
             return redirect('/dashboard/beritas/')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
@@ -122,7 +127,7 @@ class BeritaController extends Controller
         $validatedData = $request->validate($rules);
 
         DB::beginTransaction();
-        try { 
+        try {
 
             if ($request->hasFile('url_foto')) {
                 if ($berita->url_foto != null) {

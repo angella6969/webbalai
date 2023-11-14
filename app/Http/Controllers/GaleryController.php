@@ -13,7 +13,9 @@ class GaleryController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.form.galeri.video.index',[
+            
+        ]);
     }
     public function index2()
     {
