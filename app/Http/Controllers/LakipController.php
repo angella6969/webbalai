@@ -129,7 +129,6 @@ class LakipController extends Controller
                 Storage::delete($lakip->url_pdf);
             }
 
-
             $lakip->delete();
             return redirect()->back()->with('success', 'Berhasil Menghapus Data');
         } catch (\Exception $e) {

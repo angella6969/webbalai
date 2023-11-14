@@ -111,8 +111,14 @@ class GaleryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Galery $galery)
+    public function destroy(string $id)
     {
-        //
+        $video = Galery::findOrFail($id);
+        try {
+            $video->delete();
+            return redirect()->back()->with('success', 'Berhasil Menghapus Data');
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
     }
 }
