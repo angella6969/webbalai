@@ -71,7 +71,7 @@
                 <li class="dropdown"><a href="#"><span>Galeri</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
                         <li><a href="/under-Maintenance">Foto</a></li>
-                        <li><a href="https://www.youtube.com/@bbwsserayuopak7569">Video</a></li>
+                        <li><a href="/media/galeri/videos">Video</a></li>
                     </ul>
                 </li>
             </ul>

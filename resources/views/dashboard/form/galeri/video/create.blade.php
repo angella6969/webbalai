@@ -5,15 +5,12 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title fw-semibold mb-3">Laporan Akuntabilitas Kinerja Instansi Pemerintahan</h5>
-            <form method="post" action="/media/galeri/videos" enctype="multipart/form-data">
+            <h5 class="card-title fw-semibold mb-3">Tambah Video</h5>
+            <form method="post" action="/dashboard/galeri/video" enctype="multipart/form-data">
                 @csrf
 
                 <x-input nama="nama" judul="Nama" nilai="" />
-                <x-garis />
-
-                <x-I_pdf nama="url_pdf" judul="File Pdf" nilai="" />
-
+                <x-input nama="url_yt" judul="Code Embed Youtube" nilai="" />
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
