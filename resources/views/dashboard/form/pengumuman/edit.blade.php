@@ -8,8 +8,10 @@
             <h5 class="card-title fw-semibold mb-4">Pengumuman</h5>
             <div class="card">
                 <div class="card-body">
-                    <form method="post" action="/dashboard/pengumuman" enctype="multipart/form-data">
+                    <form method="post" action="/dashboard/pengumuman/{{ $pengumuman->id }}"
+                        enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
 
                         <div class="mb-3">
                             <label for="Pengumuman" class="form-label">Pengumuman</label>
@@ -19,21 +21,22 @@
 
                             </div>
                         </div>
-                        <div class="separator">
+                        {{-- <div class="separator">
                             <br>
                             <p class="d-flex justify-content-center">Dokumen Pendukunng</p>
                             <p class="d-flex justify-content-center">Pilih Salah satu : Link / Dokumen</p>
                             <div class="line"></div>
-                        </div>
+                        </div> --}}
+                        <x-garis />
 
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <label for="Pengumuman" class="form-label">Link</label>
                             <div class="input-group">
                                 <input type="text" class="form-control" id="url_pengumuman" name="url_pengumuman"
                                     placeholder="link pengumuman  jika ada" value="{{ old('url_pengumuman') }}">
 
                             </div>
-                        </div>
+                        </div> --}}
 
 
 

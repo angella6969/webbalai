@@ -28,7 +28,7 @@
                             <tr style="text-align: center;">
                                 <th scope="col">No</th>
                                 <th scope="col">Judul </th>
-                                <th scope="col">Url</th>
+                                {{-- <th scope="col">Url</th> --}}
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -37,7 +37,7 @@
                                 <tr style="text-align: center;">
                                     <td> {{ $loop->iteration }}</td>
                                     <td> {{ $pengumuman->judul }}</td>
-                                    <td> {{ $pengumuman->url_pengumuman }}</td>
+                                    {{-- <td> {{ $pengumuman->url_pengumuman }}</td> --}}
 
                                     <td>
                                         <button class="btn badge bg-info show-DI-modal" data-id="{{ $pengumuman->id }}"

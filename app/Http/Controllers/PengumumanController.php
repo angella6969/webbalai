@@ -102,6 +102,7 @@ class PengumumanController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // dd('awd');
         $pengumuman = Pengumuman::findOrfail($id);
         $validatedData = $request->validate([
             'judul' => ['required'],
@@ -111,7 +112,7 @@ class PengumumanController extends Controller
         ]);
         DB::beginTransaction();
         try {
-
+ 
             if ($request->hasFile('dokumen')) {
                 if ($pengumuman->dokumen != null) {
                     Storage::delete($pengumuman->dokumen);
@@ -125,7 +126,7 @@ class PengumumanController extends Controller
 
             Pengumuman::where('id', $id)->update($validatedData);
             DB::commit();
-            // return redirect('/dashboard/daerah-irigasi')->with('success', 'Data berhasil disimpan.');
+            return redirect('/dashboard/pengumuman')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
