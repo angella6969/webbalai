@@ -3,7 +3,7 @@
 
 <div class="mb-3 mt-3">
     <div style="z-index: 999">
-        <textarea hidden id="{{ $body }}" name="{{ $body }}" style="width: 100px;">{{  old($body)  }}</textarea>
+        <textarea hidden id="{{ $body }}" name="{{ $body }}" style="width: 100px;">{{ old('$body', $body) }}</textarea>
     </div>
 </div>
 
@@ -60,5 +60,5 @@
         })
         .catch(error => {
             console.log(error);
-        }); 
+        });
 </script>

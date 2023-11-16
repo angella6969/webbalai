@@ -38,14 +38,17 @@ class KalatirtaController extends Controller
     public function store(StoreKalatirtaRequest $request)
     {
         $validatedData = $request->validate([
-            'nama' => ['required'],
-            'alamat' => ['required'],
+            'nama' => ['required', 'max:254'],
+            'alamat' => ['required', 'max:254'],
             'nohp' => ['required', 'regex:/^\d{10,15}$/'],
-            'email' => ['required'],
-            'pekerjaan' => ['required'],
-            'alamatkantor' => ['required'],
+            'email' => ['required', 'max:254', 'email:dns'],
+            'pekerjaan' => ['required', 'max:254'],
+            'alamatkantor' => ['required', 'max:254'],
             'tujuan' => ['required'],
             'informasi' => ['required'],
+            'memperoleh' => ['required'],
+            'mengirim' => ['required'],
+            'keterangan' => ['nullable'],
             'ktp' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'required'],
         ]);
 
@@ -90,9 +93,24 @@ class KalatirtaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateKalatirtaRequest $request, Kalatirta $kalatirta)
+    public function update(UpdateKalatirtaRequest $request, String $id)
     {
-        //
+
+        // $kalatirta = Kalatirta::findOrFail($id);
+        $validatedData = $request->validate([
+            'status' => ['required'],
+            'keterangan' => ['nullable'],
+        ]);
+        // dd( $validatedData);
+        DB::beginTransaction();
+        try {
+            Kalatirta::where('id', $id)->update($validatedData);
+            DB::commit();
+            return redirect('/dashboard/kalatirta-so/')->with('success', 'Data berhasil disimpan.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 
     /**

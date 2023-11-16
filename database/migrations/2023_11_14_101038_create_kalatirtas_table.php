@@ -18,11 +18,14 @@ return new class extends Migration
             $table->string('nohp')->nullable();
             $table->string('pekerjaan')->nullable();
             $table->string('alamatkantor')->nullable();
-            $table->string('tujuan')->nullable();
-            $table->string('informasi')->nullable();
+            $table->longText('tujuan')->nullable();
+            $table->longText('informasi')->nullable();
             $table->string('ktp')->nullable();
             $table->string('email')->nullable();
-            $table->string('status')->nullable();
+            $table->string('status')->default('Menunggu Konformasi');
+            $table->string('memperoleh')->nullable();
+            $table->string('mengirim')->nullable();
+            $table->longText('keterangan')->nullable();
             $table->timestamps();
         });
     }

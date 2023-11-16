@@ -217,7 +217,8 @@
                                     <label for="nohp" class="form-label">Nomor Tlp/WA</label>
                                     <div class="input-group">
                                         <input type="number" class="form-control @error('nohp') is-invalid @enderror"
-                                            id="nohp" name="nohp" placeholder="Hanya Angka dan No Tlp yang Valid"
+                                            id="nohp" name="nohp"
+                                            placeholder="Hanya Angka dan No Tlp yang Valid"
                                             value="{{ old('nohp') }}" required>
                                         @error('nohp')
                                             <span class="invalid-feedback" role="alert">
@@ -267,6 +268,38 @@
                                         @enderror
                                     </div>
                                 </div>
+                                <div class="mt-3">
+                                    <label for="memperoleh" class="form-label">Cara Memperoleh Informasi</label>
+                                    <select class="form-select" aria-label="Default select example" name="memperoleh"
+                                        id="memperoleh" required>
+                                        <option value="" {{ old('memperoleh') == '' ? 'selected' : '' }}>
+                                            Kategori</option>
+                                        <option value="Melihat/Membaca/Mendengarkan/Mencatat"
+                                            {{ old('memperoleh') == 'Melihat/Membaca/Mendengarkan/Mencatat' ? 'selected' : '' }}>
+                                            Melihat/Membaca/Mendengarkan/Mencatat</option>
+                                        <option value="Mendapatkan Salinan Informasi (Hard/Soft Copy)"
+                                            {{ old('memperoleh') == 'Mendapatkan Salinan Informasi (Hard/Soft Copy)' ? 'selected' : '' }}>
+                                            Mendapatkan Salinan Informasi (Hard/Soft Copy)</option>
+                                    </select>
+                                </div>
+                                <div class="mt-3">
+                                    <label for="mengirim" class="form-label">Cara Mengirim Informasi</label>
+                                    <select class="form-select" aria-label="Default select example" name="mengirim"
+                                        id="mengirim" required>
+                                        <option value="" {{ old('mengirim') == '' ? 'selected' : '' }}>
+                                            Kategori</option>
+                                        <option value="Diambil Langsung"
+                                            {{ old('mengirim') == 'Diambil Langsung' ? 'selected' : '' }}>
+                                            Diambil Langsung</option>
+                                        <option value="Kurir" {{ old('mengirim') == 'Kurir' ? 'selected' : '' }}>
+                                            Kurir</option>
+                                        <option value="Via Pos" {{ old('mengirim') == 'Via Pos' ? 'selected' : '' }}>
+                                            Via Pos</option>
+                                        <option value="Email" {{ old('mengirim') == 'Email' ? 'selected' : '' }}>
+                                            Email</option>
+                                    </select>
+                                </div>
+
 
                                 <div class="mb-3 mt-3">
                                     <label for="informasi" class="form-label">Informasi yang dibutuhkan</label>
@@ -334,7 +367,7 @@
 <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
 
 <script>
-    function previewImage(id) { 
+    function previewImage(id) {
         const image = document.querySelector(`#${id}`);
         const imgPreview = document.querySelector(`#img-preview-${id}`);
 

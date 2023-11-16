@@ -83,29 +83,29 @@
         </div>
 
     </section>
-
-    <div class="col-lg-12" style="height: 60px; color:#fff; background: rgb(232,170,28); ">
-        <div class="container">
-            <div class="row">
-                <div class="col-2" style="margin:10px 0px 10px 100px;"> Pengumuman : </div>
-                <div style="margin: 10px 0px 10px 0px;" class="col-1">
-                    <img src="{{ asset('images/icon/chevrons-left (1).svg') }}" id="arrow-left" alt=""
-                        onclick="moveSlide(1)">
-                </div>
-                <div class="col-6">
-                    <div style="margin: 10px 0px 10px 0px;" id="info-container">
-                        <!-- Data dari database akan ditampilkan di sini -->
+    <section>
+        <div class="col-lg-12" style="height: 60px; color:#fff; background: rgb(232,170,28); ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-2" style="margin:10px 0px 10px 100px;"> Pengumuman : </div>
+                    <div style="margin: 10px 0px 10px 0px;" class="col-1">
+                        <img src="{{ asset('images/icon/chevrons-left (1).svg') }}" id="arrow-left" alt=""
+                            onclick="moveSlide(1)">
                     </div>
+                    <div class="col-6">
+                        <div style="margin: 10px 0px 10px 0px;" id="info-container">
+                            <!-- Data dari database akan ditampilkan di sini -->
+                        </div>
 
-                </div>
-                <div style="margin: 10px 0px 10px 0px;" class="col-1">
-                    <img src="{{ asset('images/icon/chevrons-right (1).svg') }}" id="arrow-left" alt=""
-                        onclick="moveSlide(-1)">
+                    </div>
+                    <div style="margin: 10px 0px 10px 0px;" class="col-1">
+                        <img src="{{ asset('images/icon/chevrons-right (1).svg') }}" id="arrow-left" alt=""
+                            onclick="moveSlide(-1)">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    </section>
 
     <section id="" class="testimonials">
         <div class="container">

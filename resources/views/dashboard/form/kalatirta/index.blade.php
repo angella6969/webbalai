@@ -22,7 +22,7 @@
                     <a href="/dashboard/kinerja/data/create" class="btn btn-info">Tambah LAKIP</a>
                 </div> --}}
                 <div class="table-responsive-sm mt-3">
-                    <table class="table table-striped table-sm">
+                    <table class="table  table-sm">
                         <thead>
                             <tr style="text-align: center;">
                                 <th scope="col">No</th>
@@ -32,7 +32,8 @@
                         </thead>
                         <tbody>
                             @foreach ($datas as $data)
-                                <tr style="text-align: center;">
+                                <tr style="text-align: center;"
+                                    class="{{ $data->status == 'Diterima' ? 'bg-success' : ($data->status == 'Ditolak' ? 'bg-danger' : 'white') }}">
                                     <td> {{ $loop->iteration }}</td>
                                     <td> {{ $data->nama }}</td>
 

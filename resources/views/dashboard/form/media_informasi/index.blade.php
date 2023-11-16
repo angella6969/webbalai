@@ -79,7 +79,7 @@
                     </thead>
                     <tbody>
                         @foreach ($Infografiss as $Infografis)
-                        <tr style="text-align: center;">
+                        <tr style="text-align: center;" >
                             <td> {{ $loop->iteration }}</td>
                             <td> {{ $Infografis->nama }}</td>
                             <td> <img style="height: 150px" src={{ asset('storage/' . substr($Infografis->url_foto1, 6))
