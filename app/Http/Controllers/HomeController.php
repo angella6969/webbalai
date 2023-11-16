@@ -14,6 +14,7 @@ use App\Models\Infrastruktur;
 use App\Models\Logoterkait;
 use App\Models\Pengumuman;
 use App\Models\Situsterkait;
+use App\Models\Visitor;
 
 class HomeController extends Controller
 {
@@ -31,6 +32,7 @@ class HomeController extends Controller
         $embungs = Embung::all();
         $bendungs = Bendung::all();
         $data = $bendungans->merge($embungs)->merge($bendungs);
+
         return view('content.home', [
             'images' => $image,
             'beritas' => $berita,

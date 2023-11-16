@@ -21,10 +21,10 @@
 
                 <x-garis />
 
-                <x-i_img nama="url_foto1" judul="Foto Berita" nilai="" img="Foto1" />
-                <x-i_img nama="url_foto2" judul="Foto Berita" nilai="" img="Foto2" />
-                <x-i_img nama="url_foto3" judul="Foto Berita" nilai="" img="Foto3" />
-                <x-i_img nama="url_foto4" judul="Foto Berita" nilai="" img="Foto4" />
+                <x-i_img nama="url_foto1" judul="Foto Infrastruktur" nilai="" img="Foto1" />
+                <x-i_img nama="url_foto2" judul="Foto Infrastruktur" nilai="" img="Foto2" />
+                <x-i_img nama="url_foto3" judul="Foto Infrastruktur" nilai="" img="Foto3" />
+                <x-i_img nama="url_foto4" judul="Foto Infrastruktur" nilai="" img="Foto4" />
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>

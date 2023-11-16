@@ -44,7 +44,7 @@
                             </p> <br>
 
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-xl-6">
                                     <table class="table table-responsive">
                                         <tbody>
                                             <tr>
@@ -110,7 +110,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-xl-6">
                                     <div>
                                         <img src="{{ asset('storage/' . substr($embung->url_foto2, 6)) }}" alt=""
                                             class="img-fluid">

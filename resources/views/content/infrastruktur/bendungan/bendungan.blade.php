@@ -24,7 +24,7 @@
                     <article class="entry entry-single">
                         <div class="entry-img d-flex justify-content-center">
                             <img src="{{ asset('storage/' . substr($bendungan->url_foto1, 6)) }}" alt=""
-                                class="" style=" width: 150vw; height: 100%;">
+                                class="" style=" width: 150vw; ">
                         </div>
 
                         <h1 class="entry-title">
@@ -42,7 +42,7 @@
                             <p>{{ $bendungan->body }}</p> <br>
 
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-xl-6">
                                     <table class="table table-responsive">
                                         <tbody>
                                             <tr>
@@ -109,7 +109,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-xl-6">
                                     <div>
                                         <img src="{{ asset('storage/' . substr($bendungan->url_foto2, 6)) }}"
                                             alt="" class="img-fluid">

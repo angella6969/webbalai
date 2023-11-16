@@ -14,7 +14,7 @@
 
         </div>
     </section>
-    <section id="" class="blog">
+    <section id="" class="blog"> 
         <div class="container" data-aos="fade-up">
             <div class="row">
                 <div class="col-lg-8 entries" style="margin-top:20px">
@@ -23,7 +23,7 @@
 
                         <div class="entry-img d-flex justify-content-center">
                             <img src="{{ asset('storage/' . substr($berita->url_foto, 6)) }}" alt=""
-                                class="img-fluid" style="border-radius: 5px">
+                            class="img-fluid" style="border-radius: 5px">
                         </div>
 
                         <h2 class="entry-title">

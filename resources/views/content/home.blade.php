@@ -162,7 +162,7 @@
                                     href="/informasi-publik/infrastruktur/{{ $infrastruktur->jenis }}/{{ $infrastruktur->slug }}"><img
                                         src="{{ asset('storage/' . substr($infrastruktur->url_foto1, 6)) }}"
                                         class="card-img-top hover-effect-2" alt=""
-                                        style="height: 200px;object-fit: none;"></a>
+                                        style="height: 200px;"></a>
 
                                 <div class="card-body">
                                     <h5 class="d-flex justify-content-center text-4 mb-1"><a href=""

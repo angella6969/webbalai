@@ -81,14 +81,14 @@
                  <ul class="" style="padding-left: .5rem; font-size: 14px;">
                      <li class="mb-2"><a style="color: white; " href="#">Pengunjung Online
                      <li class="mb-2"><a style="color: white; " href="#">Pengunjung Online
-                             : 1 orang</a></li>
+                             : orang</a></li>
                      <li class="mb-2"><a style="color: white; " href="">Pengunjung Hari
-                             ini : 1 orang</a></li>
+                             ini : {{ $dailyVisitorCount }}</a></li>
                      <li class="mb-2"><a style="color: white; " href="#">Pengunjung Bulan
-                             Ini : 1 orang </a>
+                             Ini : {{ $weeklyVisitorCount }} </a>
                      </li>
                      <li class="mb-2"><a style="color: white; " href="#">Total Pengunjung :
-                             1 orang</a></li>
+                             {{ $monthlyVisitorCount }}</a></li>
                  </ul>
              </div>
 
