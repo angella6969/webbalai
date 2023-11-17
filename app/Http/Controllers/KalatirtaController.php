@@ -99,7 +99,7 @@ class KalatirtaController extends Controller
         // $kalatirta = Kalatirta::findOrFail($id);
         $validatedData = $request->validate([
             'status' => ['required'],
-            'keterangan' => ['nullable'],
+            'keterangan' => ['nullable'], 
         ]);
         // dd( $validatedData);
         DB::beginTransaction();
@@ -116,8 +116,14 @@ class KalatirtaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Kalatirta $kalatirta)
+    public function destroy(string $id)
     {
-        //
+        $kalatirta = Kalatirta::findOrFail($id);
+        try {
+            $kalatirta->delete();
+            return redirect()->back()->with('success', 'Berhasil Menghapus Data');
+        } catch (\Exception $e) {
+            return back()->with('error', $e->getMessage());
+        }
     }
 }

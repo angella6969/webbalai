@@ -103,7 +103,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
     Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2']);
 
- 
+
 
     Route::get('/media/media-informasi/', [InfografisController::class, 'index2']);
     Route::get('/media/media-informasi/{jenis}/{slug}', [InfografisController::class, 'show']);
@@ -135,6 +135,9 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
         Route::get('/dashboard/infrastruktur/irigasi/checkSlug', [IrigasiController::class, 'checkSlug']);
         Route::get('/dashboard/infrastruktur/embungs/checkSlug', [EmbungController::class, 'checkSlug']);
 
+        Route::resource('/dashboard/media/media-informasi', InfografisController::class)->except(['show']);
+
+
         Route::middleware(['AdminSisda'])->group(function () {
             Route::resource('/dashboard/infrastruktur/embungs', EmbungController::class)->except(['show']);
             Route::resource('/dashboard/situs-terkait', SitusterkaitController::class)->except(['show']);
@@ -149,12 +152,11 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
             Route::resource('/dashboard/daftar-informasi-publik', DaftarInformasiPublikController::class)->except(['show']);
             Route::resource('/dashboard/beritas', BeritaController::class)->except(['show']);
             Route::resource('/dashboard/pengumuman', PengumumanController::class);
-            Route::resource('/dashboard/media/media-informasi', InfografisController::class)->except(['show']);
             Route::resource('/dashboard/perencanaan/pola-ws-dan-rpsda', RpsdaController::class)->except(['show']);
             Route::resource('/dashboard/perencanaan/rencana-strategis', RencanaStrategisController::class)->except(['show']);
             Route::resource('/dashboard/kinerja/lakip', LakipController::class)->except(['show']);
-            Route::resource('/dashboard/kalatirta-so', KalatirtaController::class)->except(['create','store']);
+            Route::resource('/dashboard/kalatirta-so', KalatirtaController::class)->except(['create', 'store']);
             // Route::resource('/dashboard/kalatirta-so/pengajuan-keberatan', Pengajuan_keberatanController::class)->except(['create','store']);
         });
-    }); 
+    });
 });

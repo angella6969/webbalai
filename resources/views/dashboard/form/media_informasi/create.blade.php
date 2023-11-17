@@ -71,19 +71,19 @@
                                 <label for="url_foto1">File</label>
                                 <input type="file" class="form-control" id="url_foto1" name="url_foto1"
                                     accept="image/*, image/png, image/gif">
-                                <h6>PDF Max 5 MB</h6>
+                                <h6>File Max 5 MB</h6>
                             </div>
                             <div class="mt-3 mb-3">
                                 <label for="url_foto2">File</label>
                                 <input type="file" class="form-control" id="url_foto2" name="url_foto2"
                                     accept="image/*, image/png, image/gif">
-                                <h6>PDF Max 5 MB</h6>
+                                <h6>File Max 5 MB</h6>
                             </div>
                             <div class="mt-3 mb-3">
                                 <label for="url_foto3">File</label>
                                 <input type="file" class="form-control" id="url_foto3" name="url_foto3"
                                     accept="image/*, image/png, image/gif">
-                                <h6>PDF Max 5 MB</h6>
+                                <h6>File Max 5 MB</h6>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>

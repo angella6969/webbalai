@@ -162,7 +162,7 @@
                     <img src="{{ asset('kalatirta') }}/images/kal-logo3.png" class="animated-pic" alt="">
                 </div>
             </div>
-        </div>
+        </div> 
     </section>
 
     <!-- ==MAIN MENU== -->
@@ -212,7 +212,8 @@
                 </div>
                 <div class="section-cap">"Tata Cara Penggunaan Kalatirta"</div>
                 <div class="section-row clearfix">
-                    <img src="{{ asset('kalatirta') }}/images/sop-kalatirta.jpg" class="animated fadeIn" alt="" width="200">
+                    <img src="{{ asset('kalatirta') }}/images/sop-kalatirta.jpg" class="animated fadeIn"
+                        alt="" width="200">
                     <iframe width="560" height="315"
                         src="https://www.youtube.com/embed/YSJTEl0VIcQ?si=6rwzkCPLpDJK9Cj2"
                         title="YouTube video player" frameborder="0"

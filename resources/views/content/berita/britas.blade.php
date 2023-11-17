@@ -30,9 +30,9 @@
                                     <img src="{{ asset('storage/' . substr($berita->url_foto, 6)) }}" alt=""
                                         style="height: 300px; border-radius: 10px" class="card-img-top hover-effect-2">
                                 </div>
-                                <label for="">
-                                    <h6> <i class="bi bi-clock"></i> {{ $berita->created_at }}</h6>
-                                </label>
+                                {{-- <label for=""> --}}
+                                <h6> <i class="bi bi-clock"></i> {{ $berita->created_at }}</h6>
+                                {{-- </label> --}}
                                 <h2 class="entry-title">
                                     <a href="beritas/{{ $berita->slug }}">{{ $berita->judul }}</a>
                                 </h2>

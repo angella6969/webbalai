@@ -28,7 +28,7 @@ class BeritaController extends Controller
     }
     public function index()
     {
-        $beritas = Berita::latest()->paginate(5);
+        $beritas = Berita::latest()->paginate(10);
         return view('dashboard.form.berita.index2', [
             'beritas' => $beritas
         ]);
@@ -65,7 +65,7 @@ class BeritaController extends Controller
             }
 
             Berita::create($validatedData);
-            $user = Auth::user();
+            // $user = Auth::user();
             // $user->notify(new NewDataNotification());
             // $user->notify(new NewDataNotification());
             DB::commit();

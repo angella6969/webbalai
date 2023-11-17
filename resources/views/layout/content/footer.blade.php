@@ -58,7 +58,7 @@
                              BBWS
                              SO</a></li>
                      <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
-                             href="">AiR (Rekomtek BBWS SO) </a></li>
+                             href="https://airbbwsso.net/">AiR (Rekomtek BBWS SO) </a></li>
                      {{-- <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
                              href="">Renstra BBBWS
                              Serayu Opak </a></li> --}}
@@ -79,16 +79,18 @@
              <div class="col-lg-4 mb-4 mb-lg-0 ">
                  <h2 class="text-3 mb-3" style="font-size: 18px;">Statistik Pengunjung</h2>
                  <ul class="" style="padding-left: .5rem; font-size: 14px;">
-                     <li class="mb-2"><a style="color: white; " href="#">Pengunjung Online
-                     <li class="mb-2"><a style="color: white; " href="#">Pengunjung Online
-                             : orang</a></li>
+                     {{-- <li class="mb-2"><a style="color: white; " href="#">Pengunjung Online --}}
+                     {{-- <li class="mb-2"><a style="color: white; " href="#">Pengunjung Online
+                             : orang</a></li> --}}
                      <li class="mb-2"><a style="color: white; " href="">Pengunjung Hari
                              ini : {{ $dailyVisitorCount }}</a></li>
-                     <li class="mb-2"><a style="color: white; " href="#">Pengunjung Bulan
+                     <li class="mb-2"><a style="color: white; " href="#">Pengunjung Minggu
                              Ini : {{ $weeklyVisitorCount }} </a>
                      </li>
-                     <li class="mb-2"><a style="color: white; " href="#">Total Pengunjung :
+                     <li class="mb-2"><a style="color: white; " href="#">Bulan Ini :
                              {{ $monthlyVisitorCount }}</a></li>
+                     <li class="mb-2"><a style="color: white; " href="#">Total Pengunjung :
+                             {{ $yearlyVisitorCount }}</a></li>
                  </ul>
              </div>
 

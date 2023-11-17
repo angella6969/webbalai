@@ -382,7 +382,7 @@ h6 {
 .navbar-mobile .getstarted,
 .navbar-mobile .getstarted:focus {
     margin: 15px;
-}
+} 
 
 .navbar-mobile .dropdown ul {
     position: static;
@@ -569,7 +569,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-    /* padding: 60px 0; */
+    padding: 60px 0;
     overflow: hidden;
 }
 
@@ -587,7 +587,7 @@ section {
     text-transform: uppercase;
     color: #aaaaaa;
     font-family: "Poppins", sans-serif;
-}
+} 
 
 .section-title h2::after {
     content: "";

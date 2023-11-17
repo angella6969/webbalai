@@ -231,7 +231,10 @@ HEADER
 NAVIGATION MENU
 ------------------------*/
 .navbar {
-    padding: 5px 0;
+    padding: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: flex-end;
 }
 .navbar ul {
     margin: 0;
@@ -356,6 +359,14 @@ HERO SECTION
 @media (min-width: 1024px) {
     #hero {
         background-attachment: fixed;
+    }
+}
+@media (max-width: 768px) {
+    #hero {
+        width: 100%;
+    }
+    .section-title {
+        margin-left: 25px;
     }
 }
 .hero-content {
@@ -682,7 +693,7 @@ ANIMATION
 /* -----------------------
 MOBILE DEVICE 
 ------------------------*/
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 762px) {
     .navToggle {
         display: block;
         top: 20px;

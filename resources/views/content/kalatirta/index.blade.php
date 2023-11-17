@@ -8,6 +8,7 @@
     <title>KALATIRTA - Layanan Terpadu BBWS SO</title>
     {{-- <link rel="stylesheet" href="{!! asset('/css/style.css') !!}"> --}}
     <link rel="stylesheet" href="{{ asset('kalatirta\css\style.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets\css\style.css') }}"> --}}
     <link rel="shortcut icon" type="image/png" href="{{ asset('kalatirta\images\Kal-logo2.png') }}" />
 </head>
 
@@ -119,7 +120,7 @@
             </svg>
         </div>
     </section>
-    <header id="header">
+    {{-- <header id="header">
         <div class="container section-row">
             <a href="#"><img src="{{ asset('kalatirta') }}/images/kal-logo1.png" alt=""></a>
             <div class="navbar">
@@ -148,7 +149,8 @@
                 <use xlink:href="#navToggle"></use>
             </svg>
         </div>
-    </header>
+    </header> --}}
+@include('content.kalatirta.layout.navbar')
 
     <!-- ==HERO== -->
     <section id="hero">
@@ -213,7 +215,8 @@
                 </div>
                 <div class="section-cap">"Tata Cara Penggunaan Kalatirta"</div>
                 <div class="section-row clearfix">
-                    <img src="{{ asset('kalatirta') }}/images/sop-kalatirta.jpg" class="animated fadeIn" alt="" width="200">
+                    <img src="{{ asset('kalatirta') }}/images/sop-kalatirta.jpg" class="animated fadeIn"
+                        alt="" width="200">
                     <iframe width="560" height="315"
                         src="https://www.youtube.com/embed/YSJTEl0VIcQ?si=6rwzkCPLpDJK9Cj2"
                         title="YouTube video player" frameborder="0"
