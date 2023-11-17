@@ -342,13 +342,14 @@
 
 
     <!-- ==FOOTER== -->
-    <footer id="footer">
+    {{-- <footer id="footer">
         <div class="container footer-content">
             <div class="copyright">
                 <p>Kalatirta &copy; 2023. BBWS Serayu Opak, Ditjen Sumber Daya Air - Kementerian PUPR.</p>
             </div>
         </div>
-    </footer>
+    </footer> --}}
+    @include('content.kalatirta.layout.footer')
 
     <!-- ==BACK TO TOP=== -->
     <a href="#" class="scroll-top">

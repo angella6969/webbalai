@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>KALATIRTA - Layanan Terpadu BBWS SO</title>
-    {{-- <link rel="stylesheet" href="{!! asset('/css/style.css') !!}"> --}}
     <link rel="stylesheet" href="{{ asset('kalatirta\css\style.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('assets\css\style.css') }}"> --}}
     <link rel="shortcut icon" type="image/png" href="{{ asset('kalatirta\images\Kal-logo2.png') }}" />
@@ -98,29 +97,6 @@
     </svg>
 
     <!-- ==HEADER== -->
-    {{-- <section id="topbar">
-        <div class="container section-info time">
-            <span id="time"></span>
-        </div>
-        <div class="container section-info social-links">
-            <svg class="icon">
-                <use xlink:href="#facebook"></use>
-            </svg>
-            <svg class="icon">
-                <use xlink:href="#instagram"></use>
-            </svg>
-            <svg class="icon">
-                <use xlink:href="#twitterx"></use>
-            </svg>
-            <svg class="icon">
-                <use xlink:href="#youtube"></use>
-            </svg>
-            <svg class="icon">
-                <use xlink:href="#tiktok"></use>
-            </svg>
-        </div>
-    </section> --}}
-
     @include('content.kalatirta.layout.toolbar')
     @include('content.kalatirta.layout.navbar')
 
@@ -144,177 +120,12 @@
     <main id="main">
 
         @yield('container')
-
-        {{-- <section id="tentang" class="section-content section-bg">
-            <div class="container animated fadeIn">
-                <div style="height: 50px;"></div>
-                <div class="section-title">
-                    <span>Kalatirta</span>
-                    <h2><strong>Kalatirta</strong></h2>
-                </div>
-                <div class="section-row clearfix">
-                    <div class="section-cap">"Kanal Layanan Terpadu: Permohonan Rekomendasi Teknis, Permohonan
-                        Informasi dan Data, serta Pustaka Online BBWS Serayu Opak"
-                        <p class="section-info"><strong>KALATIRTA</strong> merupakan media yang menjadi kolom/wadah
-                            untuk pelayanan terpadu
-                            terkait Rekomtek (permohonan Rekomendasi Teknis), Pustaka (perpustakaan)
-                            serta layanan informasi & data (PPID) di BBWS Serayu Opak.
-                        </p>
-                        <p class="section-info">Melalui “Kalatirta” diharapkan pelayanan publik di BBWS Serayu Opak
-                            dapat terdokumentasi dengan baik serta berjalan semakin efektif dan efisien.
-                        </p>
-                    </div>
-                    <div class="section-info">
-                        <h3>Filosofi dan Makna</h3>
-                        <p>&nbsp</p>
-                        <p><strong>Kata</strong></p>
-                        <p>Adapun secara harfiah Kalatirta berarti "zaman air" (Bahasa Sansekerta).</p>
-                        <p>&nbsp</p>
-                        <p><strong>Simbol</strong></p>
-                        <p>“Tetes Air” menjadi identitas BBWS Serayu Opak yang lingkup kerjanya menangani bidang Sumber
-                            Daya Air (SDA).</p>
-                        <p>&nbsp</p>
-                        <p><strong>Warna</strong></p>
-                        <p>warna yang digunakan merupakan familia warna biru yakni tosca, biru, ungu. Perpaduan ini
-                            bermakna bahwa “Kalatirta” adalah wadah yang menyatukan berbagai pelayanan publik menjadi
-                            terpadu dan harmoni.</p>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-
-        {{-- <section id="prosedur" class="section-content section-bg">
-            <div class="container animated fadeIn">
-                <div class="section-title">
-                    <span>Prosedur</span>
-                    <h2><strong>Prosedur</strong></h2>
-                </div>
-                <div class="section-cap">"Tata Cara Penggunaan Kalatirta"</div>
-                <div class="section-row clearfix">
-                    <img src="{{ asset('kalatirta') }}/images/sop-kalatirta.jpg" class="animated fadeIn"
-                        alt="" width="200">
-                    <iframe width="560" height="315"
-                        src="https://www.youtube.com/embed/YSJTEl0VIcQ?si=6rwzkCPLpDJK9Cj2"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-        </section> --}}
-
-        {{-- <section id="layanan" class="section-content">
-            <div class="container animated fadeIn">
-                <div class="section-title">
-                    <span>Layanan</span>
-                    <h2><strong>Layanan</strong></h2>
-                </div>
-                <div class="section-cap">"Layanan Terpadu BBWS Serayu Opak"</div>
-                <div class="section-info clearfix">
-                    <p>Layanan ini meliputi
-                        Permohonan <strong>Rekomendasi Teknis</strong> secara online,
-                        Permohonan <strong>Informasi dan Data</strong>,
-                        Layanan <strong>Pustaka Online</strong> sebagai portal Perpustakaan BBWS Serayu Opak,
-                        serta <strong>Survei Kepuasan</strong> atas Pelayanan Publik melalui Kalatirta.
-                    </p>
-                </div>
-                <div class="icon-box clearfix">
-                    <div class="col icon-box">
-                        <a href="https://airbbwsso.net/">
-                            <svg class="icon">
-                                <use xlink:href="#rekomtek"></use>
-                            </svg>
-                        </a>
-                        <h4>REKOMENDASI TEKNIS</h4>
-                        <p>Permohonan Rekomendasi Teknis</p>
-                    </div>
-                    <div class="col icon-box">
-                        <a href="kalatirta-so/form-permohonan-data">
-                            <svg class="icon">
-                                <use xlink:href="#data"></use>
-                            </svg>
-                        </a>
-                        <h4>INFORMASI DAN DATA</h4>
-                        <p>Permohonan Informasi dan Data</p>
-                    </div>
-                    <div class="col icon-box">
-                        <a href="http://202.169.239.20/perpustakaanso/">
-                            <svg class="icon">
-                                <use xlink:href="#pustaka"></use>
-                            </svg>
-                        </a>
-                        <h4>PERPUSTAKAAN ONLINE</h4>
-                        <p>Publikasi Buku Koleksi BBWS Serayu Opak</p>
-                    </div>
-                    <div class="col icon-box">
-                        <a href="#">
-                            <svg class="icon">
-                                <use xlink:href="#survei"></use>
-                            </svg>
-                        </a>
-                        <h4>SURVEI KEPUASAN</h4>
-                        <p>Kepuasan terhadap Layanan Publik Terpadu</p>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-
-        {{-- <section id="kontak" class="section-content section-bg">
-            <div class="container animated fadeIn">
-                <div class="section-title">
-                    <span>Kontak</span>
-                    <h2><strong>Kontak</strong></h2>
-                </div>
-                <div class="info">
-                    <div class="section-row">
-                        <svg class="icon">
-                            <use xlink:href="#address"></use>
-                        </svg>
-                        <div class="address">
-                            <h4>Balai Besar Wilayah Sungai Serayu Opak</h4>
-                            <p>Jl. Solo Km 6, Ngentak, Caturtunggal, Depok, Kab. Sleman,</p>
-                            <p>Prov. Daerah Istimewa Yogyakarta 55281</p>
-                        </div>
-                    </div>
-                    <div class="section-row">
-                        <svg class="icon">
-                            <use xlink:href="#email"></use>
-                        </svg>
-                        <div class="email">
-                            <h4>Email</h4>
-                            <p>Permohonan informasi & Data: <em>ppidsoy@gmail.com</em> atau <em>ppid_bbwso@pu.go.id</em>
-                            </p>
-                            <p>Persuratan: <em>so.umum@yahoo.co.id</em> </p>
-                        </div>
-                    </div>
-                    <div class="section-row">
-                        <svg class="icon">
-                            <use xlink:href="#phone"></use>
-                        </svg>
-                        <div class="phone">
-                            <h4>Telepon & Faximile</h4>
-                            <p>Telp: (0274) 489-172</p>
-                            <p>Fax: (0274) 489-552</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> --}}
-
         @include('content.kalatirta.layout.content')
         @include('content.kalatirta.layout.prosedur')
         @include('content.kalatirta.layout.layanan')
         @include('content.kalatirta.layout.kontak')
 
     </main>
-
-    <!-- ==FOOTER== -->
-    {{-- <footer id="footer">
-        <div class="container footer-content">
-            <div class="copyright">
-                <p>Kalatirta &copy; 2023. BBWS Serayu Opak, Ditjen Sumber Daya Air - Kementerian PUPR.</p>
-            </div>
-        </div>
-    </footer> --}}
     @include('content.kalatirta.layout.footer')
 
 

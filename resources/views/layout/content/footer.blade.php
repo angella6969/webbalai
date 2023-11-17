@@ -87,9 +87,9 @@
                      <li class="mb-2"><a style="color: white; " href="#">Pengunjung Minggu
                              Ini : {{ $weeklyVisitorCount }} </a>
                      </li>
-                     <li class="mb-2"><a style="color: white; " href="#">Bulan Ini :
+                     <li class="mb-2"><a style="color: white; " href="#">Pengunjung Bulan Ini :
                              {{ $monthlyVisitorCount }}</a></li>
-                     <li class="mb-2"><a style="color: white; " href="#">Total Pengunjung :
+                     <li class="mb-2"><a style="color: white; " href="#">Pengunjung Tahun Ini :
                              {{ $yearlyVisitorCount }}</a></li>
                  </ul>
              </div>
