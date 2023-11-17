@@ -53,7 +53,7 @@ GENERAL
     margin-left: auto;
 }
 .clearfix {
-    padding: 0 15%;
+    padding: 0 5%;
 }
 .clearfix::after {
     content: "";
@@ -490,6 +490,12 @@ Layanan Section
     border-color: var(--color-green);
 }
 
+@media only screen and (max-width: 762px) {
+    .icon-box {
+       
+        font-size: 10.5px;
+    }
+}
 /* -----------------------
 Kontak Section 
 ------------------------*/

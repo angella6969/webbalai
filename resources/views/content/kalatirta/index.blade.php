@@ -240,7 +240,7 @@
                         serta <strong>Survei Kepuasan</strong> atas Pelayanan Publik melalui Kalatirta.
                     </p>
                 </div>
-                <div class="icon-box clearfix">
+                <div class="icon-box clearfix"> 
                     <div class="col icon-box">
                         <a href="https://airbbwsso.net/">
                             <svg class="icon">
