@@ -182,155 +182,165 @@
             <div class="container animated fadeIn">
 
                 <div class="section-cap1">
-                    <form method="post" action="{{ route('kalatirta.store') }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('kalatirta.store1') }}" enctype="multipart/form-data">
                         @csrf
+                        <input type="hidden" name="data" value="{{ json_encode($data) }}">
                         <div class="card">
                             <div class="card-body mb-3">
-
-                                <div class="mt-3">
-                                    <label for="nama" class="form-label">Nama</label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control @error('nama') is-invalid @enderror"
-                                            id="nama" name="nama" placeholder="nama" value="{{ old('nama') }}" required>
-                                        @error('nama')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                <div class="row">
+                                    <div class="mt-3">
+                                        <label for="jenis_kelamin"> <strong>Jenis Kelamin</strong></label>
+                                    </div>
+                                    <div>
+                                        <x-radio nama="jenis_kelamin" nilai="Laki-laki" />
+                                        <x-radio nama="jenis_kelamin" nilai="Perempuan" />
                                     </div>
                                 </div>
-                                <div class="mt-3">
-                                    <label for="alamat" class="form-label">Alamat</label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control @error('alamat') is-invalid @enderror"
-                                            id="alamat" name="alamat" placeholder="alamat" value="{{ old('alamat') }}"
-                                            required>
-                                        @error('alamat')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                <div class="row">
+                                    <div class="mt-3">
+                                        <label for="mewakili"> <strong>Mewakili siapakah anda?</strong></label>
+                                    </div>
+                                    <div>
+                                        <x-radio nama="mewakili" nilai="Individu" />
+                                        <x-radio nama="mewakili" nilai="Kelompok/Komunitas Masyarakat/ LSM" />
+                                        <x-radio nama="mewakili" nilai="Badan Hukum/ Instansi" />
                                     </div>
                                 </div>
-                                <div class="mt-3">
-                                    <label for="nohp" class="form-label">Nomor Tlp/WA</label>
-                                    <div class="input-group">
-                                        <input type="number" class="form-control @error('nohp') is-invalid @enderror"
-                                            id="nohp" name="nohp" placeholder="Hanya Angka dan No Tlp yang Valid"
-                                            value="{{ old('nohp') }}" required>
-                                        @error('nohp')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                <div class="row">
+                                    <div class="mt-3">
+                                        <label for="pekerjaan"> <strong>Apa pekerjaan anda?</strong></label>
+                                    </div>
+                                    <div>
+                                        <x-radio nama="pekerjaan" nilai="Mahasiswa" />
+                                        <x-radio nama="pekerjaan" nilai="Swasta" />
+                                        <x-radio nama="pekerjaan" nilai="PNS" />
+                                        <x-radio nama="pekerjaan" nilai="Wiraswasta " />
+                                        <x-radio nama="pekerjaan" nilai="Warga sipil " />
                                     </div>
                                 </div>
-                                <div class="mt-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <div class="input-group">
-                                        <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                            id="email" name="email" placeholder="email" value="{{ old('email') }}"
-                                            required>
-                                        @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                <div class="row">
+                                    <div class="mt-3">
+                                        <label for="jenis_pelayanan"> <strong>Apakah persyaratan pelayanan sesuai dengan
+                                                jenis
+                                                pelayanan?</strong></label>
+                                    </div>
+                                    <div>
+                                        <x-radio nama="jenis_pelayanan" nilai="Tidak sesuai" />
+                                        <x-radio nama="jenis_pelayanan" nilai="Kurang sesuai" />
+                                        <x-radio nama="jenis_pelayanan" nilai="Sesuai" />
+                                        <x-radio nama="jenis_pelayanan" nilai="Sangat sesuai" />
                                     </div>
                                 </div>
-                                <div class="mt-3">
-                                    <label for="pekerjaan" class="form-label">Pekerjaan</label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control @error('pekerjaan') is-invalid @enderror"
-                                            id="pekerjaan" name="pekerjaan" placeholder="pekerjaan"
-                                            value="{{ old('pekerjaan') }}" required>
-                                        @error('pekerjaan')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                <div class="row">
+                                    <div class="mt-3">
+                                        <label for="mudah_dipahami"> <strong>Apakah prosedur pelayanan mudah
+                                                dipahami?</strong></label>
                                     </div>
-                                </div>
-                                <div class="mt-3">
-                                    <label for="alamatkantor" class="form-label">Alamat Kantor/kampus</label>
-                                    <div class="input-group">
-                                        <input type="text"
-                                            class="form-control @error('alamatkantor') is-invalid @enderror"
-                                            id="alamatkantor" name="alamatkantor" placeholder="alamatkantor"
-                                            value="{{ old('alamatkantor') }}" required>
-                                        @error('alamatkantor')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                    <div>
+                                        <x-radio nama="mudah_dipahami" nilai="Tidak mudah" />
+                                        <x-radio nama="mudah_dipahami" nilai="Kurang mudah" />
+                                        <x-radio nama="mudah_dipahami" nilai="Mudah" />
+                                        <x-radio nama="mudah_dipahami" nilai="Sangat mudah" />
                                     </div>
-                                </div>
-                                <div class="mt-3">
-                                    <label for="memperoleh" class="form-label">Cara Memperoleh Informasi</label>
-                                    <select class="form-select" aria-label="Default select example" name="memperoleh"
-                                        id="memperoleh" required>
-                                        <option value="" {{ old('memperoleh')=='' ? 'selected' : '' }}>
-                                            Kategori</option>
-                                        <option value="Melihat/Membaca/Mendengarkan/Mencatat" {{
-                                            old('memperoleh')=='Melihat/Membaca/Mendengarkan/Mencatat' ? 'selected' : ''
-                                            }}>
-                                            Melihat/Membaca/Mendengarkan/Mencatat</option>
-                                        <option value="Mendapatkan Salinan Informasi (Hard/Soft Copy)" {{
-                                            old('memperoleh')=='Mendapatkan Salinan Informasi (Hard/Soft Copy)'
-                                            ? 'selected' : '' }}>
-                                            Mendapatkan Salinan Informasi (Hard/Soft Copy)</option>
-                                    </select>
-                                </div>
-                                <div class="mt-3">
-                                    <label for="mengirim" class="form-label">Cara Mengirim Informasi</label>
-                                    <select class="form-select" aria-label="Default select example" name="mengirim"
-                                        id="mengirim" required>
-                                        <option value="" {{ old('mengirim')=='' ? 'selected' : '' }}>
-                                            Kategori</option>
-                                        <option value="Diambil Langsung" {{ old('mengirim')=='Diambil Langsung'
-                                            ? 'selected' : '' }}>
-                                            Diambil Langsung</option>
-                                        <option value="Kurir" {{ old('mengirim')=='Kurir' ? 'selected' : '' }}>
-                                            Kurir</option>
-                                        <option value="Via Pos" {{ old('mengirim')=='Via Pos' ? 'selected' : '' }}>
-                                            Via Pos</option>
-                                        <option value="Email" {{ old('mengirim')=='Email' ? 'selected' : '' }}>
-                                            Email</option>
-                                    </select>
                                 </div>
 
-
-                                <div class="mb-3 mt-3">
-                                    <label for="informasi" class="form-label">Informasi yang dibutuhkan</label>
-                                    <div style="z-index: 999">
-                                        <textarea hidden id="informasi" name="informasi"
-                                            style="width: 200px;"></textarea>
+                                <div class="row">
+                                    <div class="mt-3">
+                                        <label for="waktu"> <strong>Bagaimana pendapat anda tentang kecepatan waktu
+                                                dalam
+                                                memberikan pelayanan?</strong></label>
                                     </div>
-                                    <label for="informasi" class="form-label">
-                                        <h6>*mohon tulis dengan rinci dan jelas</h6>
-                                    </label>
-                                </div>
-                                <div class="mb-3 mt-3">
-                                    <label for="tujuan" class="form-label">Tujuan Informasi Digunakan</label>
-                                    <div style="z-index: 999">
-                                        <textarea hidden id="tujuan" name="tujuan" style="width: 200px;"></textarea>
+                                    <div>
+                                        <x-radio nama="waktu" nilai="Tidak cepat" />
+                                        <x-radio nama="waktu" nilai="Kurang cepat" />
+                                        <x-radio nama="waktu" nilai="cepat normal" />
+                                        <x-radio nama="waktu" nilai="Sangat cepat" />
                                     </div>
-                                    <label for="tujuan" class="form-label">
-                                        <h6>*mohon tulis dengan rinci dan jelas</h6>
-                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="mt-3">
+                                        <label for="biaya"> <strong>Bagaimana pendapat anda tentang biaya/tarif dalam
+                                                pelayanan?</strong></label>
+                                    </div>
+                                    <div>
+                                        <x-radio nama="biaya" nilai="Sangat mahal" />
+                                        <x-radio nama="biaya" nilai="Cukup mahal" />
+                                        <x-radio nama="biaya" nilai="Murah" />
+                                        <x-radio nama="biaya" nilai="GRATIS/ Tidak dipungut biaya" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mt-3">
+                                        <label for="standar_pelayanan"> <strong>Apakah layanan yang diberikan sesuai
+                                                degan
+                                                standar pelayanan yang ada?</strong></label>
+                                    </div>
+                                    <div>
+                                        <x-radio nama="standar_pelayanan" nilai="Tidak sesuai " />
+                                        <x-radio nama="standar_pelayanan" nilai="Kurang sesuai" />
+                                        <x-radio nama="standar_pelayanan" nilai="Sesuai" />
+                                        <x-radio nama="standar_pelayanan" nilai="Sangat sesuai" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mt-3">
+                                        <label for="kopetensi"> <strong>Apalah petugas kompeten dalam memberikan
+                                                pelayanan?</strong></label>
+                                    </div>
+                                    <div>
+                                        <x-radio nama="kopetensi" nilai="Tidak kompeten " />
+                                        <x-radio nama="kopetensi" nilai="Kurang kompeten" />
+                                        <x-radio nama="kopetensi" nilai="kompeten" />
+                                        <x-radio nama="kopetensi" nilai="Sangat kompeten" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mt-3">
+                                        <label for="sikap_petugas"> <strong>Bagamana sikap petugas layanan dalam
+                                                memberikan
+                                                pelayanan publik?</strong></label>
+                                    </div>
+                                    <div>
+                                        <x-radio nama="sikap_petugas" nilai="Tidak sopan dan tidak ramah " />
+                                        <x-radio nama="sikap_petugas" nilai="Kurang sopan dan kurang ramah" />
+                                        <x-radio nama="sikap_petugas" nilai="Sopan dan ramah" />
+                                        <x-radio nama="sikap_petugas" nilai="Sangat sopan dan sangat ramah" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mt-3">
+                                        <label for="fasilitas"> <strong>Bagaimana pendapat anda terkait sarana dan
+                                                prasarana
+                                                pelayanan?</strong></label>
+                                    </div>
+                                    <div>
+                                        <x-radio nama="fasilitas" nilai="Buruk" />
+                                        <x-radio nama="fasilitas" nilai="Cukup" />
+                                        <x-radio nama="fasilitas" nilai="Baik " />
+                                        <x-radio nama="fasilitas" nilai="Sangat Baik" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mt-3">
+                                        <label for="pengguna_layanan"> <strong>Bagaimana pendapat Saudara tentang
+                                                penanganan
+                                                pengaduan pengguna layanan</strong></label>
+                                    </div>
+                                    <div>
+                                        <x-radio nama="pengguna_layanan" nilai="Tidak ada" />
+                                        <x-radio nama="pengguna_layanan" nilai="Ada tetapi tidak berfungsi " />
+                                        <x-radio nama="pengguna_layanan" nilai="Berfungsi dengan baik " />
+                                        <x-radio nama="pengguna_layanan" nilai="Dikelola dengan maksimal" />
+                                    </div>
                                 </div>
 
-                                <div class="mb-3 mt-3">
-                                    <label for="ktp">Upload KTP</label>
-                                    <input type="hidden" name="oldImage" id="oldImage" value="">
-
-                                    <img class="img-preview img-fluid mb-3 col-sm-5" id="img-preview-ktp">
-
-                                    <input type="file" class="form-control @error('ktp') is-invalid @enderror" id="ktp"
-                                        onchange="previewImage('ktp')" name="ktp"
-                                        accept="image/*, image/png, image/gif">
-                                    <h6>Photo Max 5 MB</h6>
+                                <div class="row">
+                                    <div class="mt-3">
+                                        <label for="pengguna_layanan"> <strong>Saran dan Masukan</strong></label>
+                                        <x-ck body="kritik_saran" nilai="" />
+                                    </div>
                                 </div>
+                                <strong></strong>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>

@@ -6,7 +6,9 @@ use App\Models\Kalatirta;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreKalatirtaRequest;
 use App\Http\Requests\UpdateKalatirtaRequest;
+use App\Models\Survey;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class KalatirtaController extends Controller
 {
@@ -30,6 +32,13 @@ class KalatirtaController extends Controller
     public function create()
     {
         return view('content.kalatirta.formdata');
+    }
+    public function create1()
+    {
+        $data = session('data');
+        return view('content.kalatirta.survey', [
+            'data' => $data
+        ]);
     }
 
     /**
@@ -60,10 +69,67 @@ class KalatirtaController extends Controller
                 $validatedData['ktp'] = $petaPdfPath;
             }
 
-            Kalatirta::create($validatedData);
+            // Kalatirta::create($validatedData);
 
-            DB::commit();
+            // DB::commit();
             // dd($validatedData);
+            // return redirect('/kalatirta-so')->with('success', 'Data berhasil disimpan.');
+            return redirect('/kalatirta-so/form-permohonan-data/survey')->with('data', $validatedData);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
+    }
+    public function store1(StoreKalatirtaRequest $request)
+    {
+        $data = json_decode($request->input('data'), true);
+
+        $nama = $data['nama'];
+        $alamat = $data['alamat'];
+        $nohp  = $data['nohp'];
+        $email  = $data['email'];
+        $pekerjaan = $data['pekerjaan'];
+        $alamatkantor = $data['alamatkantor'];
+        $tujuan  = $data['tujuan'];
+        $informasi = $data['informasi'];
+        $memperoleh  = $data['memperoleh'];
+        $mengirim  = $data['mengirim'];
+        $ktp  = $data['ktp'];
+
+        $validatedData = $request->validate([
+            'jenis_kelamin' => ['required', 'max:254'],
+            'pekerjaan' => ['required', 'max:254'],
+            'mewakili' => ['required',  'max:254'],
+            'jenis_pelayanan' => ['required',  'max:254'],
+            'mudah_dipahami' => ['required',  'max:254'],
+            'waktu' => ['required',  'max:254'],
+            'biaya' => ['required',  'max:254'],
+            'standar_pelayanan' => ['required',  'max:254'],
+            'kopetensi' => ['required',  'max:254'],
+            'sikap_petugas' => ['required',  'max:254'],
+            'fasilitas' => ['required',  'max:254'],
+            'pengguna_layanan' => ['required',  'max:254'],
+            'kritik_saran' => ['required',  'max:254'],
+
+        ]);
+        DB::beginTransaction();
+        try {
+            Kalatirta::create([
+                'nama' => $nama,
+                'alamat' => $alamat,
+                'nohp' => $nohp,
+                'email' => $email,
+                'pekerjaan' => $pekerjaan,
+                'alamatkantor' => $alamatkantor,
+                'tujuan' => $tujuan,
+                'informasi' => $informasi,
+                'memperoleh' => $memperoleh,
+                'mengirim' => $mengirim,
+                'ktp' => $ktp,
+            ]);
+            Survey::create($validatedData);
+            DB::commit();
+
             return redirect('/kalatirta-so')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
@@ -99,7 +165,7 @@ class KalatirtaController extends Controller
         // $kalatirta = Kalatirta::findOrFail($id);
         $validatedData = $request->validate([
             'status' => ['required'],
-            'keterangan' => ['nullable'], 
+            'keterangan' => ['nullable'],
         ]);
         // dd( $validatedData);
         DB::beginTransaction();

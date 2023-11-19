@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{ asset('kalatirta\css\style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/png" href="{{ asset('kalatirta\images\Kal-logo2.png') }}" />
 </head>
 
@@ -129,18 +131,18 @@
                     <li class="dropdown">
                         <a href="#internal" class="nav-link">Informasi&nbsp;></a>
                         <ul>
-                            <li><a href="#p">Daftar Informasi Publik</a></li>
+                            <li><a href="{{ route('info.publik') }}">Daftar Informasi Publik</a></li>
                             <li><a href="#prosedur">Prosedur Layanan</a></li>
                             <li><a href="#">Pengajuan Keberatan</a></li>
                             <li><a href="#">Survei Kepuasan</a></li>
                         </ul>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#tentang" class="nav-link">Tentang</a>
                     </li>
                     <li>
                         <a href="#kontak" class="nav-link">Kontak</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
             <svg class="navToggle">
@@ -184,7 +186,7 @@
                 <div class="section-cap1">
                     <form method="post" action="{{ route('kalatirta.store') }}" enctype="multipart/form-data">
                         @csrf
-                        <div class="card">
+                        <div class="card"> 
                             <div class="card-body mb-3">
 
                                 <div class="mt-3">
@@ -313,7 +315,8 @@
                                 <div class="mb-3 mt-3">
                                     <label for="tujuan" class="form-label">Tujuan Informasi Digunakan</label>
                                     <div style="z-index: 999">
-                                        <textarea hidden id="tujuan" name="tujuan" style="width: 200px;">{{ old('tujuan') }}</textarea>
+                                        <textarea hidden id="tujuan" name="tujuan"
+                                            style="width: 200px;">{{ old('tujuan') }}</textarea>
                                     </div>
                                     <label for="tujuan" class="form-label">
                                         <h6>*mohon tulis dengan rinci dan jelas</h6>
@@ -335,20 +338,32 @@
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Launch demo modal
+                    </button>
                 </div>
             </div>
         </section>
     </main>
-
-
-    <!-- ==FOOTER== -->
-    {{-- <footer id="footer">
-        <div class="container footer-content">
-            <div class="copyright">
-                <p>Kalatirta &copy; 2023. BBWS Serayu Opak, Ditjen Sumber Daya Air - Kementerian PUPR.</p>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
             </div>
         </div>
-    </footer> --}}
+    </div>
+
+    <!-- ==FOOTER== -->
     @include('content.kalatirta.layout.footer')
 
     <!-- ==BACK TO TOP=== -->
@@ -365,6 +380,9 @@
     <script src="{{ asset('kalatirta\js\main.js') }}"></script>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
 <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
 
 <script>

@@ -49,7 +49,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('kalatirta.index');
 // });
 Route::get('/v2', function () {
-    return view('welcome');
+    return view('content.kalatirta.survey');
 });
 Route::get('/under-Maintenance', function () {
     return view('content.Construction');
@@ -80,6 +80,8 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::get('/kalatirta-so', [KalatirtaController::class, 'index2'])->name('kalatirta');
     Route::get('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'create'])->name('kalatirta.create');
     Route::post('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'store'])->name('kalatirta.store');
+    Route::get('/kalatirta-so/form-permohonan-data/survey', [KalatirtaController::class, 'create1']);
+    Route::post('/kalatirta-so/form-permohonan-data/survey', [KalatirtaController::class, 'store1'])->name('kalatirta.store1');
 
     Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('struktur-organisasi');
     Route::get('/profil/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi');

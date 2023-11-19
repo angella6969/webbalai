@@ -13,15 +13,22 @@ return new class extends Migration
     {
         Schema::create('surveys', function (Blueprint $table) {
             $table->id();
-            $table->string('nama')->nullable();
-            $table->string('instansi')->nullable();
+            // $table->string('nama')->nullable();
+            $table->string('jenis_kelamin')->nullable();
+            $table->string('pekerjaan')->nullable();
             $table->string('mewakili')->nullable();
-            $table->string('responsif')->nullable();
-            $table->string('kopetensi')->nullable();
+            $table->string('jenis_pelayanan')->nullable();
+            $table->string('mudah_dipahami')->nullable(); 
             $table->string('waktu')->nullable();
-            $table->string('kepuasan')->nullable();
+            $table->string('biaya')->nullable();
+            $table->string('standar_pelayanan')->nullable();
+            $table->string('kopetensi')->nullable();
+            $table->string('sikap_petugas')->nullable();
             $table->string('fasilitas')->nullable();
-            $table->foreignId('permintaan_id');
+            $table->string('pengguna_layanan')->nullable();
+            $table->string('kritik_saran')->nullable();
+
+            // $table->foreignId('permintaan_id');
             $table->timestamps();
         });
     }
