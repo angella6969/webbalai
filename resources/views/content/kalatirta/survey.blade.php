@@ -163,16 +163,16 @@
         <section id="formdata" class="section-content section-bg">
             <div class="container animated fadeIn">
                 <div class="section-title">
-                    <span>Permohonan</span>
-                    <h2><strong>Form Permohonan Informasi dan Data</strong></h2>
+                    <span>Survey</span>
+                    <h2><strong>Form Survey Layanan Informasi Publik BBWS Serayu Opak</strong></h2>
                 </div>
                 <div class="section-info clearfix">
                     <div class="section-cap">
-                        <p class="section-info">
+                        {{-- <p class="section-info">
                             Sesuai Undang-Undang Nomer 14 Tahun 2008 tentang Keterbukaan Informasi Publik
                             (Pasal 22 ayat 7): proses pelayanan informasi diselesaikan paling lambat 10 hari kerja
                             sejak diterimanya permohonan.
-                        </p>
+                        </p> --}}
                     </div>
                 </div>
             </div>
@@ -352,13 +352,6 @@
 
 
     <!-- ==FOOTER== -->
-    {{-- <footer id="footer">
-        <div class="container footer-content">
-            <div class="copyright">
-                <p>Kalatirta &copy; 2023. BBWS Serayu Opak, Ditjen Sumber Daya Air - Kementerian PUPR.</p>
-            </div>
-        </div>
-    </footer> --}}
     @include('content.kalatirta.layout.footer')
 
     <!-- ==BACK TO TOP=== -->
@@ -375,41 +368,5 @@
     <script src="{{ asset('kalatirta\js\main.js') }}"></script>
 
 </body>
-<script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
-
-<script>
-    function previewImage(id) {
-        const image = document.querySelector(`#${id}`);
-        const imgPreview = document.querySelector(`#img-preview-${id}`);
-
-        imgPreview.style.display = 'block';
-
-        const oFReader = new FileReader();
-
-        oFReader.readAsDataURL(image.files[0]);
-
-        oFReader.onload = function(oFREvent) {
-            imgPreview.src = oFREvent.target.result;
-        }
-    }
-</script>
-<script>
-    function initializeEditor(selector) {
-        ClassicEditor
-            .create(document.querySelector(selector), {
-                toolbar: ['redo', '|', 'undo'],
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }
-
-    // Inisialisasi CKEditor untuk textarea pertama
-    initializeEditor('#informasi');
-
-    // Inisialisasi CKEditor untuk textarea kedua
-    initializeEditor('#tujuan');
-</script>
-
 
 </html>
