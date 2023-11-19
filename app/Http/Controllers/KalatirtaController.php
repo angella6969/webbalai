@@ -69,11 +69,6 @@ class KalatirtaController extends Controller
                 $validatedData['ktp'] = $petaPdfPath;
             }
 
-            // Kalatirta::create($validatedData);
-
-            // DB::commit();
-            // dd($validatedData);
-            // return redirect('/kalatirta-so')->with('success', 'Data berhasil disimpan.');
             return redirect('/kalatirta-so/form-permohonan-data/survey')->with('data', $validatedData);
         } catch (\Exception $e) {
             DB::rollBack();
