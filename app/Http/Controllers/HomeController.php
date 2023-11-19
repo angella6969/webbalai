@@ -32,12 +32,17 @@ class HomeController extends Controller
         $embungs = Embung::all();
         $bendungs = Bendung::all();
         $data = $bendungans->merge($embungs)->merge($bendungs);
+        // $alldata = $bendungans->merge($embungs)->merge($bendungs)->merge($berita)->merge($infoData)->filter(request(['search']));
+
+
+        // dd($alldata);
 
         return view('content.home', [
             'images' => $image,
             'beritas' => $berita,
             'infoData' => $infoData,
             'infrastrukturs' => $data,
+            // 'alldata' => $alldata,
             'logoTerkaits' => $logoTerkait
         ]);
     }
