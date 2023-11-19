@@ -8,7 +8,7 @@
                 <li class="dropdown">
                     <a href="#internal" class="nav-link">Informasi&nbsp;></a>
                     <ul>
-                        <li><a href="#p">Daftar Informasi Publik</a></li>
+                        <li><a href="{{ route('info.publik') }}">Daftar Informasi Publik</a></li>
                         <li><a href="#prosedur">Prosedur Layanan</a></li>
                         <li><a href="#">Pengajuan Keberatan</a></li>
                         <li><a href="#">Survei Kepuasan</a></li>

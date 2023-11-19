@@ -24,7 +24,7 @@
                 <p>Permohonan Rekomendasi Teknis</p>
             </div>
             <div class="col icon-box">
-                <a href="kalatirta-so/form-permohonan-data">
+                <a href="{{ route('kalatirta.create') }}">
                     <svg class="icon">
                         <use xlink:href="#data"></use>
                     </svg>

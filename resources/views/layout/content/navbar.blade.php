@@ -81,7 +81,7 @@
                     <ul>
                         <li><a href="/layanan/ppid-bbws-so/profil">Profil</a></li>
                         <li><a href="/layanan/ppid-bbws-so/prosedur_pelayanan">Prosedur Pelayanan</a></li>
-                        <li><a href="/kalatirta-so">KALATIRTA</a></li>
+                        <li><a href="{{ route('kalatirta') }}">KALATIRTA</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Perpustakaan Online</a></li>
@@ -96,27 +96,27 @@
 
         <div class="input-group">
             <form action="/dashboard/daerah-irigasi">
-
-            <input type="text" class="form-control" name="search" id="search" value="{{ request('search') }}"
-                style="width: 200px; height:30px ; font-size: .8rem" placeholder="Cari..." required=""
-                aria-label="cari..." data-uw-rm-form="fx" >
-            </span>
-        </form>
+                <input type="text" class="form-control" name="search" id="search" value="{{ request('search') }}"
+                    style="width: 200px; height:30px ; font-size: .8rem" placeholder="Cari..." required=""
+                    aria-label="cari..." data-uw-rm-form="fx">
+                </span>
+            </form>
 
             {{-- <form action="/dashboard/daerah-irigasi"> --}}
                 {{-- <div class="row"> --}}
                     {{-- <div class="col-12 col-sm-12"> --}}
                         {{-- <div class="input-group"> --}}
-                            {{-- <input type="text" class="form-control " placeholder="..." name="search" --}}
-                                {{-- value="{{ request('search') }}"> --}}
+                            {{-- <input type="text" class="form-control " placeholder="..." name="search" --}} {{--
+                                value="{{ request('search') }}"> --}}
                             {{-- <button class="btn btn-primary " type="submit" id="basic-addon2"><span
                                     data-feather="search"></span></button> --}}
-                        {{-- </div> --}}
+                            {{-- </div> --}}
                         {{--
                     </div> --}}
                     {{-- </div> --}}
-            {{-- </form> --}}
-        {{-- </div> --}}
+                {{-- </form> --}}
+            {{--
+        </div> --}}
     </ul>
     <i class="bi bi-list mobile-nav-toggle"></i>
 </nav>

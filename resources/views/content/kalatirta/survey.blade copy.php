@@ -304,7 +304,7 @@
                                     <label for="informasi" class="form-label">Informasi yang dibutuhkan</label>
                                     <div style="z-index: 999">
                                         <textarea hidden id="informasi" name="informasi"
-                                            style="width: 200px;">{{ old('informasi') }}</textarea>
+                                            style="width: 200px;"></textarea>
                                     </div>
                                     <label for="informasi" class="form-label">
                                         <h6>*mohon tulis dengan rinci dan jelas</h6>
@@ -313,7 +313,7 @@
                                 <div class="mb-3 mt-3">
                                     <label for="tujuan" class="form-label">Tujuan Informasi Digunakan</label>
                                     <div style="z-index: 999">
-                                        <textarea hidden id="tujuan" name="tujuan" style="width: 200px;">{{ old('tujuan') }}</textarea>
+                                        <textarea hidden id="tujuan" name="tujuan" style="width: 200px;"></textarea>
                                     </div>
                                     <label for="tujuan" class="form-label">
                                         <h6>*mohon tulis dengan rinci dan jelas</h6>

@@ -77,9 +77,9 @@ Route::get('/layanan/ppid-bbws-so/prosedur_pelayanan', function () {
 
 Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function () {
 
-    Route::get('/kalatirta-so', [KalatirtaController::class, 'index2']);
-    Route::get('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'create']);
-    Route::post('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'store']);
+    Route::get('/kalatirta-so', [KalatirtaController::class, 'index2'])->name('kalatirta');
+    Route::get('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'create'])->name('kalatirta.create');
+    Route::post('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'store'])->name('kalatirta.store');
 
     Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('struktur-organisasi');
     Route::get('/profil/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi');
@@ -101,7 +101,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::get('/informasi-publik/infrastruktur/irigasis/{slug}', [IrigasiController::class, 'show']);
     Route::get('/informasi-publik/infrastruktur/irigasis', [IrigasiController::class, 'index2']);
 
-    Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2']);
+    Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2'])->name('info.publik');
 
 
 
