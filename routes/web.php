@@ -77,11 +77,22 @@ Route::get('/layanan/ppid-bbws-so/prosedur_pelayanan', function () {
 
 Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function () {
 
+    //====================================== Route Kalatirta  ======================================\\
+
     Route::get('/kalatirta-so', [KalatirtaController::class, 'index2'])->name('kalatirta');
+    Route::get('/kalatirta-so/permohonan-data', [KalatirtaController::class, 'show1'])->name('kalatirta.status');
     Route::get('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'create'])->name('kalatirta.create');
     Route::post('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'store'])->name('kalatirta.store');
-    Route::get('/kalatirta-so/form-permohonan-data/survey', [KalatirtaController::class, 'create1']);
+
+    // Route::middleware(['CheckAccessMiddleware'])->group(function () {
+
+    // Routes yang diinginkan
+    Route::get('/kalatirta-so/form-permohonan-data/survey', [KalatirtaController::class, 'create1'])->name('survey');
     Route::post('/kalatirta-so/form-permohonan-data/survey', [KalatirtaController::class, 'store1'])->name('kalatirta.store1');
+    // });
+
+
+    //====================================== Route kalatirta  ======================================\\
 
     Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('struktur-organisasi');
     Route::get('/profil/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi');

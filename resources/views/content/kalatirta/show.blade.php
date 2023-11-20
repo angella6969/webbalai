@@ -2,12 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
     <title>KALATIRTA - Layanan Terpadu BBWS SO</title>
-
     <link rel="stylesheet" href="{{ asset('kalatirta\css\style.css') }}">
+    @include('content.kalatirta.layout.link')
     <link rel="shortcut icon" type="image/png" href="{{ asset('kalatirta\images\Kal-logo2.png') }}" />
 </head>
 
@@ -36,6 +34,7 @@
             </path>
         </symbol>
         <!-- ==social== -->
+
         @include('content.kalatirta.layout.sosial')
 
         <!-- ==contact== -->
@@ -69,39 +68,88 @@
     </svg>
 
     <!-- ==HEADER== -->
-    @include('content.kalatirta.layout.toolbar')
-    @include('content.kalatirta.layout.navbar')
-
-    <!-- ==HERO== -->
-    <section id="hero">
-        <div class="container animated fadeIn">
-            <div class="hero-content section-row">
-                <div class="section-title">
-                    <h2>Selamat datang di KALATIRTA</h2>
-                    <h3>Portal Layanan Publik Terpadu BBWS Serayu Opak</h3>
-                    <a href="#layanan" class="btn-to-main">Akses Layanan</a>
-                </div>
-                <div class="img-fluid">
-                    <img src="{{ asset('kalatirta') }}/images/kal-logo3.png" class="animated-pic" alt="">
-                </div>
-            </div>
+    <section id="topbar">
+        <div class="container section-info time">
+            <span id="time"></span>
+        </div>
+        <div class="container section-info social-links">
+            <svg class="icon">
+                <use xlink:href="#facebook"></use>
+            </svg>
+            <svg class="icon">
+                <use xlink:href="#instagram"></use>
+            </svg>
+            <svg class="icon">
+                <use xlink:href="#twitterx"></use>
+            </svg>
+            <svg class="icon">
+                <use xlink:href="#youtube"></use>
+            </svg>
+            <svg class="icon">
+                <use xlink:href="#tiktok"></use>
+            </svg>
         </div>
     </section>
+    @include('content.kalatirta.layout.navbar')
+
 
     <!-- ==MAIN MENU== -->
     <main id="main">
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="#">Beranda</a></li>
+                    <li>Layanan</li>
+                </ol>
+                <h2>Layanan Informasi dan Data</h2>
+            </div>
+        </section>
+        <section id="formdata" class="section-content section-bg">
+            <div class="container animated fadeIn">
+                <div class="section-title">
+                    <span>Survey</span>
+                    <h2><strong>Form Survey Layanan Informasi Publik BBWS Serayu Opak</strong></h2>
+                </div>
+                <div class="section-info clearfix">
+                    <div class="section-cap">
 
-        @yield('container')
-        @include('content.kalatirta.layout.content')
-        @include('content.kalatirta.layout.prosedur')
-        @include('content.kalatirta.layout.layanan')
-        @include('content.kalatirta.layout.kontak')
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section id="">
+            <div class="container animated fadeIn">
+
+                <div class="section-cap1">
+                    <div class="table-responsive-sm">
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr style="text-align: center;">
+                                    <th scope="col">No</th>
+                                    <th scope="col">Nama </th>
+                                    <th scope="col">Status Permintaan Data</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $dat)
+                                    <tr style="text-align: center;">
+                                        <td> {{ $loop->iteration }}</td>
+                                        <td> {{ $dat->nama }}</td>
+                                        <td> {{ $dat->status }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
 
     <!-- ==FOOTER== -->
     @include('content.kalatirta.layout.footer')
-
 
     <!-- ==BACK TO TOP=== -->
     <a href="#" class="scroll-top">
@@ -114,11 +162,7 @@
     <div id="preloader"></div>
 
     <!-- ==SCRIPT== -->
-    {{-- <script src="{{asset('/js/main.js')}}"></script> --}}
     <script src="{{ asset('kalatirta\js\main.js') }}"></script>
-
-
 </body>
-
 
 </html>

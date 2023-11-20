@@ -78,7 +78,9 @@ class KalatirtaController extends Controller
     public function store1(StoreKalatirtaRequest $request)
     {
         $data = json_decode($request->input('data'), true);
-
+        if ($data === null) {
+            return redirect()->route('kalatirta.create')->with('fail', 'Data Kosong / Silahkan Isi Data Terlebih dahulu');
+        }
         $nama = $data['nama'];
         $alamat = $data['alamat'];
         $nohp  = $data['nohp'];
@@ -139,6 +141,13 @@ class KalatirtaController extends Controller
     {
         $data = Kalatirta::findOrfail($id);
         return view('dashboard.form.kalatirta.show', [
+            'data' => $data
+        ]);
+    }
+    public function show1()
+    {
+        $data = Kalatirta::latest()->get();
+        return view('content.kalatirta.show', [
             'data' => $data
         ]);
     }

@@ -21,8 +21,15 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+
+
+        // ========================= Middelware Pengunjung ========================= \\
         \App\Http\Middleware\SaveVisitor::class,
         \App\Http\Middleware\VisitorCountsMiddleware::class,
+
+
+
+
     ];
 
     /**
@@ -67,8 +74,13 @@ class Kernel extends HttpKernel
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
+        // ========================= Middelware Role =========================\\
         'SuperAdmin' => \App\Http\Middleware\SuperAdmin::class,
         'Admin' => \App\Http\Middleware\Admin::class,
         'AdminSisda' => \App\Http\Middleware\AdminSisda::class,
+
+        // ========================= Middelware Kalatirta ========================= \\
+        // 'CheckAccessMiddleware' => \App\Http\Middleware\CheckParentRouteMiddleware::class,
     ];
 }

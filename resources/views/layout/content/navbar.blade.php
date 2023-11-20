@@ -32,9 +32,11 @@
                         <li><a href="/informasi-publik/kinerja/lakip">LAKIP</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href="#"><span>Infrastruktur</span> <i class="bi bi-chevron-right"></i></a>
+                <li class="dropdown"><a href="#"><span>Infrastruktur</span> <i
+                            class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-right"></i></a>
+                        <li class="dropdown"><a href="#"><span>Informasi</span> <i
+                                    class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <li><a href="/informasi-publik/infrastruktur/bendungans">Bendungan</a></li>
                                 <li><a href="/informasi-publik/infrastruktur/bendungs">Bendung</a></li>
@@ -95,7 +97,7 @@
         </li>
 
         <div class="input-group">
-            <form action="/dashboard/daerah-irigasi">
+            <form action="/all-data">
                 <input type="text" class="form-control" name="search" id="search" value="{{ request('search') }}"
                     style="width: 200px; height:30px ; font-size: .8rem" placeholder="Cari..." required=""
                     aria-label="cari..." data-uw-rm-form="fx">
@@ -103,18 +105,18 @@
             </form>
 
             {{-- <form action="/dashboard/daerah-irigasi"> --}}
-                {{-- <div class="row"> --}}
-                    {{-- <div class="col-12 col-sm-12"> --}}
-                        {{-- <div class="input-group"> --}}
-                            {{-- <input type="text" class="form-control " placeholder="..." name="search" --}} {{--
+            {{-- <div class="row"> --}}
+            {{-- <div class="col-12 col-sm-12"> --}}
+            {{-- <div class="input-group"> --}}
+            {{-- <input type="text" class="form-control " placeholder="..." name="search" --}} {{--
                                 value="{{ request('search') }}"> --}}
-                            {{-- <button class="btn btn-primary " type="submit" id="basic-addon2"><span
+            {{-- <button class="btn btn-primary " type="submit" id="basic-addon2"><span
                                     data-feather="search"></span></button> --}}
-                            {{-- </div> --}}
-                        {{--
+            {{-- </div> --}}
+            {{--
                     </div> --}}
-                    {{-- </div> --}}
-                {{-- </form> --}}
+            {{-- </div> --}}
+            {{-- </form> --}}
             {{--
         </div> --}}
     </ul>

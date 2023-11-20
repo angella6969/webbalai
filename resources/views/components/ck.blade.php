@@ -10,7 +10,7 @@
 <script>
     ClassicEditor
         .create(document.querySelector('#{{ $body }}'), {
-            toolbar: ['heading', '|', 'bold', 'italic', 'numberedList', 'insertTable', 'blockQuote', 'redo', '|',
+            toolbar: ['heading', '|', 'bold', 'italic', 'numberedList', 'blockQuote', 'redo', '|',
                 'undo'
             ],
             heading: {

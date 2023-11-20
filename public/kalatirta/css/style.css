@@ -492,7 +492,6 @@ Layanan Section
 
 @media only screen and (max-width: 762px) {
     .icon-box {
-       
         font-size: 10.5px;
     }
 }
@@ -777,4 +776,10 @@ MOBILE DEVICE
     /* background-color: #0d6efd; */
     border-color: #0d6efd;
     height: 50px;
+}
+
+@media only screen and (max-width: 762px) {
+    .hilang {
+        display: none;
+    }
 }
