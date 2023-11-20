@@ -97,7 +97,7 @@
 
 
                     <div class="d-flex justify-content-center mt-3">
-                        <button type="submit" class="btn btn-primary">Sumbit</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
             </div>
@@ -140,10 +140,7 @@
                 });
         }
 
-        // Inisialisasi CKEditor untuk textarea pertama
         initializeEditor('#informasi');
-
-        // Inisialisasi CKEditor untuk textarea kedua
         initializeEditor('#tujuan');
         initializeEditor('#keterangan');
     </script>

@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateInfografisRequest;
 use Illuminate\Support\Facades\DB;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class InfografisController extends Controller
 {
@@ -94,18 +95,63 @@ class InfografisController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Infografis $infografis)
+    public function edit(string $id)
     {
+        $Infografis = Infografis::findOrFail($id);
+        return view('dashboard.form.media_informasi.edit', [
+            'Infografis' => $Infografis
+        ]);
         dd("edit");
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateInfografisRequest $request, Infografis $infografis)
+    public function update(UpdateInfografisRequest $request, string $id)
     {
-        //
-    } 
+        $Infografis = Infografis::findOrFail($id);
+        $validatedData = $request->validate([
+            'nama' => ['required'],
+            'jenis' => ['required'],
+            'url_foto1' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,image/svg+xml', 'nullable'],
+            'url_foto2' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,image/svg+xml', 'nullable'],
+            'url_foto3' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,image/svg+xml', 'nullable'],
+        ]);
+        DB::beginTransaction();
+        try {
+
+            if ($request->hasFile('url_foto1')) {
+                if ($Infografis->url_foto1 != null) {
+                    Storage::delete($Infografis->url_foto1);
+                }
+                $petaPdfPath = $request->file('url_foto1')->store('public/images/media-informasi');
+                $validatedData['url_foto1'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto2')) {
+                if ($Infografis->url_foto2 != null) {
+                    Storage::delete($Infografis->url_foto2);
+                }
+                $petaPdfPath = $request->file('url_foto2')->store('public/images/media-informasi');
+                $validatedData['url_foto2'] = $petaPdfPath;
+            }
+            if ($request->hasFile('url_foto3')) {
+                if ($Infografis->url_foto3 != null) {
+                    Storage::delete($Infografis->url_foto3);
+                }
+                $petaPdfPath = $request->file('url_foto3')->store('public/images/media-informasi');
+                $validatedData['url_foto3'] = $petaPdfPath;
+            }
+
+
+            Infografis::where('id', $id)->update($validatedData);
+
+            DB::commit();
+            return redirect('/dashboard/media/media-informasi')->with('success', 'Data berhasil disimpan.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -122,7 +168,7 @@ class InfografisController extends Controller
     }
     public function checkSlug(Request $request)
     {
-        $slug = SlugService::createSlug(Bendungan::class, 'slug', $request->nama);
+        $slug = SlugService::createSlug(Infografis::class, 'slug', $request->nama);
         return response()->json(['slug' => $slug]);
     }
 }

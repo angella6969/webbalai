@@ -138,7 +138,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::get('/email', [EmailController::class, 'index']);
 
 
-    Route::middleware(['auth'])->group(function () {
+    Route::middleware(['auth'])->group(function () { 
 
         Route::get('/dashboard', [DashboardController::class, 'index']);
 

@@ -1,6 +1,6 @@
 <div class="mb-3">
     <div class="input-group">
-        <input type="text"  class="form-control"  readonly id="slug" name="slug" placeholder="slug"
+        <input type="text" hidden class="form-control"  readonly id="slug" name="slug" placeholder="slug"
             value="{{ old('slug',$nilai) }}" required>
     </div>
 </div>
