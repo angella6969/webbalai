@@ -51,10 +51,10 @@ class BendungController extends Controller
             "tahun_pembangunan" => ['required'],
             "body" => ['required'],
             'slug' => ['required', 'unique:Bendungs'],
-            'url_foto1' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto2' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto3' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto4' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto1' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto2' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto3' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto4' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
         ]);
         DB::beginTransaction();
         try {
@@ -125,10 +125,10 @@ class BendungController extends Controller
             "lokasi" => ['required'],
             "tahun_pembangunan" => ['required'],
             "body" => ['required'],
-            'url_foto1' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto2' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto3' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto4' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto1' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto2' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto3' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto4' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
         ];
         if ($request->slug != $bendung->slug) {
             $rules['slug'] = ['required', 'unique:Bendungs'];

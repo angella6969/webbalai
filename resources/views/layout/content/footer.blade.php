@@ -58,20 +58,20 @@
                              BBWS
                              SO</a></li>
                      <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
-                             href="https://airbbwsso.net/">AiR (Rekomtek BBWS SO) </a></li>
+                             href="https://airbbwsso.net/" target="_blank">AiR (Rekomtek BBWS SO) </a></li>
                      {{-- <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
                              href="">Renstra BBBWS
                              Serayu Opak </a></li> --}}
                      <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
-                             href="#">E-PPID PUPR </a>
+                             href="https://sahabat.pu.go.id/eppid/" target="_blank">E-PPID PUPR </a>
                      </li>
                      <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
-                             href="#">JDIH PUPR </a>
+                             href="https://jdih.pu.go.id/" target="_blank">JDIH PUPR </a>
                      </li>
                      {{-- <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
                              href="#">Pola WS </a></li> --}}
                      <li class="mb-2"><i data-feather="chevron-right"></i><a style="color: white; font-size: 14px;"
-                             href="">Knowledge
+                             href="https://simantu.pu.go.id/login.php" target="_blank">Knowledge
                              Management </a></li>
                  </ul>
              </div>

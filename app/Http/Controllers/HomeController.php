@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $image = Image::all();
+        $image = Image::latest()->get();
         $berita = Berita::all();
         $infoData = Pengumuman::all();
         $logoTerkait = Situsterkait::all();

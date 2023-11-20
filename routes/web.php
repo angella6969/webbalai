@@ -147,6 +147,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
         Route::get('/dashboard/infrastruktur/bendungs/checkSlug', [BendungController::class, 'checkSlug']);
         Route::get('/dashboard/infrastruktur/irigasi/checkSlug', [IrigasiController::class, 'checkSlug']);
         Route::get('/dashboard/infrastruktur/embungs/checkSlug', [EmbungController::class, 'checkSlug']);
+        Route::get('/dashboard/media/media-informasi/checkSlug', [InfografisController::class, 'checkSlug']);
 
         Route::resource('/dashboard/media/media-informasi', InfografisController::class)->except(['show']);
 

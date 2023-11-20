@@ -83,10 +83,10 @@
                     <ul>
                         <li><a href="/layanan/ppid-bbws-so/profil">Profil</a></li>
                         <li><a href="/layanan/ppid-bbws-so/prosedur_pelayanan">Prosedur Pelayanan</a></li>
-                        <li><a href="{{ route('kalatirta') }}">KALATIRTA</a></li>
+                        <li><a href="{{ route('kalatirta') }}" target="_blank">KALATIRTA</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Perpustakaan Online</a></li>
+                <li><a href="http://202.169.239.20/perpustakaanso/" target="_blank">Perpustakaan Online</a></li>
                 <li class="dropdown"><a href="#"><span>Pengaduan</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
                         <li><a href="/under-Maintenance">Pengaduan Balai</a></li>

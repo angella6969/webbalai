@@ -60,10 +60,10 @@ class BendunganController extends Controller
             // "irigasi" => ['required'],
             "body" => ['required'],
             'slug' => ['required', 'unique:Bendungans'],
-            'url_foto1' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto2' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto3' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto4' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto1' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto2' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto3' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto4' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
         ]);
         DB::beginTransaction();
         try {
@@ -143,14 +143,14 @@ class BendunganController extends Controller
             "tinggi_dasar_sungai" => ['required'],
             "panjang_puncak" => ['required'],
             "lebar_puncak" => ['required'],
-            "elevasi_puncak" => ['required'],
+            "elevasi_puncak" => ['required'], 
             "volume_tampung_normal" => ['required'],
             "volume_tampung_total" => ['required'],
             "body" => ['required'],
-            'url_foto1' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto2' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto3' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto4' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto1' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto2' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto3' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto4' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
         ];
 
 

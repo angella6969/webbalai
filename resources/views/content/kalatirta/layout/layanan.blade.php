@@ -33,7 +33,7 @@
                 <p>Permohonan Informasi dan Data</p>
             </div>
             <div class="col icon-box">
-                <a href="http://202.169.239.20/perpustakaanso/">
+                <a href="http://202.169.239.20/perpustakaanso/"> 
                     <svg class="icon">
                         <use xlink:href="#pustaka"></use>
                     </svg>

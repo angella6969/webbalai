@@ -54,10 +54,10 @@ class EmbungController extends Controller
             "volume_tampung" => ['required'],
             "body" => ['required'],
             'slug' => ['required', 'unique:Embungs'],
-            'url_foto1' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto2' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto3' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto4' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto1' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto2' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto3' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto4' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
         ]);
 
 
@@ -134,10 +134,10 @@ class EmbungController extends Controller
             "tahun_pembangunan" => ['required'],
             "volume_tampung" => ['required'],
             "body" => ['required'],
-            'url_foto1' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto2' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto3' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto4' => ['file', 'max:15120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto1' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto2' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto3' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_foto4' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
         ];
 
         if ($request->slug != $embung->slug) {

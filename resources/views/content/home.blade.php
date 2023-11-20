@@ -191,7 +191,7 @@
             @foreach ($logoTerkaits as $logoTerkait)
                 <div class="swiper-slide1">
                     <div class="border:none">
-                        <a href="{{ $logoTerkait->url_situs }}"><img
+                        <a href="{{ $logoTerkait->url_situs }}" target="_blank"><img
                                 src="{{ asset('storage/' . substr($logoTerkait->image, 6)) }}"
                                 class="card-img-top hover-effect-2 d-flex justify-content-center" alt=""></a>
                     </div>

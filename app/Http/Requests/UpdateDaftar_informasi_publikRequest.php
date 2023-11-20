@@ -11,7 +11,7 @@ class UpdateDaftar_informasi_publikRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
