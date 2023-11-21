@@ -43,6 +43,7 @@
 <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
     <div id="heroCarousel" data-bs-interval="4000" class="carousel carousel-fade" data-bs-ride="carousel">
 
+       
         @foreach ($images as $image)
         <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
             <img src="{{ asset('storage/' . substr($image->image, 6)) }}"
