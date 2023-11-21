@@ -54,18 +54,20 @@ class KalatirtaController extends Controller
         $formattedDate = $date->format('M/y');
 
         // Mencari nomor registrasi terakhir dari database
-        $lastRegistration = Kalatirta::latest('created_at')->first();
+        $lastRegistration = Kalatirta::latest()->pluck('nomor_registrasi')->first();
         if ($lastRegistration) {
             // Memecah nomor registrasi menjadi bagian-bagian
-            $parts = explode('/', $lastRegistration->noReg);
+            $parts = explode('/', $lastRegistration);
 
             // Mengambil bagian nomor
             $lastNumber = intval($parts[0]);
+            $lastNumber2 = ($parts[1]);
+            $lastNumber1 = ($parts[2]) . "/" . ($parts[3]);
 
             // Mengecek apakah bulan saat ini sama dengan bulan pada nomor registrasi terakhir
-            if ($date->format('M/y') == $lastRegistration->formatted_date) {
+            if ($date->format('M/y') === $lastNumber1) {
                 // Jika ya, tambahkan satu ke nomor terakhir
-                $newNumber = $lastNumber + 1;
+                $newNumber = $lastNumber + 1 ;
             } else {
                 // Jika tidak, reset nomor menjadi 1
                 $newNumber = 1;
@@ -79,7 +81,9 @@ class KalatirtaController extends Controller
 
         // Membuat nomor registrasi baru
         $noReg = $newNumberFormatted . '/PPID/' . $formattedDate;
-        // dd($noReg);
+
+        dd($noReg);
+
         $validatedData = $request->validate([
             'nama' => ['required', 'max:254'],
             'alamat' => ['required', 'max:254'],
@@ -92,9 +96,12 @@ class KalatirtaController extends Controller
             'memperoleh' => ['required'],
             'mengirim' => ['required'],
             'keterangan' => ['nullable'],
+            'nomor_registrasi' => ['nullable'],
             'alamat_kirim' => ['nullable', 'max:254'],
             'ktp' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'required'],
         ]);
+        $validatedData['nomor_registrasi'] = $noReg;
+        dd($validatedData['nomor_registrasi']);
 
         DB::beginTransaction();
         try {
@@ -128,6 +135,7 @@ class KalatirtaController extends Controller
         $mengirim  = $data['mengirim'];
         $ktp  = $data['ktp'];
         $alamat_kirim  = $data['alamat_kirim'];
+        $nomor_registrasi  = $data['nomor_registrasi'];
 
         $validatedData = $request->validate([
             'jenis_kelamin' => ['required', 'max:254'],
@@ -160,6 +168,7 @@ class KalatirtaController extends Controller
                 'mengirim' => $mengirim,
                 'ktp' => $ktp,
                 'alamat_kirim' => $alamat_kirim,
+                'nomor_registrasi' => $nomor_registrasi,
             ]);
             Survey::create($validatedData);
             DB::commit();
