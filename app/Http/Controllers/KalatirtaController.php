@@ -61,13 +61,12 @@ class KalatirtaController extends Controller
 
             // Mengambil bagian nomor
             $lastNumber = intval($parts[0]);
-            $lastNumber2 = ($parts[1]);
             $lastNumber1 = ($parts[2]) . "/" . ($parts[3]);
 
             // Mengecek apakah bulan saat ini sama dengan bulan pada nomor registrasi terakhir
             if ($date->format('M/y') === $lastNumber1) {
                 // Jika ya, tambahkan satu ke nomor terakhir
-                $newNumber = $lastNumber + 1 ;
+                $newNumber = $lastNumber + 1;
             } else {
                 // Jika tidak, reset nomor menjadi 1
                 $newNumber = 1;
