@@ -48,7 +48,9 @@ class DaftarInformasiPublikController extends Controller
             'nama' => ['required'],
             'jenis' => ['required'],
             'link' => ['nullable'],
-            'url_file' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            // 'url_file' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_file' => ['file', 'max:5120', 'mimes:xls,xlsx,jpg,jpeg,png,gif,pdf', 'nullable'],
+
         ]);
         DB::beginTransaction();
         try {
@@ -102,7 +104,7 @@ class DaftarInformasiPublikController extends Controller
             'nama' => ['required'],
             'jenis' => ['required'],
             'link' => ['nullable'],
-            'url_file' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            'url_file' => ['file', 'max:5120', 'mimes:xls,xlsx,jpg,jpeg,png,gif,pdf', 'nullable'],
         ]);
 
         DB::beginTransaction();

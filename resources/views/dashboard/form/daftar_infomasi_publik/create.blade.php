@@ -10,12 +10,12 @@
                 <h5 class="card-title fw-semibold mb-3">Daftar Informasi Publik</h5>
                 <form method="post" action="/dashboard/daftar-informasi-publik" enctype="multipart/form-data">
                     @csrf
-                    <x-input nama="nama" judul="Informasi Publik" nilai="" />
+                    <x-input nama="nama" judul="Judul Informasi Publik" nilai="" />
                     <div class="mt-3">
-                        <label for="jenis" class="form-label">Informasi Publik</label>
+                        <label for="jenis" class="form-label">Klasifikasi Informasi Publik</label>
                         <select class="form-select" aria-label="Default select example" name="jenis" id="jenis"
                             required>
-                            <option value="" {{ old('jenis') == '' ? 'selected' : '' }}>Kategori Informasi</option>
+                            <option value="" {{ old('jenis') == '' ? 'selected' : '' }}></option>
                             <option value="serta" {{ old('jenis') == 'serta' ? 'selected' : '' }}>Serta Merta</option>
                             <option value="setiap-saat" {{ old('jenis') == 'setiap-saat' ? 'selected' : '' }}>Setiap Saat
                             </option>
@@ -36,7 +36,8 @@
 
                     <div class="mt-3 mb-3">
                         <label for="url_file">PDF</label>
-                        <input type="file" class="form-control" id="url_file" name="url_file" accept=" application/pdf">
+                        <input type="file" class="form-control" id="url_file" name="url_file"
+                            accept=".pdf, .xls, .xlsx, .jpg, .jpeg, .png">
                         <h6>PDF Max 5 MB</h6>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

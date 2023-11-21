@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('memperoleh')->nullable();
             $table->string('nomor_registrasi')->nullable();
             $table->string('mengirim')->nullable();
+            $table->string('alamat_kirim')->nullable();
             $table->longText('keterangan')->nullable();
             $table->timestamps();
         });

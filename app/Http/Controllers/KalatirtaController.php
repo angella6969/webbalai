@@ -79,7 +79,7 @@ class KalatirtaController extends Controller
 
         // Membuat nomor registrasi baru
         $noReg = $newNumberFormatted . '/PPID/' . $formattedDate;
-        dd($noReg);
+        // dd($noReg);
         $validatedData = $request->validate([
             'nama' => ['required', 'max:254'],
             'alamat' => ['required', 'max:254'],
@@ -92,6 +92,7 @@ class KalatirtaController extends Controller
             'memperoleh' => ['required'],
             'mengirim' => ['required'],
             'keterangan' => ['nullable'],
+            'alamat_kirim' => ['nullable', 'max:254'],
             'ktp' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'required'],
         ]);
 
@@ -126,6 +127,7 @@ class KalatirtaController extends Controller
         $memperoleh  = $data['memperoleh'];
         $mengirim  = $data['mengirim'];
         $ktp  = $data['ktp'];
+        $alamat_kirim  = $data['alamat_kirim'];
 
         $validatedData = $request->validate([
             'jenis_kelamin' => ['required', 'max:254'],
@@ -157,6 +159,7 @@ class KalatirtaController extends Controller
                 'memperoleh' => $memperoleh,
                 'mengirim' => $mengirim,
                 'ktp' => $ktp,
+                'alamat_kirim' => $alamat_kirim,
             ]);
             Survey::create($validatedData);
             DB::commit();

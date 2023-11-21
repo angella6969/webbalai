@@ -134,12 +134,12 @@
 
 
                                 <x-input nama="nama" judul="Nama" nilai="" />
-                                <x-input nama="alamat" judul="Alamat" nilai="" />
+                                <x-input nama="alamat" judul="Alamat Sesuai KTP" nilai="" />
 
 
 
                                 <div class="mt-3">
-                                    <label for="nohp" class="form-label">Nomor Tlp/WA</label>
+                                    <label for="nohp" class="form-label">Nomor Tlp/WA Aktif</label>
                                     <div class="input-group">
                                         <input type="number" class="form-control @error('nohp') is-invalid @enderror"
                                             id="nohp" name="nohp"
@@ -155,8 +155,7 @@
 
                                 <x-input nama="email" judul="Email" nilai="" />
                                 <x-input nama="pekerjaan" judul="Pekerjaan" nilai="" />
-                                <x-input nama="pekerjaan" judul="Pekerjaan" nilai="" />
-                                <x-input nama="alamatkantor" judul="Alamat Kantor/kampus" nilai="" />
+                                <x-input nama="alamatkantor" judul="Alamat Kantor/kampus/Domisili" nilai="" />
 
 
                                 <div class="mt-3">
@@ -189,6 +188,11 @@
                                         <option value="Email" {{ old('mengirim') == 'Email' ? 'selected' : '' }}>
                                             Email</option>
                                     </select>
+                                </div>
+                                <div class="mt-3" id="alamat-section" style="display: none;">
+                                    <label for="alamat_kirim" class="form-label">Alamat Penerima</label>
+                                    <input type="text" class="form-control" name="alamat_kirim"
+                                        id="alamat_kirim">
                                 </div>
 
 
@@ -288,9 +292,25 @@
     // Inisialisasi CKEditor untuk textarea kedua
     initializeEditor('#tujuan');
 </script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.js"
     integrity="sha512-OmBbzhZ6lgh87tQFDVBHtwfi6MS9raGmNvUNTjDIBb/cgv707v9OuBVpsN6tVVTLOehRFns+o14Nd0/If0lE/A=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <x-notif />
+
+<script>
+    $(document).ready(function() {
+        // Tangkap perubahan pada elemen select
+        $('#mengirim').change(function() {
+            // Sembunyikan input alamat secara default
+            $('#alamat-section').hide();
+
+            // Jika opsi "Kurir" atau "Via Pos" dipilih, tampilkan input alamat
+            if ($(this).val() == 'Kurir' || $(this).val() == 'Via Pos') {
+                $('#alamat-section').show();
+            }
+        });
+    });
+</script>
 
 </html>
