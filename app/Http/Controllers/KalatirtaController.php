@@ -81,7 +81,7 @@ class KalatirtaController extends Controller
         // Membuat nomor registrasi baru
         $noReg = $newNumberFormatted . '/PPID/' . $formattedDate;
 
-        dd($noReg);
+        // dd($noReg);
 
         $validatedData = $request->validate([
             'nama' => ['required', 'max:254'],
@@ -100,7 +100,7 @@ class KalatirtaController extends Controller
             'ktp' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'required'],
         ]);
         $validatedData['nomor_registrasi'] = $noReg;
-        dd($validatedData['nomor_registrasi']);
+        // dd($validatedData['nomor_registrasi']);
 
         DB::beginTransaction();
         try {
