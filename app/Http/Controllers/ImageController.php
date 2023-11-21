@@ -36,6 +36,7 @@ class ImageController extends Controller
     public function store(StoreImageRequest $request)
     {
         $validatedData = $request->validate([
+            "nama" => ['required'],
             'image' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif', 'nullable'],
         ]);
         DB::beginTransaction();
@@ -81,6 +82,7 @@ class ImageController extends Controller
     {
         $Image = Image::findOrFail($id);
         $validatedData = $request->validate([
+            "nama" => ['required'],
             'image' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif', 'nullable'],
         ]);
 
