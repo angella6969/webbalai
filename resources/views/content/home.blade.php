@@ -39,7 +39,7 @@
         }
     </style>
 
-
+    {{-- ============================ Foto Beranda ============================ --}}
     <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
         <div id="heroCarousel" data-bs-interval="4000" class="carousel carousel-fade" data-bs-ride="carousel">
 
@@ -81,8 +81,11 @@
             <div clas="col-xl-4" style="margin:0px 0px 20px 100px; "> </div>
 
         </div>
-
     </section>
+    {{-- ============================ End Foto Beranda ============================ --}}
+
+
+    {{-- ============================ Pengumuman ============================ --}}
     <section style="padding-top:0px">
         <div class="col-lg-12" style="height: 60px; color:#fff; background: rgb(232,170,28); ">
             <div class="container">
@@ -106,7 +109,10 @@
             </div>
         </div>
     </section>
+    {{-- ============================ End Pengumuman ============================ --}}
 
+
+    {{-- ============================ Berita ============================ --}}
     <section id="" class="testimonials">
         <div class="container">
             {{-- <div class="section-title" data-aos="zoom-out">
@@ -143,8 +149,10 @@
             </div>
         </div>
     </section>
+    {{-- ============================ End Berita ============================ --}}
 
 
+    {{-- ============================ Infrastruktur ============================ --}}
     <section id="" class="testimonials" style="background-color:rgba(145, 145, 133,0.2)">
         <div class="container">
 
@@ -177,7 +185,10 @@
             </div>
         </div>
     </section>
+    {{-- ============================ End Infrastruktur ============================ --}}
 
+
+    {{-- ============================ Logo Terkait ============================ --}}
     <section id="" class="testimonials">
         {{-- <div class="container"> --}}
 
@@ -187,7 +198,6 @@
         </div> --}}
 
         <div class="multiple-items1 card-img-top1" id="multiple-items1" data-aos="fade-up" data-aos-delay="100">
-            {{-- <div class="swiper-wrapper"> --}}
             @foreach ($logoTerkaits as $logoTerkait)
                 <div class="swiper-slide1">
                     <div class="border:none">
@@ -201,15 +211,13 @@
                                 style="font-size: 14px; color: rgb(11,38,83)">{{ $logoTerkait->name }}</a>
                         </h3>
                     </div>
-                </div><!-- End testimonial item -->
+                </div>
             @endforeach
-            {{--
-            </div> --}}
+
             <div class="swiper-pagination"></div>
         </div>
-        {{--
-    </div> --}}
     </section>
+    {{-- ============================ Logo Terkait ============================ --}}
 
 
 
@@ -225,20 +233,32 @@
         document.addEventListener('DOMContentLoaded', function() {
             $('.multiple-items1').slick({
                 slidesToShow: 4,
-                slidesToScroll: 4,
+                slidesToScroll: 1,
                 autoplay: true,
                 arrows: false,
                 autoplaySpeed: 1000,
                 responsive: [{
                         breakpoint: 1024,
                         settings: {
-                            slidesToShow: 2,
+                            slidesToShow: 3,
                             slidesToScroll: 1,
                             infinite: true,
                         }
                     },
                     {
                         breakpoint: 768,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1
+                        }
+                    }, {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    }, {
+                        breakpoint: 480,
                         settings: {
                             slidesToShow: 1,
                             slidesToScroll: 1

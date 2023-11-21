@@ -19,11 +19,12 @@ return new class extends Migration
             $table->string('pekerjaan')->nullable();
             $table->string('alamatkantor')->nullable();
             $table->longText('tujuan')->nullable();
-            $table->longText('informasi')->nullable();
+            $table->longText('informasi')->nullable(); 
             $table->string('ktp')->nullable();
             $table->string('email')->nullable();
             $table->string('status')->default('Menunggu Konformasi');
             $table->string('memperoleh')->nullable();
+            $table->string('nomor_registrasi')->nullable();
             $table->string('mengirim')->nullable();
             $table->longText('keterangan')->nullable();
             $table->timestamps();

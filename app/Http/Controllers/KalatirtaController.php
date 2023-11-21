@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreKalatirtaRequest;
 use App\Http\Requests\UpdateKalatirtaRequest;
 use App\Models\Survey;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -46,6 +47,39 @@ class KalatirtaController extends Controller
      */
     public function store(StoreKalatirtaRequest $request)
     {
+        // Mendapatkan tanggal sekarang
+        $date = Carbon::now();
+
+        // Format tanggal menjadi 'M/y'
+        $formattedDate = $date->format('M/y');
+
+        // Mencari nomor registrasi terakhir dari database
+        $lastRegistration = Kalatirta::latest('created_at')->first();
+        if ($lastRegistration) {
+            // Memecah nomor registrasi menjadi bagian-bagian
+            $parts = explode('/', $lastRegistration->noReg);
+
+            // Mengambil bagian nomor
+            $lastNumber = intval($parts[0]);
+
+            // Mengecek apakah bulan saat ini sama dengan bulan pada nomor registrasi terakhir
+            if ($date->format('M/y') == $lastRegistration->formatted_date) {
+                // Jika ya, tambahkan satu ke nomor terakhir
+                $newNumber = $lastNumber + 1;
+            } else {
+                // Jika tidak, reset nomor menjadi 1
+                $newNumber = 1;
+            }
+        } else {
+            // Jika belum ada nomor registrasi sebelumnya, set nomor pertama
+            $newNumber = 1;
+        }
+        // Format nomor baru menjadi format yang diinginkan (misalnya, 4 digit dengan leading zero)
+        $newNumberFormatted = sprintf('%04d', $newNumber);
+
+        // Membuat nomor registrasi baru
+        $noReg = $newNumberFormatted . '/PPID/' . $formattedDate;
+        dd($noReg);
         $validatedData = $request->validate([
             'nama' => ['required', 'max:254'],
             'alamat' => ['required', 'max:254'],
