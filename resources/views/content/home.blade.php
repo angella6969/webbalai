@@ -174,7 +174,7 @@
 
                                 <div class="card-body">
                                     <h5 class="d-flex justify-content-center text-4 mb-1"><a href=""
-                                            class="link-color-dark">{{ $infrastruktur->nama }}</a></h5>
+                                        style="color: black" class="link-color-dark">{{ $infrastruktur->nama }}</a></h5>
                                     <span class="text-color-dark mb-3"><i class="far fa-clock text-color-primary"></i>
                                         {{ $infrastruktur->tanggal }}</span>
                                 </div>
@@ -182,7 +182,7 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="swiper-pagination"></div>
+                <div  class="swiper-pagination"></div>
             </div>
         </div>
     </section>
