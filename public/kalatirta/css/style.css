@@ -244,6 +244,7 @@ NAVIGATION MENU
 .navbar li {
     position: relative;
     display: flex;
+    
 }
 .navbar > ul > li {
     white-space: nowrap;
@@ -259,6 +260,7 @@ NAVIGATION MENU
     font-size: 0.9rem;
     white-space: nowrap;
     transition: 0.3s;
+    text-decoration: none;
 }
 .navbar > ul > li > a:before {
     content: "";
@@ -460,7 +462,7 @@ Layanan Section
     margin-top: 30px;
 }
 .icon-box .col {
-    width: 25%;
+    width: 30%;
     background: var(--color-white1);
     box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
     border-radius: 10px;
@@ -783,3 +785,4 @@ MOBILE DEVICE
         display: none;
     }
 }
+ 

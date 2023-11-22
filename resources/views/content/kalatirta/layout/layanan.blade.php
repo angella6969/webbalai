@@ -24,7 +24,7 @@
                 <p>Permohonan Rekomendasi Teknis</p>
             </div>
             <div class="col icon-box">
-                <a href="{{ route('kalatirta.create') }}">
+                <a href="{{ route('kalatirta.showPortal') }}">
                     <svg class="icon">
                         <use xlink:href="#data"></use>
                     </svg>
@@ -41,7 +41,7 @@
                 <h4>PERPUSTAKAAN ONLINE</h4>
                 <p>Publikasi Buku Koleksi BBWS Serayu Opak</p>
             </div>
-            <div class="col icon-box">
+            {{-- <div class="col icon-box">
                 <a href="#">
                     <svg class="icon">
                         <use xlink:href="#survei"></use>
@@ -49,7 +49,7 @@
                 </a>
                 <h4>SURVEI KEPUASAN</h4>
                 <p>Kepuasan terhadap Layanan Publik Terpadu</p>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>

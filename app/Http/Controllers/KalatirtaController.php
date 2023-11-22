@@ -47,41 +47,25 @@ class KalatirtaController extends Controller
      */
     public function store(StoreKalatirtaRequest $request)
     {
-        // Mendapatkan tanggal sekarang
         $date = Carbon::now();
-
-        // Format tanggal menjadi 'M/y'
         $formattedDate = $date->format('M/y');
-
-        // Mencari nomor registrasi terakhir dari database
         $lastRegistration = Kalatirta::latest()->pluck('nomor_registrasi')->first();
         if ($lastRegistration) {
-            // Memecah nomor registrasi menjadi bagian-bagian
             $parts = explode('/', $lastRegistration);
-
-            // Mengambil bagian nomor
             $lastNumber = intval($parts[0]);
             $lastNumber1 = ($parts[2]) . "/" . ($parts[3]);
-
-            // Mengecek apakah bulan saat ini sama dengan bulan pada nomor registrasi terakhir
             if ($date->format('M/y') === $lastNumber1) {
-                // Jika ya, tambahkan satu ke nomor terakhir
                 $newNumber = $lastNumber + 1;
             } else {
-                // Jika tidak, reset nomor menjadi 1
                 $newNumber = 1;
             }
         } else {
-            // Jika belum ada nomor registrasi sebelumnya, set nomor pertama
             $newNumber = 1;
         }
-        // Format nomor baru menjadi format yang diinginkan (misalnya, 4 digit dengan leading zero)
         $newNumberFormatted = sprintf('%04d', $newNumber);
-
-        // Membuat nomor registrasi baru
         $noReg = $newNumberFormatted . '/PPID/' . $formattedDate;
 
-        // dd($noReg);
+        // dd($parts);
 
         $validatedData = $request->validate([
             'nama' => ['required', 'max:254'],
@@ -194,6 +178,13 @@ class KalatirtaController extends Controller
         $data = Kalatirta::latest()->get();
         return view('content.kalatirta.show', [
             'data' => $data
+        ]);
+    }
+    public function showPortal()
+    {
+        // $data = Kalatirta::latest()->get();
+        return view('content.kalatirta.portal', [
+            // 'data' => $data
         ]);
     }
 

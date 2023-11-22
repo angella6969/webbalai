@@ -83,6 +83,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::get('/kalatirta-so/permohonan-data', [KalatirtaController::class, 'show1'])->name('kalatirta.status');
     Route::get('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'create'])->name('kalatirta.create');
     Route::post('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'store'])->name('kalatirta.store');
+    Route::get('/kalatirta-so/portal', [KalatirtaController::class, 'showPortal'])->name('kalatirta.showPortal');
 
     // Route::middleware(['CheckAccessMiddleware'])->group(function () {
 
@@ -138,7 +139,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::get('/email', [EmailController::class, 'index']);
 
 
-    Route::middleware(['auth'])->group(function () { 
+    Route::middleware(['auth'])->group(function () {
 
         Route::get('/dashboard', [DashboardController::class, 'index']);
 

@@ -2,17 +2,39 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>KALATIRTA - Layanan Terpadu BBWS SO</title>
+
     <link rel="stylesheet" href="{{ asset('kalatirta\css\style.css') }}">
-    @include('content.kalatirta.layout.link')
     <link rel="shortcut icon" type="image/png" href="{{ asset('kalatirta\images\Kal-logo2.png') }}" />
 </head>
 
 <body>
     <!-- ==ICON== -->
+    {{-- <svg id="Layer_1" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"
+        data-name="Layer 1">
+        <path
+            d="m18.5 24h-13a5.506 5.506 0 0 1 -5.5-5.5v-13a5.506 5.506 0 0 1 5.5-5.5h13a5.506 5.506 0 0 1 5.5 5.5v13a5.506 5.506 0 0 1 -5.5 5.5zm-13-21a2.5 2.5 0 0 0 -2.5 2.5v13a2.5 2.5 0 0 0 2.5 2.5h13a2.5 2.5 0 0 0 2.5-2.5v-13a2.5 2.5 0 0 0 -2.5-2.5zm13.5 4a2 2 0 0 0 -2-2h-10a2 2 0 0 0 -2 2 2 2 0 0 0 2 2h10a2 2 0 0 0 2-2zm-12.5 4.5a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0 -1.5-1.5zm5 0a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0 -1.5-1.5zm-5 4.5a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0 -1.5-1.5zm5 0a1.5 1.5 0 1 0 1.5 1.5 1.5 1.5 0 0 0 -1.5-1.5zm7.5 1.5a1.5 1.5 0 0 0 -1.5-1.5h-1a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 0 1.5-1.5zm0-4.5a1.5 1.5 0 0 0 -1.5-1.5h-1a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 0 1.5-1.5z" />
+    </svg> --}}
     <!-- ==main== -->
     <svg style="display:none;">
+        <symbol id="air" viewBox="0 0 24 24">
+            <path
+                d="M10,24a9.893,9.893,0,0,1-7.077-2.961C-4.04,14.063,3.4,4.954,6.542,1.569A4.571,4.571,0,0,1,10.008,0a4.617,4.617,0,0,1,3.511,1.625C16.648,5,24.016,14.088,17.077,21.039A9.893,9.893,0,0,1,10,24Zm.005-21a1.6,1.6,0,0,0-1.23.57C5.674,7.056.011,13.982,5.056,18.929a6.969,6.969,0,0,0,9.888,0c5.039-4.923-.613-11.879-3.663-15.3A1.643,1.643,0,0,0,10.006,3ZM21.5,5a2.5,2.5,0,0,1,0-5A2.5,2.5,0,0,1,21.5,5Z">
+            </path>
+        </symbol>
+        <symbol id="form" viewBox="0 0 24 24">
+            <path
+                d="m17 17.5a1.5 1.5 0 0 1 -1.5 1.5h-7a1.5 1.5 0 0 1 0-3h7a1.5 1.5 0 0 1 1.5 1.5zm5-10.343v11.343a5.506 5.506 0 0 1 -5.5 5.5h-9a5.506 5.506 0 0 1 -5.5-5.5v-13a5.506 5.506 0 0 1 5.5-5.5h7.343a5.464 5.464 0 0 1 3.889 1.611l1.657 1.657a5.464 5.464 0 0 1 1.611 3.889zm-3.015-.157h-1.985a2 2 0 0 1 -2-2v-1.984c-.053-.004-7.5-.016-7.5-.016a2.5 2.5 0 0 0 -2.5 2.5v13a2.5 2.5 0 0 0 2.5 2.5h9a2.5 2.5 0 0 0 2.5-2.5s-.012-11.447-.015-11.5zm-4.485 2h-5a2.5 2.5 0 0 0 0 5h5a2.5 2.5 0 0 0 0-5z">
+            </path>
+        </symbol>
+        <symbol id="map" viewBox="0 0 24 24">
+            <path
+                d="M20.469,1.146l-.031-.011L17.847.272a5.335,5.335,0,0,0-3.1-.081L9.44,1.734A2.312,2.312,0,0,1,7.859,1.6l-.5-.23A5.318,5.318,0,0,0,0,6.277V17.8a5.328,5.328,0,0,0,3.822,5.1l2.74.857A5.34,5.34,0,0,0,8.148,24a6.245,6.245,0,0,0,1.416-.192L15.1,22.28a2.3,2.3,0,0,1,1.249.01l2.259.651A4.363,4.363,0,0,0,24,18.7V6.154A5.328,5.328,0,0,0,20.469,1.146ZM14,3.534V19.47l-4,1.105V4.668ZM4.682,20.027A2.326,2.326,0,0,1,3,17.8V6.277A2.285,2.285,0,0,1,4.032,4.348a2.337,2.337,0,0,1,1.3-.4,2.145,2.145,0,0,1,.823.162L7,4.464V20.752ZM21,18.7a1.367,1.367,0,0,1-1.625,1.341L17,19.37V3.153l2.475.823A2.323,2.323,0,0,1,21,6.154Z">
+            </path>
+        </symbol>
         <symbol id="rekomtek" viewBox="0 0 24 24">
             <path
                 d="m23.395,11.231c-.571-.767-1.441-1.213-2.395-1.23v-1.5c0-3.033-2.468-5.5-5.5-5.5h-4.056c-.077,0-.155-.018-.224-.053l-3.155-1.578c-.483-.241-1.024-.369-1.565-.369h-2C2.019,1,0,3.019,0,5.5v12c0,3.033,2.468,5.5,5.5,5.5h11.558c2.447,0,4.565-1.575,5.269-3.919l1.544-5.147c.28-.935.106-1.919-.476-2.702Zm-18.528,1.789l-1.784,5.119c-.054-.204-.082-.418-.082-.638v-9.5h14.95c.033.162.05.329.05.5v1.5h-8.885c-1.913,0-3.62,1.213-4.249,3.02Zm14.587,5.199c-.32,1.066-1.282,1.782-2.396,1.782H5.61l2.089-5.994c.209-.602.778-1.006,1.416-1.006h11.882l-1.544,5.218Z">
@@ -34,7 +56,6 @@
             </path>
         </symbol>
         <!-- ==social== -->
-
         @include('content.kalatirta.layout.sosial')
 
         <!-- ==contact== -->
@@ -68,90 +89,80 @@
     </svg>
 
     <!-- ==HEADER== -->
-    <section id="topbar">
-        <div class="container section-info time">
-            <span id="time"></span>
-        </div>
-        <div class="container section-info social-links">
-            <svg class="icon">
-                <use xlink:href="#facebook"></use>
-            </svg>
-            <svg class="icon">
-                <use xlink:href="#instagram"></use>
-            </svg>
-            <svg class="icon">
-                <use xlink:href="#twitterx"></use>
-            </svg>
-            <svg class="icon">
-                <use xlink:href="#youtube"></use>
-            </svg>
-            <svg class="icon">
-                <use xlink:href="#tiktok"></use>
-            </svg>
-        </div>
-    </section>
+    @include('content.kalatirta.layout.toolbar')
     @include('content.kalatirta.layout.navbar')
 
+    <!-- ==HERO== -->
+    {{-- <section id="hero">
+        <div class="container animated fadeIn">
+            <div class="hero-content section-row">
+                <div class="section-title">
+                    <h2>Selamat datang di KALATIRTA</h2>
+                    <h3>Portal Layanan Publik Terpadu BBWS Serayu Opak</h3>
+                    <a href="#layanan" class="btn-to-main">Akses Layanan</a>
+                </div>
+                <div class="img-fluid">
+                    <img src="{{ asset('kalatirta') }}/images/kal-logo3.png" class="animated-pic" alt="">
+                </div>
+            </div>
+        </div>
+    </section> --}}
 
     <!-- ==MAIN MENU== -->
     <main id="main">
-        <section id="breadcrumbs" class="breadcrumbs">
-            <div class="container">
-                <ol>
-                    <li><a href="#">Beranda</a></li>
-                    <li>Layanan</li>
-                </ol>
-                <h2>Layanan Informasi dan Data</h2>
-            </div>
-        </section>
-        <section id="formdata" class="section-content section-bg">
+
+        <section id="layanan" class="section-content">
             <div class="container animated fadeIn">
                 <div class="section-title">
-                    <span>Permintaan</span>
-                    <h2><strong>Daftar Tunggu Permintaan Informasi </strong></h2>
+                    <span>Portal Layanan</span>
+                    <h2><strong>Portal Layanan</strong></h2>
                 </div>
-                <div class="section-info clearfix">
-                    <div class="section-cap">
-
+                <div class="section-cap">"Portal Layanan Terpadu BBWS Serayu Opak"</div>
+                {{-- <div class="section-info clearfix">
+                    <p>Layanan ini meliputi
+                        Permohonan <strong>Rekomendasi Teknis</strong> secara online,
+                        Permohonan <strong>Informasi dan Data</strong>,
+                        Layanan <strong>Pustaka Online</strong> sebagai portal Perpustakaan BBWS Serayu Opak,
+                        serta <strong>Survei Kepuasan</strong> atas Pelayanan Publik melalui Kalatirta.
+                    </p>
+                </div> --}}
+                <div class="icon-box clearfix d-flex justify-content-center">
+                    <div class="col icon-box">
+                        <a href="http://202.157.187.148/data/duga_air" target="_blank">
+                            <svg class="icon">
+                                <use xlink:href="#air"></use>
+                            </svg>
+                        </a>
+                        <h4>Telemetri</h4>
+                        {{-- <p>Permohonan Rekomendasi Teknis</p> --}}
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="">
-            <div class="container animated fadeIn">
-
-                <div class="section-cap1">
-                    <div class="table-responsive-sm">
-                        <table class="table table-striped table-sm">
-                            <thead>
-                                <tr style="text-align: center;">
-                                    <th scope="col">No</th>
-                                    <th scope="col">Nama </th>
-                                    <th scope="col">No Registrasi </th>
-                                    <th scope="col">Status Permintaan Data</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($data as $dat)
-                                    <tr style="text-align: center;">
-                                        <td> {{ $loop->iteration }}</td>
-                                        <td> {{ $dat->nama }}</td>
-                                        <td> {{ $dat->nomor_registrasi }}</td>
-                                        <td> {{ $dat->status }}</td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                    <div class="col icon-box">
+                        <a href="https://www.arcgis.com/apps/dashboards/69b81994477c4ae59c352d9e80b10dbc" target="_blank">
+                            <svg class="icon">
+                                <use xlink:href="#map"></use>
+                            </svg>
+                        </a>
+                        <h4>Peta</h4>
+                        {{-- <p>Permohonan Informasi dan Data</p> --}}
                     </div>
+                    <div class="col icon-box">
+                        <a href="{{ route('kalatirta.create') }}">
+                            <svg class="icon">
+                                <use xlink:href="#form"></use>
+                            </svg>
+                        </a>
+                        <h4>Form Permintaan Data</h4>
+                        {{-- <p>Publikasi Buku Koleksi BBWS Serayu Opak</p> --}}
+                    </div>
+
                 </div>
             </div>
         </section>
     </main>
 
-
     <!-- ==FOOTER== -->
     @include('content.kalatirta.layout.footer')
+
 
     <!-- ==BACK TO TOP=== -->
     <a href="#" class="scroll-top">
@@ -164,7 +175,11 @@
     <div id="preloader"></div>
 
     <!-- ==SCRIPT== -->
+    {{-- <script src="{{asset('/js/main.js')}}"></script> --}}
     <script src="{{ asset('kalatirta\js\main.js') }}"></script>
+
+
 </body>
+
 
 </html>
