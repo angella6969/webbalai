@@ -78,7 +78,7 @@
             <div class="hero-content section-row">
                 <div class="section-title">
                     <h2>Selamat datang di KALATIRTA</h2>
-                    <h3>Portal Layanan Publik Terpadu BBWS Serayu Opak</h3>
+                    <h3>Layanan Publik Terpadu BBWS Serayu Opak</h3>
                     <a href="#layanan" class="btn-to-main">Akses Layanan</a>
                 </div>
                 <div class="img-fluid">

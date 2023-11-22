@@ -156,7 +156,7 @@ class KalatirtaController extends Controller
             Survey::create($validatedData);
             DB::commit();
 
-            return redirect('/kalatirta-so')->with('success', 'Data berhasil disimpan.');
+            return redirect('/kalatirta-so/permohonan-data')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());

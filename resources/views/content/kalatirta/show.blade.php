@@ -108,7 +108,7 @@
             <div class="container animated fadeIn">
                 <div class="section-title">
                     <span>Permintaan</span>
-                    <h2><strong>Daftar Tunggu Permintaan Informasi </strong></h2>
+                    <h2><strong>Daftar Tunggu Permohonan Informasi & Data </strong></h2>
                 </div>
                 <div class="section-info clearfix">
                     <div class="section-cap">

@@ -244,7 +244,6 @@ NAVIGATION MENU
 .navbar li {
     position: relative;
     display: flex;
-    
 }
 .navbar > ul > li {
     white-space: nowrap;
@@ -700,15 +699,22 @@ ANIMATION
 /* -----------------------
 MOBILE DEVICE 
 ------------------------*/
+@media(max-width: 762px) {
+    .navbar ul li {
+        padding: 10px 0 px 10px 20px !important;
+    }
+}
+
 @media only screen and (max-width: 762px) {
-    .navToggle {
+    /* .navToggle {
         display: block;
         top: 20px;
-    }
+    } */
     .navbar {
         padding: 0;
         z-index: 100;
     }
+
     #title {
         position: absolute;
         top: 20px;
@@ -785,4 +791,3 @@ MOBILE DEVICE
         display: none;
     }
 }
- 

@@ -27,15 +27,25 @@
                             <tr style="text-align: center;">
                                 <th scope="col">No</th>
                                 <th scope="col">Nama </th>
+                                <th scope="col">Status </th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($datas as $data)
-                                <tr style="text-align: center;"
-                                    class="{{ $data->status == 'Diterima' ? 'bg-success' : ($data->status == 'Ditolak' ? 'bg-danger' : 'white') }}">
+                                <tr style="text-align: center;" {{-- class="{{ $data->status == 'Diterima' ? 'bg-success' : ($data->status == 'Ditolak' ? 'bg-danger' : 'white') }}" --}}
+                                    class="{{ $data->status == 'Diterima'
+                                        ? 'bg-info'
+                                        : ($data->status == 'Ditolak'
+                                            ? 'bg-danger'
+                                            : ($data->status == 'Diproses'
+                                                ? 'bg-warning'
+                                                : ($data->status == 'Selesai'
+                                                    ? 'bg-success'
+                                                    : 'bg-light'))) }}">
                                     <td> {{ $loop->iteration }}</td>
                                     <td> {{ $data->nama }}</td>
+                                    <td> {{ $data->status }}</td>
 
                                     <td>
                                         <a href="/dashboard/kalatirta-so/{{ $data->id }}"

@@ -114,10 +114,10 @@
         <section id="layanan" class="section-content">
             <div class="container animated fadeIn">
                 <div class="section-title">
-                    <span>Portal Layanan</span>
-                    <h2><strong>Portal Layanan</strong></h2>
+                    <span>Layanan</span>
+                    <h2><strong>Layanan</strong></h2>
                 </div>
-                <div class="section-cap">"Portal Layanan Terpadu BBWS Serayu Opak"</div>
+                <div class="section-cap">"Informasi & Data BBWS Serayu Opak"</div>
                 {{-- <div class="section-info clearfix">
                     <p>Layanan ini meliputi
                         Permohonan <strong>Rekomendasi Teknis</strong> secara online,
@@ -128,21 +128,21 @@
                 </div> --}}
                 <div class="icon-box clearfix d-flex justify-content-center">
                     <div class="col icon-box">
-                        <a href="http://202.157.187.148/data/duga_air" target="_blank">
+                        <a href="http://202.157.187.148/data/duga_air">
                             <svg class="icon">
                                 <use xlink:href="#air"></use>
                             </svg>
                         </a>
-                        <h4>Telemetri</h4>
+                        <h4>Informasi Hidrologi</h4>
                         {{-- <p>Permohonan Rekomendasi Teknis</p> --}}
                     </div>
                     <div class="col icon-box">
-                        <a href="https://www.arcgis.com/apps/dashboards/69b81994477c4ae59c352d9e80b10dbc" target="_blank">
+                        <a href="https://www.arcgis.com/apps/dashboards/69b81994477c4ae59c352d9e80b10dbc" >
                             <svg class="icon">
                                 <use xlink:href="#map"></use>
                             </svg>
                         </a>
-                        <h4>Peta</h4>
+                        <h4>Peta Infrastruktur</h4>
                         {{-- <p>Permohonan Informasi dan Data</p> --}}
                     </div>
                     <div class="col icon-box">
@@ -151,7 +151,7 @@
                                 <use xlink:href="#form"></use>
                             </svg>
                         </a>
-                        <h4>Form Permintaan Data</h4>
+                        <h4>Form Permohonan Data</h4>
                         {{-- <p>Publikasi Buku Koleksi BBWS Serayu Opak</p> --}}
                     </div>
 
