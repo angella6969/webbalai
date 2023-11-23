@@ -78,10 +78,10 @@
 
                     </div>
                     <hr>
-                    <div id="section2" class="text-light p-3 border-radius">
+                    <div id="section2" class="text-light col-8 col-lg-8 p-3 border-radius">
                         <h4 class="text-light m-0 text-5 font-weight-light"><i class="fas fa-images"></i> Brita</h4>
                     </div>
-                    <div class="col-12 col-lg-12 mt-3">
+                    <div class="col-8 col-lg-8 mt-3">
                         @foreach ($berita as $berit)
                             <article class="entry entry-single">
                                 <div class="sidebar-item recent-posts" style="overflow: auto;">
@@ -101,10 +101,10 @@
 
                     </div>
                     <hr>
-                    <div id="section3" class="text-light p-3 border-radius">
+                    <div id="section3" class="text-light col-8 col-lg-8 p-3 border-radius">
                         <h4 class="text-light m-0 text-5 font-weight-light"><i class="fas fa-photo-video"></i> Video </h4>
                     </div>
-                    <div class="col-12 col-lg-12">
+                    <div class="col-8 col-lg-8 mt-3">
                         @foreach ($galeris as $galeri)
                             <article class="entry entry-single">
                                 <div class="sidebar-item recent-posts" style="overflow: auto;">
