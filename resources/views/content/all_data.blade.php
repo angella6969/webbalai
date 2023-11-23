@@ -62,11 +62,11 @@
 
 
                 <div class="row">
-                    <div id="section1" class="text-light p-3 border-radius">
+                    <div id="section1" class="text-light p-3  col-8 col-lg-8 border-radius">
                         <h4 class="text-light m-0 text-5 font-weight-light"><i class="far fa-newspaper"></i> Infrastruktur
                         </h4>
                     </div>
-                    <div class="col-12 col-lg-12 mt-3">
+                    <div class="col-8 col-lg-8 mt-3">
                         @foreach ($infrastrukturs as $infrastruktur)
                             <article class="entry entry-single">
                                 <div>
@@ -84,9 +84,17 @@
                     <div class="col-12 col-lg-12 mt-3">
                         @foreach ($berita as $berit)
                             <article class="entry entry-single">
-                                <div>
-                                    <p>{{ $berit->judul }}</p>
-                                    <p>{{ $berit->created_at }}</p>
+                                <div class="sidebar-item recent-posts" style="overflow: auto;">
+                                    <div class="post-item clearfix">
+                                        <div>
+                                            <a style="color: black" href=""><img src="{{ asset('images\icon\file-text (2).svg') }}"
+                                                    alt="">
+                                                {{ $berit->judul }}
+                                            </a>
+                                            <p><i class="bi bi-clock"></i>
+                                                {{ $berit->created_at }}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </article>
                         @endforeach
@@ -99,20 +107,16 @@
                     <div class="col-12 col-lg-12">
                         @foreach ($galeris as $galeri)
                             <article class="entry entry-single">
-                                {{-- <div>
-                                    <p>{{ $galeri->nama }}</p>
-                                    <p>{{ $galeri->created_at }}</p>
-                                </div> --}}
-
                                 <div class="sidebar-item recent-posts" style="overflow: auto;">
                                     <div class="post-item clearfix">
-                                        <a href=""><img src="{{ asset('images\icon\youtube (1).svg') }}"
-                                                alt="">
-                                            {{ $galeri->nama }}
-                                        </a>
-                                        <hr>
-                                        <time datetime="2020-01-01"><i class="bi bi-clock"></i>
-                                            {{ $galeri->created_at }}</time>
+                                        <div>
+                                            <a style="color: black" href=""><img src="{{ asset('images\icon\youtube (1).svg') }}"
+                                                    alt="">
+                                                {{ $galeri->nama }}
+                                            </a>
+                                            <p><i class="bi bi-clock"></i>
+                                                {{ $galeri->created_at }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </article>
