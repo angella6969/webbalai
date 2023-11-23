@@ -23,7 +23,7 @@ class Embung extends Model
     public function scopeFilter($query, array $Filters)
     {
         $query->when($Filters['search'] ?? false, function ($query, $search) {
-            return  $query->where('name', 'ilike', '%' . strtolower($search) . '%');
+            return  $query->where('nama', 'LIKE', '%' . strtolower($search) . '%');
         });
 
         // $query->when($Filters['status'] ?? false, function ($query, $status) {

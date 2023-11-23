@@ -131,6 +131,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
 
     Route::resource('/', HomeController::class);
+    Route::get('/all-data', [HomeController::class, 'all_data'])->name('all_data');
 
     Route::get('/beritas', [BeritaController::class, 'index2']);
     Route::get('/beritas/{slug}', [BeritaController::class, 'show']);

@@ -12,7 +12,7 @@ class Pengumuman extends Model
     public function scopeFilter($query, array $Filters)
     {
         $query->when($Filters['search'] ?? false, function ($query, $search) {
-            return  $query->where('judul', 'ilike', '%' . strtolower($search) . '%');
+            return  $query->where('judul', 'LIKE', '%' . strtolower($search) . '%');
         });
 
         // $query->when($Filters['status'] ?? false, function ($query, $status) {

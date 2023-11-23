@@ -9,12 +9,15 @@ use App\Models\Bendung;
 use App\Models\Bendungan;
 use App\Models\Berita;
 use App\Models\Embung;
+use App\Models\Galery;
 use App\Models\Image;
+use App\Models\Infografis;
 use App\Models\Infrastruktur;
 use App\Models\Logoterkait;
 use App\Models\Pengumuman;
 use App\Models\Situsterkait;
 use App\Models\Visitor;
+use Illuminate\Support\Facades\Request;
 
 class HomeController extends Controller
 {
@@ -31,11 +34,11 @@ class HomeController extends Controller
         $bendungans = Bendungan::all();
         $embungs = Embung::all();
         $bendungs = Bendung::all();
+
         $data = $bendungans->merge($embungs)->merge($bendungs);
-        // $alldata = $bendungans->merge($embungs)->merge($bendungs)->merge($berita)->merge($infoData)->filter(request(['search']));
 
 
-        // dd($alldata);
+
 
         return view('content.home', [
             'images' => $image,
@@ -53,6 +56,32 @@ class HomeController extends Controller
     public function create()
     {
         //
+    }
+    public function all_data(Request $request)
+    {
+        // dd('awd');
+        // $image = Image::latest()->Filter(request(['search']))->get();
+        // $berita = Berita::latest()->Filter(request(['search']))->get();
+        // $infoData = Pengumuman::latest()->Filter(request(['search']))->get();
+        // // $logoTerkait = Situsterkait::latest()->Filter(request(['search']))->get();
+
+        $bendungans = Bendungan::latest()->Filter(request(['search']))->get();
+        $embungs = Embung::latest()->Filter(request(['search']))->get();
+        $bendungs = Bendung::latest()->Filter(request(['search']))->get();
+        // $infografis = Infografis::latest()->Filter(request(['search']))->get();
+        $mergedData = $bendungans->merge($embungs)->merge($bendungs);
+
+        // Misalkan Anda ingin menyaring berdasarkan kolom 'nama' dari masing-masing model
+        // $a = $mergedData;
+        // dd($mergedData);
+        return view('content.all_data', [
+            // 'data' => $mergedData
+            'berita' => Berita::latest()->Filter(request(['search']))->get(),
+            'infoData' => Pengumuman::latest()->Filter(request(['search']))->get(),
+            'galeris' => Galery::latest()->Filter(request(['search']))->get(),
+            'infrastrukturs' => $mergedData,
+            'infografis' => Infografis::latest()->Filter(request(['search']))->get(),
+        ]);
     }
 
     /**

@@ -174,7 +174,8 @@
 
                                 <div class="card-body">
                                     <h5 class="d-flex justify-content-center text-4 mb-1"><a href=""
-                                        style="color: black" class="link-color-dark">{{ $infrastruktur->nama }}</a></h5>
+                                            style="color: black" class="link-color-dark">{{ $infrastruktur->nama }}</a>
+                                    </h5>
                                     <span class="text-color-dark mb-3"><i class="far fa-clock text-color-primary"></i>
                                         {{ $infrastruktur->tanggal }}</span>
                                 </div>
@@ -182,7 +183,7 @@
                         </div>
                     @endforeach
                 </div>
-                <div  class="swiper-pagination"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -224,6 +225,8 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    {{-- ============================ JS Logo Terkait ============================ --}}
+
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css"
@@ -269,6 +272,7 @@
             });
         });
     </script>
+    {{-- ============================ End JS Logo Terkait ============================ --}}
 
     <script>
         const infoData = @json($infoData);
