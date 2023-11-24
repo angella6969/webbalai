@@ -99,7 +99,7 @@
         <div class="input-group">
             <form action="/all-data">
                 <input type="text" class="form-control" name="search" id="search" value="{{ request('search') }}"
-                    style="width: 200px; height:30px ; font-size: .8rem" placeholder="Cari..." required=""
+                    style="width: 200px; height:30px ; font-size: .8rem" placeholder="Cari..." 
                     aria-label="cari..." data-uw-rm-form="fx">
                 </span>
             </form>

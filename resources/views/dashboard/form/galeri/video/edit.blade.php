@@ -11,6 +11,7 @@
                 @method('PUT')
 
                 <x-input nama="nama" judul="Nama" nilai="{{ $video->nama }}" />
+                <x-slug judul="nama" nilai="{{ $video->slug }}" rute="media/galeri/videos"/>
                 <x-input nama="url_yt" judul="Code embed Youtube" nilai="{{ $video->url_yt }}" />
 
 

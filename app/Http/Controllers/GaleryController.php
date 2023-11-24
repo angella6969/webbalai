@@ -6,6 +6,10 @@ use App\Models\Galery;
 use App\Http\Requests\StoreGaleryRequest;
 use App\Http\Requests\UpdateGaleryRequest;
 use Illuminate\Support\Facades\DB;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Http\Request;
+
+
 
 class GaleryController extends Controller
 {
@@ -25,6 +29,14 @@ class GaleryController extends Controller
             'videos' => Galery::latest()->get()
         ]);
     }
+    public function index3($slug)
+    {
+        $search = Galery::where('slug', $slug)->get();
+        // dd($search);
+        return view('content.galeri.video.video', [
+            'video' =>  $search
+        ]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -41,14 +53,14 @@ class GaleryController extends Controller
     {
         $thumbnailUrl = "https://img.youtube.com/vi/{$request->url_yt}/maxresdefault.jpg";
         $thumbnailSize = @getimagesize($thumbnailUrl);
-        // dd($request->url);
+
 
         $validatedData = $request->validate([
-
-            'url_yt' => 'required',
-            'nama' => 'required',
+            'url_yt' => ['required'],
+            'slug' => ['required'],
+            'nama' => ['required', 'regex:/^[^\'"]/'],
         ]);
-
+        // dd(  $validatedData);
         $thumbnailContent = @file_get_contents($thumbnailUrl);
         DB::beginTransaction();
         try {
@@ -94,6 +106,7 @@ class GaleryController extends Controller
         $video = Galery::findOrFail($id);
         $validatedData = $request->validate([
             "nama" => ['required'],
+            'slug' => ['required'],
             'url_pdf' => ['file', 'max:15120', 'mimetypes:application/pdf', 'nullable'],
         ]);
 
@@ -120,5 +133,10 @@ class GaleryController extends Controller
         } catch (\Exception $e) {
             return back()->with('error', $e->getMessage());
         }
+    }
+    public function checkSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Galery::class, 'slug', $request->nama);
+        return response()->json(['slug' => $slug]);
     }
 }

@@ -10,6 +10,7 @@
                 @csrf
 
                 <x-input nama="nama" judul="Nama" nilai="" />
+                <x-slug judul="nama" nilai="" rute="media/galeri/videos" />
                 <x-input nama="url_yt" judul="Code Embed Youtube" nilai="" />
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

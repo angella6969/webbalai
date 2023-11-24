@@ -70,12 +70,11 @@ class HomeController extends Controller
         $bendungs = Bendung::latest()->Filter(request(['search']))->get();
         // $infografis = Infografis::latest()->Filter(request(['search']))->get();
         $mergedData = $bendungans->merge($embungs)->merge($bendungs);
-
+// dd( $mergedData);
         // Misalkan Anda ingin menyaring berdasarkan kolom 'nama' dari masing-masing model
         // $a = $mergedData;
         // dd($mergedData);
         return view('content.all_data', [
-            // 'data' => $mergedData
             'berita' => Berita::latest()->Filter(request(['search']))->get(),
             'infoData' => Pengumuman::latest()->Filter(request(['search']))->get(),
             'galeris' => Galery::latest()->Filter(request(['search']))->get(),
