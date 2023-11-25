@@ -32,11 +32,9 @@
                         <li><a href="/informasi-publik/kinerja/lakip">LAKIP</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href="#"><span>Infrastruktur</span> <i
-                            class="bi bi-chevron-right"></i></a>
+                <li class="dropdown"><a href="#"><span>Infrastruktur</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li class="dropdown"><a href="#"><span>Informasi</span> <i
-                                    class="bi bi-chevron-right"></i></a>
+                        <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <li><a href="/informasi-publik/infrastruktur/bendungans">Bendungan</a></li>
                                 <li><a href="/informasi-publik/infrastruktur/bendungs">Bendung</a></li>
@@ -95,30 +93,35 @@
                 </li>
             </ul>
         </li>
+        <li class="nav-item dropdown me-5">
+            <button class="btn nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                <i class="bi bi-sun-fill theme-icon-active" data-theme-icon-active="bi-sun-fill"></i> Mode
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="light">
+                        <i class="bi bi-sun-fill me-3 opacity-50" data-theme-icon="bi-sun-fill"></i>Light
+                    </button>
+                </li>
+                <li><button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="dark">
+                        <i class="bi bi-moon-fill me-3 opacity-50" data-theme-icon="bi-moon-fill"></i>Dark
+                    </button></li>
+                {{-- <li>
+                    <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="auto">
+                        <i class="bi bi-circle-half me-3 opacity-50" data-theme-icon="bi-half-fill"></i>Auto
+                    </button>
+                </li> --}}
+            </ul>
+        </li>
 
         <div class="input-group">
             <form action="/all-data">
                 <input type="text" class="form-control" name="search" id="search" value="{{ request('search') }}"
-                    style="width: 200px; height:30px ; font-size: .8rem" placeholder="Cari..." 
-                    aria-label="cari..." data-uw-rm-form="fx">
+                    style="width: 200px; height:30px ; font-size: .8rem" placeholder="Cari..." aria-label="cari..."
+                    data-uw-rm-form="fx">
                 </span>
             </form>
-
-            {{-- <form action="/dashboard/daerah-irigasi"> --}}
-            {{-- <div class="row"> --}}
-            {{-- <div class="col-12 col-sm-12"> --}}
-            {{-- <div class="input-group"> --}}
-            {{-- <input type="text" class="form-control " placeholder="..." name="search" --}} {{--
-                                value="{{ request('search') }}"> --}}
-            {{-- <button class="btn btn-primary " type="submit" id="basic-addon2"><span
-                                    data-feather="search"></span></button> --}}
-            {{-- </div> --}}
-            {{--
-                    </div> --}}
-            {{-- </div> --}}
-            {{-- </form> --}}
-            {{--
-        </div> --}}
+        </div>
     </ul>
     <i class="bi bi-list mobile-nav-toggle"></i>
 </nav>
