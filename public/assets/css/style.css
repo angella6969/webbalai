@@ -27,7 +27,7 @@ ul {
 }
 body {
     font-family: "Open Sans", sans-serif;
-    color: #444444;
+    /* color: #444444; */
 }
 
 a {
@@ -39,6 +39,9 @@ a:hover {
     color: #fc8129;
     text-decoration: none;
 }
+/* p{
+    color:var(--bs-bg-body);
+} */
 
 h1,
 h2,

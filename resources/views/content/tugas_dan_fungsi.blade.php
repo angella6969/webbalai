@@ -14,7 +14,7 @@
         .image-container ul li {
             display: none;
             white-space: normal;
-        }
+        } 
 
         .image-container ul li.active {
             display: block;

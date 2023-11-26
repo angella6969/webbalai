@@ -30,7 +30,7 @@
         </div>
     </div>
 </div>
-<header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+<header id="header" class="fixed-top d-flex align-items-center  header-transparent " >
     <div class="container d-flex align-items-center justify-content-between">
 
         <div class="logo">

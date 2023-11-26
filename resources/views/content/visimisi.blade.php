@@ -10,8 +10,8 @@
             </div>
             <div class="col-md-4">
                 <ul class="breadcrumb justify-content-start text-color-light justify-content-md-end">
-                    <li><a class="text-color-light" style="color: black" href="/">Beranda</a> / <a href=""
-                            style="color: black" class="active">Profil</a></li>
+                    <li><a class="text-color-light" style="color: var(--bs-bg-body)" href="/">Beranda</a> / <a href=""
+                            style="color: var(--bs-bg-body)" class="active">Profil</a></li>
                 </ul>
             </div>
         </div>
@@ -84,24 +84,24 @@
                     <ol class="mb-3 mt-3" style="&quot;Open Sans&quot;, sans-serif;" data-aos="fade-up" data-aos-delay="100">
                         <p style="text-align: justify;">Guna mendukung pencapaian visi dan misi, tujuan Kementerian PUPR
                             2020-2024 diformulasikan
-                            sebagai berikut:</span><br /><span style="color: #000000;">1. Peningkatan ketersediaan dan
+                            sebagai berikut:</span><br /><span >1. Peningkatan ketersediaan dan
                                 kemudahan akses serta efisiensi pemanfaatan air untuk memenuhi kebutuhan domestik,
                                 peningkatan produktivitas pertanian, pengembangan energi, industri dan sektor ekonomi
                                 unggulan, serta konservasi dan pengurangan risiko/kerentanan bencana
-                                alam.</span><br /><span style="color: #000000;">2. Peningkatan kelancaran konektivitas
+                                alam.</span><br /><span >2. Peningkatan kelancaran konektivitas
                                 dan akses jalan yang lebih merata bagi peningkatan pelayanan sistem logistik nasional
                                 yang lebih efisien dan penguatan daya saing.</span><br /><span
-                                style="color: #000000;">3. Peningkatan pemenuhan kebutuhan perumahan dan infrastruktur
+                                >3. Peningkatan pemenuhan kebutuhan perumahan dan infrastruktur
                                 permukiman yang layak dan aman menuju terwujudnya smart living, dengan pemanfaatan dan
                                 pengelolaan yang partisipatif untuk meningkatkan kualitas hidup
-                                masyarakat.</span><br /><span style="color: #000000;">4. Peningkatan pembinaan SDM
+                                masyarakat.</span><br /><span >4. Peningkatan pembinaan SDM
                                 untuk pemenuhan kebutuhan SDM Vokasional bidang konstruksi yang kompeten dan
-                                profesional.</span><br /><span style="color: #000000;">5. Peningkatan penyelenggaraan
+                                profesional.</span><br /><span >5. Peningkatan penyelenggaraan
                                 pembangunan infrastruktur yang efektif, bersih dan</span><br /><span
-                                style="color: #000000;">terpercaya yang didukung oleh SDM Aparatur yang berkinerja
+                                >terpercaya yang didukung oleh SDM Aparatur yang berkinerja
                                 tinggi.</span></p>
                         <hr />
-                        <p style="text-align: left; text-align: justify;" data-aos="fade-up" data-aos-delay="100"><span style=" color: #000000;">Untuk
+                        <p style="text-align: left; text-align: justify;" data-aos="fade-up" data-aos-delay="100"><span >Untuk
                                 mewujudkan visi, misi, tujuan
                                 dan sasaran strategis Kementerian PUPR tahun 2020-2024, Direktorat Jenderal Sumber Daya
                                 Air menjabarkan visi Kementerian PUPR tersebut ke dalam tujuan dan sasaran program dan
@@ -112,8 +112,8 @@
                                 arah kebijakan pembangunan nasional dalam RPJMN tahun 2020-2024.</span></p>
                         <hr />
                         <p style="text-align: left; text-align: justify;" data-aos="fade-up" data-aos-delay="100"><span
-                                style="text-align: justify; color: #000000;">Tujuan Direktorat Jenderal Sumber
-                                Daya Air 2020-2024 sebagai berikut:</span><br /><span style="color: #000000;">
+                                style="text-align: justify; ">Tujuan Direktorat Jenderal Sumber
+                                Daya Air 2020-2024 sebagai berikut:</span><br /><span style="">
                                 <li data-aos="fade-up" data-aos-delay="100"> 
                                     <p>Tujuan
                                         1: Menyelenggarakan pembangunan infrastruktur sumber daya air untuk mendukung
@@ -122,7 +122,7 @@
                                         untuk
                                         pertumbuhan yang berkualitas.</p>
                                 </li>
-                            </span><br /><span style="color: #000000;">
+                            </span><br /><span style="">
                                 <li data-aos="fade-up" data-aos-delay="100">
                                     <p>Tujuan 2:
                                         Menyelenggarakan tata kelola pengelolaan SDA yang terpadu dan berkelanjutan
@@ -133,7 +133,7 @@
                                         pelayanan
                                         dasar.</p>
                                 </li>
-                            </span><br /><span style="color: #000000;">
+                            </span><br /><span style="">
                                 <li data-aos="fade-up" data-aos-delay="100">
                                     <p>Tujuan 3: Menyelenggarakan tata
                                         kelola sumber daya organisasi Direktorat Jenderal SDA yang meliputi: sumber daya

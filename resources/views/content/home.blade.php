@@ -132,7 +132,7 @@
 
                                 <div class="card-body">
                                     <h6 class="font-weight-bold text-4 mb-1"><a href="beritas/{{ $berita->slug }}"
-                                            style="color: black">{{ $berita->judul }}</a></h6>
+                                            style="color:var(--bs-bg-body)">{{ $berita->judul }}</a></h6>
                                     <span class="text-color-dark mb-3"><i class="bi bi-clock"></i>
                                         {{ $berita->created_at }} </span>
                                 </div>

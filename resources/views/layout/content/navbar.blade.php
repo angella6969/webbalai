@@ -94,18 +94,7 @@
             </ul>
         </li>
         <li class="nav-item dropdown me-5">
-            <button class="btn nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                <i class="bi bi-sun-fill theme-icon-active" data-theme-icon-active="bi-sun-fill"></i> Mode
-            </button>
-            <ul class="dropdown-menu">
-                <li>
-                    <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="light">
-                        <i class="bi bi-sun-fill me-3 opacity-50" data-theme-icon="bi-sun-fill"></i>Light
-                    </button>
-                </li>
-                <li><button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="dark">
-                        <i class="bi bi-moon-fill me-3 opacity-50" data-theme-icon="bi-moon-fill"></i>Dark
-                    </button></li>
+            <i class="bi bi-sun-fill me-3 opacity-50" data-theme-icon="bi-sun-fill"></i>Light
                 {{-- <li>
                     <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="auto">
                         <i class="bi bi-circle-half me-3 opacity-50" data-theme-icon="bi-half-fill"></i>Auto
