@@ -98,18 +98,36 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('struktur-organisasi');
     Route::get('/profil/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi');
 
+
+
+
+    
     Route::get('/informasi-publik/infrastruktur/bendungans/{slug}', [BendunganController::class, 'show'])->name('bendungan');
     Route::get('/informasi-publik/infrastruktur/bendungans', [BendunganController::class, 'index2'])->name('bendung');
+
+
+
 
     Route::get('/informasi-publik/perencanaan/rencana-strategis', [RencanaStrategisController::class, 'index2']);
     Route::get('/informasi-publik/perencanaan/pola-ws-dan-rpsda', [RpsdaController::class, 'index2']);
     Route::get('/informasi-publik/kinerja/lakip', [LakipController::class, 'index2']);
 
+
+
+
+
     Route::get('/informasi-publik/infrastruktur/bendungs/{slug}', [BendungController::class, 'show']);
     Route::get('/informasi-publik/infrastruktur/bendungs', [BendungController::class, 'index2']);
 
+
+
+
+
     Route::get('/informasi-publik/infrastruktur/embungs/{slug}', [EmbungController::class, 'show']);
     Route::get('/informasi-publik/infrastruktur/embungs', [EmbungController::class, 'index2']);
+
+
+
 
 
     Route::get('/informasi-publik/infrastruktur/irigasis/{slug}', [IrigasiController::class, 'show']);
@@ -123,8 +141,15 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::get('/media/media-informasi/{jenis}/{slug}', [InfografisController::class, 'show']);
     Route::get('/media/media-informasi/{jenis}', [InfografisController::class, 'showJenis']);
 
+
+
+
     Route::get('/media/galeri/videos', [GaleryController::class, 'index2']);
     Route::get('/media/galeri/video/{slug}', [GaleryController::class, 'index3']);
+
+
+
+
 
 
     Route::get('/login', [UserController::class, 'index'])->middleware('guest')->name('login');
