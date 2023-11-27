@@ -78,7 +78,7 @@ class HomeController extends Controller
             'berita' => Berita::latest()->Filter(request(['search']))->get(),
             'infoData' => Pengumuman::latest()->Filter(request(['search']))->get(),
             'galeris' => Galery::latest()->Filter(request(['search']))->get(),
-            'infrastrukturs' => $mergedData,
+            'infrastrukturs' => $mergedData, 
             'infografis' => Infografis::latest()->Filter(request(['search']))->get(),
         ]);
     }
