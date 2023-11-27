@@ -93,15 +93,15 @@
                 </li>
             </ul>
         </li>
-        <li class="nav-item dropdown me-5">
+        {{-- <li class="nav-item dropdown me-5">
             <i class="bi bi-sun-fill me-3 opacity-50" data-theme-icon="bi-sun-fill"></i>Light
-                {{-- <li>
+                <li>
                     <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="auto">
                         <i class="bi bi-circle-half me-3 opacity-50" data-theme-icon="bi-half-fill"></i>Auto
                     </button>
-                </li> --}}
+                </li>
             </ul>
-        </li>
+        </li> --}}
 
         <div class="input-group">
             <form action="/all-data">
