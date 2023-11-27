@@ -1,19 +1,10 @@
 @extends('layout.content.main')
 @section('container')
-<section class="breadcrumbs">
-    <div class="container">
 
-        <div class="d-flex justify-content-between align-items-center">
-            <h2>Berita Terbaru</h2>
+{{-- Header Content --}}
+<x-h_content judul="Berita Terbaru" posisi1="Beranda" posisi2="Berita" />
+{{-- End Header Content --}}
 
-            <ol>
-                <li><a style="color: black" href="/">Beranda</a></li>
-                <li style="color: black">Berita</li>
-            </ol>
-        </div>
-
-    </div>
-</section>
 <section id="" class="blog">
     <div class="container" data-aos="fade-up">
         <div class="row">

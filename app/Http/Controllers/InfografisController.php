@@ -90,6 +90,19 @@ class InfografisController extends Controller
             'Infografis' => $Infografis,
         ]);
     }
+    public function showJenis(Infografis $infografis, string $jenis)
+    {
+        $Infografis = Infografis::where('jenis', $jenis)->get();
+        // dd($Infografis);
+
+        if (!$Infografis) {
+            abort(404);
+        }
+
+        return view('content.media.medias', [
+            'medias' => $Infografis,
+        ]);
+    }
 
 
     /**

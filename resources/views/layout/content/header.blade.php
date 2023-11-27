@@ -20,7 +20,7 @@
                                     src="{{ asset('images\icon\twitter.svg') }}" alt=""></a></li>
                         <li><a href="https://www.youtube.com/channel/UClOhOH8Ixk2dcIAS9jr2aqg"><img
                                     src="{{ asset('images\icon\youtube.svg') }}" alt=""></a></li>
-                        
+
                     </ul>
 
                 </div>

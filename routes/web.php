@@ -121,6 +121,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
     Route::get('/media/media-informasi/', [InfografisController::class, 'index2']);
     Route::get('/media/media-informasi/{jenis}/{slug}', [InfografisController::class, 'show']);
+    Route::get('/media/media-informasi/{jenis}', [InfografisController::class, 'showJenis']);
 
     Route::get('/media/galeri/videos', [GaleryController::class, 'index2']);
     Route::get('/media/galeri/video/{slug}', [GaleryController::class, 'index3']);
