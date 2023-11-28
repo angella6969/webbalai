@@ -106,6 +106,7 @@ h6 {
     width: 100%;
     margin-top: 35px;
     color: #111;
+    
 }
 
 #header.header-transparent {
@@ -113,7 +114,7 @@ h6 {
 }
 
 #header.header-scrolled {
-    background: var(--main-putih);
+    background-color: var(--main-putih);
     box-shadow: 0px 2px 15px rgba(146, 148, 146, 0.6);
 }
 
