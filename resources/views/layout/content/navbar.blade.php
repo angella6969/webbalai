@@ -161,7 +161,7 @@
             // Terapkan margin atas baru
             scrollBox.style.marginTop = newMarginTop + 'px';
         } else {
-            // Kembalikan margin atas ke nilai awal
+            // Kembalikan margin atas ke nilai awal 
             scrollBox.style.marginTop = '40px';
         }
     });
