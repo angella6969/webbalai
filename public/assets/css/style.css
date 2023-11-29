@@ -98,7 +98,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-    height: 60px;
+    height: 70px;
     transition: all 0.5s;
     z-index: 997;
     transition: all 0.5s;
@@ -106,7 +106,6 @@ h6 {
     width: 100%;
     margin-top: 35px;
     color: #111;
-    
 }
 
 #header.header-transparent {
@@ -386,7 +385,7 @@ h6 {
 .navbar-mobile .getstarted,
 .navbar-mobile .getstarted:focus {
     margin: 15px;
-} 
+}
 
 .navbar-mobile .dropdown ul {
     position: static;
@@ -591,7 +590,7 @@ section {
     text-transform: uppercase;
     color: #aaaaaa;
     font-family: "Poppins", sans-serif;
-} 
+}
 
 .section-title h2::after {
     content: "";
@@ -1557,7 +1556,9 @@ section {
 .breadcrumbs {
     padding: 15px 0;
     margin-top: 70px;
-    background: #f7f8f9;
+    /* background: #f7f8f9; */
+    color: #f7f8f9;
+    background-color: rgb(122, 129, 177);
     min-height: 40px;
 }
 
