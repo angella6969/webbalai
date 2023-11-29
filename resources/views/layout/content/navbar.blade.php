@@ -50,9 +50,11 @@
                         <li><a href="/informasi-publik/kinerja/lakip">LAKIP</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href="#"><span>Infrastruktur</span> <i class="bi bi-chevron-right"></i></a>
+                <li class="dropdown"><a href="#"><span>Infrastruktur</span> <i
+                            class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-right"></i></a>
+                        <li class="dropdown"><a href="#"><span>Informasi</span> <i
+                                    class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <li><a href="/informasi-publik/infrastruktur/bendungans">Bendungan</a></li>
                                 <li><a href="/informasi-publik/infrastruktur/bendungs">Bendung</a></li>
@@ -82,7 +84,7 @@
                         <li><a href="/under-Maintenance">Leaflet dan Brosur</a></li>
                         <li><a href="#">Infografis</a></li>
                     </ul>
-                </li> --}} 
+                </li> --}}
 
                 <li class="dropdown"><a href="#"><span>Galeri</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
@@ -94,7 +96,6 @@
         </li>
         <li class="dropdown"><a href="#"><span>Layanan</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-
                 <li class="dropdown"><a href="#"><span>PPID BBWS SO</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
                         <li><a href="/layanan/ppid-bbws-so/profil">Profil</a></li>
@@ -111,8 +112,16 @@
                 </li>
             </ul>
         </li>
+        <style>
+            @media(max-width:762px) {
+                .hid {
+                    display: none;
+                }
+            }
+        </style>
+
         <li class="dropdown me-3">
-            <button class="btn nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            <button class="btn nav-link dropdown-toggle hid" type="button" data-bs-toggle="dropdown">
                 <i class="bi bi-sun-fill theme-icon-active" data-theme-icon-active="bi-sun-fill"></i>
             </button>
             <ul class="dropdown-menu">
@@ -122,23 +131,24 @@
                     </button>
                 </li>
                 <li>
-                    <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="dark">
+                    <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="auto">
                         <i class="bi bi-moon-stars-fill me-3 opacity-50" data-theme-icon="bi-moon-stars-fill"></i>Dark
                     </button>
                 </li>
-                <li>
-                    <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="auto">
+                {{-- <li>
+                    <button class="dropdown-item d-flex align-items-center" type="button"
+                        data-bs-theme-value="auto">
                         <i class="bi bi-circle-half me-3 opacity-50" data-theme-icon="bi-circle-half"></i>Auto
                     </button>
-                </li>
+                </li> --}}
             </ul>
         </li>
 
         <div class="input-group">
             <form action="/all-data">
-                <input type="text" class="form-control" name="search" id="search" value="{{ request('search') }}"
-                    style="width: 200px; height:30px ; font-size: .8rem" placeholder="Cari..." aria-label="cari..."
-                    data-uw-rm-form="fx">
+                <input type="text" class="form-control" name="search" id="search"
+                    value="{{ request('search') }}" style="width: 200px; height:30px ; font-size: .8rem"
+                    placeholder="Cari..." aria-label="cari..." data-uw-rm-form="fx">
                 </span>
             </form>
         </div>

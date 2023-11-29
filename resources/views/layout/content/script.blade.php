@@ -22,78 +22,97 @@
 {{-- Them Setting --}}
 <script>
     (() => {
-    'use strict';
+        'use strict';
 
-    const getStoredTheme = () => localStorage.getItem('theme');
-    const setStoredTheme = theme => localStorage.setItem('theme', theme);
+        const getStoredTheme = () => localStorage.getItem('theme');
+        const setStoredTheme = theme => localStorage.setItem('theme', theme);
 
-    const getPreferredTheme = () => {
-        const storedTheme = getStoredTheme();
-        if (storedTheme) {
-            return storedTheme;
+        const getPreferredTheme = () => {
+            const storedTheme = getStoredTheme();
+            if (storedTheme && (storedTheme === 'light' || storedTheme === 'dark')) {
+                return storedTheme;
+            }
+
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         }
 
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
+        const setTheme = theme => {
+            const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    const setTheme = theme => {
-        if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.setAttribute('data-bs-theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-bs-theme', theme);
+            document.documentElement.setAttribute('data-bs-theme', theme === 'auto' && isDarkMode ? 'dark' :
+                theme);
         }
-    }
 
-    const showActiveTheme = (theme, focus = false) => {
-        const activeThemeIcon = document.querySelector('.theme-icon-active');
-        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
-        const iconOfActiveBtn = btnToActive.querySelector('i').dataset.themeIcon;
+        // const setTheme = theme => {
+        //     const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-            element.classList.remove('active');
-            element.setAttribute('aria-pressed', 'false');
+        //     if (theme === 'auto' && isDarkMode) {
+        //         console.log('Auto mode, dark theme detected');
+        //         document.documentElement.setAttribute('data-bs-theme', 'dark');
+        //         document.getElementById('header-1').style.backgroundColor = 'yellow';
+        //         // document.getElementById('text-1').style.color = 'purple';
+        //         document.body.style.backgroundColor = 'black';
+        //     } else {
+        //         document.documentElement.setAttribute('data-bs-theme', theme);
+        //         document.getElementById('header-1').style.backgroundColor = '';
+        //         // document.getElementById('text-1').style.color = '';
+        //         document.body.style.backgroundColor = '';
+        //     }
+        // }
+
+        const showActiveTheme = (theme, focus = false) => {
+            const activeThemeIcon = document.querySelector('.theme-icon-active');
+            const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`);
+
+            if (btnToActive) {
+                const iconOfActiveBtn = btnToActive.querySelector('i').dataset.themeIcon;
+
+                document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+                    element.classList.remove('active');
+                    element.setAttribute('aria-pressed', 'false');
+                });
+
+                btnToActive.classList.add('active');
+                btnToActive.setAttribute('aria-pressed', 'true');
+
+                const themeSwitcherLabel = `${btnToActive.textContent} (${btnToActive.dataset.bsThemeValue})`;
+                document.querySelector('.dropdown-toggle').setAttribute('aria-label', themeSwitcherLabel);
+
+                // Perbarui ikon aktif
+                activeThemeIcon.classList.remove(activeThemeIcon.dataset.themeIconActive);
+                activeThemeIcon.classList.add(iconOfActiveBtn);
+                activeThemeIcon.dataset.themeIconActive = iconOfActiveBtn;
+
+                setStoredTheme(theme);
+                setTheme(theme);
+
+                if (focus) {
+                    activeThemeIcon.focus();
+                }
+            }
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            const storedTheme = getStoredTheme();
+            if (storedTheme !== 'light' && storedTheme !== 'dark') {
+                setTheme(getPreferredTheme());
+            }
         });
 
-        btnToActive.classList.add('active');
-        btnToActive.setAttribute('aria-pressed', 'true');
+        window.addEventListener('DOMContentLoaded', () => {
+            const storedTheme = getStoredTheme();
+            const initialTheme = storedTheme || getPreferredTheme();
+            showActiveTheme(initialTheme);
 
-        const themeSwitcherLabel = `${btnToActive.textContent} (${btnToActive.dataset.bsThemeValue})`;
-        document.querySelector('.dropdown-toggle').setAttribute('aria-label', themeSwitcherLabel);
-
-        // Perbarui ikon aktif
-        activeThemeIcon.classList.remove(activeThemeIcon.dataset.themeIconActive);
-        activeThemeIcon.classList.add(iconOfActiveBtn);
-        activeThemeIcon.dataset.themeIconActive = iconOfActiveBtn;
-
-        setStoredTheme(theme);
-        setTheme(theme);
-
-        if (focus) {
-            activeThemeIcon.focus();
-        }
-    }
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-        const storedTheme = getStoredTheme();
-        if (storedTheme !== 'light' && storedTheme !== 'dark') {
-            setTheme(getPreferredTheme());
-        }
-    });
-
-    window.addEventListener('DOMContentLoaded', () => {
-        const storedTheme = getStoredTheme();
-        const initialTheme = storedTheme || getPreferredTheme();
-        showActiveTheme(initialTheme);
-
-        document.querySelectorAll('[data-bs-theme-value]').forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                const theme = toggle.getAttribute('data-bs-theme-value');
-                showActiveTheme(theme, true);
+            document.querySelectorAll('[data-bs-theme-value]').forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const theme = toggle.getAttribute('data-bs-theme-value');
+                    showActiveTheme(theme, true);
+                });
             });
         });
-    });
-})();
+    })();
 </script>
 {{-- End Them Setting --}}
 
-<script src="https://cdn.userway.org/widget.js" data-account="wAv6JLf3pD"></script>
+{{-- <script src="https://cdn.userway.org/widget.js" data-account="wAv6JLf3pD"></script> --}}

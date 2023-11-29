@@ -2,7 +2,7 @@
     <div class="sidebar">
         <h3 style="color: var(--bs-bg-text)" class="sidebar-title">Berita Terbaru</h3>
         @foreach ($beritas as $berita)
-            <div class="sidebar-item recent-posts">
+            <div   class="sidebar-item recent-posts">
                 <div class="post-item clearfix">
                     <a href="beritas/{{ $berita->slug }}"><img
                             style="border-radius: 15px 2px 15px 2px; border-bottom:3px solid #fbb717 !important;"
