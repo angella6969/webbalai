@@ -35,7 +35,7 @@
                 @endif
                 @endforeach
             </div>
-            {{-- End Main Content --}}
+            {{-- End Main Content --}} 
 
             {{-- Sidebar Content Berita --}}
             @include('layout.content.sidebar_content')
