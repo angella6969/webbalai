@@ -26,7 +26,7 @@
             margin-bottom: 20px;
         }
 
-        .btn {
+        .btn1 {
             margin: 5px;
             background-color: rgba(255, 201, 40, 0.8);
             width: 20%;
@@ -34,18 +34,18 @@
         }
 
         @media (max-width: 768px) {
-            .btn {
+            .btn1 {
                 display: block;
                 width: 100%;
             }
         }
 
-        .btn:hover {
+        .btn1:hover {
             background-color: rgba(53, 71, 119, 0.8);
             color: #fff;
         }
 
-        .btn.active-button {
+        .btn1.active-button {
             background-color: rgba(53, 71, 119, 0.8);
             color: white;
         }
@@ -84,9 +84,9 @@
                         </header>
 
                         <div class="btn-group" role="group">
-                            <button class="btn btn-light" onclick="toggleImage(0)">Informasi Serta Merta</button>
-                            <button class="btn btn-light" onclick="toggleImage(1)">Informasi Setiap Saat</button>
-                            <button class="btn btn-light" onclick="toggleImage(2)">Informasi Berkala</button>
+                            <button class="btn btn1 btn-light" onclick="toggleImage(0)">Informasi Serta Merta</button>
+                            <button class="btn btn1 btn-light" onclick="toggleImage(1)">Informasi Setiap Saat</button>
+                            <button class="btn btn1 btn-light" onclick="toggleImage(2)">Informasi Berkala</button>
                         </div>
                         <div class="container">
                             <div class="paragraf-container">

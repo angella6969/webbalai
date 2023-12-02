@@ -131,16 +131,16 @@
                     </button>
                 </li>
                 <li>
-                    <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="auto">
+                    <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="dark">
                         <i class="bi bi-moon-stars-fill me-3 opacity-50" data-theme-icon="bi-moon-stars-fill"></i>Dark
                     </button>
                 </li>
-                {{-- <li>
+                <li>
                     <button class="dropdown-item d-flex align-items-center" type="button"
                         data-bs-theme-value="auto">
                         <i class="bi bi-circle-half me-3 opacity-50" data-theme-icon="bi-circle-half"></i>Auto
                     </button>
-                </li> --}}
+                </li>
             </ul>
         </li>
 

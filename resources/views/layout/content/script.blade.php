@@ -49,13 +49,13 @@
         //     if (theme === 'auto' && isDarkMode) {
         //         console.log('Auto mode, dark theme detected');
         //         document.documentElement.setAttribute('data-bs-theme', 'dark');
-        //         document.getElementById('header-1').style.backgroundColor = 'yellow';
-        //         // document.getElementById('text-1').style.color = 'purple';
+        //         document.getElementById('warna-1').style.backgroundColor = '#FFC928';
+        //         document.getElementById('warna-2').style.color = 'white';
         //         document.body.style.backgroundColor = 'black';
         //     } else {
         //         document.documentElement.setAttribute('data-bs-theme', theme);
-        //         document.getElementById('header-1').style.backgroundColor = '';
-        //         // document.getElementById('text-1').style.color = '';
+        //         document.getElementById('warna-1').style.backgroundColor = '';
+        //         document.getElementById('warna-2').style.color = '';
         //         document.body.style.backgroundColor = '';
         //     }
         // }

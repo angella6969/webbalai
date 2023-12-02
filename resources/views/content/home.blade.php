@@ -132,9 +132,10 @@
 
                                 <div class="card-body">
                                     <h6 class="font-weight-bold text-4 mb-1"><a href="beritas/{{ $berita->slug }}"
-                                            style="color:var(--bs-bg-body)">{{ $berita->judul }}</a></h6>
-                                    <span class="text-color-dark mb-3"><i class="bi bi-clock"></i>
-                                        {{ $berita->created_at }} </span>
+                                            style="color:var(--bs-bg-body)"><strong>{{ $berita->judul }}</strong></a></h6>
+                                    <span style="font-size: 12px" class="text-color-dark mb-3"><i class="bi bi-clock"></i>
+                                        {{ Carbon\Carbon::createFromTimeString($berita->created_at)->format('d F Y') }}
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -174,7 +175,8 @@
 
                                 <div class="card-body">
                                     <h5 class="d-flex justify-content-center text-4 mb-1"><a href=""
-                                            style="color: black" class="link-color-dark">{{ $infrastruktur->nama }}</a>
+                                            style="color: black; font-size: 14px;"
+                                            class="link-color-dark"><strong>{{ $infrastruktur->nama }}</strong></a>
                                     </h5>
                                     <span class="text-color-dark mb-3"><i class="far fa-clock text-color-primary"></i>
                                         {{ $infrastruktur->tanggal }}</span>
