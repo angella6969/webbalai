@@ -88,7 +88,7 @@
 
     {{-- ============================ Pengumuman ============================ --}}
     <section style="padding-top:0px">
-        <div class="col-lg-12" style="height: 60px; color:#fff; background: rgb(232,170,28); ">
+        <div class="col-lg-12" style="height: 60px; color:#fff; background: var(--main-kuning); ">
             <div class="container">
                 <div class="row">
                     <div class="col-2" style="margin:10px 0px 10px 100px;"> Pengumuman : </div>

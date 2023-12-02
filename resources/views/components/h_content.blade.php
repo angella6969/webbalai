@@ -7,6 +7,5 @@
                 <li>{{ $posisi2 }}</li>
             </ol>
         </div>
-
     </div>
 </section>
