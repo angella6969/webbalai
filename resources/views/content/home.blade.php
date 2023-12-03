@@ -37,8 +37,6 @@
         display: block;
         margin: 0 auto;
     }
-
-    
 </style>
 
 {{-- ============================ Foto Beranda ============================ --}}
@@ -196,12 +194,12 @@
 
 {{-- ============================ Logo Terkait ============================ --}}
 <section id="" class="testimonials">
-    <div class="container">
+    {{-- <div class=""> --}}
 
-        <div class="section-title" data-aos="zoom-out">
+        {{-- <div class="section-title" data-aos="zoom-out">
             <h2>Situs Terkait</h2>
 
-        </div>
+        </div> --}}
 
         <div class="multiple-items1 card-img-top1" id="multiple-items1" data-aos="fade-up" data-aos-delay="100">
             @foreach ($logoTerkaits as $logoTerkait)
@@ -209,7 +207,7 @@
                 <div class="border:none">
                     <a href="{{ $logoTerkait->url_situs }}" target="_blank"><img
                             src="{{ asset('storage/' . substr($logoTerkait->image, 6)) }}"
-                            class="card-img-top hover-effect-2 d-flex justify-content-center" alt=""></a>
+                            class="card-img-top  d-flex justify-content-center" alt=""></a>
                 </div>
                 <div class="card-body">
                     <h3 class="font-weight-bold text-4 mb-1"><a href="" class="link-color-dark align-content-center"
@@ -240,43 +238,61 @@
 
 <script type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
-            $('.multiple-items1').slick({
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                autoplay: true,
-                arrows: false,
-                autoplaySpeed: 1000,
-                responsive: [{
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 1,
-                            infinite: true,
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 1
-                        }
-                    }, {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
-                    }, {
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
+        $('.multiple-items1').slick({
+            slidesToShow: 7,
+            slidesToScroll: 1,
+            autoplay: true,
+            arrows: false,
+            infinite: true,
+            autoplaySpeed: 1000,
+            responsive: [
+                {
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 6,
                     }
-                ]
-            });
+                },
+                {
+                    breakpoint: 1300,
+                    settings: {
+                        slidesToShow: 5,
+                    }
+                },
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
         });
+    });
 </script>
+
 {{-- ============================ End JS Logo Terkait ============================ --}}
 
 <script>
