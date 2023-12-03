@@ -55,12 +55,9 @@ class HomeController extends Controller
         $bendungs = Bendung::latest()->get();
 
         $data = $bendungans->merge($embungs)->merge($bendungs);
-
-
-        // dd($data);
-
+        
         return view('content.infrastruktur.all-data', [
-            'infrastrukturs' => $bendungans,
+            'infrastrukturs' => $data,
         ]);
     }
 
@@ -73,21 +70,12 @@ class HomeController extends Controller
     }
     public function all_data(Request $request)
     {
-        // dd('awd');
-        // $image = Image::latest()->Filter(request(['search']))->get();
-        // $berita = Berita::latest()->Filter(request(['search']))->get();
-        // $infoData = Pengumuman::latest()->Filter(request(['search']))->get();
-        // // $logoTerkait = Situsterkait::latest()->Filter(request(['search']))->get();
-
         $bendungans = Bendungan::latest()->Filter(request(['search']))->get();
         $embungs = Embung::latest()->Filter(request(['search']))->get();
         $bendungs = Bendung::latest()->Filter(request(['search']))->get();
         // $infografis = Infografis::latest()->Filter(request(['search']))->get();
         $mergedData = $bendungans->merge($embungs)->merge($bendungs);
-        // dd( $mergedData);
-        // Misalkan Anda ingin menyaring berdasarkan kolom 'nama' dari masing-masing model
-        // $a = $mergedData; 
-        // dd($mergedData);
+
         return view('content.all_data', [
             'berita' => Berita::latest()->Filter(request(['search']))->get(),
             'infoData' => Pengumuman::latest()->Filter(request(['search']))->get(),
