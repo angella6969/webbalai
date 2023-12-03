@@ -15,7 +15,7 @@ class InfrastrukturController extends Controller
     {
         $infrastruktur = Infrastruktur::all();
         return view('dashboard.form.infrastruktur.index', [
-            'infrastrukturs' => $infrastruktur,
+            'infrastrukturs' => $infrastruktur, 
         ]);
     }
 
