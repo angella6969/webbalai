@@ -125,7 +125,7 @@
                                 </div>
                             </div>
                         </div>
-                    </article>
+                    </article> 
                 </div>
             </div>
         </div>
