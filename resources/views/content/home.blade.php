@@ -103,7 +103,7 @@
         <div class="col-lg-12" style="height: 70px; color: #fff; background: var(--main-kuning);">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2 ahidden-slider slider-item" > Pengumuman : </div>
+                    <div class="col-md-2 ahidden-slider slider-item"> Pengumuman : </div>
                     <div class="col-md-8 slider">
                         @foreach ($infoData as $data)
                             <div class="slider-item"><a style="color: var(--bs-light-text)"
@@ -173,24 +173,24 @@
                     @foreach ($infrastrukturs as $infrastruktur)
                         <div class="swiper-slide">
                             <div class="card">
-                                <a
+                                <a style="color:var(--bs-dark-text)"
                                     href="/informasi-publik/infrastruktur/{{ $infrastruktur->jenis }}/{{ $infrastruktur->slug }}"><img
                                         src="{{ asset('storage/' . substr($infrastruktur->url_foto1, 6)) }}"
-                                        class="card-img-top hover-effect-2" alt="" style="height: 200px;"></a>
+                                        class="card-img-top hover-effect-2" alt="" style="height: 200px; ">
 
-                                <div class="card-body">
-                                    <h5 class="d-flex justify-content-center text-4 mb-1"><a href=""
-                                            style="color: black; font-size: 14px;"
-                                            class="link-color-dark"><strong>{{ $infrastruktur->nama }}</strong></a>
-                                    </h5>
-                                    <span class="text-color-dark mb-3"><i class="far fa-clock text-color-primary"></i>
-                                        {{ $infrastruktur->tanggal }}</span>
-                                </div>
+                                    <div class="card-body">
+                                        <h5 class="d-flex justify-content-center text-4 mb-1">
+                                            <strong>{{ $infrastruktur->nama }}</strong>
+                                        </h5>
+                                        <span class="text-color-dark mb-3"><i class="far fa-clock text-color-primary"></i>
+                                            {{ $infrastruktur->tanggal }}</span>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     @endforeach
                 </div>
-                <div class="swiper-pagination"></div>
+                {{-- <div class="swiper-pagination"></div> --}}
             </div>
         </div>
     </section>
@@ -217,25 +217,21 @@
                     <div class="card-body">
                         <h3 class="font-weight-bold text-4 mb-1"><a href=""
                                 class="link-color-dark align-content-center"
-                                style="font-size: 14px; color: rgb(11,38,83)">{{ $logoTerkait->name }}</a>
+                                style="font-size: 14px; color: rgb(11,38,83)">{{ $logoTerkait->nama }}</a>
                         </h3>
                     </div>
                 </div>
             @endforeach
-            {{-- <div class="swiper-pagination"></div> --}}
         </div>
     </section>
 
 
 
 
-    {{-- ============================ Logo Terkait ============================ --}}
-
-
-
+    {{-- ============================ End Logo Terkait ============================ --}}
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    {{-- ============================ JS Logo Terkait ============================ --}}
+
 
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -244,6 +240,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script type="text/javascript">
+        // ============================ JS Logo Terkait ============================ \\
         document.addEventListener('DOMContentLoaded', function() {
             $('.multiple-items1').slick({
                 slidesToShow: 7,
@@ -297,6 +294,9 @@
                 ]
             });
         });
+
+
+        // ============================ JS Pengumuman ============================ \\
         $(document).ready(function() {
             $('.slider').slick({
                 slidesToShow: 1,
@@ -306,35 +306,4 @@
             });
         });
     </script>
-
-    {{-- ============================ End JS Logo Terkait ============================ --}}
-
-    {{-- <script>
-        const infoData = @json($infoData);
-        let currentIndex = 0;
-
-        function displayInfo() {
-            const infoContainer = document.getElementById('info-container');
-            const info = infoData[currentIndex];
-            const infoLink = `<a href="${'storage/'+info.url_pengumuman.substr(7)}" style="color:white;">${info.judul}</a>`;
-            infoContainer.classList.add('info-transition');
-            setTimeout(() => {
-                infoContainer.innerHTML = infoLink;
-                infoContainer.classList.remove('info-transition');
-                currentIndex = (currentIndex + 1) % infoData.length;
-            }, 500);
-        }
-
-        displayInfo();
-
-        const interval = setInterval(displayInfo,
-            4000);
-
-        function moveSlide(direction) {
-            clearInterval(interval);
-            currentIndex = (currentIndex + direction + infoData.length) % infoData.length;
-            displayInfo();
-            interval = setInterval(displayInfo, 4000);
-        }
-    </script> --}}
 @endsection
