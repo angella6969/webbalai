@@ -22,8 +22,9 @@
 
                         <div class="entry-meta">
                             <ul>
-                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a
-                                        href="">{{ $berita->created_at }}</time></a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="">
+                                        {{ Carbon\Carbon::createFromTimeString($berita->created_at)->format('d F Y') }}</time></a>
+                                </li>
                             </ul>
                         </div>
 

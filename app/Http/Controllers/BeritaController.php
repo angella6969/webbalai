@@ -26,7 +26,7 @@ class BeritaController extends Controller
             'beritas' => $beritas
         ]);
     }
-    public function index()
+    public function index() 
     {
         $beritas = Berita::latest()->paginate(10);
         return view('dashboard.form.berita.index2', [

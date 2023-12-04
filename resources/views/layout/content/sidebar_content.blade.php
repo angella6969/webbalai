@@ -9,7 +9,7 @@
                             src="{{ asset('storage/' . substr($berita->url_foto, 6)) }}" alt=""></a>
                     <h4><a style="color: var(--bs-bg-text)"  href="beritas/{{ $berita->slug }}">{{ $berita->judul }}</a></h4>
                     <time datetime="2020-01-01"><i class="bi bi-clock"></i>
-                        {{ $berita->created_at }}</time>
+                        {{ Carbon\Carbon::createFromTimeString($berita->created_at)->format('d F Y') }}</time>
                 </div>
             </div>
         @endforeach

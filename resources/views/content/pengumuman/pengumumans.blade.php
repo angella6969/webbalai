@@ -1,8 +1,8 @@
 @extends('layout.content.main')
 @section('container')
-{{-- Header Content --}}
-<x-h_content judul="Pengumuman" posisi1="Beranda" posisi2="Pengumuman" />
-{{-- End Header Content --}}
+    {{-- Header Content --}}
+    <x-h_content judul="Pengumuman" posisi1="Beranda" posisi2="Pengumuman" />
+    {{-- End Header Content --}}
 
     <!-- ======= Blog Section ======= -->
     <section id="Pengumuman" class="blog">
@@ -14,14 +14,17 @@
                             <div>
                                 <table class="table table-responsive">
                                     <td>{{ $pengumuman->judul }}</td>
-                                    {{-- <tr><a href="pengumuman/{{ $pengumuman->slug }}">{{ $pengumuman->judul }}</a></tr> --}}
-                                    <td><a href="{{ asset('storage/' . substr($pengumuman->url_pengumuman, 6)) }}">Unduh</a>
-                                    </td>
+                                    @if ($pengumuman->url_pengumuman)
+                                        <td><a
+                                                href="{{ asset('storage/' . substr($pengumuman->url_pengumuman, 6)) }}">Unduh</a>
+                                        </td>
+                                    @else
+                                        <td style="display: none;"></td>
+                                    @endif
                                 </table>
                             </div>
-                            {{-- <label for=""> --}}
-                            <p style="font-size: 10px"> <i class="bi bi-clock"></i> {{ $pengumuman->created_at }}</p>
-                            {{-- </label> --}}
+                            <p style="font-size: 10px"> <i class="bi bi-clock"></i>
+                                {{ Carbon\Carbon::createFromTimeString($pengumuman->created_at)->format('d F Y') }}</p>
                         </article>
                     @endforeach
                 </div>

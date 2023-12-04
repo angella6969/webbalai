@@ -35,8 +35,21 @@ class HomeController extends Controller
         $embungs = Embung::all();
         $bendungs = Bendung::all();
 
-        $data = $bendungans->merge($embungs)->merge($bendungs);
+        $data = collect();
 
+        if (!$bendungans->isEmpty()) {
+            $data = $data->merge($bendungans);
+        }
+
+        if (!$embungs->isEmpty()) {
+            $data = $data->merge($embungs);
+        }
+
+        if (!$bendungs->isEmpty()) {
+            $data = $data->merge($bendungs);
+        }
+
+        // dd($data, $bendungans, $embungs, $bendungs);
 
         return view('content.home', [
             'images' => $image,
@@ -50,12 +63,24 @@ class HomeController extends Controller
 
     public function all_data_infrastruktur()
     {
-        $bendungans = Bendungan::latest()->get();
-        $embungs = Embung::latest()->get();
-        $bendungs = Bendung::latest()->get();
+        $bendungans = Bendungan::all();
+        $embungs = Embung::all();
+        $bendungs = Bendung::all();
 
-        $data = $bendungans->merge($embungs)->merge($bendungs);
-        
+        $data = collect();
+
+        if (!$bendungans->isEmpty()) {
+            $data = $data->merge($bendungans);
+        }
+
+        if (!$embungs->isEmpty()) {
+            $data = $data->merge($embungs);
+        }
+
+        if (!$bendungs->isEmpty()) {
+            $data = $data->merge($bendungs);
+        }
+        // dd($data);
         return view('content.infrastruktur.all-data', [
             'infrastrukturs' => $data,
         ]);
