@@ -14,6 +14,7 @@
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 <script src="https://unpkg.com/feather-icons"></script>
 {{-- <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script> --}}
+<script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 <script>
     feather.replace();
 </script>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Embung;
 use App\Http\Requests\StoreEmbungRequest;
 use App\Http\Requests\UpdateEmbungRequest;
+use App\Models\Bendung;
+use App\Models\Bendungan;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -91,7 +93,7 @@ class EmbungController extends Controller
         }
     }
 
-    /**
+    /** 
      * Display the specified resource.
      */
     public function show(Embung $embung, string $slug)
@@ -103,8 +105,28 @@ class EmbungController extends Controller
             abort(404);
         }
 
+        $bendungans = Bendungan::all();
+        $embungs = Embung::all();
+        $bendungs = Bendung::all();
+
+        $data = collect();
+
+        if (!$bendungans->isEmpty()) {
+            $data = $data->merge($bendungans);
+        }
+
+        if (!$embungs->isEmpty()) {
+            $data = $data->merge($embungs);
+        }
+
+        if (!$bendungs->isEmpty()) {
+            $data = $data->merge($bendungs);
+        }
+
+
         return view('content.infrastruktur.embung.embung', [
             'embung' => $embung,
+            'infrastrukturs' => $data,
         ]);
     }
 

@@ -6,12 +6,13 @@ use App\Models\Bendungan;
 use App\Http\Requests\StoreBendunganRequest;
 use App\Http\Requests\UpdateBendunganRequest;
 use App\Models\Bendung;
+use App\Models\Embung;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
-class BendunganController extends Controller 
+class BendunganController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -106,10 +107,28 @@ class BendunganController extends Controller
         if (!$bendungan) {
             abort(404);
         }
+        $bendungans = Bendungan::all();
+        $embungs = Embung::all();
+        $bendungs = Bendung::all();
+
+        $data = collect();
+
+        if (!$bendungans->isEmpty()) {
+            $data = $data->merge($bendungans);
+        }
+
+        if (!$embungs->isEmpty()) {
+            $data = $data->merge($embungs);
+        }
+
+        if (!$bendungs->isEmpty()) {
+            $data = $data->merge($bendungs);
+        }
+
 
         return view('content.infrastruktur.bendungan.bendungan', [
             'bendungan' => $bendungan,
-            // 'beritas' => $beritas
+            'infrastrukturs' => $data
         ]);
     }
 
@@ -143,7 +162,7 @@ class BendunganController extends Controller
             "tinggi_dasar_sungai" => ['required'],
             "panjang_puncak" => ['required'],
             "lebar_puncak" => ['required'],
-            "elevasi_puncak" => ['required'], 
+            "elevasi_puncak" => ['required'],
             "volume_tampung_normal" => ['required'],
             "volume_tampung_total" => ['required'],
             "body" => ['required'],
@@ -163,7 +182,7 @@ class BendunganController extends Controller
 
         DB::beginTransaction();
         try {
- 
+
             if ($request->hasFile('url_foto1')) {
                 if ($bendungan->url_foto1 != null) {
                     Storage::delete($bendungan->url_foto1);

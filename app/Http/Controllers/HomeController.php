@@ -12,7 +12,7 @@ use App\Models\Embung;
 use App\Models\Galery;
 use App\Models\Image;
 use App\Models\Infografis;
-use App\Models\Infrastruktur;
+use App\Models\Infrastruktur; 
 use App\Models\Logoterkait;
 use App\Models\Pengumuman;
 use App\Models\Situsterkait;

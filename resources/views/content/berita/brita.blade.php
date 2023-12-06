@@ -1,7 +1,7 @@
 @extends('layout.content.main')
 @section('container')
     {{-- Header Content --}}
-    <x-h_content judul="Berita Terbaru" posisi1="Beranda" posisi2="Berita" />
+    <x-h_content judul="Berita Terbaru" posisi1="Beranda" posisi2="Berita" link="" />
     {{-- End Header Content --}}
 
     <section id="" class="blog">

@@ -1,7 +1,7 @@
 @extends('layout.content.main')
 @section('container')
     {{-- Header Content --}}
-    <x-h_content judul="Berita Terbaru" posisi1="Beranda" posisi2="Berita" />
+    <x-h_content judul="Berita Terbaru" posisi1="Beranda" posisi2="Berita" link="" />
     {{-- End Header Content --}}
 
     <section id="blog" class="blog">
@@ -18,7 +18,7 @@
                             <article class="entry">
                                 <div class="entry-img d-flex justify-content-center">
                                     <img src="{{ asset('storage/' . substr($berita->url_foto, 6)) }}" alt=""
-                                        style="height: 300px; border-radius: 10px" class="card-img-top hover-effect-2">
+                                        style="height: 300px; border-radius: 10px" class="card-img-top img-fluid">
                                 </div>
                                 <h6> <i class="bi bi-clock"></i>
                                     {{ Carbon\Carbon::createFromTimeString($berita->created_at)->format('d F Y') }}</h6>
@@ -36,7 +36,7 @@
                             </article>
                         @endif
                     @endforeach
-                   <div class="d-flex justify-content-center"> {{ $beritas->links() }}</div>
+                    <div class="d-flex justify-content-center"> {{ $beritas->links() }}</div>
                 </div>
                 {{-- End Main Content --}}
 

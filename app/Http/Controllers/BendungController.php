@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Bendung;
 use App\Http\Requests\StoreBendungRequest;
 use App\Http\Requests\UpdateBendungRequest;
+use App\Models\Bendungan;
+use App\Models\Embung;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -95,9 +97,27 @@ class BendungController extends Controller
         if (!$bendung) {
             abort(404);
         }
+        $bendungans = Bendungan::all();
+        $embungs = Embung::all();
+        $bendungs = Bendung::all();
 
+        $data = collect();
+
+        if (!$bendungans->isEmpty()) {
+            $data = $data->merge($bendungans);
+        }
+
+        if (!$embungs->isEmpty()) {
+            $data = $data->merge($embungs);
+        }
+
+        if (!$bendungs->isEmpty()) {
+            $data = $data->merge($bendungs);
+        }
         return view('content.infrastruktur.bendung.bendung', [
             'bendung' => $bendung,
+            'infrastrukturs' => $data,
+
         ]);
     }
 

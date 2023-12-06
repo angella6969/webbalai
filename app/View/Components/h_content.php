@@ -11,12 +11,13 @@ class h_content extends Component
     /**
      * Create a new component instance.
      */
-    public $posisi1, $judul, $posisi2;
-    public function __construct($posisi1, $judul,$posisi2)
+    public $posisi1, $judul, $posisi2, $link;
+    public function __construct($posisi1, $judul, $posisi2, $link)
     {
         $this->posisi1 = $posisi1;
         $this->judul = $judul;
         $this->posisi2 = $posisi2;
+        $this->link = $$link;
     }
 
     /**

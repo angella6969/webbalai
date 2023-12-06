@@ -5,7 +5,7 @@
 
 <div class="container-fluid">
     <div class="card">
-        <div class="card-body">
+        <div class="card-body"> 
             <h5 class="card-title fw-semibold mb-4">Berita</h5>
             <form action="/dashboard/daerah-irigasi">
                 <div class="row">
@@ -13,7 +13,7 @@
                         <div class="input-group mb-3">
                             <input type="text" class="form-control " placeholder="..." name="search"
                                 value="{{ request('search') }}">
-                            <button class="btn btn-primary " type="submit" id="basic-addon2"><span
+                            <button class="btn btn-primary " type="submit"><span
                                     data-feather="search"></span></button>
                         </div>
                     </div>

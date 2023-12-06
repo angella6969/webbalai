@@ -1,6 +1,6 @@
 @extends('layout.content.main')
 @section('container')
-    <section
+    {{-- <section
         style="background-color:rgba(3,15,107,0.2) ;background-size: cover; background-position: center center; background-repeat: no-repeat;">
         <div class="container"><br>
             <div class="row align-items-center ">
@@ -12,12 +12,16 @@
                     <ul class="breadcrumb justify-content-start text-color-light justify-content-md-end">
                         <li><a class="text-color-light" href="/">Beranda</a> / <a href=""
                                 class="active">Profil</a></li>
-                        {{-- <li class="active"> Profil</li> --}}
+                        <li class="active"> Profil</li>
                     </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
+    {{-- Header Content --}}
+    <x-h_content judul="Bendung" posisi1="Beranda" posisi2="Infrastruktur" link="/informasi-publik/infrastruktur" />
+    {{-- End Header Content --}}
+
     <section id="" class="blog">
         <div class="container" data-aos="fade-up">
             <div class="row">
@@ -65,17 +69,27 @@
                                     </table>
                                 </div>
                                 <div class="col-xl-6">
-                                    <div>
-                                        <img src="{{ asset('storage/' . substr($bendung->url_foto1, 6)) }}" alt=""
-                                            class="img-fluid">
-                                    </div>
-                                    <div>
-                                        <img src="{{ asset('storage/' . substr($bendung->url_foto2, 6)) }}" alt=""
-                                            class="img-fluid">
-                                    </div>
-                                    <div>
-                                        <img src="{{ asset('storage/' . substr($bendung->url_foto4, 6)) }}" alt=""
-                                            class="img-fluid">
+                                    <div class="row">
+                                        <a style="padding:5px"
+                                            href="{{ asset('storage/' . substr($bendung->url_foto1, 6)) }}"
+                                            data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                                            <img src="{{ asset('storage/' . substr($bendung->url_foto1, 6)) }}"
+                                                alt="" class="img-fluid"  style="height: 150px; width: auto;"></a>
+                                        <a style="padding:5px"
+                                            href="{{ asset('storage/' . substr($bendung->url_foto2, 6)) }}"
+                                            data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                                            <img src="{{ asset('storage/' . substr($bendung->url_foto2, 6)) }}"
+                                                alt="" class="img-fluid"  style="height: 150px; width: auto;"></a>
+                                        <a style="padding:5px"
+                                            href="{{ asset('storage/' . substr($bendung->url_foto3, 6)) }}"
+                                            data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                                            <img src="{{ asset('storage/' . substr($bendung->url_foto3, 6)) }}"
+                                                alt="" class="img-fluid"  style="height: 150px; width: auto;"></a>
+                                        <a style="padding:5px"
+                                            href="{{ asset('storage/' . substr($bendung->url_foto4, 6)) }}"
+                                            data-toggle="lightbox" data-gallery="example-gallery" class="col-sm-4">
+                                            <img src="{{ asset('storage/' . substr($bendung->url_foto4, 6)) }}"
+                                                alt="" class="img-fluid"  style="height: 150px; width: auto;"></a>
                                     </div>
                                 </div>
                             </div>
@@ -85,4 +99,7 @@
             </div>
         </div>
     </section>
+    {{-- ============================ Infrastruktur ============================ --}}
+    @include('layout.content.i_infrastruktur')
+    {{-- ============================ End Infrastruktur ============================ --}}
 @endsection

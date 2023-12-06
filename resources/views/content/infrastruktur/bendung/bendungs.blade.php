@@ -1,6 +1,6 @@
 @extends('layout.content.main')
 @section('container')
-    <section
+    {{-- <section
         style="background-color:rgba(3,15,107,0.2) ;background-size: cover; background-position: center center; background-repeat: no-repeat;">
         <div class="container"><br>
             <div class="row align-items-center ">
@@ -12,12 +12,17 @@
                     <ul class="breadcrumb justify-content-start text-color-light justify-content-md-end">
                         <li><a style="color: black" href="/">Beranda</a> / <a href="" style="color: black"
                                 class="active"><strong>Infrastruktur</strong></a></li>
-                        {{-- <li class="active"> Profil</li> --}}
+                       
                     </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
+
+    {{-- Header Content --}}
+    <x-h_content judul="Bendung" posisi1="Beranda" posisi2="Infrastruktur" link="/informasi-publik/infrastruktur" />
+    {{-- End Header Content --}}
+
     <section id="" class="blog">
         <div class="container" data-aos="fade-up">
             <div class="row">

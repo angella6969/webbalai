@@ -45,12 +45,12 @@
             color: #fff;
         }
 
-        .btn1.active-button {
+        /* .btn1.active-button {
             background-color: rgba(53, 71, 119, 0.8);
             color: white;
-        }
+        } */
     </style>
-    <section
+    {{-- <section
         style="background-color:rgba(3,15,107,0.2) ;background-size: cover; background-position: center center; background-repeat: no-repeat;">
         <div class="container"><br>
             <div class="row align-items-center ">
@@ -66,7 +66,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
+
+        {{-- Header Content --}}
+        <x-h_content judul="Daftar Informasi Publik" posisi1="Beranda" posisi2="Daftar Informasi Publik" link="" />
+        {{-- End Header Content --}}
 
     <section class="section section-height-3">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
