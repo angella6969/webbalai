@@ -117,6 +117,35 @@
         <section id="">
             <div class="container animated fadeIn">
                 <div class="section-cap1">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <table class="table table-responsive">
+                                @foreach ($data as $item)
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>NAMA</strong></td>
+                                            <td><strong>:</strong></td>
+                                            <td>{{ $item->nama }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Keperluan</strong></td>
+                                            <td><strong>:</strong></td>
+                                            <td>{!! $item->tujuan !!}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Alasan Ditolak</strong></td>
+                                            <td><strong>:</strong></td>
+                                            <td>{{ $item->keterangan }}</td>
+                                        </tr>
+                                    </tbody>
+                            </table>
+                            @endforeach
+                        </div>
+                    </div>
+                    <br>
+
+                    <h2><strong>Ajukan Keberatan</strong></h2>
                     <form method="post" action="{{ route('kalatirta.formKeberatan_search') }}"
                         enctype="multipart/form-data">
                         @csrf
@@ -125,7 +154,7 @@
 
 
                                 <x-input nama="nomor_registrasi" judul="Nama" nilai="" />
-                                {{-- <x-input nama="alamat" judul="Alamat Sesuai KTP" nilai="" />
+                                <x-input nama="alamat" judul="Alamat Sesuai KTP" nilai="" />
 
 
 
@@ -217,9 +246,9 @@
                                         accept="image/*, image/png, image/gif">
                                     <h6>Photo Max 5 MB</h6>
                                 </div>
-                            </div> --}}
-                                <button type="submit" class="btn btn-primary ">Submit</button>
                             </div>
+                            <button type="submit" class="btn btn-primary ">Submit</button>
+                        </div>
                     </form>
 
                 </div>

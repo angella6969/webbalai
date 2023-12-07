@@ -10,6 +10,8 @@ use App\Models\Survey;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Http\Request;
+
 
 class KalatirtaController extends Controller
 {
@@ -34,6 +36,32 @@ class KalatirtaController extends Controller
     {
         return view('content.kalatirta.formdata');
     }
+
+
+    public function formKeberatan()
+    {
+        return view('content.kalatirta.formkeberatan');
+    }
+
+    public function formKeberatan_search(Request $request)
+    {
+        $validatedData = $request->validate([
+            'nomor_registrasi' => ['nullable', 'max:250'],
+        ]);
+        $data = Kalatirta::where('nomor_registrasi', $validatedData['nomor_registrasi'])->get();
+        if ($data->isEmpty()) {
+            return redirect()->back()->with('data', 'Data tidak ditemukan');
+        }
+
+        // Tampilkan data jika ditemukan
+        // dd($data);
+
+        return view('content.kalatirta.dataformkeberatan', [
+            'data' => $data
+        ]);
+    }
+
+
     public function create1()
     {
         $data = session('data');

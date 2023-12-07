@@ -83,6 +83,10 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::get('/kalatirta-so/permohonan-data', [KalatirtaController::class, 'show1'])->name('kalatirta.status');
     Route::get('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'create'])->name('kalatirta.create');
     Route::post('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'store'])->name('kalatirta.store');
+
+    Route::get('/kalatirta-so/form-keberatan', [KalatirtaController::class, 'formKeberatan'])->name('kalatirta.formKeberatan');
+    Route::post('/kalatirta-so/form-keberatan', [KalatirtaController::class, 'formKeberatan_search'])->name('kalatirta.formKeberatan_search');
+
     Route::get('/kalatirta-so/portal', [KalatirtaController::class, 'showPortal'])->name('kalatirta.showPortal');
     Route::get('/kalatirta-so/form-permohonan-data/survey', [KalatirtaController::class, 'create1'])->name('survey');
     Route::post('/kalatirta-so/form-permohonan-data/survey', [KalatirtaController::class, 'store1'])->name('kalatirta.store1');

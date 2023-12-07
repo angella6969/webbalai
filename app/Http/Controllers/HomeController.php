@@ -95,7 +95,7 @@ class HomeController extends Controller
     }
     public function all_data(Request $request)
     {
-        $bendungans = Bendungan::latest()->Filter(request(['search']))->get();
+        $bendungans = Bendungan::latest()->Filter(request(['search']))->get(); 
         $embungs = Embung::latest()->Filter(request(['search']))->get();
         $bendungs = Bendung::latest()->Filter(request(['search']))->get();
         // $infografis = Infografis::latest()->Filter(request(['search']))->get();

@@ -3,7 +3,7 @@
 
         {{--  --}}
 
-        <h3 style="color: var(--bs-bg-text)" class="sidebar-title d-flex justify-content-center">Filter Berita</h3>
+        {{-- <h3 style="color: var(--bs-bg-text)" class="sidebar-title d-flex justify-content-center">Filter Berita</h3>
         <div class="card">
             <div class="card-body">
                 <form action="/beritas">
@@ -54,7 +54,7 @@
                     </div>
                 </form>
             </div>
-        </div>
+        </div> --}}
         {{--  --}}
 
 
