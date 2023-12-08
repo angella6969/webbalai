@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengajuan_keberatans', function (Blueprint $table) {
+        Schema::create('kalatirta_pengaduans', function (Blueprint $table) {
             $table->id();
+            $table->longText('keberatan')->nullable();
+            $table->text('dokumen')->nullable();
+            $table->string('status')->default('Menunggu Konfirmasi');
+            $table->string('nomor_registrasi')->nullable();
+            $table->foreignId('kalatirta_id');
             $table->timestamps();
         });
     }
@@ -22,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pengajuan_keberatans');
+        Schema::dropIfExists('kalatirta_pengaduans');
     }
 };

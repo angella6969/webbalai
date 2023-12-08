@@ -13,7 +13,10 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\InfografisController;
 use App\Http\Controllers\InfrastrukturController;
 use App\Http\Controllers\IrigasiController;
+use App\Http\Controllers\Kalatirta_pengaduan;
+use App\Http\Controllers\Kalatirta_pengaduanController;
 use App\Http\Controllers\KalatirtaController;
+use App\Http\Controllers\KalatirtaPengaduanController;
 use App\Http\Controllers\LakipController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PermohonanController;
@@ -27,6 +30,7 @@ use App\Models\Bendungan;
 use App\Models\Berita;
 use App\Models\Dashboard;
 use App\Models\Image;
+use App\Models\Kalatirta_pengaduan as ModelsKalatirta_pengaduan;
 use App\Models\Lakip;
 use App\Models\Pengajuan_keberatan;
 use Illuminate\Support\Facades\Route;
@@ -84,8 +88,15 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::get('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'create'])->name('kalatirta.create');
     Route::post('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'store'])->name('kalatirta.store');
 
+
+
+
+
+
     Route::get('/kalatirta-so/form-keberatan', [KalatirtaController::class, 'formKeberatan'])->name('kalatirta.formKeberatan');
     Route::post('/kalatirta-so/form-keberatan', [KalatirtaController::class, 'formKeberatan_search'])->name('kalatirta.formKeberatan_search');
+    Route::post('/kalatirta-so/form-data-keberatan', [KalatirtaController::class, 'formDataKeberatan'])->name('kalatirta.formDataKeberatan');
+    Route::get('/kalatirta-so/form-data-keberatan/list', [KalatirtaController::class, 'formDataKeberatanlist'])->name('kalatirta.formDataKeberatanlist');
 
     Route::get('/kalatirta-so/portal', [KalatirtaController::class, 'showPortal'])->name('kalatirta.showPortal');
     Route::get('/kalatirta-so/form-permohonan-data/survey', [KalatirtaController::class, 'create1'])->name('survey');
@@ -247,7 +258,8 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
             Route::resource('/dashboard/perencanaan/rencana-strategis', RencanaStrategisController::class)->except(['show']);
             Route::resource('/dashboard/kinerja/lakip', LakipController::class)->except(['show']);
             Route::resource('/dashboard/kalatirta-so', KalatirtaController::class)->except(['create', 'store']);
-            // Route::resource('/dashboard/kalatirta-so/pengajuan-keberatan', Pengajuan_keberatanController::class)->except(['create','store']);
+            Route::resource('/dashboard/kalatirta/keberatan', KalatirtaPengaduanController::class)->except(['create', 'store']);
+            // Route::get('/dashboard/kalatirta-so/keberatan', [KalatirtaPengaduanController::class, 'index']);
         });
 
         //=====================================================================================================\\

@@ -108,151 +108,97 @@
         <section id="formdata" class="section-content section-bg">
             <div class="container animated fadeIn">
                 <div class="section-title">
-                    <span>Form Keberatan</span>
-                    <h2><strong>Form Keberatan</strong></h2>
+                    <span>Formulir Pengajuan Keberatan Informasi</span>
+                    <h2><strong>Formulir Pengajuan Keberatan Informasi</strong></h2>
                 </div>
             </div>
         </section>
 
         <section id="">
-            <div class="container animated fadeIn">
-                <div class="section-cap1">
+            <form method="post" action="{{ route('kalatirta.formDataKeberatan') }}" enctype="multipart/form-data">
+                @csrf
+                <div class="container animated fadeIn">
+                    <div class="section-cap1">
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <table class="table table-responsive">
-                                @foreach ($data as $item)
-                                    <tbody>
-                                        <tr>
-                                            <td><strong>NAMA</strong></td>
-                                            <td><strong>:</strong></td>
-                                            <td>{{ $item->nama }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Keperluan</strong></td>
-                                            <td><strong>:</strong></td>
-                                            <td>{!! $item->tujuan !!}</td>
-                                        </tr>
-                                        <tr>
-                                            <td><strong>Alasan Ditolak</strong></td>
-                                            <td><strong>:</strong></td>
-                                            <td>{{ $item->keterangan }}</td>
-                                        </tr>
-                                    </tbody>
-                            </table>
-                            @endforeach
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-responsive">
+                                    @foreach ($data as $item)
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Nama Pemohon</strong></td>
+                                                <td><strong>:</strong></td>
+                                                <td>{{ $item->nama }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Nomor Registrasi</strong></td>
+                                                <td><strong>:</strong></td>
+                                                <td>{{ $item->nomor_registrasi }}</td>
+
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Tujuan Informasi Digunakan</strong></td>
+                                                <td><strong>:</strong></td>
+                                                <td>{!! $item->tujuan !!}</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Alasan Ditolak</strong></td>
+                                                <td><strong>:</strong></td>
+                                                <td>{{ $item->keterangan }}</td>
+                                            </tr>
+                                        </tbody>
+                                </table>
+                                <input type="hidden" name="kalatirta_id" id="kalatirta_id" value="{{ $item->id }}">
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
-                    <br>
+                        <br>
 
-                    <h2><strong>Ajukan Keberatan</strong></h2>
-                    <form method="post" action="{{ route('kalatirta.formKeberatan_search') }}"
-                        enctype="multipart/form-data">
-                        @csrf
+                        <h2><strong>Ajukan Keberatan</strong></h2>
+
                         <div class="card">
                             <div class="card-body mb-3">
-
-
-                                <x-input nama="nomor_registrasi" judul="Nama" nilai="" />
-                                <x-input nama="alamat" judul="Alamat Sesuai KTP" nilai="" />
-
-
+                                {{-- <x-ck1 body="keberatan" nilai=""></x-ck1> --}}
 
                                 <div class="mt-3">
-                                    <label for="nohp" class="form-label">Nomor Tlp/WA Aktif</label>
-                                    <div class="input-group">
-                                        <input type="number" class="form-control @error('nohp') is-invalid @enderror"
-                                            id="nohp" name="nohp"
-                                            placeholder="Hanya Angka dan No Tlp yang Valid" value="{{ old('nohp') }}"
-                                            required>
-                                        @error('nohp')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-                                <x-input nama="email" judul="Email" nilai="" />
-                                <x-input nama="pekerjaan" judul="Pekerjaan" nilai="" />
-                                <x-input nama="alamatkantor" judul="Alamat Kantor/kampus/Domisili" nilai="" />
-
-
-                                <div class="mt-3">
-                                    <label for="memperoleh" class="form-label">Cara Memperoleh Informasi</label>
-                                    <select class="form-select" aria-label="Default select example" name="memperoleh"
-                                        id="memperoleh" required>
-                                        <option value="" {{ old('memperoleh') == '' ? 'selected' : '' }}>
+                                    <label for="keberatan" class="form-label">Alasan Keberatan</label>
+                                    <select class="form-select" aria-label="Default select example" name="keberatan"
+                                        id="keberatan" required>
+                                        <option value="" {{ old('keberatan') == '' ? 'selected' : '' }}>
                                             Kategori</option>
-                                        <option value="Melihat/Membaca/Mendengarkan/Mencatat"
-                                            {{ old('memperoleh') == 'Melihat/Membaca/Mendengarkan/Mencatat' ? 'selected' : '' }}>
-                                            Melihat/Membaca/Mendengarkan/Mencatat</option>
-                                        <option value="Mendapatkan Salinan Informasi (Hard/Soft Copy)"
-                                            {{ old('memperoleh') == 'Mendapatkan Salinan Informasi (Hard/Soft Copy)' ? 'selected' : '' }}>
-                                            Mendapatkan Salinan Informasi (Hard/Soft Copy)</option>
+                                        <option value="Permihinan Informasi Ditolak"
+                                            {{ old('keberatan') == 'Permihinan Informasi Ditolak' ? 'selected' : '' }}>
+                                            Permihinan Informasi Ditolak</option>
+                                        <option value="Informasi Berkala Tidak Tersedia"
+                                            {{ old('keberatan') == 'Informasi Berkala Tidak Tersedia' ? 'selected' : '' }}>
+                                            Informasi Berkala Tidak Tersedia</option>
+                                        <option value="Permintaan Informasi Tidak Ditanggapi"
+                                            {{ old('keberatan') == 'Permintaan Informasi Tidak Ditanggapi' ? 'selected' : '' }}>
+                                            Permintaan Informasi Tidak Ditanggapi</option>
+                                        <option value="Permintaan Informasi Ditanggapi Tidak Semestinya"
+                                            {{ old('keberatan') == 'Permintaan Informasi Ditanggapi Tidak Semestinya' ? 'selected' : '' }}>
+                                            Permintaan Informasi Ditanggapi Tidak Semestinya</option>
+                                        <option value="Permintaan Informasi Tidak Dipenuhi"
+                                            {{ old('keberatan') == 'Permintaan Informasi Tidak Dipenuhi' ? 'selected' : '' }}>
+                                            Permintaan Informasi Tidak Dipenuhi</option>
+                                        <option value="Biaya Yang Dikenakan Tidak Wajar"
+                                            {{ old('keberatan') == 'Biaya Yang Dikenakan Tidak Wajar' ? 'selected' : '' }}>
+                                            Biaya Yang Dikenakan Tidak Wajar</option>
+                                        <option value="Informasi Disampaikan Melebihi Jangka Waktu Yang Ditentukan"
+                                            {{ old('keberatan') == 'Informasi Disampaikan Melebihi Jangka Waktu Yang Ditentukan' ? 'selected' : '' }}>
+                                            Informasi Disampaikan Melebihi Jangka Waktu Yang Ditentukan</option>
+                                        {{-- <option value="Lainnya" {{ old('keberatan') == 'Lainnya' ? 'selected' : '' }}>
+                                            Lainnya</option> --}}
                                     </select>
                                 </div>
-                                <div class="mt-3">
-                                    <label for="mengirim" class="form-label">Cara Mengirim Informasi</label>
-                                    <select class="form-select" aria-label="Default select example" name="mengirim"
-                                        id="mengirim" required>
-                                        <option value="" {{ old('mengirim') == '' ? 'selected' : '' }}>
-                                            Kategori</option>
-                                        <option value="Diambil Langsung"
-                                            {{ old('mengirim') == 'Diambil Langsung' ? 'selected' : '' }}>
-                                            Diambil Langsung</option>
-                                        <option value="Kurir" {{ old('mengirim') == 'Kurir' ? 'selected' : '' }}>
-                                            Kurir</option>
-                                        <option value="Via Pos" {{ old('mengirim') == 'Via Pos' ? 'selected' : '' }}>
-                                            Via Pos</option>
-                                        <option value="Email" {{ old('mengirim') == 'Email' ? 'selected' : '' }}>
-                                            Email</option>
-                                    </select>
-                                </div>
-                                <div class="mt-3" id="alamat-section" style="display: none;">
-                                    <label for="alamat_kirim" class="form-label">Alamat Penerima</label>
-                                    <input type="text" class="form-control" name="alamat_kirim"
-                                        id="alamat_kirim">
-                                </div>
-
-
-                                <div class="mb-3 mt-3">
-                                    <label for="informasi" class="form-label">Informasi yang dibutuhkan</label>
-                                    <div style="z-index: 999">
-                                        <textarea hidden id="informasi" name="informasi" style="width: 200px;">{{ old('informasi') }}</textarea>
-                                    </div>
-                                    <label for="informasi" class="form-label">
-                                        <h6>*mohon tulis dengan rinci dan jelas</h6>
-                                    </label>
-                                </div>
-                                <div class="mb-3 mt-3">
-                                    <label for="tujuan" class="form-label">Tujuan Informasi Digunakan</label>
-                                    <div style="z-index: 999">
-                                        <textarea hidden id="tujuan" name="tujuan" style="width: 200px;">{{ old('tujuan') }}</textarea>
-                                    </div>
-                                    <label for="tujuan" class="form-label">
-                                        <h6>*mohon tulis dengan rinci dan jelas</h6>
-                                    </label>
-                                </div>
-
-                                <div class="mb-3 mt-3">
-                                    <label for="ktp">Upload KTP</label>
-                                    <input type="hidden" name="oldImage" id="oldImage" value="">
-
-                                    <img class="img-preview img-fluid mb-3 col-sm-5" id="img-preview-ktp">
-
-                                    <input type="file" class="form-control @error('ktp') is-invalid @enderror"
-                                        id="ktp" onchange="previewImage('ktp')" name="ktp"
-                                        accept="image/*, image/png, image/gif">
-                                    <h6>Photo Max 5 MB</h6>
-                                </div>
+                                {{-- <x-garis></x-garis> --}}
+                                {{-- <x-i_pdf nama="dokumen" judul="" nilai=""></x-i_pdf> --}}
                             </div>
-                            <button type="submit" class="btn btn-primary ">Submit</button>
+                            <button type="submit" class="btn btn-primary mb-3">Submit</button>
                         </div>
-                    </form>
-
+                    </div>
                 </div>
-            </div>
+            </form>
         </section>
     </main>
 
@@ -277,60 +223,28 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
-<script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
-
-<script>
-    function previewImage(id) {
-        const image = document.querySelector(`#${id}`);
-        const imgPreview = document.querySelector(`#img-preview-${id}`);
-
-        imgPreview.style.display = 'block';
-
-        const oFReader = new FileReader();
-
-        oFReader.readAsDataURL(image.files[0]);
-
-        oFReader.onload = function(oFREvent) {
-            imgPreview.src = oFREvent.target.result;
-        }
-    }
-</script>
-<script>
-    function initializeEditor(selector) {
-        ClassicEditor
-            .create(document.querySelector(selector), {
-                toolbar: ['redo', '|', 'undo'],
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }
-
-    // Inisialisasi CKEditor untuk textarea pertama
-    initializeEditor('#informasi');
-
-    // Inisialisasi CKEditor untuk textarea kedua
-    initializeEditor('#tujuan');
-</script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.js"
-    integrity="sha512-OmBbzhZ6lgh87tQFDVBHtwfi6MS9raGmNvUNTjDIBb/cgv707v9OuBVpsN6tVVTLOehRFns+o14Nd0/If0lE/A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<x-notif />
+
+<x-notif_sweet />
 
 <script>
     $(document).ready(function() {
         // Tangkap perubahan pada elemen select
-        $('#mengirim').change(function() {
+        $('#keberatan').change(function() {
             // Sembunyikan input alamat secara default
-            $('#alamat-section').hide();
+            $('#keberatan-section').hide();
 
             // Jika opsi "Kurir" atau "Via Pos" dipilih, tampilkan input alamat
-            if ($(this).val() == 'Kurir' || $(this).val() == 'Via Pos') {
-                $('#alamat-section').show();
+            if ($(this).val() == 'Lainnya') {
+                $('#keberatan-section').show();
             }
         });
     });
+</script>
+<script src="https://unpkg.com/autosize@4.0.2/dist/autosize.min.js"></script>
+<script>
+    // Aktifkan autosize pada textarea dengan id 'autoresizeTextarea'
+    autosize(document.getElementById('keberatan-section'));
 </script>
 
 </html>

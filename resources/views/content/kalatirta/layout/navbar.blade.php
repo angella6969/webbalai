@@ -44,7 +44,7 @@
                     <ul>
                         <li><a href="{{ route('info.publik') }}">Daftar Informasi Publik</a></li>
                         <li><a href="#prosedur">Prosedur Layanan</a></li>
-                        <li><a href="#">Pengajuan Keberatan</a></li>
+                        <li><a href="{{ route('kalatirta.formKeberatan') }}">Pengajuan Keberatan</a></li>
                         <li><a href="{{ route('kalatirta.status') }}">Status Permohonan Informasi & Data</a></li>
                     </ul>
                 </li>

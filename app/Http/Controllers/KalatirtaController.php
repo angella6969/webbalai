@@ -6,6 +6,7 @@ use App\Models\Kalatirta;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreKalatirtaRequest;
 use App\Http\Requests\UpdateKalatirtaRequest;
+use App\Models\Kalatirta_pengaduan;
 use App\Models\Survey;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -42,23 +43,77 @@ class KalatirtaController extends Controller
     {
         return view('content.kalatirta.formkeberatan');
     }
+    public function formDataKeberatanlist()
+    {
+        return view('content.kalatirta.formDataKeberatanlist', [
+            'data' => Kalatirta_pengaduan::latest()->get()
+        ]);
+    }
 
     public function formKeberatan_search(Request $request)
     {
         $validatedData = $request->validate([
             'nomor_registrasi' => ['nullable', 'max:250'],
+            'nohp' => ['required', 'regex:/^\d{10,15}$/'],
         ]);
-        $data = Kalatirta::where('nomor_registrasi', $validatedData['nomor_registrasi'])->get();
+        $data = Kalatirta::where('nomor_registrasi', $validatedData['nomor_registrasi'])
+            ->where('nohp', $validatedData['nohp'])
+            ->get();
         if ($data->isEmpty()) {
-            return redirect()->back()->with('data', 'Data tidak ditemukan');
+            return redirect()->back()->with('fail', 'Data tidak ditemukan');
         }
-
-        // Tampilkan data jika ditemukan
-        // dd($data);
 
         return view('content.kalatirta.dataformkeberatan', [
             'data' => $data
         ]);
+    }
+    public function formDataKeberatan(Request $request)
+    {
+        $date = Carbon::now();
+        $formattedDate = $date->format('M/y');
+        $lastRegistration = Kalatirta_pengaduan::latest()->pluck('nomor_registrasi')->first();
+        if ($lastRegistration) {
+            $parts = explode('/', $lastRegistration);
+            $lastNumber = intval($parts[0]);
+            $lastNumber1 = ($parts[3]) . "/" . ($parts[4]);
+            if ($date->format('M/y') === $lastNumber1) {
+                $newNumber = $lastNumber + 1;
+            } else {
+                $newNumber = 1;
+            }
+        } else {
+            $newNumber = 1;
+        }
+
+        $newNumberFormatted = sprintf('%04d', $newNumber);
+        $noReg = $newNumberFormatted . '/PPID/PENGADUAN/' . $formattedDate;
+
+        $validatedData = $request->validate([
+            'keberatan' => ['nullable', 'max:250'],
+            'dokumen' => ['file', 'max:15120', 'mimetypes:application/pdf', 'nullable'],
+            'kalatirta_id' => ['nullable'],
+        ]);
+
+
+        DB::beginTransaction();
+        try {
+
+            if ($request->hasFile('dokumen')) {
+                $petaPdfPath = $request->file('dokumen')->store('public/pdf/kalatirta');
+                $validatedData['dokumen'] = $petaPdfPath;
+            }
+            $validatedData['nomor_registrasi'] = $noReg;
+            Kalatirta_pengaduan::create($validatedData);
+            DB::commit();
+
+            return redirect('/kalatirta-so/form-data-keberatan/list')->with('success', 'Data berhasil disimpan.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
+
+
+        return view('content.kalatirta.dataformkeberatan', []);
     }
 
 
@@ -93,7 +148,7 @@ class KalatirtaController extends Controller
         $newNumberFormatted = sprintf('%04d', $newNumber);
         $noReg = $newNumberFormatted . '/PPID/' . $formattedDate;
 
-        // dd($parts);
+
 
         $validatedData = $request->validate([
             'nama' => ['required', 'max:254'],
@@ -113,7 +168,6 @@ class KalatirtaController extends Controller
         ]);
         $validatedData['nomor_registrasi'] = $noReg;
         // dd($validatedData['nomor_registrasi']);
-
         DB::beginTransaction();
         try {
 
@@ -121,7 +175,7 @@ class KalatirtaController extends Controller
                 $petaPdfPath = $request->file('ktp')->store('public/images/kalatirta');
                 $validatedData['ktp'] = $petaPdfPath;
             }
-
+            // db::commit();
             return redirect('/kalatirta-so/form-permohonan-data/survey')->with('data', $validatedData);
         } catch (\Exception $e) {
             DB::rollBack();

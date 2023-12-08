@@ -22,4 +22,8 @@ class Kalatirta extends Model
     {
         return $this->belongsTo(Survey::class);
     }
+    public function kalatirta_pengaduan()
+    {
+        return $this->hasMany(Kalatirta_pengaduan::class);
+    }
 }

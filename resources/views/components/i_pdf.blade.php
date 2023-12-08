@@ -6,7 +6,7 @@
     <a href="{{ asset('storage/' . substr($nilai, 6)) }}" target="_blank">View PDF</a>
 @else
     <!-- Tampilkan pesan jika tidak ada PDF yang sudah ada -->
-    <p>No PDF uploaded</p>
+    {{-- <p>No PDF uploaded</p> --}}
 @endif
 
 <input type="file" class="form-control @error('$nama') is-invalid @enderror" id="{{ $nama }}"

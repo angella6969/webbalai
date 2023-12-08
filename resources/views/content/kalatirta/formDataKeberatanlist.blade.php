@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>KALATIRTA - Layanan Terpadu BBWS SO</title>
-    <link rel="shortcut icon" type="image/png" href="{{ asset('kalatirta\images\Kal-logo2.png') }}" />
-
+    <link rel="stylesheet" href="{{ asset('kalatirta\css\style.css') }}">
     @include('content.kalatirta.layout.link')
+    <link rel="shortcut icon" type="image/png" href="{{ asset('kalatirta\images\Kal-logo2.png') }}" />
 </head>
 
 <body>
@@ -34,8 +34,8 @@
             </path>
         </symbol>
         <!-- ==social== -->
-        @include('content.kalatirta.layout.sosial')
 
+        @include('content.kalatirta.layout.sosial')
 
         <!-- ==contact== -->
         <symbol id="address" xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
@@ -90,7 +90,6 @@
             </svg>
         </div>
     </section>
-
     @include('content.kalatirta.layout.navbar')
 
 
@@ -108,66 +107,43 @@
         <section id="formdata" class="section-content section-bg">
             <div class="container animated fadeIn">
                 <div class="section-title">
-                    <span>Form Keberatan</span>
-                    <h2><strong>Form Keberatan</strong></h2>
+                    <span>Permintaan</span>
+                    <h2><strong>Daftar Tunggu Pengajuan Keberatan Informasi & Data </strong></h2>
+                </div>
+                <div class="section-info clearfix">
+                    <div class="section-cap">
+
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="">
             <div class="container animated fadeIn">
+
                 <div class="section-cap1">
-                    <form method="post" action="{{ route('kalatirta.formKeberatan_search') }}"
-                        enctype="multipart/form-data">
-                        @csrf
-                        <div class="card">
-                            <div class="card-body mb-3">
-
-
-                                {{-- <x-input nama="nomor_registrasi" judul="Nomor Reigstrasi" nilai="" /> --}}
-                                <div class="mt-3">
-                                    <label for="nomor_registrasi"
-                                        class="form-label d-flex justify-content-center mt-3">Nomor
-                                        Reigstrasi</label>
-                                    <div class="input-group">
-                                        <input type="text"
-                                            class="form-control @error('nomor_registrasi') is-invalid @enderror"
-                                            id="nomor_registrasi" name="nomor_registrasi"
-                                            placeholder="Inputkan Nomor Registrasi"
-                                            value="{{ old('nomor_registrasi') }}" required>
-                                        @error('nomor_registrasi')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="mt-3">
-                                    <label for="nohp" class="form-label d-flex justify-content-center mt-3">Nomor
-                                        HP/WA</label>
-                                    <div class="input-group">
-                                        <input type="number" class="form-control @error('nohp') is-invalid @enderror"
-                                            id="nohp" name="nohp"
-                                            placeholder="Hanya Angka dan No Tlp yang Valid" value="{{ old('nohp') }}"
-                                            required>
-                                        @error('nohp')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                    <label for="nohp" class="form-label ">
-                                        <h6>*Nomor
-                                            HP/WA yang digunakan saat permintaan data</h6>
-                                    </label>
-                                </div>
-                                <div class="d-flex justify-content-center mt-3">
-                                    <button type="submit" class="btn btn-primary ">Submit</button>
-                                </div>
-                            </div>
-
-                    </form>
-
+                    <div class="table-responsive-sm">
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr style="text-align: center;">
+                                    <th scope="col">No</th>
+                                    <th scope="col">Nama </th>
+                                    <th scope="col">No Pengaduan </th>
+                                    <th scope="col">Status Pengaduan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($data as $dat)
+                                    <tr style="text-align: center;">
+                                        <td> {{ $loop->iteration }}</td>
+                                        <td> {{ $dat->nama }}</td>
+                                        <td> {{ $dat->nomor_registrasi }}</td>
+                                        <td> {{ $dat->status }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>
@@ -189,73 +165,6 @@
 
     <!-- ==SCRIPT== -->
     <script src="{{ asset('kalatirta\js\main.js') }}"></script>
-
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-</script>
-<script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
-
-
-{{--  sweetalert2  --}}
-<x-notif_sweet />
-{{-- End sweetalert2  --}}
-
-
-
-
-
-<script>
-    function previewImage(id) {
-        const image = document.querySelector(`#${id}`);
-        const imgPreview = document.querySelector(`#img-preview-${id}`);
-
-        imgPreview.style.display = 'block';
-
-        const oFReader = new FileReader();
-
-        oFReader.readAsDataURL(image.files[0]);
-
-        oFReader.onload = function(oFREvent) {
-            imgPreview.src = oFREvent.target.result;
-        }
-    }
-</script>
-<script>
-    function initializeEditor(selector) {
-        ClassicEditor
-            .create(document.querySelector(selector), {
-                toolbar: ['redo', '|', 'undo'],
-            })
-            .catch(error => {
-                console.log(error);
-            });
-    }
-
-    // Inisialisasi CKEditor untuk textarea pertama
-    initializeEditor('#informasi');
-
-    // Inisialisasi CKEditor untuk textarea kedua
-    initializeEditor('#tujuan');
-</script>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.js"
-    integrity="sha512-OmBbzhZ6lgh87tQFDVBHtwfi6MS9raGmNvUNTjDIBb/cgv707v9OuBVpsN6tVVTLOehRFns+o14Nd0/If0lE/A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-<script>
-    $(document).ready(function() {
-        // Tangkap perubahan pada elemen select
-        $('#mengirim').change(function() {
-            // Sembunyikan input alamat secara default
-            $('#alamat-section').hide();
-
-            // Jika opsi "Kurir" atau "Via Pos" dipilih, tampilkan input alamat
-            if ($(this).val() == 'Kurir' || $(this).val() == 'Via Pos') {
-                $('#alamat-section').show();
-            }
-        });
-    });
-</script>
 
 </html>

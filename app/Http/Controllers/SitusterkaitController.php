@@ -85,7 +85,7 @@ class SitusterkaitController extends Controller
             'url_situs' => ['required']
         ]);
 
-        DB::beginTransaction();
+        DB::beginTransaction(); 
         try {
 
             if ($request->hasFile('image')) {
@@ -97,7 +97,7 @@ class SitusterkaitController extends Controller
             }
             Situsterkait::where('id', $id)->update($validatedData);
             DB::commit();
-            return redirect('/dashboard/foto-beranda')->with('success', 'Data berhasil disimpan.');
+            return redirect('/dashboard/situs-terkait')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
