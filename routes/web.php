@@ -7,6 +7,7 @@ use App\Http\Controllers\DaftarInformasiPublikController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\EmbungController;
+use App\Http\Controllers\FotoController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
@@ -22,6 +23,7 @@ use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PermohonanController;
 use App\Http\Controllers\RencanaStrategisController;
 use App\Http\Controllers\RpsdaController;
+use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\SitusterkaitController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\UserController;
@@ -46,12 +48,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('content/home');
-// });
-// Route::get('/kalatirta-so', function () {
-//     return view('kalatirta.index');
-// });
+
 Route::get('/v2', function () {
     return view('content.kalatirta.survey');
 });
@@ -111,6 +108,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
     Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('struktur-organisasi');
     Route::get('/profil/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi');
+    Route::get('/profil/sejarah', [SejarahController::class, 'show'])->name('sejarah');
 
     //=====================================================================================================\\
 
@@ -172,6 +170,13 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::get('/media/galeri/videos', [GaleryController::class, 'index2']);
     Route::get('/media/galeri/video/{slug}', [GaleryController::class, 'index3']);
 
+    Route::get('/media/galeri/fotos', [FotoController::class, 'shows'])->name('foto.shows');;
+    Route::get('/media/galeri/foto/{slug}', [FotoController::class, 'show'])->name('foto.show');;
+
+
+
+
+
 
 
     Route::get('/login', [UserController::class, 'index'])->middleware('guest')->name('login');
@@ -217,6 +222,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
         Route::get('/dashboard/infrastruktur/embungs/checkSlug', [EmbungController::class, 'checkSlug']);
         Route::get('/dashboard/media/media-informasi/checkSlug', [InfografisController::class, 'checkSlug']);
         Route::get('/dashboard/media/galeri/videos/checkSlug', [GaleryController::class, 'checkSlug']);
+        Route::get('/dashboard/media/galeri/foto/checkSlug', [GaleryController::class, 'checkSlug']);
 
         //=====================================================================================================\\
 
@@ -259,6 +265,8 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
             Route::resource('/dashboard/kinerja/lakip', LakipController::class)->except(['show']);
             Route::resource('/dashboard/kalatirta-so', KalatirtaController::class)->except(['create', 'store']);
             Route::resource('/dashboard/kalatirta/keberatan', KalatirtaPengaduanController::class)->except(['create', 'store']);
+            Route::resource('/dashboard/profil/sejarah', SejarahController::class)->except(['show']);
+            Route::resource('/dashboard/galeri/foto', FotoController::class)->except(['show']);
             // Route::get('/dashboard/kalatirta-so/keberatan', [KalatirtaPengaduanController::class, 'index']);
         });
 

@@ -32,7 +32,7 @@
                             <a href="/informasi-publik/infrastruktur/bendungs/{{ $bendung->slug }}">
                                 <div class="entry-img d-flex justify-content-center">
                                     <img src="{{ asset('storage/' . substr($bendung->url_foto1, 6)) }}" alt=""
-                                        class="img-fluid" style="border-radius: 5px">
+                                        class="img-fluid" style="border-radius: 5px; height: 310px; width: auto;">
                                 </div>
                             </a>
                             <h1 class="entry-title">

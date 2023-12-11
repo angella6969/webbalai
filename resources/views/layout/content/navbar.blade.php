@@ -22,10 +22,10 @@
                 </span></a></li>
         <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><a href="/under-Maintenance">Sejarah</a></li>
-                <li><a href="/profil/visi-misi">Visi dan Misi</a></li>
+                <li><a href="{{ route('sejarah') }}">Sejarah</a></li>
+                <li><a href="{{ route('visi-misi') }}">Visi dan Misi</a></li>
                 <li><a href="/profil/fungsi-dan-tugas">Fungsi dan Tugas</a></li>
-                <li><a href="/profil/struktur-organisasi">Struktur Organisasi</a></li>
+                <li><a href="{{ route('struktur-organisasi') }}">Struktur Organisasi</a></li>
                 <li><a href="/profil/kontak">Kontak</a></li>
             </ul>
         </li>
@@ -33,7 +33,7 @@
             <ul>
                 <li><a href="/beritas">Berita Balai</a></li>
                 <li><a href="{{ route('pengumuman') }}">Pengumuman</a></li>
-                <li><a href="/under-Maintenance">Agenda Kegiatan</a></li>
+                {{-- <li><a href="/under-Maintenance">Agenda Kegiatan</a></li> --}}
             </ul>
         </li>
         <li class="dropdown"><a href="#"><span>Info Publik</span> <i class="bi bi-chevron-down"></i></a>
@@ -88,7 +88,7 @@
 
                 <li class="dropdown"><a href="#"><span>Galeri</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="/under-Maintenance">Foto</a></li>
+                        <li><a href="{{ route('foto.shows') }}">Foto</a></li>
                         <li><a href="/media/galeri/videos">Video</a></li>
                     </ul>
                 </li>
@@ -106,8 +106,8 @@
                 <li><a href="http://202.169.239.20/perpustakaanso/" target="_blank">Perpustakaan Online</a></li>
                 <li class="dropdown"><a href="#"><span>Pengaduan</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="/under-Maintenance">Pengaduan Balai</a></li>
-                        <li><a href="/under-Maintenance">Pengaduan PUPR</a></li>
+                        <li><a href="http://lapor.go.id/">Pengaduan Balai</a></li>
+                        <li><a href="{{ asset('images\lapor-medsos-copy.jpg') }}" target="_blank">Pengaduan PUPR</a></li>
                     </ul>
                 </li>
             </ul>

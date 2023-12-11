@@ -44,7 +44,7 @@
                 @can('Admin')
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                        <span class="hide-menu">Beranda</span>
+                        <span class="hide-menu">Profil</span>
                     </li>
 
                     <li class="sidebar-item">
@@ -54,6 +54,15 @@
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
                             <span class="hide-menu">Foto Beranda</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link {{ Request::is('dashboard/profil/sejarah*') ? 'active' : '' }}"
+                            href="{{ route('sejarah.index') }}" aria-expanded="false">
+                            <span>
+                                {{-- <i class="ti ti-article"></i> --}}
+                            </span>
+                            <span class="hide-menu">Sejarah</span>
                         </a>
                     </li>
                     <li class="nav-small-cap">
@@ -70,8 +79,8 @@
                             <span class="hide-menu">Permintaan Data</span>
                         </a>
                     <li class="sidebar-item">
-                        <a class="sidebar-link {{ Request::is('dashboard/kalatirta-so/keberatan*') ? 'active' : '' }}"
-                            href="/dashboard/kalatirta-so/keberatan" aria-expanded="false">
+                        <a class="sidebar-link {{ Request::is('dashboard/kalatirta/keberatan*') ? 'active' : '' }}"
+                            href="/dashboard/kalatirta/keberatan" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>

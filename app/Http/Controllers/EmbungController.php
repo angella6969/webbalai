@@ -178,22 +178,22 @@ class EmbungController extends Controller
                 $validatedData['url_foto1'] = $petaPdfPath;
             }
             if ($request->hasFile('url_foto2')) {
-                if ($embung->url_foto1 != null) {
-                    Storage::delete($embung->url_foto1);
+                if ($embung->url_foto2 != null) {
+                    Storage::delete($embung->url_foto2);
                 }
                 $petaPdfPath = $request->file('url_foto2')->store('public/images/infrastruktur/embung');
                 $validatedData['url_foto2'] = $petaPdfPath;
             }
             if ($request->hasFile('url_foto3')) {
-                if ($embung->url_foto1 != null) {
-                    Storage::delete($embung->url_foto1);
+                if ($embung->url_foto3 != null) {
+                    Storage::delete($embung->url_foto3);
                 }
                 $petaPdfPath = $request->file('url_foto3')->store('public/images/infrastruktur/embung');
                 $validatedData['url_foto3'] = $petaPdfPath;
             }
             if ($request->hasFile('url_foto4')) {
-                if ($embung->url_foto1 != null) {
-                    Storage::delete($embung->url_foto1);
+                if ($embung->url_foto4 != null) {
+                    Storage::delete($embung->url_foto4);
                 }
                 $petaPdfPath = $request->file('url_foto4')->store('public/images/infrastruktur/embung');
                 $validatedData['url_foto4'] = $petaPdfPath;
