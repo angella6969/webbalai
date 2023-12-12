@@ -41,6 +41,8 @@
                         <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
+
+                {{-- ================================ Admin PPID ================================ --}}
                 @can('Admin')
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -159,7 +161,25 @@
                             <span class="hide-menu">LAKIP</span>
                         </a>
                     </li>
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">Galeri</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link {{ Request::is('dashboard/galeri/foto*') ? 'active' : '' }}"
+                            href="/dashboard/galeri/foto" aria-expanded="false">
+                            <span>
+                                {{-- <i class="ti ti-article"></i> --}}
+                            </span>
+                            <span class="hide-menu">Foto</span>
+                        </a>
+                    </li>
                 @endcan
+
+                {{-- ================================ End Admin PPID ================================ --}}
+
+
+                {{-- ================================ All Admin ================================ --}}
 
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -175,6 +195,10 @@
                     </a>
                 </li>
 
+                {{-- ================================ End All Admin ================================ --}}
+
+                {{-- ================================ Admin SISDA ================================ --}}
+
                 @can('AdminSisda')
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -189,15 +213,15 @@
                             <span class="hide-menu">video</span>
                         </a>
                     </li>
-                    <li class="sidebar-item">
+                    {{-- <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/galeri/foto*') ? 'active' : '' }}"
                             href="/dashboard/galeri/foto" aria-expanded="false">
                             <span>
-                                {{-- <i class="ti ti-article"></i> --}}
+                                 
                             </span>
                             <span class="hide-menu">Foto</span>
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                         <span class="hide-menu">Situs</span>
@@ -243,6 +267,8 @@
                         </a>
                     </li>
                 @endcan
+                {{-- ================================ End Admin SISDA ================================ --}}
+
             </ul>
         </nav>
     </div>

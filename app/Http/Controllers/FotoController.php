@@ -98,6 +98,8 @@ class FotoController extends Controller
                 $validatedData['url_foto10'] = $petaPdfPath;
             }
 
+
+
             Foto::create($validatedData);
             DB::commit();
             // dd( $validatedData);
@@ -134,7 +136,7 @@ class FotoController extends Controller
      */
     public function edit(string $id)
     {
-        $fotos = Foto::findOrfail($id)->first();
+        $fotos = Foto::findOrfail($id);
         return view('dashboard.form.galeri.foto.edit', [
             'foto' => $fotos
         ]);
@@ -232,6 +234,18 @@ class FotoController extends Controller
                 $petaPdfPath = $request->file('url_foto10')->store('public/images/galery');
                 $validatedData['url_foto10'] = $petaPdfPath;
             }
+            // for ($i = 1; $i <= 10; $i++) {
+            //     $inputName = 'url_foto' . $i;
+
+            //     if ($request->hasFile($inputName)) {
+            //         if ($foto->$inputName != null) {
+            //             Storage::delete($foto->$inputName);
+            //         }
+
+            //         $petaPdfPath = $request->file($inputName)->store('public/images/galery');
+            //         $validatedData[$inputName] = $petaPdfPath;
+            //     }
+            // }
             Foto::where('id', $id)->update($validatedData);
             DB::commit();
             return redirect('/dashboard/galeri/foto')->with('success', 'Data berhasil disimpan.');
