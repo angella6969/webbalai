@@ -222,7 +222,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
         Route::get('/dashboard/infrastruktur/embungs/checkSlug', [EmbungController::class, 'checkSlug']);
         Route::get('/dashboard/media/media-informasi/checkSlug', [InfografisController::class, 'checkSlug']);
         Route::get('/dashboard/media/galeri/videos/checkSlug', [GaleryController::class, 'checkSlug']);
-        Route::get('/dashboard/media/galeri/foto/checkSlug', [GaleryController::class, 'checkSlug']);
+        Route::get('/dashboard/media/galeri/fotos/checkSlug', [GaleryController::class, 'checkSlug']);
 
         //=====================================================================================================\\
 
@@ -267,7 +267,6 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
             Route::resource('/dashboard/kalatirta/keberatan', KalatirtaPengaduanController::class)->except(['create', 'store']);
             Route::resource('/dashboard/profil/sejarah', SejarahController::class)->except(['show']);
             Route::resource('/dashboard/galeri/foto', FotoController::class)->except(['show']);
-            // Route::get('/dashboard/kalatirta-so/keberatan', [KalatirtaPengaduanController::class, 'index']);
         });
 
         //=====================================================================================================\\
