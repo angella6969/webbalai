@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title fw-semibold mb-3">Infrastruktur Bendung</h5>
+                <h5 class="card-title fw-semibold mb-3">Sejarah BBWS Serayu Opak</h5>
                 <form method="post" action="/dashboard/profil/sejarah/{{ $sejarah->id }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
@@ -22,9 +22,9 @@
                     <x-garis />
 
                     <x-i_img nama="url_foto1" judul="Foto Sejarah 1" nilai="{{ $sejarah->url_foto1 }}" />
-                    <x-i_img nama="url_foto2" judul="Foto Sejarah 2" nilai="{{ $sejarah->url_foto2 }}" />
+                    {{-- <x-i_img nama="url_foto2" judul="Foto Sejarah 2" nilai="{{ $sejarah->url_foto2 }}" />
                     <x-i_img nama="url_foto3" judul="Foto Sejarah 3" nilai="{{ $sejarah->url_foto3 }}" />
-                    <x-i_img nama="url_foto4" judul="Foto Sejarah 4" nilai="{{ $sejarah->url_foto4 }}" />
+                    <x-i_img nama="url_foto4" judul="Foto Sejarah 4" nilai="{{ $sejarah->url_foto4 }}" /> --}}
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>

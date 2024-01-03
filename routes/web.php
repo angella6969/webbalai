@@ -86,7 +86,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::post('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'store'])->name('kalatirta.store');
 
 
-
+ 
 
 
 
@@ -116,14 +116,16 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
 
 
-
-
+    //====================================== Route informasi publik  ======================================\\
 
     Route::get('/informasi-publik/perencanaan/rencana-strategis', [RencanaStrategisController::class, 'index2']);
     Route::get('/informasi-publik/perencanaan/pola-ws-dan-rpsda', [RpsdaController::class, 'index2']);
     Route::get('/informasi-publik/kinerja/lakip', [LakipController::class, 'index2']);
 
+    //=====================================================================================================\\
 
+
+    
 
 
     //====================================== Route Infrastruktur  ======================================\\

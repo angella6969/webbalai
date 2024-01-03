@@ -69,9 +69,9 @@ class SejarahController extends Controller
         $validatedData = $request->validate([
             "body" => ['required'],
             'url_foto1' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto2' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto3' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
-            'url_foto4' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            // 'url_foto2' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            // 'url_foto3' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            // 'url_foto4' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
         ]);
 
         // dd($validatedData);
@@ -86,27 +86,27 @@ class SejarahController extends Controller
                 $petaPdfPath = $request->file('url_foto1')->store('public/images/infrastruktur/sejarah');
                 $validatedData['url_foto1'] = $petaPdfPath;
             }
-            if ($request->hasFile('url_foto2')) {
-                if ($sejarah->url_foto2 != null) {
-                    Storage::delete($sejarah->url_foto2);
-                }
-                $petaPdfPath = $request->file('url_foto2')->store('public/images/infrastruktur/sejarah');
-                $validatedData['url_foto2'] = $petaPdfPath;
-            }
-            if ($request->hasFile('url_foto3')) {
-                if ($sejarah->url_foto3 != null) {
-                    Storage::delete($sejarah->url_foto3);
-                }
-                $petaPdfPath = $request->file('url_foto3')->store('public/images/infrastruktur/sejarah');
-                $validatedData['url_foto3'] = $petaPdfPath;
-            }
-            if ($request->hasFile('url_foto4')) {
-                if ($sejarah->url_foto4 != null) {
-                    Storage::delete($sejarah->url_foto4);
-                }
-                $petaPdfPath = $request->file('url_foto4')->store('public/images/profil/sejarah');
-                $validatedData['url_foto4'] = $petaPdfPath;
-            }
+            // if ($request->hasFile('url_foto2')) {
+            //     if ($sejarah->url_foto2 != null) {
+            //         Storage::delete($sejarah->url_foto2);
+            //     }
+            //     $petaPdfPath = $request->file('url_foto2')->store('public/images/infrastruktur/sejarah');
+            //     $validatedData['url_foto2'] = $petaPdfPath;
+            // }
+            // if ($request->hasFile('url_foto3')) {
+            //     if ($sejarah->url_foto3 != null) {
+            //         Storage::delete($sejarah->url_foto3);
+            //     }
+            //     $petaPdfPath = $request->file('url_foto3')->store('public/images/infrastruktur/sejarah');
+            //     $validatedData['url_foto3'] = $petaPdfPath;
+            // }
+            // if ($request->hasFile('url_foto4')) {
+            //     if ($sejarah->url_foto4 != null) {
+            //         Storage::delete($sejarah->url_foto4);
+            //     }
+            //     $petaPdfPath = $request->file('url_foto4')->store('public/images/profil/sejarah');
+            //     $validatedData['url_foto4'] = $petaPdfPath;
+            // }
 
             Sejarah::where('id', $id)->update($validatedData);
 
