@@ -24,11 +24,12 @@
                 <div>
                     {!! $item->body !!}
                 </div>
-                <div>
-                    <img src="{{ asset('storage/' . substr($item->url_foto1, 6)) }}" alt="" class="img-fluid">
-                    <img src="{{ asset('storage/' . substr($item->url_foto2, 6)) }}" alt="" class="img-fluid">
+                <div class="d-flex justify-content-center">
+                    <img style="max-height: 900px; width: auto" src="{{ asset('storage/' . substr($item->url_foto1, 6)) }}"
+                        alt="" class="img-fluid">
+                    {{-- <img src="{{ asset('storage/' . substr($item->url_foto2, 6)) }}" alt="" class="img-fluid">
                     <img src="{{ asset('storage/' . substr($item->url_foto3, 6)) }}" alt="" class="img-fluid">
-                    <img src="{{ asset('storage/' . substr($item->url_foto4, 6)) }}" alt="" class="img-fluid">
+                    <img src="{{ asset('storage/' . substr($item->url_foto4, 6)) }}" alt="" class="img-fluid"> --}}
                 </div>
             @endforeach
         </div>

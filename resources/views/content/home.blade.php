@@ -33,8 +33,10 @@
 
             @foreach ($images as $image)
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                    <img src="{{ asset('storage/' . substr($image->image, 6)) }}"
+                    <img src="{{ asset('storage/' . substr($image->image, 6)) }}" 
                         style="width: 100vw; height: 100vh; object-fit: cover;" alt="Slide">
+                        {{-- style="background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit; z-index: 20;" alt="Slide"> --}}
+
                 </div>
             @endforeach
 
