@@ -26,6 +26,7 @@
         }
     </style>
 
+
     {{-- ============================ Foto Beranda ============================ --}}
     <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
         <div id="heroCarousel" data-bs-interval="4000" class="carousel carousel-fade" data-bs-ride="carousel">
@@ -33,12 +34,17 @@
 
             @foreach ($images as $image)
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                    <img src="{{ asset('storage/' . substr($image->image, 6)) }}" 
-                        style="width: 100vw; height: 100vh; object-fit: cover;" alt="Slide">
-                        {{-- style="background-position: center center; width: 100%; height: 100%; opacity: 1; visibility: inherit; z-index: 20;" alt="Slide"> --}}
 
+                    <img src="{{ asset('storage/' . substr($image->image, 6)) }}"
+                        style="width: 100vw; height: 100vh; object-fit: cover;" alt="Slide">
+                    <div class="p-3 py-2 text-white "
+                        style="z-index: 999; background-color: rgba(59, 54, 54, 0.7); position: absolute; top:90%; left: 35%; right: 35%;">
+                        <h6 class="d-flex justify-content-center">{{ $image->nama }}</h6>
+                    </div>
+                    {{-- style="background-position: center; object-fit: cover; width: 100%; height:100%; opacity: 1; visibility: inherit; z-index: 20;" alt="Slide"> --}}
                 </div>
             @endforeach
+
 
             <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
@@ -48,6 +54,7 @@
                 <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
             </a>
         </div>
+
         <svg class="hero-waves" style="z-index: 996;" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
             <defs>
@@ -67,10 +74,11 @@
             </g>
         </svg>
 
-        <div class="col-lg-12" style="height: 10px; color:#fff; background: rgb(255, 255, 255); ">
-            <div clas="col-xl-4" style="margin:0px 0px 20px 100px; "> </div>
+        {{-- <div class="col-lg-12" style="height: 10px; color:#fff; background: rgb(255, 255, 255); ">
+            <div clas="col-xl-4" style="margin:0px 0px 20px 100px; "></div>
+        </div> --}}
 
-        </div>
+
     </section>
     {{-- ============================ End Foto Beranda ============================ --}}
 

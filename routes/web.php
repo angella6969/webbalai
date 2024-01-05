@@ -155,7 +155,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
 
 
-
+ 
 
 
     Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2'])->name('info.publik');
