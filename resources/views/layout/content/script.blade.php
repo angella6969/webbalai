@@ -116,4 +116,76 @@
 </script>
 {{-- End Them Setting --}}
 
-{{-- <script src="https://cdn.userway.org/widget.js" data-account="wAv6JLf3pD"></script> --}}
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script type="text/javascript">
+    // ============================ JS Logo Terkait ============================ \\
+    document.addEventListener('DOMContentLoaded', function() {
+        $('.multiple-items1').slick({
+            slidesToShow: 7,
+            slidesToScroll: 1,
+            autoplay: true,
+            arrows: true,
+            infinite: true,
+            autoplaySpeed: 1000,
+            responsive: [{
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 6,
+                    }
+                },
+                {
+                    breakpoint: 1300,
+                    settings: {
+                        slidesToShow: 5,
+                    }
+                },
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+        });
+    });
+
+
+    // ============================ JS Pengumuman ============================ \\
+    $(document).ready(function() {
+        $('.slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+    });
+</script>

@@ -2252,3 +2252,29 @@ section {
         width: 80vw; /* Set lebar elemen sesuai kebutuhan */
     }
 }
+
+/* my custome css */
+
+.card-img-top1 {
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.multiple-items1 .swiper-slide1 img {
+    height: 100px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.slider-item {
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 762px) {
+    .ahidden-slider {
+        display: none;
+    }
+}
