@@ -116,13 +116,6 @@
 
     {{-- ============================ Logo Terkait ============================ --}}
     <section id="" class="testimonials">
-        {{-- <div class=""> --}}
-
-        {{-- <div class="section-title" data-aos="zoom-out">
-            <h2>Situs Terkait</h2>
-
-        </div> --}}
-
         <div class="multiple-items1 card-img-top1" id="multiple-items1" data-aos="fade-up" data-aos-delay="100">
             @foreach ($logoTerkaits as $logoTerkait)
                 <div class="swiper-slide1">
