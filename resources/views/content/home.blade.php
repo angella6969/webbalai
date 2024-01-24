@@ -36,12 +36,12 @@
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
 
                     <img src="{{ asset('storage/' . substr($image->image, 6)) }}"
-                        style="width: 100vw; height: 100vh; object-fit: cover;" alt="Slide">
+                        style="width: 100%; height: 100%; object-fit: contain;" alt="Slide">
+                        {{-- style="background-position: center; object-fit: contain; width: 100%; height:100%; opacity: 1; visibility: inherit; z-index: 20;" alt="Slide"> --}}
                     <div class="p-3 py-2 text-white "
                         style="z-index: 999; background-color: rgba(59, 54, 54, 0.9); position: absolute; top:90%; left: 35%; right: 35%; border-radius: 30px;">
                         <h6 class="d-flex justify-content-center">{{ $image->nama }}</h6>
                     </div>
-                    {{-- style="background-position: center; object-fit: cover; width: 100%; height:100%; opacity: 1; visibility: inherit; z-index: 20;" alt="Slide"> --}}
                 </div>
             @endforeach
 
