@@ -174,7 +174,7 @@
                                             Informasi Berkala Tidak Tersedia</option>
                                         <option value="Permintaan Informasi Tidak Ditanggapi"
                                             {{ old('keberatan') == 'Permintaan Informasi Tidak Ditanggapi' ? 'selected' : '' }}>
-                                            Permintaan Informasi Tidak Ditanggapi</option>
+                                            Permintaan Informasi Tidak Ditanggapi</option> 
                                         <option value="Permintaan Informasi Ditanggapi Tidak Semestinya"
                                             {{ old('keberatan') == 'Permintaan Informasi Ditanggapi Tidak Semestinya' ? 'selected' : '' }}>
                                             Permintaan Informasi Ditanggapi Tidak Semestinya</option>

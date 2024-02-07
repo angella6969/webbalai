@@ -9,9 +9,9 @@ use App\Http\Requests\UpdateKalatirtaRequest;
 use App\Models\Kalatirta_pengaduan;
 use App\Models\Survey;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB; 
 use Illuminate\Support\Facades\Log;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
 
 
 class KalatirtaController extends Controller

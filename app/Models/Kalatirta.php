@@ -14,6 +14,7 @@ class Kalatirta extends Model
         $query->when($Filters['search'] ?? false, function ($query, $search) {
             return  $query->where('name', 'ilike', '%' . strtolower($search) . '%');
         });
+        
         $query->when($filters['nomor_registrasi'] ?? false, function ($query, $nomor_registrasi) {
             return $query->where('nomor_registrasi', '=', $nomor_registrasi);
         });
