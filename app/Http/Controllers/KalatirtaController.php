@@ -43,6 +43,8 @@ class KalatirtaController extends Controller
     {
         return view('content.kalatirta.formkeberatan');
     }
+
+
     public function formDataKeberatanlist()
     {
         return view('content.kalatirta.formDataKeberatanlist', [
@@ -56,9 +58,12 @@ class KalatirtaController extends Controller
             'nomor_registrasi' => ['nullable', 'max:250'],
             'nohp' => ['required', 'regex:/^\d{10,15}$/'],
         ]);
+
         $data = Kalatirta::where('nomor_registrasi', $validatedData['nomor_registrasi'])
             ->where('nohp', $validatedData['nohp'])
+            ->where('status', '=', 'Ditolak')
             ->get();
+
         if ($data->isEmpty()) {
             return redirect()->back()->with('fail', 'Data tidak ditemukan');
         }

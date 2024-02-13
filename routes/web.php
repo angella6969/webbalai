@@ -22,6 +22,7 @@ use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\PermohonanController;
 use App\Http\Controllers\RencanaStrategisController;
 use App\Http\Controllers\RpsdaController;
+use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\SitusterkaitController;
 use App\Http\Controllers\StrukturOrganisasiController;
 use App\Http\Controllers\UserController;
@@ -111,6 +112,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
     Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('struktur-organisasi');
     Route::get('/profil/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi');
+    Route::get('/profil/sejarah', [SejarahController::class, 'index'])->name('sejarah');
 
     //=====================================================================================================\\
 

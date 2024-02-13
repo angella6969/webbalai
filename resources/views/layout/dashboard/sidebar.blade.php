@@ -71,7 +71,7 @@
                         </a>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/kalatirta-so/keberatan*') ? 'active' : '' }}"
-                            href="/dashboard/kalatirta-so/keberatan" aria-expanded="false">
+                            href="/dashboard/kalatirta/keberatan" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>

@@ -22,10 +22,10 @@
                 </span></a></li>
         <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><a href="/under-Maintenance">Sejarah</a></li>
-                <li><a href="/profil/visi-misi">Visi dan Misi</a></li>
+                <li><a href="{{ route('sejarah') }}">Sejarah</a></li>
+                <li><a href="{{ route('visi-misi') }}">Visi dan Misi</a></li>
                 <li><a href="/profil/fungsi-dan-tugas">Fungsi dan Tugas</a></li>
-                <li><a href="/profil/struktur-organisasi">Struktur Organisasi</a></li>
+                <li><a href="{{ route('struktur-organisasi') }}">Struktur Organisasi</a></li>
                 <li><a href="/profil/kontak">Kontak</a></li>
             </ul>
         </li>
@@ -50,11 +50,9 @@
                         <li><a href="/informasi-publik/kinerja/lakip">LAKIP</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href="#"><span>Infrastruktur</span> <i
-                            class="bi bi-chevron-right"></i></a>
+                <li class="dropdown"><a href="#"><span>Infrastruktur</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li class="dropdown"><a href="#"><span>Informasi</span> <i
-                                    class="bi bi-chevron-right"></i></a>
+                        <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <li><a href="/informasi-publik/infrastruktur/bendungans">Bendungan</a></li>
                                 <li><a href="/informasi-publik/infrastruktur/bendungs">Bendung</a></li>
@@ -136,8 +134,7 @@
                     </button>
                 </li>
                 <li>
-                    <button class="dropdown-item d-flex align-items-center" type="button"
-                        data-bs-theme-value="auto">
+                    <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="auto">
                         <i class="bi bi-circle-half me-3 opacity-50" data-theme-icon="bi-circle-half"></i>Auto
                     </button>
                 </li>
@@ -146,9 +143,9 @@
 
         <div class="input-group">
             <form action="/all-data">
-                <input type="text" class="form-control" name="search" id="search"
-                    value="{{ request('search') }}" style="width: 200px; height:30px ; font-size: .8rem"
-                    placeholder="Cari..." aria-label="cari..." data-uw-rm-form="fx">
+                <input type="text" class="form-control" name="search" id="search" value="{{ request('search') }}"
+                    style="width: 200px; height:30px ; font-size: .8rem" placeholder="Cari..." aria-label="cari..."
+                    data-uw-rm-form="fx">
                 </span>
             </form>
         </div>
