@@ -3,8 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sejarah;
+<<<<<<< HEAD
 use App\Http\Requests\StoreSejarahRequest;
 use App\Http\Requests\UpdateSejarahRequest;
+=======
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreSejarahRequest;
+use App\Http\Requests\UpdateSejarahRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+>>>>>>> 835f221c4bd9aa36a40ae3cf2e8249a9934a2b29
 
 class SejarahController extends Controller
 {
@@ -13,7 +21,14 @@ class SejarahController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         return view('content.sejarah');
+=======
+        $sejarah = Sejarah::latest()->get();
+        return view('dashboard.form.profil.sejarah.index', [
+            'sejarah' => $sejarah
+        ]);
+>>>>>>> 835f221c4bd9aa36a40ae3cf2e8249a9934a2b29
     }
 
     /**
@@ -37,23 +52,95 @@ class SejarahController extends Controller
      */
     public function show(Sejarah $sejarah)
     {
+<<<<<<< HEAD
         //
+=======
+        $sejarah = Sejarah::latest()->get();
+        return view('content.profil.sejarah.sejarah', [
+            'sejarah' => $sejarah
+        ]);
+>>>>>>> 835f221c4bd9aa36a40ae3cf2e8249a9934a2b29
     }
 
     /**
      * Show the form for editing the specified resource.
      */
+<<<<<<< HEAD
     public function edit(Sejarah $sejarah)
     {
         //
+=======
+    public function edit(String $id)
+    {
+        $sejarah = Sejarah::findorFail($id);
+        return view('dashboard.form.profil.sejarah.edit', [
+            'sejarah' => $sejarah
+        ]);
+>>>>>>> 835f221c4bd9aa36a40ae3cf2e8249a9934a2b29
     }
 
     /**
      * Update the specified resource in storage.
      */
+<<<<<<< HEAD
     public function update(UpdateSejarahRequest $request, Sejarah $sejarah)
     {
         //
+=======
+    public function update(UpdateSejarahRequest $request, String $id)
+    {
+        $sejarah = Sejarah::findOrFail($id);
+        $validatedData = $request->validate([
+            "body" => ['required'],
+            'url_foto1' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            // 'url_foto2' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            // 'url_foto3' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+            // 'url_foto4' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
+        ]);
+
+        // dd($validatedData);
+
+        DB::beginTransaction();
+        try {
+
+            if ($request->hasFile('url_foto1')) {
+                if ($sejarah->url_foto1 != null) {
+                    Storage::delete($sejarah->url_foto1);
+                }
+                $petaPdfPath = $request->file('url_foto1')->store('public/images/infrastruktur/sejarah');
+                $validatedData['url_foto1'] = $petaPdfPath;
+            }
+            // if ($request->hasFile('url_foto2')) {
+            //     if ($sejarah->url_foto2 != null) {
+            //         Storage::delete($sejarah->url_foto2);
+            //     }
+            //     $petaPdfPath = $request->file('url_foto2')->store('public/images/infrastruktur/sejarah');
+            //     $validatedData['url_foto2'] = $petaPdfPath;
+            // }
+            // if ($request->hasFile('url_foto3')) {
+            //     if ($sejarah->url_foto3 != null) {
+            //         Storage::delete($sejarah->url_foto3);
+            //     }
+            //     $petaPdfPath = $request->file('url_foto3')->store('public/images/infrastruktur/sejarah');
+            //     $validatedData['url_foto3'] = $petaPdfPath;
+            // }
+            // if ($request->hasFile('url_foto4')) {
+            //     if ($sejarah->url_foto4 != null) {
+            //         Storage::delete($sejarah->url_foto4);
+            //     }
+            //     $petaPdfPath = $request->file('url_foto4')->store('public/images/profil/sejarah');
+            //     $validatedData['url_foto4'] = $petaPdfPath;
+            // }
+
+            Sejarah::where('id', $id)->update($validatedData);
+
+            DB::commit();
+            return redirect('dashboard/profil/sejarah')->with('success', 'Data berhasil disimpan.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
+>>>>>>> 835f221c4bd9aa36a40ae3cf2e8249a9934a2b29
     }
 
     /**

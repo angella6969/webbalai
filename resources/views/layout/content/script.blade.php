@@ -1,8 +1,6 @@
 <!-- Vendor JS Files -->
 <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
-{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-</script> --}}
+
 <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
@@ -44,22 +42,6 @@
                 theme);
         }
 
-        // const setTheme = theme => {
-        //     const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        //     if (theme === 'auto' && isDarkMode) {
-        //         console.log('Auto mode, dark theme detected');
-        //         document.documentElement.setAttribute('data-bs-theme', 'dark');
-        //         document.getElementById('warna-1').style.backgroundColor = '#FFC928';
-        //         document.getElementById('warna-2').style.color = 'white';
-        //         document.body.style.backgroundColor = 'black';
-        //     } else {
-        //         document.documentElement.setAttribute('data-bs-theme', theme);
-        //         document.getElementById('warna-1').style.backgroundColor = '';
-        //         document.getElementById('warna-2').style.color = '';
-        //         document.body.style.backgroundColor = '';
-        //     }
-        // }
 
         const showActiveTheme = (theme, focus = false) => {
             const activeThemeIcon = document.querySelector('.theme-icon-active');
@@ -116,4 +98,76 @@
 </script>
 {{-- End Them Setting --}}
 
-{{-- <script src="https://cdn.userway.org/widget.js" data-account="wAv6JLf3pD"></script> --}}
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script type="text/javascript">
+    // ============================ JS Logo Terkait ============================ \\
+    document.addEventListener('DOMContentLoaded', function() {
+        $('.multiple-items1').slick({
+            slidesToShow: 7,
+            slidesToScroll: 1,
+            autoplay: true,
+            arrows: true,
+            infinite: true,
+            autoplaySpeed: 1000,
+            responsive: [{
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 6,
+                    }
+                },
+                {
+                    breakpoint: 1300,
+                    settings: {
+                        slidesToShow: 5,
+                    }
+                },
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 4,
+                    }
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                    }
+                }
+            ]
+        });
+    });
+
+
+    // ============================ JS Pengumuman ============================ \\
+    $(document).ready(function() {
+        $('.slider').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+    });
+</script>

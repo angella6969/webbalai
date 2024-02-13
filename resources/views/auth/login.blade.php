@@ -47,14 +47,14 @@
 
     <div>
         <div class="login_wrapper">
-            <div class="container">
+            <div class="container"> 
                 <div class="row">
                 </div>
             </div>
             <main class="form-signin w-100 m-auto">
                 <div class="animate form login_form">
                     <section class="login_content">
-                        <form action="/login" method="post">
+                        <form action="{{ route('login') }}" method="post">
                             {{ csrf_field() }}
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <h1>Login</h1>

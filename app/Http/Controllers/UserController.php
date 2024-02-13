@@ -13,6 +13,7 @@ class UserController extends Controller
     }
     public function authenticate(Request $request)
     {
+
         $request->validate([
             'email' => ['required', 'email:dns'],
             'password' => ['required', 'min:6']
@@ -22,12 +23,11 @@ class UserController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required', 'min:6']
         ]);
-
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect('/dashboard');
+            return redirect()->route('dashboard');
         } else {
-            return redirect('/login')->with('loginError', 'Email atau Password invalid');
+            return redirect()->route('login')->with('loginError', 'Email atau Password invalid');
         }
     }
     public function logout(Request $request)

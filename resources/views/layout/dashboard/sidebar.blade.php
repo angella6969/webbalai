@@ -34,26 +34,37 @@
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
             <ul id="sidebarnav">
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="/dashboard" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('dashboard') }}" aria-expanded="false">
                         <span>
                             <i class="ti ti-layout-dashboard"></i>
                         </span>
                         <span class="hide-menu">Dashboard</span>
                     </a>
                 </li>
+
+                {{-- ================================ Admin PPID ================================ --}}
                 @can('Admin')
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                        <span class="hide-menu">Beranda</span>
+                        <span class="hide-menu">Profil</span>
                     </li>
 
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/foto-beranda*') ? 'active' : '' }}"
-                            href="/dashboard/foto-beranda" aria-expanded="false">
+                            href="{{ route('foto-beranda.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
                             <span class="hide-menu">Foto Beranda</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link {{ Request::is('dashboard/profil/sejarah*') ? 'active' : '' }}"
+                            href="{{ route('sejarah.index') }}" aria-expanded="false">
+                            <span>
+                                {{-- <i class="ti ti-article"></i> --}}
+                            </span>
+                            <span class="hide-menu">Sejarah</span>
                         </a>
                     </li>
                     <li class="nav-small-cap">
@@ -63,30 +74,21 @@
 
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/kalatirta-so*') ? 'active' : '' }}"
-                            href="/dashboard/kalatirta-so" aria-expanded="false">
+                            href="{{ route('kalatirta-so.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
                             <span class="hide-menu">Permintaan Data</span>
                         </a>
                     <li class="sidebar-item">
-                        <a class="sidebar-link {{ Request::is('dashboard/kalatirta-so/keberatan*') ? 'active' : '' }}"
-                            href="/dashboard/kalatirta/keberatan" aria-expanded="false">
+                        <a class="sidebar-link {{ Request::is('dashboard/kalatirta/keberatan*') ? 'active' : '' }}"
+                            href="{{ route('keberatan.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
                             <span class="hide-menu">Keberatan Data</span>
                         </a>
                     </li>
-                    {{-- <li class="sidebar-item">
-                    <a class="sidebar-link {{ Request::is('dashboard/kalatirta-so/pengajuan-keberatan*') ? 'active' : '' }}"
-                        href="/dashboard/kalatirta-so/pengajuan-keberatan" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-article"></i>
-                        </span>
-                        <span class="hide-menu">Pengajuan Keberatan</span>
-                    </a>
-                </li> --}}
 
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -94,7 +96,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/beritas*') ? 'active' : '' }}"
-                            href="/dashboard/beritas/" aria-expanded="false">
+                            href="{{ route('beritas.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -152,6 +154,11 @@
                     </li>
                 @endcan
 
+                {{-- ================================ End Admin PPID ================================ --}}
+
+
+                {{-- ================================ All Admin ================================ --}}
+
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Media </span>
@@ -166,20 +173,28 @@
                     </a>
                 </li>
 
+                {{-- ================================ End All Admin ================================ --}}
+
+
+
+                <li class="nav-small-cap">
+                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                    <span class="hide-menu">Galeri</span>
+                </li>
+
                 @can('AdminSisda')
-                    <li class="nav-small-cap">
-                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                        <span class="hide-menu">Galeri</span>
-                    </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/galeri/video*') ? 'active' : '' }}"
                             href="/dashboard/galeri/video" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
-                            <span class="hide-menu">video</span>
+                            <span class="hide-menu">Video</span>
                         </a>
                     </li>
+                @endcan
+
+                @can('Admin')
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/galeri/foto*') ? 'active' : '' }}"
                             href="/dashboard/galeri/foto" aria-expanded="false">
@@ -189,6 +204,12 @@
                             <span class="hide-menu">Foto</span>
                         </a>
                     </li>
+                @endcan
+
+
+                {{-- ================================ Admin SISDA ================================ --}}
+
+                @can('AdminSisda')
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                         <span class="hide-menu">Situs</span>
@@ -234,6 +255,8 @@
                         </a>
                     </li>
                 @endcan
+                {{-- ================================ End Admin SISDA ================================ --}}
+
             </ul>
         </nav>
     </div>

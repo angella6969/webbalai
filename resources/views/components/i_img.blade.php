@@ -2,7 +2,7 @@
 <input type="hidden" name="oldImage" id="oldImage" value="{{ $nilai }}">
 
 @if ($nilai)
-    <img src="{{ asset('storage/' . substr($nilai, 6)) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block"
+    <img src="{{ asset('storage/' . substr($nilai, 7)) }}" class="img-preview img-fluid mb-3 col-sm-5 d-block"
         id="img-preview-{{ $nama }}">
 @else
     <img class="img-preview img-fluid mb-3 col-sm-5" id="img-preview-{{ $nama }}">

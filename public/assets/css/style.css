@@ -425,8 +425,9 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-    width: 100%;
-    height: 85vh;
+    max-width: 100vw;
+    max-height: 85vh;
+    /* height: 50%; */
     overflow: hidden;
     position: relative;
     background: linear-gradient(0deg, rgb(42, 44, 57) 0%, rgb(51, 54, 74) 100%);
@@ -2249,5 +2250,31 @@ section {
         background-repeat: no-repeat;
         height: auto; /* Set tinggi elemen sesuai kebutuhan */
         width: 80vw; /* Set lebar elemen sesuai kebutuhan */
+    }
+}
+
+/* my custome css */
+
+.card-img-top1 {
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.multiple-items1 .swiper-slide1 img {
+    height: 100px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.slider-item {
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 762px) {
+    .ahidden-slider {
+        display: none;
     }
 }

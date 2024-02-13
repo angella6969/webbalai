@@ -31,7 +31,7 @@
                             <div class="entry-img d-flex justify-content-center">
                                 <a href="/informasi-publik/infrastruktur/embungs/{{ $embung->slug }}"> <img
                                         src="{{ asset('storage/' . substr($embung->url_foto1, 6)) }}" alt=""
-                                        class="img-fluid" style="border-radius: 5px"></a>
+                                        class="img-fluid" style="border-radius: 5px; height: 310px; width: auto;"></a>
                             </div>
 
 

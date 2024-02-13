@@ -7,6 +7,7 @@ use App\Http\Controllers\DaftarInformasiPublikController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\EmbungController;
+use App\Http\Controllers\FotoController;
 use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
@@ -47,12 +48,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('content/home');
-// });
-// Route::get('/kalatirta-so', function () {
-//     return view('kalatirta.index');
-// });
+
 Route::get('/v2', function () {
     return view('content.kalatirta.survey');
 });
@@ -61,10 +57,10 @@ Route::get('/under-Maintenance', function () {
 });
 Route::get('/profil/kontak', function () {
     return view('content.kontak');
-});
+})->name('kontak');
 Route::get('/profil/fungsi-dan-tugas', function () {
     return view('content.tugas_dan_fungsi');
-});
+})->name('fungsi-dan-tugas');
 
 Route::get('/profil/main-map', function () {
     return view('content.mainmap');
@@ -112,7 +108,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
     Route::get('/profil/struktur-organisasi', [StrukturOrganisasiController::class, 'index'])->name('struktur-organisasi');
     Route::get('/profil/visi-misi', [VisiMisiController::class, 'index'])->name('visi-misi');
-    Route::get('/profil/sejarah', [SejarahController::class, 'index'])->name('sejarah');
+    Route::get('/profil/sejarah', [SejarahController::class, 'show'])->name('sejarah');
 
     //=====================================================================================================\\
 
@@ -120,12 +116,14 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
 
 
+    //====================================== Route informasi publik  ======================================\\
 
+    Route::get('/informasi-publik/perencanaan/rencana-strategis', [RencanaStrategisController::class, 'index2'])->name('rencana-strategis');
+    Route::get('/informasi-publik/perencanaan/pola-ws-dan-rpsda', [RpsdaController::class, 'index2'])->name('pola-ws-dan-rpsda');
+    Route::get('/informasi-publik/kinerja/lakip', [LakipController::class, 'index2'])->name('lakip');
 
+    //=====================================================================================================\\
 
-    Route::get('/informasi-publik/perencanaan/rencana-strategis', [RencanaStrategisController::class, 'index2']);
-    Route::get('/informasi-publik/perencanaan/pola-ws-dan-rpsda', [RpsdaController::class, 'index2']);
-    Route::get('/informasi-publik/kinerja/lakip', [LakipController::class, 'index2']);
 
 
 
@@ -134,15 +132,15 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
     //================================== Route Infrastruktur bendungs  ==================================\\
     Route::get('/informasi-publik/infrastruktur/bendungs/{slug}', [BendungController::class, 'show']);
-    Route::get('/informasi-publik/infrastruktur/bendungs', [BendungController::class, 'index2']);
+    Route::get('/informasi-publik/infrastruktur/bendungs', [BendungController::class, 'index2'])->name('bendungs');
 
     //================================== Route Infrastruktur bendungans  ==================================\\
     Route::get('/informasi-publik/infrastruktur/bendungans/{slug}', [BendunganController::class, 'show'])->name('bendungan');
-    Route::get('/informasi-publik/infrastruktur/bendungans', [BendunganController::class, 'index2'])->name('bendung');
+    Route::get('/informasi-publik/infrastruktur/bendungans', [BendunganController::class, 'index2'])->name('bendungans');
 
     //================================== Route Infrastruktur embungs  ==================================\\
     Route::get('/informasi-publik/infrastruktur/embungs/{slug}', [EmbungController::class, 'show']);
-    Route::get('/informasi-publik/infrastruktur/embungs', [EmbungController::class, 'index2']);
+    Route::get('/informasi-publik/infrastruktur/embungs', [EmbungController::class, 'index2'])->name('embungs');
 
     //================================== Route Infrastruktur irigasis  ==================================\\
     Route::get('/informasi-publik/infrastruktur/irigasis/{slug}', [IrigasiController::class, 'show']);
@@ -160,19 +158,26 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
 
 
-    Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2'])->name('info.publik');
+    Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2'])->name('daftar-informasi-publik');
 
 
 
-    Route::get('/media/media-informasi/', [InfografisController::class, 'index2']);
+    Route::get('/media/media-informasi/', [InfografisController::class, 'index2'])->name('media-informasi');
     Route::get('/media/media-informasi/{jenis}/{slug}', [InfografisController::class, 'show']);
     Route::get('/media/media-informasi/{jenis}', [InfografisController::class, 'showJenis']);
 
 
 
 
-    Route::get('/media/galeri/videos', [GaleryController::class, 'index2']);
+    Route::get('/media/galeri/videos', [GaleryController::class, 'index2'])->name('videos');
     Route::get('/media/galeri/video/{slug}', [GaleryController::class, 'index3']);
+
+    Route::get('/media/galeri/fotos', [FotoController::class, 'shows'])->name('foto.shows');
+    Route::get('/media/galeri/foto/{slug}', [FotoController::class, 'show'])->name('foto.show');
+
+
+
+
 
 
 
@@ -181,13 +186,14 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::post('/logout', [UserController::class, 'logout']);
 
 
-    Route::resource('/', HomeController::class);
+    // Route::resource('/', HomeController::class);
     Route::get('/all-data', [HomeController::class, 'all_data'])->name('all_data');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
     //=========================================== Route beritas  ===========================================\\
 
-    Route::get('/beritas', [BeritaController::class, 'index2']);
+    Route::get('/beritas', [BeritaController::class, 'index2'])->name('beritas');
     Route::get('/beritas/{slug}', [BeritaController::class, 'show']);
 
     //=====================================================================================================\\
@@ -208,7 +214,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
     Route::middleware(['auth'])->group(function () {
 
-        Route::get('/dashboard', [DashboardController::class, 'index']);
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
         //================================== Route checkSlug all  ==================================\\
 
@@ -219,6 +225,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
         Route::get('/dashboard/infrastruktur/embungs/checkSlug', [EmbungController::class, 'checkSlug']);
         Route::get('/dashboard/media/media-informasi/checkSlug', [InfografisController::class, 'checkSlug']);
         Route::get('/dashboard/media/galeri/videos/checkSlug', [GaleryController::class, 'checkSlug']);
+        Route::get('/dashboard/media/galeri/fotos/checkSlug', [GaleryController::class, 'checkSlug']);
 
         //=====================================================================================================\\
 
@@ -252,16 +259,94 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
         //================================== Route Admin PPID ==================================\\
 
         Route::middleware(['Admin'])->group(function () {
-            Route::resource('/dashboard/foto-beranda', ImageController::class)->except(['show']);
-            Route::resource('/dashboard/daftar-informasi-publik', DaftarInformasiPublikController::class)->except(['show']);
-            Route::resource('/dashboard/beritas', BeritaController::class)->except(['show']);
-            Route::resource('/dashboard/pengumuman', PengumumanController::class);
-            Route::resource('/dashboard/perencanaan/pola-ws-dan-rpsda', RpsdaController::class)->except(['show']);
-            Route::resource('/dashboard/perencanaan/rencana-strategis', RencanaStrategisController::class)->except(['show']);
-            Route::resource('/dashboard/kinerja/lakip', LakipController::class)->except(['show']);
-            Route::resource('/dashboard/kalatirta-so', KalatirtaController::class)->except(['create', 'store']);
-            Route::resource('/dashboard/kalatirta/keberatan', KalatirtaPengaduanController::class)->except(['create', 'store']);
-            // Route::get('/dashboard/kalatirta-so/keberatan', [KalatirtaPengaduanController::class, 'index']);
+            Route::resource('/dashboard/foto-beranda', ImageController::class)->except(['show'])->names([
+                'index' => 'foto-beranda.index',
+                'create' => 'foto-beranda.create',
+                'store' => 'foto-beranda.store',
+                'edit' => 'foto-beranda.edit',
+                'update' => 'foto-beranda.update',
+                'destroy' => 'foto-beranda.destroy',
+            ]);
+            Route::resource('/dashboard/daftar-informasi-publik', DaftarInformasiPublikController::class)->except(['show'])->names([
+                'index' => 'daftar-informasi-publik.index',
+                'create' => 'daftar-informasi-publik.create',
+                'store' => 'daftar-informasi-publik.store',
+                'edit' => 'daftar-informasi-publik.edit',
+                'update' => 'daftar-informasi-publik.update',
+                'destroy' => 'daftar-informasi-publik.destroy',
+            ]);
+            Route::resource('/dashboard/beritas', BeritaController::class)->except(['show'])->names([
+                'index' => 'beritas.index',
+                'create' => 'beritas.create',
+                'store' => 'beritas.store',
+                'edit' => 'beritas.edit',
+                'update' => 'beritas.update',
+                'destroy' => 'beritas.destroy',
+            ]);
+            Route::resource('/dashboard/pengumuman', PengumumanController::class)->names([
+                'index' => 'pengumuman.index',
+                'create' => 'pengumuman.create',
+                'store' => 'pengumuman.store',
+                'edit' => 'pengumuman.edit',
+                'update' => 'pengumuman.update',
+                'destroy' => 'pengumuman.destroy',
+            ]);
+            Route::resource('/dashboard/perencanaan/pola-ws-dan-rpsda', RpsdaController::class)->except(['show'])->names([
+                'index' => 'pola-ws-dan-rpsda.index',
+                'create' => 'pola-ws-dan-rpsda.create',
+                'store' => 'pola-ws-dan-rpsda.store',
+                'edit' => 'pola-ws-dan-rpsda.edit',
+                'update' => 'pola-ws-dan-rpsda.update',
+                'destroy' => 'pola-ws-dan-rpsda.destroy',
+            ]);
+            Route::resource('/dashboard/perencanaan/rencana-strategis', RencanaStrategisController::class)->except(['show'])->names([
+                'index' => 'rencana-strategis.index',
+                'create' => 'rencana-strategis.create',
+                'store' => 'rencana-strategis.store',
+                'edit' => 'rencana-strategis.edit',
+                'update' => 'rencana-strategis.update',
+                'destroy' => 'rencana-strategis.destroy',
+            ]);
+            Route::resource('/dashboard/kinerja/lakip', LakipController::class)->except(['show'])->names([
+                'index' => 'lakip.index',
+                'create' => 'lakip.create',
+                'store' => 'lakip.store',
+                'edit' => 'lakip.edit',
+                'update' => 'lakip.update',
+                'destroy' => 'lakip.destroy',
+            ]);
+            Route::resource('/dashboard/kalatirta-so', KalatirtaController::class)->except(['create', 'store'])->names([
+                'index' => 'kalatirta-so.index',
+                'create' => 'kalatirta-so.create',
+                'store' => 'kalatirta-so.store',
+                'edit' => 'kalatirta-so.edit',
+                'update' => 'kalatirta-so.update',
+                'destroy' => 'kalatirta-so.destroy',
+            ]);
+            Route::resource('/dashboard/kalatirta/keberatan', KalatirtaPengaduanController::class)->except(['create', 'store'])->names([
+                'index' => 'keberatan.index',
+                'create' => 'keberatan.create',
+                'store' => 'keberatan.store',
+                'edit' => 'keberatan.edit',
+                'update' => 'keberatan.update',
+                'destroy' => 'keberatan.destroy',
+            ]);
+            Route::resource('/dashboard/profil/sejarah', SejarahController::class)->except(['show'])->names([
+                'index' => 'sejarah.index',
+                'create' => 'sejarah.create',
+                'store' => 'sejarah.store',
+                'edit' => 'sejarah.edit',
+                'update' => 'sejarah.update',
+                'destroy' => 'sejarah.destroy',
+            ]);
+            Route::resource('/dashboard/galeri/foto', FotoController::class)->except(['show'])->names([
+                'index' => 'foto.index',
+                'create' => 'foto.create',
+                'store' => 'foto.store',
+                'edit' => 'foto.edit',
+                'update' => 'foto.update',
+                'destroy' => 'foto.destroy',
+            ]);
         });
 
         //=====================================================================================================\\
