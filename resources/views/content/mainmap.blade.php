@@ -38,9 +38,7 @@
 
     <div class="container">
         <div class="row" style="padding: 20px">
-            {{-- <div class="dot"></div>
-            <div class="square"></div>
-            <div class="dot-hollow"></div> --}}
+
             <div class="col-lg-8">
 
                 <ul>

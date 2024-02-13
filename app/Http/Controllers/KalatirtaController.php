@@ -122,7 +122,7 @@ class KalatirtaController extends Controller
         $data = session('data');
         return view('content.kalatirta.survey', [
             'data' => $data
-        ]);
+        ]); 
     }
 
     /**

@@ -125,25 +125,7 @@
             </div>
         </div>
     </section>
-    {{-- <script>
-    function toggleImage(index) {
-            var images = document.querySelectorAll('.image-element');
-            images.forEach(function(image) {
-                var dataIndex = image.getAttribute('data-index');
-                if (dataIndex == index) {
-                    image.classList.remove('hidden');
-                    localStorage.setItem('activeImageIndex', index);
-                } else {
-                    image.classList.add('hidden');
-                }
-            });
-        }
 
-        var storedIndex = localStorage.getItem('activeImageIndex');
-        if (storedIndex !== null) {
-            toggleImage(parseInt(storedIndex));
-        }
-</script> --}}
     <script>
         function toggleImage(index) {
             var images = document.querySelectorAll('.image-element');

@@ -57,10 +57,10 @@ Route::get('/under-Maintenance', function () {
 });
 Route::get('/profil/kontak', function () {
     return view('content.kontak');
-});
+})->name('kontak');
 Route::get('/profil/fungsi-dan-tugas', function () {
     return view('content.tugas_dan_fungsi');
-});
+})->name('fungsi-dan-tugas');
 
 Route::get('/profil/main-map', function () {
     return view('content.mainmap');
@@ -87,7 +87,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
 
  
-
+ 
 
 
     Route::get('/kalatirta-so/form-keberatan', [KalatirtaController::class, 'formKeberatan'])->name('kalatirta.formKeberatan');
@@ -118,9 +118,9 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
     //====================================== Route informasi publik  ======================================\\
 
-    Route::get('/informasi-publik/perencanaan/rencana-strategis', [RencanaStrategisController::class, 'index2']);
-    Route::get('/informasi-publik/perencanaan/pola-ws-dan-rpsda', [RpsdaController::class, 'index2']);
-    Route::get('/informasi-publik/kinerja/lakip', [LakipController::class, 'index2']);
+    Route::get('/informasi-publik/perencanaan/rencana-strategis', [RencanaStrategisController::class, 'index2'])->name('rencana-strategis');
+    Route::get('/informasi-publik/perencanaan/pola-ws-dan-rpsda', [RpsdaController::class, 'index2'])->name('pola-ws-dan-rpsda');
+    Route::get('/informasi-publik/kinerja/lakip', [LakipController::class, 'index2'])->name('lakip');
 
     //=====================================================================================================\\
 
@@ -132,15 +132,15 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
     //================================== Route Infrastruktur bendungs  ==================================\\
     Route::get('/informasi-publik/infrastruktur/bendungs/{slug}', [BendungController::class, 'show']);
-    Route::get('/informasi-publik/infrastruktur/bendungs', [BendungController::class, 'index2']);
+    Route::get('/informasi-publik/infrastruktur/bendungs', [BendungController::class, 'index2'])->name('bendungs');
 
     //================================== Route Infrastruktur bendungans  ==================================\\
     Route::get('/informasi-publik/infrastruktur/bendungans/{slug}', [BendunganController::class, 'show'])->name('bendungan');
-    Route::get('/informasi-publik/infrastruktur/bendungans', [BendunganController::class, 'index2'])->name('bendung');
+    Route::get('/informasi-publik/infrastruktur/bendungans', [BendunganController::class, 'index2'])->name('bendungans');
 
     //================================== Route Infrastruktur embungs  ==================================\\
     Route::get('/informasi-publik/infrastruktur/embungs/{slug}', [EmbungController::class, 'show']);
-    Route::get('/informasi-publik/infrastruktur/embungs', [EmbungController::class, 'index2']);
+    Route::get('/informasi-publik/infrastruktur/embungs', [EmbungController::class, 'index2'])->name('embungs');
 
     //================================== Route Infrastruktur irigasis  ==================================\\
     Route::get('/informasi-publik/infrastruktur/irigasis/{slug}', [IrigasiController::class, 'show']);
@@ -158,18 +158,18 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
  
 
 
-    Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2'])->name('info.publik');
+    Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2'])->name('daftar-informasi-publik');
 
 
 
-    Route::get('/media/media-informasi/', [InfografisController::class, 'index2']);
+    Route::get('/media/media-informasi/', [InfografisController::class, 'index2'])->name('media-informasi');
     Route::get('/media/media-informasi/{jenis}/{slug}', [InfografisController::class, 'show']);
     Route::get('/media/media-informasi/{jenis}', [InfografisController::class, 'showJenis']);
 
 
 
 
-    Route::get('/media/galeri/videos', [GaleryController::class, 'index2']);
+    Route::get('/media/galeri/videos', [GaleryController::class, 'index2'])->name('videos');
     Route::get('/media/galeri/video/{slug}', [GaleryController::class, 'index3']);
 
     Route::get('/media/galeri/fotos', [FotoController::class, 'shows'])->name('foto.shows');;
@@ -186,13 +186,14 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::post('/logout', [UserController::class, 'logout']);
 
 
-    Route::resource('/', HomeController::class);
+    // Route::resource('/', HomeController::class);
     Route::get('/all-data', [HomeController::class, 'all_data'])->name('all_data');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
     //=========================================== Route beritas  ===========================================\\
 
-    Route::get('/beritas', [BeritaController::class, 'index2']);
+    Route::get('/beritas', [BeritaController::class, 'index2'])->name('beritas');
     Route::get('/beritas/{slug}', [BeritaController::class, 'show']);
 
     //=====================================================================================================\\
@@ -213,7 +214,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
     Route::middleware(['auth'])->group(function () {
 
-        Route::get('/dashboard', [DashboardController::class, 'index']);
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
         //================================== Route checkSlug all  ==================================\\
 

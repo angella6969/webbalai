@@ -1,8 +1,6 @@
 <!-- Vendor JS Files -->
 <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
-{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-</script> --}}
+
 <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
 <script src="{{ asset('assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
@@ -44,22 +42,6 @@
                 theme);
         }
 
-        // const setTheme = theme => {
-        //     const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        //     if (theme === 'auto' && isDarkMode) {
-        //         console.log('Auto mode, dark theme detected');
-        //         document.documentElement.setAttribute('data-bs-theme', 'dark');
-        //         document.getElementById('warna-1').style.backgroundColor = '#FFC928';
-        //         document.getElementById('warna-2').style.color = 'white';
-        //         document.body.style.backgroundColor = 'black';
-        //     } else {
-        //         document.documentElement.setAttribute('data-bs-theme', theme);
-        //         document.getElementById('warna-1').style.backgroundColor = '';
-        //         document.getElementById('warna-2').style.color = '';
-        //         document.body.style.backgroundColor = '';
-        //     }
-        // }
 
         const showActiveTheme = (theme, focus = false) => {
             const activeThemeIcon = document.querySelector('.theme-icon-active');
