@@ -35,7 +35,7 @@
 
         <div class="logo">
             {{-- <h1><a href="index.html">Selecao</a></h1> --}}
-            <img src="{{ url()->to('/') }}/images/logo/cropped-logo-dark.png.png" style="width: 350px" alt="Logo">
+            <img src="balai/bbwsserayuopak/images/logo/cropped-logo-dark.png.png" style="width: 350px" alt="Logo">
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
