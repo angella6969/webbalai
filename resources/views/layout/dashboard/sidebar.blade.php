@@ -34,7 +34,7 @@
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
             <ul id="sidebarnav">
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="/dashboard" aria-expanded="false">
+                    <a class="sidebar-link" href="{{ route('dashboard') }}" aria-expanded="false">
                         <span>
                             <i class="ti ti-layout-dashboard"></i>
                         </span>
@@ -51,7 +51,7 @@
 
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/foto-beranda*') ? 'active' : '' }}"
-                            href="/dashboard/foto-beranda" aria-expanded="false">
+                            href="{{ route('foto-beranda.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -74,7 +74,7 @@
 
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/kalatirta-so*') ? 'active' : '' }}"
-                            href="/dashboard/kalatirta-so" aria-expanded="false">
+                            href="{{ route('kalatirta-so.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -82,22 +82,13 @@
                         </a>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/kalatirta/keberatan*') ? 'active' : '' }}"
-                            href="/dashboard/kalatirta/keberatan" aria-expanded="false">
+                            href="{{ route('keberatan.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
                             <span class="hide-menu">Keberatan Data</span>
                         </a>
                     </li>
-                    {{-- <li class="sidebar-item">
-                    <a class="sidebar-link {{ Request::is('dashboard/kalatirta-so/pengajuan-keberatan*') ? 'active' : '' }}"
-                        href="/dashboard/kalatirta-so/pengajuan-keberatan" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-article"></i>
-                        </span>
-                        <span class="hide-menu">Pengajuan Keberatan</span>
-                    </a>
-                </li> --}}
 
                     <li class="nav-small-cap">
                         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
@@ -105,7 +96,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/beritas*') ? 'active' : '' }}"
-                            href="/dashboard/beritas/" aria-expanded="false">
+                            href="{{ route('beritas.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>

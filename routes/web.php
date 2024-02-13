@@ -73,7 +73,7 @@ Route::get('/layanan/ppid-bbws-so/prosedur_pelayanan', function () {
 });
 
 
- 
+
 
 
 Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function () {
@@ -86,8 +86,8 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::post('/kalatirta-so/form-permohonan-data', [KalatirtaController::class, 'store'])->name('kalatirta.store');
 
 
- 
- 
+
+
 
 
     Route::get('/kalatirta-so/form-keberatan', [KalatirtaController::class, 'formKeberatan'])->name('kalatirta.formKeberatan');
@@ -125,7 +125,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     //=====================================================================================================\\
 
 
-    
+
 
 
     //====================================== Route Infrastruktur  ======================================\\
@@ -155,7 +155,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
 
 
- 
+
 
 
     Route::get('/info-public/daftar-informasi-publik', [DaftarInformasiPublikController::class, 'index2'])->name('daftar-informasi-publik');
@@ -172,8 +172,8 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
     Route::get('/media/galeri/videos', [GaleryController::class, 'index2'])->name('videos');
     Route::get('/media/galeri/video/{slug}', [GaleryController::class, 'index3']);
 
-    Route::get('/media/galeri/fotos', [FotoController::class, 'shows'])->name('foto.shows');;
-    Route::get('/media/galeri/foto/{slug}', [FotoController::class, 'show'])->name('foto.show');;
+    Route::get('/media/galeri/fotos', [FotoController::class, 'shows'])->name('foto.shows');
+    Route::get('/media/galeri/foto/{slug}', [FotoController::class, 'show'])->name('foto.show');
 
 
 
@@ -259,17 +259,94 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
         //================================== Route Admin PPID ==================================\\
 
         Route::middleware(['Admin'])->group(function () {
-            Route::resource('/dashboard/foto-beranda', ImageController::class)->except(['show']);
-            Route::resource('/dashboard/daftar-informasi-publik', DaftarInformasiPublikController::class)->except(['show']);
-            Route::resource('/dashboard/beritas', BeritaController::class)->except(['show']);
-            Route::resource('/dashboard/pengumuman', PengumumanController::class);
-            Route::resource('/dashboard/perencanaan/pola-ws-dan-rpsda', RpsdaController::class)->except(['show']);
-            Route::resource('/dashboard/perencanaan/rencana-strategis', RencanaStrategisController::class)->except(['show']);
-            Route::resource('/dashboard/kinerja/lakip', LakipController::class)->except(['show']);
-            Route::resource('/dashboard/kalatirta-so', KalatirtaController::class)->except(['create', 'store']);
-            Route::resource('/dashboard/kalatirta/keberatan', KalatirtaPengaduanController::class)->except(['create', 'store']);
-            Route::resource('/dashboard/profil/sejarah', SejarahController::class)->except(['show']);
-            Route::resource('/dashboard/galeri/foto', FotoController::class)->except(['show']);
+            Route::resource('/dashboard/foto-beranda', ImageController::class)->except(['show'])->names([
+                'index' => 'foto-beranda.index',
+                'create' => 'foto-beranda.create',
+                'store' => 'foto-beranda.store',
+                'edit' => 'foto-beranda.edit',
+                'update' => 'foto-beranda.update',
+                'destroy' => 'foto-beranda.destroy',
+            ]);
+            Route::resource('/dashboard/daftar-informasi-publik', DaftarInformasiPublikController::class)->except(['show'])->names([
+                'index' => 'daftar-informasi-publik.index',
+                'create' => 'daftar-informasi-publik.create',
+                'store' => 'daftar-informasi-publik.store',
+                'edit' => 'daftar-informasi-publik.edit',
+                'update' => 'daftar-informasi-publik.update',
+                'destroy' => 'daftar-informasi-publik.destroy',
+            ]);
+            Route::resource('/dashboard/beritas', BeritaController::class)->except(['show'])->names([
+                'index' => 'beritas.index',
+                'create' => 'beritas.create',
+                'store' => 'beritas.store',
+                'edit' => 'beritas.edit',
+                'update' => 'beritas.update',
+                'destroy' => 'beritas.destroy',
+            ]);
+            Route::resource('/dashboard/pengumuman', PengumumanController::class)->names([
+                'index' => 'pengumuman.index',
+                'create' => 'pengumuman.create',
+                'store' => 'pengumuman.store',
+                'edit' => 'pengumuman.edit',
+                'update' => 'pengumuman.update',
+                'destroy' => 'pengumuman.destroy',
+            ]);
+            Route::resource('/dashboard/perencanaan/pola-ws-dan-rpsda', RpsdaController::class)->except(['show'])->names([
+                'index' => 'pola-ws-dan-rpsda.index',
+                'create' => 'pola-ws-dan-rpsda.create',
+                'store' => 'pola-ws-dan-rpsda.store',
+                'edit' => 'pola-ws-dan-rpsda.edit',
+                'update' => 'pola-ws-dan-rpsda.update',
+                'destroy' => 'pola-ws-dan-rpsda.destroy',
+            ]);
+            Route::resource('/dashboard/perencanaan/rencana-strategis', RencanaStrategisController::class)->except(['show'])->names([
+                'index' => 'rencana-strategis.index',
+                'create' => 'rencana-strategis.create',
+                'store' => 'rencana-strategis.store',
+                'edit' => 'rencana-strategis.edit',
+                'update' => 'rencana-strategis.update',
+                'destroy' => 'rencana-strategis.destroy',
+            ]);
+            Route::resource('/dashboard/kinerja/lakip', LakipController::class)->except(['show'])->names([
+                'index' => 'lakip.index',
+                'create' => 'lakip.create',
+                'store' => 'lakip.store',
+                'edit' => 'lakip.edit',
+                'update' => 'lakip.update',
+                'destroy' => 'lakip.destroy',
+            ]);
+            Route::resource('/dashboard/kalatirta-so', KalatirtaController::class)->except(['create', 'store'])->names([
+                'index' => 'kalatirta-so.index',
+                'create' => 'kalatirta-so.create',
+                'store' => 'kalatirta-so.store',
+                'edit' => 'kalatirta-so.edit',
+                'update' => 'kalatirta-so.update',
+                'destroy' => 'kalatirta-so.destroy',
+            ]);
+            Route::resource('/dashboard/kalatirta/keberatan', KalatirtaPengaduanController::class)->except(['create', 'store'])->names([
+                'index' => 'keberatan.index',
+                'create' => 'keberatan.create',
+                'store' => 'keberatan.store',
+                'edit' => 'keberatan.edit',
+                'update' => 'keberatan.update',
+                'destroy' => 'keberatan.destroy',
+            ]);
+            Route::resource('/dashboard/profil/sejarah', SejarahController::class)->except(['show'])->names([
+                'index' => 'sejarah.index',
+                'create' => 'sejarah.create',
+                'store' => 'sejarah.store',
+                'edit' => 'sejarah.edit',
+                'update' => 'sejarah.update',
+                'destroy' => 'sejarah.destroy',
+            ]);
+            Route::resource('/dashboard/galeri/foto', FotoController::class)->except(['show'])->names([
+                'index' => 'foto.index',
+                'create' => 'foto.create',
+                'store' => 'foto.store',
+                'edit' => 'foto.edit',
+                'update' => 'foto.update',
+                'destroy' => 'foto.destroy',
+            ]);
         });
 
         //=====================================================================================================\\
