@@ -3,16 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sejarah;
-<<<<<<< HEAD
-use App\Http\Requests\StoreSejarahRequest;
-use App\Http\Requests\UpdateSejarahRequest;
-=======
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSejarahRequest;
 use App\Http\Requests\UpdateSejarahRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
->>>>>>> 835f221c4bd9aa36a40ae3cf2e8249a9934a2b29
 
 class SejarahController extends Controller
 {
@@ -21,14 +16,10 @@ class SejarahController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        return view('content.sejarah');
-=======
         $sejarah = Sejarah::latest()->get();
         return view('dashboard.form.profil.sejarah.index', [
             'sejarah' => $sejarah
         ]);
->>>>>>> 835f221c4bd9aa36a40ae3cf2e8249a9934a2b29
     }
 
     /**
@@ -52,41 +43,26 @@ class SejarahController extends Controller
      */
     public function show(Sejarah $sejarah)
     {
-<<<<<<< HEAD
-        //
-=======
         $sejarah = Sejarah::latest()->get();
         return view('content.profil.sejarah.sejarah', [
             'sejarah' => $sejarah
         ]);
->>>>>>> 835f221c4bd9aa36a40ae3cf2e8249a9934a2b29
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-<<<<<<< HEAD
-    public function edit(Sejarah $sejarah)
-    {
-        //
-=======
     public function edit(String $id)
     {
         $sejarah = Sejarah::findorFail($id);
         return view('dashboard.form.profil.sejarah.edit', [
             'sejarah' => $sejarah
         ]);
->>>>>>> 835f221c4bd9aa36a40ae3cf2e8249a9934a2b29
     }
 
     /**
      * Update the specified resource in storage.
      */
-<<<<<<< HEAD
-    public function update(UpdateSejarahRequest $request, Sejarah $sejarah)
-    {
-        //
-=======
     public function update(UpdateSejarahRequest $request, String $id)
     {
         $sejarah = Sejarah::findOrFail($id);
@@ -140,7 +116,6 @@ class SejarahController extends Controller
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
         }
->>>>>>> 835f221c4bd9aa36a40ae3cf2e8249a9934a2b29
     }
 
     /**
