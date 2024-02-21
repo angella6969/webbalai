@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-3">Berita</h5>
-            <form method="post" action="/dashboard/beritas/" enctype="multipart/form-data">
+            <form method="post" action="{{ route('beritas.store') }}" enctype="multipart/form-data">
                 @csrf
                 <x-input nama="judul" judul="judul" nilai="" />
                 <x-slug judul="judul" nilai="" rute="beritas" />

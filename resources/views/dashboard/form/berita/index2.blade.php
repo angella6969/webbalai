@@ -7,7 +7,7 @@
     <div class="card">
         <div class="card-body"> 
             <h5 class="card-title fw-semibold mb-4">Berita</h5>
-            <form action="/dashboard/daerah-irigasi">
+            <form action="{{ route('beritas.index') }}">
                 <div class="row">
                     <div class="col-12 col-sm-12">
                         <div class="input-group mb-3">
@@ -20,7 +20,7 @@
                 </div>
             </form>
             <div class="mt-2 mb-2">
-                <a href="/dashboard/beritas/create" class="btn btn-info">Tambah Berita</a>
+                <a href="{{ route('beritas.create') }}" class="btn btn-info">Tambah Berita</a>
             </div>
             <div class="table-responsive-sm">
                 <table class="table table-striped table-sm">
@@ -35,14 +35,14 @@
                         @foreach ($beritas as $berita)
                         <tr style="text-align: center;">
                             <td> {{ $loop->iteration }}</td>
-                            <td> {{ $berita->judul }}</td>
+                            <td> {{ $berita->judul }}</td> 
 
                             <td>
-                                <a href="/dashboard/beritas/{{ $berita->id }}/edit" class="bg badge bg-warning"><span
+                                <a href="{{ route('beritas.edit', ['berita' => $berita->id]) }}" class="bg badge bg-warning"><span
                                         data-feather="edit">
                                     </span></a>
 
-                                <form action="/dashboard/beritas/{{ $berita->id }}" class="d-inline " method="POST">
+                                <form action="{{ route('beritas.destroy', ['berita' => $berita->id]) }}" class="d-inline " method="POST">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn badge bg-danger show-DI-modal "

@@ -8,7 +8,7 @@
             <h5 class="card-title fw-semibold mb-4">Pengumuman</h5>
             <div class="card">
                 <div class="card-body">
-                    <form method="post" action="/dashboard/pengumuman" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('pengumuman.store') }}" enctype="multipart/form-data">
                         @csrf
 
                         {{-- <div class="mb-3">

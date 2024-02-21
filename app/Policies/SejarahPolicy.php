@@ -2,15 +2,9 @@
 
 namespace App\Policies;
 
-<<<<<<< HEAD
-use App\Models\Sejarah;
-use App\Models\User;
-use Illuminate\Auth\Access\Response;
-=======
 use Illuminate\Auth\Access\Response;
 use App\Models\Sejarah;
 use App\Models\User;
->>>>>>> 835f221c4bd9aa36a40ae3cf2e8249a9934a2b29
 
 class SejarahPolicy
 {

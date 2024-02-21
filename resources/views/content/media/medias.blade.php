@@ -25,7 +25,8 @@
                 @foreach ($medias as $media)
                     <div class="col-lg-4 entries" style="margin-top:20px">
                         <article class="entry entry-single">
-                            <a href="/media/media-informasi/{{ $media->jenis }}/{{ $media->slug }}">
+                            <a
+                                href="{{ route('media-informasi.jenis.slug', ['slug' => $media->slug, 'jenis' => $media->jenis]) }}">
                                 <div class="entry-img d-flex justify-content-center">
                                     <img src="{{ asset('storage/' . substr($media->url_foto1, 6)) }}" alt=""
                                         class="img-fluid" style="border-radius: 5px; height: 310px; width: auto;">
@@ -33,7 +34,7 @@
                             </a>
                             <h1 class="entry-title">
                                 {{ $media->nama }}
-                                <a href="/media/media-informasi/{{ $media->jenis }}">
+                                <a href="{{ route('media-informasi.jenis', ['jenis' => $media->jenis]) }}">
                                     <h6>{{ $media->jenis }}</h6>
                                 </a>
                             </h1>

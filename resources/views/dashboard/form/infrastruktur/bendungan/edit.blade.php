@@ -7,7 +7,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-3">Infrastruktur bendungan</h5>
-            <form method="post" action="/dashboard/infrastruktur/bendungans/{{ $bendungan->id }}"
+            <form method="post" action="{{ route('bendungans.update', ['bendungan' => $bendungan->id]) }}"
                 enctype="multipart/form-data">
                 @csrf
                 @method('PUT')

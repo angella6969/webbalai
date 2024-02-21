@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-4">Daftar Pola WS dan RPSDA</h5>
-                <form action="/dashboard/perencanaan/pola-ws-dan-rpsda">
+                <form action="{{ route('lakip.index') }}">
                     <div class="row">
                         <div class="col-12 col-sm-12">
                             <div class="input-group mb-3">
@@ -19,7 +19,7 @@
                     </div>
                 </form>
                 <div class="mt-2 mb-2">
-                    <a href="/dashboard/kinerja/lakip/create" class="btn btn-info">Tambah LAKIP</a>
+                    <a href="{{ route('lakip.create') }}" class="btn btn-info">Tambah LAKIP</a>
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">
@@ -37,11 +37,11 @@
                                     <td> {{ $lakip->nama }}</td>
 
                                     <td>
-                                        <a href="/dashboard/kinerja/lakip/{{ $lakip->id }}/edit"
+                                        <a href="{{ route('lakip.edit', ['lakip' => $lakip->id]) }}"
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
 
-                                        <form action="/dashboard/kinerja/lakip/{{ $lakip->id }}" class="d-inline "
+                                        <form action="{{ route('lakip.destroy', ['lakip' => $lakip->id]) }}" class="d-inline "
                                             method="POST">
                                             @csrf
                                             @method('DELETE')

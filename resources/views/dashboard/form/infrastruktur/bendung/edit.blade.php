@@ -8,7 +8,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-3">Infrastruktur Bendung</h5>
-            <form method="post" action="/dashboard/infrastruktur/bendungs/{{ $bendung->id }}"
+            <form method="post" action="{{ route('bendungs.update', ['bendung' => $bendung->id]) }}"
                 enctype="multipart/form-data">
                 @csrf
                 @method('PUT')

@@ -105,7 +105,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/pengumuman*') ? 'active' : '' }}"
-                            href="/dashboard/pengumuman" aria-expanded="false">
+                            href="{{ route('pengumuman.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -118,7 +118,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/daftar-informasi-publik*') ? 'active' : '' }}"
-                            href="/dashboard/daftar-informasi-publik" aria-expanded="false">
+                            href="{{ route('daftar-informasi-publik.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-cards"></i> --}}
                             </span>
@@ -127,7 +127,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/perencanaan/rencana-strategis*') ? 'active' : '' }}"
-                            href="/dashboard/perencanaan/rencana-strategis" aria-expanded="false">
+                            href="{{ route('rencana-strategis.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-cards"></i> --}}
                             </span>
@@ -136,7 +136,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/perencanaan/pola-ws-dan-rpsda*') ? 'active' : '' }}"
-                            href="/dashboard/perencanaan/pola-ws-dan-rpsda" aria-expanded="false">
+                            href="{{ route('pola-ws-dan-rpsda.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-cards"></i> --}}
                             </span>
@@ -145,7 +145,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/kinerja/lakip*') ? 'active' : '' }}"
-                            href="/dashboard/kinerja/lakip" aria-expanded="false">
+                            href="{{ route('lakip.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-cards"></i> --}}
                             </span>
@@ -165,7 +165,7 @@
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link {{ Request::is('dashboard/media/media-informasi*') ? 'active' : '' }}"
-                        href="/dashboard/media/media-informasi" aria-expanded="false">
+                        href="{{ route('media-informasi.index') }}" aria-expanded="false">
                         <span>
                             {{-- <i class="ti ti-cards"></i> --}}
                         </span>
@@ -185,7 +185,7 @@
                 @can('AdminSisda')
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/galeri/video*') ? 'active' : '' }}"
-                            href="/dashboard/galeri/video" aria-expanded="false">
+                            href="{{ route('video.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -197,7 +197,7 @@
                 @can('Admin')
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/galeri/foto*') ? 'active' : '' }}"
-                            href="/dashboard/galeri/foto" aria-expanded="false">
+                            href="{{ route('foto.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -216,7 +216,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/situs-terkait*') ? 'active' : '' }}"
-                            href="/dashboard/situs-terkait" aria-expanded="false">
+                            href="{{ route('situs-terkait.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -229,7 +229,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/infrastruktur/bendungans*') ? 'active' : '' }}"
-                            href="/dashboard/infrastruktur/bendungans" aria-expanded="false">
+                            href="{{ route('bendungans.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-cards"></i> --}}
                             </span>
@@ -238,7 +238,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/infrastruktur/bendungs*') ? 'active' : '' }}"
-                            href="/dashboard/infrastruktur/bendungs" aria-expanded="false">
+                            href="{{ route('bendungs.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-file-description"></i> --}}
                             </span>
@@ -247,7 +247,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/infrastruktur/embungs*') ? 'active' : '' }}"
-                            href="/dashboard/infrastruktur/embungs" aria-expanded="false">
+                            href="{{ route('embungs.index') }}" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-typography"></i> --}}
                             </span>

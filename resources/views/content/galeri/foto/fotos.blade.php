@@ -6,7 +6,7 @@
             <div class="row">
                 @foreach ($fotos as $foto)
                     <div class="col-lg-4 entries" style="margin-top:20px">
-                        <a href="foto/{{ $foto->slug }}" style="color: var(--bg-bs-text)">
+                        <a href="{{ route('foto.show', ['slug' => $foto->slug]) }}" style="color: var(--bg-bs-text)"> 
                             <article class="entry">
                                 <div class="entry-img d-flex justify-content-center">
                                     <img src="{{ asset('storage/' . substr($foto->url_foto1, 7)) }}" alt=""

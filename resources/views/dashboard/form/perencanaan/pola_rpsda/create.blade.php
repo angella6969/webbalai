@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">Perencanaan Pola WS dan RPSDA</h5>
-                <form method="post" action="/dashboard/perencanaan/pola-ws-dan-rpsda" enctype="multipart/form-data">
+                <form method="post" action="{{ route('pola-ws-dan-rpsda.store') }}" enctype="multipart/form-data">
                     @csrf
 
                     <x-input nama="nama" judul="Nama" nilai="" />

@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">Pelayanan Permintaan Data Oleh :</h5>
-                <form method="post" action="/dashboard/kalatirta-so/{{ $data->id }}" enctype="multipart/form-data">
+                <form method="post" action="{{ route('kalatirta-so.update', ['kalatirta_so' => $data->id]) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <table class="table table-responsive">

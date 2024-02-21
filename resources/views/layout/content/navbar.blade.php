@@ -18,7 +18,7 @@
 
 <nav id="navbar" class="navbar">
     <ul>
-        <li><a class="nav-link scrollto active" href="{{ route('home') }}"><span data-feather="home">
+        <li><a class="nav-link scrollto active" href="{{ url(route('home')) }}"><span data-feather="home">
                 </span></a></li>
         <li class="dropdown"><a href="#"><span>Profil</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -49,9 +49,11 @@
                         <li><a href="{{ route('lakip') }}">LAKIP</a></li>
                     </ul>
                 </li>
-                <li class="dropdown"><a href="#"><span>Infrastruktur</span> <i class="bi bi-chevron-right"></i></a>
+                <li class="dropdown"><a href="#"><span>Infrastruktur</span> <i
+                            class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li class="dropdown"><a href="#"><span>Informasi</span> <i class="bi bi-chevron-right"></i></a>
+                        <li class="dropdown"><a href="#"><span>Informasi</span> <i
+                                    class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <li><a href="{{ route('bendungans') }}">Bendungan</a></li>
                                 <li><a href="{{ route('bendungs') }}">Bendung</a></li>
@@ -95,8 +97,8 @@
             <ul>
                 <li class="dropdown"><a href="#"><span>PPID BBWS SO</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="/layanan/ppid-bbws-so/profil">Profil</a></li>
-                        <li><a href="/layanan/ppid-bbws-so/prosedur_pelayanan">Prosedur Pelayanan</a></li>
+                        <li><a href="{{ route('daftar-informasi-publik') }}">Profil</a></li>
+                        <li><a href="{{ route('prosedur_pelayanan.ppid') }}">Prosedur Pelayanan</a></li>
                         <li><a href="{{ route('kalatirta') }}" target="_blank">KALATIRTA</a></li>
                     </ul>
                 </li>
@@ -134,7 +136,8 @@
                     </button>
                 </li>
                 <li>
-                    <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="auto">
+                    <button class="dropdown-item d-flex align-items-center" type="button"
+                        data-bs-theme-value="auto">
                         <i class="bi bi-circle-half me-3 opacity-50" data-theme-icon="bi-circle-half"></i>Auto
                     </button>
                 </li>
@@ -143,9 +146,9 @@
 
         <div class="input-group">
             <form action="/all-data">
-                <input type="text" class="form-control" name="search" id="search" value="{{ request('search') }}"
-                    style="width: 200px; height:30px ; font-size: .8rem" placeholder="Cari..." aria-label="cari..."
-                    data-uw-rm-form="fx">
+                <input type="text" class="form-control" name="search" id="search"
+                    value="{{ request('search') }}" style="width: 200px; height:30px ; font-size: .8rem"
+                    placeholder="Cari..." aria-label="cari..." data-uw-rm-form="fx">
                 </span>
             </form>
         </div>

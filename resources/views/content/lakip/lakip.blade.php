@@ -35,15 +35,15 @@
                         </div>
                         <div class="col-12 " style="">
                             <div>
-                                <img src="{{ asset('storage/' . substr($Infografis->url_foto1, 6)) }}" alt=""
+                                <img src="{{ asset('balai/bbwsserayuopak/storage/' . substr($Infografis->url_foto1, 6)) }}" alt=""
                                     class="img-fluid">
                             </div>
                             <div>
-                                <img src="{{ asset('storage/' . substr($Infografis->url_foto2, 6)) }}" alt=""
+                                <img src="{{ asset('balai/bbwsserayuopak/storage/' . substr($Infografis->url_foto2, 6)) }}" alt=""
                                     class="img-fluid">
                             </div>
                             <div>
-                                <img src="{{ asset('storage/' . substr($Infografis->url_foto3, 6)) }}" alt=""
+                                <img src="{{ asset('balai/bbwsserayuopak/storage/' . substr($Infografis->url_foto3, 6)) }}" alt=""
                                     class="img-fluid">
                             </div>
                         </div>

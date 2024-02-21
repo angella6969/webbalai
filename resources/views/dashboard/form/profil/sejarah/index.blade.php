@@ -19,7 +19,7 @@
                                 <tr style="text-align: center;">
                                     <td> Sejarah</td>
                                     <td>
-                                        <a href="/dashboard/profil/sejarah/{{ $sejara->id }}/edit"
+                                        <a href="{{ route('sejarah.edit', ['sejarah' => $sejara->id]) }}"
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
                                     </td>
