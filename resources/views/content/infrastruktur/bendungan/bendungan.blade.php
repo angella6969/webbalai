@@ -19,7 +19,7 @@
     </section> --}}
 
     {{-- Header Content --}}
-    <x-h_content judul="Bendungan" posisi1="Beranda" posisi2="Infrastruktur" link="/informasi-publik/infrastruktur" />
+    <x-h_content judul="Bendungan" posisi1="Beranda" posisi2="Infrastruktur" link="informasi-publik/infrastruktur" />
     {{-- End Header Content --}}
 
     <section id="" class="blog">

@@ -35,7 +35,7 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->namespace($this->namespace)
-                ->prefix('balai/bbwsserayuopak') 
+                // ->prefix('balai/bbwsserayuopak') 
                 ->group(base_path('routes/web.php'));
         });
     }

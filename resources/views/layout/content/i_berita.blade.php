@@ -1,10 +1,9 @@
-
 <section id="" class="testimonials">
-    <div class="multiple-items1 card-img-top1" id="multiple-items1" data-aos="fade-up" data-aos-delay="100" >
+    <div class="multiple-items1 card-img-top1" id="multiple-items1" data-aos="fade-up" data-aos-delay="100">
         @foreach ($beritas as $berita)
             <div class="swiper-slide">
                 <div class="card " style="border: 10px">
-                    <a href="{{ route('beritas.slug', ['slug' => $berita->slug]) }}"><img 
+                    <a href="beritas/{{ $berita->slug }}"><img
                             src="{{ asset('storage/' . substr($berita->url_foto, 6)) }}"
                             class="card-img-top hover-effect-2 card-img-top img-fluid" alt=""
                             style="height: 200px;  border-radius: 0 0 100px 0; border-bottom: 5px solid #fbb717;"></a>

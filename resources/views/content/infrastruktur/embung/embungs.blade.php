@@ -1,6 +1,5 @@
 @extends('layout.content.main')
 @section('container')
- 
     {{-- Header Content --}}
     <x-h_content judul="Embung" posisi1="Beranda" posisi2="Infrastruktur" link="/informasi-publik/infrastruktur" />
     {{-- End Header Content --}}
@@ -11,7 +10,7 @@
                     <div class="col-lg-4 entries" style="margin-top:20px">
                         <article class="entry entry-single">
                             <div class="entry-img d-flex justify-content-center">
-                                <a href="{{ route('embungs.show', ['slug' => $embung->slug]) }}"> <img
+                                <a href="informasi-publik/infrastruktur/embungs/{{ $embung->slug }}"> <img
                                         src="{{ asset('storage/' . substr($embung->url_foto1, 6)) }}" alt=""
                                         class="img-fluid" style="border-radius: 5px; height: 310px; width: auto;"></a>
                             </div>

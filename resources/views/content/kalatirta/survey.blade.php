@@ -154,7 +154,7 @@
             <div class="container animated fadeIn">
 
                 <div class="section-cap1">
-                    <form method="post" id="myForm" action="{{ route('kalatirta.store1') }}"
+                    <form method="post" id="myForm" action="kalatirta-so/form-permohonan-data/survey"
                         enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="data" value="{{ json_encode($data) }}">

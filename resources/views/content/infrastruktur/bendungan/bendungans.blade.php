@@ -32,7 +32,7 @@
                     <div class="col-lg-4 entries" style="margin-top:20px">
                         <article class="entry entry-single">
                             <div class="entry-img d-flex justify-content-center">
-                                <a href="{{ route('bendungans.show', ['slug' => $bendungan->slug]) }}"> <img
+                                <a href="informasi-publik/infrastruktur/bendungans/{{ $bendungan->slug }}"> <img
                                         src="{{ asset('storage/' . substr($bendungan->url_foto1, 6)) }}" alt=""
                                         class="img-fluid" style="border-radius: 5px; height: 310px; width: auto;"></a>
                             </div>

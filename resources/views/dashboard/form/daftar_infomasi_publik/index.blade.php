@@ -17,9 +17,9 @@
                             </div>
                         </div>
                     </div>
-                </form> 
+                </form>
                 <div class="mt-2 mb-2">
-                    <a href="{{ route('daftar-informasi-publik.create') }}" class="btn btn-info">Tambah Informasi Publik</a>
+                    <a href="dashboard/daftar-informasi-publik/create" class="btn btn-info">Tambah Informasi Publik</a>
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">
@@ -38,12 +38,11 @@
                                     <td> {{ $informasi->jenis }}</td>
 
                                     <td>
-                                        <a href="{{ route('daftar-informasi-publik.edit', ['daftar_informasi_publik' => $informasi->id]) }}"
+                                        <a href="dashboard/daftar-informasi-publik/{{ $informasi->id }}/edit"
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
 
-                                        <form
-                                            action="{{ route('daftar-informasi-publik.destroy', ['daftar_informasi_publik' => $informasi->id]) }}"
+                                        <form action="dashboard/daftar-informasi-publik/{{ $informasi->id }}"
                                             class="d-inline " method="POST">
                                             @csrf
                                             @method('DELETE')

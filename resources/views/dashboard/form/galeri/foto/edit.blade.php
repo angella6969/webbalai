@@ -6,12 +6,12 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">Video Youtube</h5>
-                <form method="post" action="{{ route('foto.update', ['foto' => $foto->id]) }}" enctype="multipart/form-data">
+                <form method="post" action="dashboard/galeri/foto/{{ $foto->id }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
                     <x-input nama="nama" judul="Nama Album" nilai="{{ $foto->nama }}" />
-                        {{-- @dd($foto->url_foto1) --}}
+                    {{-- @dd($foto->url_foto1) --}}
 
                     {{-- <x-slug judul="nama" nilai="" rute="media/galeri/fotos" /> --}}
                     <x-i_img nama="url_foto1" nilai="{{ $foto->url_foto1 }}" judul="Foto 1" />

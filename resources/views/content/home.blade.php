@@ -10,7 +10,6 @@
 
                     <img src="{{ asset('storage' . substr($image->image, 6)) }}"
                         style="width: 100%; height: 100%; object-fit: contain;" alt="Slide">
-                    {{-- style="background-position: center; object-fit: contain; width: 100%; height:100%; opacity: 1; visibility: inherit; z-index: 20;" alt="Slide"> --}}
                     <div class="p-3 py-2 text-white "
                         style="z-index: 999; background-color: rgba(59, 54, 54, 0.9); position: absolute; top:90%; left: 35%; right: 35%; border-radius: 30px;">
                         <h6 class="d-flex justify-content-center">{{ $image->nama }}</h6>
@@ -66,7 +65,7 @@
                     <div class="col-md-8 slider">
                         @foreach ($infoData as $data)
                             <div class="slider-item"><a style="color: var(--bs-light-text)"
-                                    href="/pengumumans">{{ $data->judul }}</a></div>
+                                    href="pengumumans">{{ $data->judul }}</a></div>
                         @endforeach
                     </div>
                 </div>
@@ -103,7 +102,7 @@
                                 style="font-size: 14px; color: rgb(11,38,83)">{{ $logoTerkait->nama }}</a>
                         </h3>
                     </div>
-                </div> 
+                </div>
             @endforeach
         </div>
     </section>

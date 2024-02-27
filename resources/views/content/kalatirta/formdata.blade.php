@@ -127,7 +127,7 @@
             <div class="container animated fadeIn">
 
                 <div class="section-cap1">
-                    <form method="post" action="{{ route('kalatirta.store') }}" enctype="multipart/form-data">
+                    <form method="post" action="kalatirta-so/form-permohonan-data" enctype="multipart/form-data">
                         @csrf
                         <div class="card">
                             <div class="card-body mb-3">
