@@ -50,11 +50,11 @@
                                     <td> {{ $data->status }}</td>
 
                                     <td>
-                                        <a href="{{ route('keberatan.show', ['keberatan' => $data->id]) }}"
+                                        <a href="/dashboard/kalatirta/keberatan/{{ $data->id }}"
                                             class="bg badge bg-warning"><span data-feather="eye">
                                             </span></a>
 
-                                        <form action="{{ route('keberatan.destroy', ['keberatan' => $data->id]) }}" class="d-inline "
+                                        <form action="/dashboard/kalatirta-so/{{ $data->id }}" class="d-inline "
                                             method="POST">
                                             @csrf
                                             @method('DELETE')

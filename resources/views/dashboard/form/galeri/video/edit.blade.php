@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-3">Video Youtube</h5>
-            <form method="post" action="{{ route('video.update', ['video' => $video->id]) }}" enctype="multipart/form-data">
+            <form method="post" action="/dashboard/galeri/video/{{ $video->id }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 

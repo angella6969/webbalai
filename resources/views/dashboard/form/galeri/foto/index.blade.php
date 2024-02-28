@@ -5,8 +5,13 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
+<<<<<<< HEAD
                 <h5 class="card-title fw-semibold mb-4">Daftar Foto</h5>
                 <form action="dashboard/galeri/foto">
+=======
+                <h5 class="card-title fw-semibold mb-4">Daftar Video</h5>
+                <form action="/dashboard/galeri/foto">
+>>>>>>> parent of 71e58e0 (awd awdawdwd1)
                     <div class="row">
                         <div class="col-12 col-sm-12">
                             <div class="input-group mb-3">
@@ -19,7 +24,11 @@
                     </div>
                 </form>
                 <div class="mt-2 mb-2">
+<<<<<<< HEAD
                     <a href="dashboard/galeri/foto/create" class="btn btn-info">Tambah Album Foto</a>
+=======
+                    <a href="/dashboard/galeri/foto/create" class="btn btn-info">Tambah Album Foto</a>
+>>>>>>> parent of 71e58e0 (awd awdawdwd1)
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">
@@ -39,11 +48,15 @@
                                     <td> </td>
 
                                     <td>
+<<<<<<< HEAD
                                         <a href="dashboard/galeri/foto/{{ $foto->id }}/edit"
+=======
+                                        <a href="/dashboard/galeri/foto/{{ $foto->id }}/edit"
+>>>>>>> parent of 71e58e0 (awd awdawdwd1)
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
 
-                                        <form action="{{ route('foto.destroy', ['foto' => $foto->id]) }}" class="d-inline "
+                                        <form action="/dashboard/galeri/foto/{{ $foto->id }}" class="d-inline "
                                             method="POST">
                                             @csrf
                                             @method('DELETE')

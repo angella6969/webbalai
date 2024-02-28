@@ -30,7 +30,7 @@
         integrity="sha384-rGBUrM2P5RA5Y1woiQOfG5xFVoJG3p5FzDrEJusZrAAXg8r+YtST5CyuUSM0a7fT" crossorigin="anonymous">
 
     <div class="halaman-container" style="text-align: center;">
-        <img class="img-fluid" src="{{ asset('images/404.png') }}" alt="">
+        <img class="img-fluid" src="{{ asset('images\404.png') }}" alt="">
         <h1>TIDAK KETEMU !</h1>
         <p>Halaman yang Anda cari sudah dipindah atau sedang tidak available</p>
         <a href="/"> MONGGO KEMBALI KE BERANDA</a>

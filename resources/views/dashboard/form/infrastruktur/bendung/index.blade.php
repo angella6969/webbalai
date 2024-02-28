@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">Infrastruktur</h5>
-            <form action="{{ route('bendungs.index') }}">
+            <form action="/dashboard/infrastruktur/bendungs">
                 <div class="row">
                     <div class="col-12 col-sm-12">
                         <div class="input-group mb-3">
@@ -19,7 +19,7 @@
                 </div>
             </form>
             <div class="mt-2 mb-2">
-                <a href="{{ route('bendungs.create') }}" class="btn btn-info">Tambah Infrastruktur</a>
+                <a href="/dashboard/infrastruktur/bendungs/create" class="btn btn-info">Tambah Infrastruktur</a>
             </div>
             <div class="table-responsive-sm">
                 <table class="table table-striped table-sm">
@@ -39,11 +39,11 @@
                             <td> {{ $bendung->jenis }}</td>
 
                             <td>
-                                <a href="{{ route('bendungs.edit', ['bendung' => $bendung->id]) }}"
+                                <a href="/dashboard/infrastruktur/bendungs/{{ $bendung->id }}/edit"
                                     class="bg badge bg-warning"><span data-feather="edit">
                                     </span></a>
 
-                                <form action="{{ route('bendungs.destroy', ['bendung' => $bendung->id]) }}" class="d-inline "
+                                <form action="/dashboard/infrastruktur/bendungs/{{ $bendung->id }}" class="d-inline "
                                     method="POST">
                                     @csrf
                                     @method('DELETE')

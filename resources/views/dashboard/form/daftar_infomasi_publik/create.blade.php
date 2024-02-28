@@ -8,8 +8,13 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">Daftar Informasi Publik</h5>
+<<<<<<< HEAD
                 <form method="post" action="dashboard/daftar-informasi-publik" enctype="multipart/form-data">
                     @csrf 
+=======
+                <form method="post" action="/dashboard/daftar-informasi-publik" enctype="multipart/form-data">
+                    @csrf
+>>>>>>> parent of 71e58e0 (awd awdawdwd1)
                     <x-input nama="nama" judul="Judul Informasi Publik" nilai="" />
                     <div class="mt-3">
                         <label for="jenis" class="form-label">Klasifikasi Informasi Publik</label>

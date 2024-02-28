@@ -23,7 +23,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">update Situs Terkait</h5>
-                <form method="post" action="{{ route('situs-terkait.update', ['situs_terkait' => $situs->id]) }}" enctype="multipart/form-data">
+                <form method="post" action="/dashboard/situs-terkait/{{ $situsterkaits->id }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 

@@ -8,7 +8,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">Sejarah BBWS Serayu Opak</h5>
-                <form method="post" action="{{ route('sejarah.update', ['sejarah' => $sejarah->id]) }}" enctype="multipart/form-data">
+                <form method="post" action="/dashboard/profil/sejarah/{{ $sejarah->id }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 

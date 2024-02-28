@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">Perencanaan Rencana Strategis</h5>
-                <form method="post" action="{{ route('rencana-strategis.store') }}" enctype="multipart/form-data">
+                <form method="post" action="/dashboard/perencanaan/rencana-strategis" enctype="multipart/form-data">
                     @csrf
 
                     <x-input nama="nama" judul="Nama" nilai="" />

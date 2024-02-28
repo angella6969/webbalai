@@ -23,7 +23,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-3">Daftar Situs Terkait</h5>
-            <form method="post" action="{{ route('situs-terkait.store') }}" enctype="multipart/form-data">
+            <form method="post" action="/dashboard/situs-terkait" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-3">
@@ -55,8 +55,8 @@
         {{--
     </div> --}}
 </div>
-{{-- </div>
-</div> --}}
+</div>
+</div>
 <script>
     function previewImage() {
 

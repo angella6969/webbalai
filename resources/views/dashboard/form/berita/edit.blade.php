@@ -4,6 +4,7 @@
 
     <link rel="stylesheet" href="{{ asset('css\myCss.css') }}">
 
+<<<<<<< HEAD
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
@@ -11,6 +12,15 @@
                 <form method="POST" action="/dashboard/beritas/{{ $berita->id }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
+=======
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title fw-semibold mb-3">Berita</h5>
+            <form method="POST" action="/dashboard/beritas/{{ $berita->id }}" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+>>>>>>> parent of 71e58e0 (awd awdawdwd1)
 
                     <x-input nama="judul" judul="judul" nilai="{{ $berita->judul }}" />
                     <x-slug judul="judul" nilai="{{ $berita->slug }}" rute="beritas" />

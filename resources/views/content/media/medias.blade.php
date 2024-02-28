@@ -25,7 +25,11 @@
                 @foreach ($medias as $media)
                     <div class="col-lg-4 entries" style="margin-top:20px">
                         <article class="entry entry-single">
+<<<<<<< HEAD
                             <a href="media/media-informasi/{{ $media->jenis }}/{{ $media->slug }}">
+=======
+                            <a href="/media/media-informasi/{{ $media->jenis }}/{{ $media->slug }}">
+>>>>>>> parent of 71e58e0 (awd awdawdwd1)
                                 <div class="entry-img d-flex justify-content-center">
                                     <img src="{{ asset('storage/' . substr($media->url_foto1, 6)) }}" alt=""
                                         class="img-fluid" style="border-radius: 5px; height: 310px; width: auto;">
@@ -33,7 +37,11 @@
                             </a>
                             <h1 class="entry-title">
                                 {{ $media->nama }}
+<<<<<<< HEAD
                                 <a href="media/media-informasi/{{ $media->jenis }}">
+=======
+                                <a href="/media/media-informasi/{{ $media->jenis }}">
+>>>>>>> parent of 71e58e0 (awd awdawdwd1)
                                     <h6>{{ $media->jenis }}</h6>
                                 </a>
                             </h1>

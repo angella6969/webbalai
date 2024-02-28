@@ -19,7 +19,11 @@
                     </div>
                 </form>
                 <div class="mt-2 mb-2">
+<<<<<<< HEAD
                     <a href="dashboard/daftar-informasi-publik/create" class="btn btn-info">Tambah Informasi Publik</a>
+=======
+                    <a href="/dashboard/daftar-informasi-publik/create" class="btn btn-info">Tambah Informasi Publik</a>
+>>>>>>> parent of 71e58e0 (awd awdawdwd1)
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">

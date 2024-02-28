@@ -4,13 +4,13 @@
             value="{{ old('slug',$nilai) }}" required>
     </div>
 </div>
-  
+ 
 <script>
     const judul = document.querySelector('#{{ $judul }}');
     const slug = document.querySelector('#slug');
 
     judul.addEventListener('change', function() {
-        fetch('/balai/bbwsserayuopak/dashboard/{{ $rute }}/checkSlug?{{ $judul }}=' + judul.value)
+        fetch('/dashboard/{{ $rute }}/checkSlug?{{ $judul }}=' + judul.value)
             .then(response => response.json())
             .then(data => slug.value = data.slug)
     });

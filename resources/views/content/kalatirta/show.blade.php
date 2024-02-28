@@ -130,16 +130,24 @@
                                     <th scope="col">Nama </th>
                                     <th scope="col">No Registrasi </th>
                                     <th scope="col">Status Permintaan Data</th>
+                                    <th scope="col">Keterangan</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($data as $dat)
-                                    <tr style="text-align: center;">
-                                        <td> {{ $loop->iteration }}</td>
-                                        <td> {{ $dat->nama }}</td>
-                                        <td> {{ $dat->nomor_registrasi }}</td>
-                                        <td> {{ $dat->status }}</td>
-                                    </tr>
+                                <tr style="text-align: center;">
+                                    <td> {{ $loop->iteration }}</td>
+                                    <td> {{ $dat->nama }}</td>
+                                    <td> {{ $dat->nomor_registrasi }}</td>
+                                    <td> {{ $dat->status }}</td>
+                                    <td>
+                                        @if($dat->status == 'Ditolak')
+                                        <a href="/kalatirta-so/form-keberatan">Detail</a>
+                                        @else
+                                        -
+                                        @endif
+                                    </td>
+                                </tr>
                                 @endforeach
                             </tbody>
                         </table>

@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">Laporan Akuntabilitas Kinerja Instansi Pemerintahan</h5>
-                <form method="post" action="{{ route('lakip.update', ['lakip' => $lakip->id]) }}" enctype="multipart/form-data">
+                <form method="post" action="/dashboard/kinerja/lakip/{{ $lakip->id }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 

@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">Pola WS dan RPSDA</h5>
-                <form method="post" action="{{ route('pola-ws-dan-rpsda.update', ['pola_ws_dan_rpsda' => $pengumuman->id]) }}"
+                <form method="post" action="/dashboard/perencanaan/pola-ws-dan-rpsda/{{ $rpsda->id }}"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')

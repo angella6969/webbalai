@@ -20,7 +20,11 @@
                 </div>
             </form> --}}
                 <div class="mt-2 mb-2">
+<<<<<<< HEAD
                     <a href="dashboard/foto-beranda/create" class="btn btn-info">Tambah Foto</a>
+=======
+                    <a href="/dashboard/foto-beranda/create" class="btn btn-info">Tambah Foto</a>
+>>>>>>> parent of 71e58e0 (awd awdawdwd1)
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">
@@ -38,11 +42,19 @@
                                     <td> <img style="height: 150px" src={{ asset('storage/' . substr($image->image, 6)) }}
                                             alt=""></td>
                                     <td>
+<<<<<<< HEAD
                                         <a href="dashboard/foto-beranda/{{ $image->id }}/edit"
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
 
                                         <form action="dashboard/foto-beranda/{{ $image->id }}" class="d-inline "
+=======
+                                        <a href="/dashboard/foto-beranda/{{ $image->id }}/edit"
+                                            class="bg badge bg-warning"><span data-feather="edit">
+                                            </span></a>
+
+                                        <form action="/dashboard/foto-beranda/{{ $image->id }}" class="d-inline "
+>>>>>>> parent of 71e58e0 (awd awdawdwd1)
                                             method="POST">
                                             @csrf
                                             @method('DELETE')

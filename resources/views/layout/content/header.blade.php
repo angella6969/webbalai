@@ -13,13 +13,13 @@
                 <div class="right-icons">
                     <ul>
                         <li><a href="https://www.facebook.com/serayuopak/"><img
-                                    src="{{ asset('images\icon\facebook.svg') }}" alt=""></a></li>
+                                    src="{{url()->to('/') }}/images/icon/facebook.svg" alt=""></a></li>
                         <li><a href="https://www.instagram.com/pupr_sda_serayuopak/?hl=id"><img
-                                    src="{{ asset('images\icon\instagram.svg') }}" alt=""></a></li>
+                                    src="{{url()->to('/') }}/images/icon/instagram.svg" alt=""></a></li>
                         <li><a href="https://twitter.com/pupr_sda_so?lang=id"><img
-                                    src="{{ asset('images\icon\twitter.svg') }}" alt=""></a></li>
+                                    src="{{url()->to('/') }}/images/icon/twitter.svg" alt=""></a></li>
                         <li><a href="https://www.youtube.com/channel/UClOhOH8Ixk2dcIAS9jr2aqg"><img
-                                    src="{{ asset('images\icon\youtube.svg') }}" alt=""></a></li>
+                                    src="{{url()->to('/') }}/images/icon/youtube.svg" alt=""></a></li>
 
                     </ul>
 
@@ -30,11 +30,14 @@
         </div>
     </div>
 </div>
-<header id="header" class="fixed-top d-flex align-items-center  header-transparent " >
+<header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
     <div class="container d-flex align-items-center justify-content-between">
 
         <div class="logo">
-            <img src="{{ asset('images\logo\cropped-logo-dark.png.png') }}" style="width: 350px" alt="Logo">
+            {{-- <h1><a href="index.html">Selecao</a></h1> --}}
+            <img src="balai/bbwsserayuopak/images/logo/cropped-logo-dark.png.png" style="width: 350px" alt="Logo">
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
 
 

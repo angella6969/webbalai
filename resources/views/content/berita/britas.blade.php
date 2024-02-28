@@ -17,7 +17,7 @@
                         @if ($berita->created_at->toDateString() != $today)
                             <article class="entry">
                                 <div class="entry-img d-flex justify-content-center">
-                                    <img src="{{ asset('storage' . substr($berita->url_foto, 6)) }}" alt=""
+                                    <img src="{{ asset('storage/' . substr($berita->url_foto, 6)) }}" alt=""
                                         style="height: 300px; border-radius: 10px" class="card-img-top img-fluid">
                                 </div>
                                 <h6> <i class="bi bi-clock"></i>

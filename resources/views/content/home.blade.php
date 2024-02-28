@@ -18,9 +18,9 @@
             @endforeach
 
 
-            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
-            </a>
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+        </a>
 
             <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
                 <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
@@ -55,8 +55,9 @@
     {{-- ============================ End Foto Beranda ============================ --}}
 
 
-    {{-- ============================ Pengumuman ============================ --}}
+{{-- ============================ Pengumuman ============================ --}}
 
+<<<<<<< HEAD
     <section style="padding-top: 0px">
         <div class="col-lg-12" style="height: 70px; color: #fff; background: var(--main-kuning);">
             <div class="container">
@@ -68,22 +69,35 @@
                                     href="pengumumans">{{ $data->judul }}</a></div>
                         @endforeach
                     </div>
+=======
+<section style="padding-top: 0px">
+    <div class="col-lg-12" style="height: 70px; color: #fff; background: var(--main-kuning);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 ahidden-slider slider-item"> Pengumuman : </div>
+                <div class="col-md-8 slider">
+                    @foreach ($infoData as $data)
+                    <div class="slider-item"><a style="color: var(--bs-light-text)" href="/pengumumans">{{ $data->judul
+                            }}</a></div>
+                    @endforeach
+>>>>>>> parent of 71e58e0 (awd awdawdwd1)
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    {{-- ============================ End Pengumuman ============================ --}}
-
-
-    {{-- ============================ Berita ============================ --}}
-    @include('layout.content.i_berita')
-    {{-- ============================ End Berita ============================ --}}
+{{-- ============================ End Pengumuman ============================ --}}
 
 
-    {{-- ============================ Infrastruktur ============================ --}}
-    @include('layout.content.i_infrastruktur')
-    {{-- ============================ End Infrastruktur ============================ --}}
+{{-- ============================ Berita ============================ --}}
+@include('layout.content.i_berita')
+{{-- ============================ End Berita ============================ --}}
+
+
+{{-- ============================ Infrastruktur ============================ --}}
+@include('layout.content.i_infrastruktur')
+{{-- ============================ End Infrastruktur ============================ --}}
 
 
     {{-- ============================ Logo Terkait ============================ --}}
@@ -93,7 +107,7 @@
                 <div class="swiper-slide1">
                     <div class="border:none">
                         <a href="{{ $logoTerkait->url_situs }}" target="_blank"><img
-                                src="{{ asset('storage/' . substr($logoTerkait->image, 6)) }}"
+                                src="{{ asset('storage' . substr($logoTerkait->image, 6)) }}"
                                 class="card-img-top1  d-flex justify-content-center" alt=""></a>
                     </div>
                     <div class="card-body">
