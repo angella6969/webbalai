@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-3">Infrastruktur Embung</h5>
-            <form method="post" action="{{ route('embungs.store') }}" enctype="multipart/form-data">
+            <form method="post" action="/balai/bbwsserayuopak/dashboard/infrastruktur/embungs" enctype="multipart/form-data">
                 @csrf
 
                 <x-input nama="nama" judul="Nama" nilai="" />

@@ -8,7 +8,7 @@
                 <h5 class="card-title fw-semibold mb-4">Tambah Media Informasi</h5>
                 <div class="card">
                     <div class="card-body">
-                        <form method="post" action="{{ route('media-informasi.store') }}" enctype="multipart/form-data">
+                        <form method="post" action="/balai/bbwsserayuopak/dashboard/media/media-informasi" enctype="multipart/form-data">
                             @csrf
 
 

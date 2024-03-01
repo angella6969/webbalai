@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-4">Pengumumans</h5>
-                <form action="{{ route('pengumuman.index') }}">
+                <form action="/balai/bbwsserayuopak/dashboard/pengumuman">
                     <div class="row">
                         <div class="col-12 col-sm-12">
                             <div class="input-group mb-3">
@@ -20,7 +20,7 @@
                     </div>
                 </form>
                 <div class="mt-2 mb-2">
-                    <a href="{{ route('pengumuman.create') }}" class="btn btn-info">Tambah Data</a>
+                    <a href="/balai/bbwsserayuopak/dashboard/pengumuman/create" class="btn btn-info">Tambah Data</a>
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">
@@ -45,12 +45,12 @@
                                             data-url_pengumuman="{{ $pengumuman->url_pengumuman }}">
                                             <span data-feather="eye"></span>
                                         </button>
-                                        <a href="{{ route('pengumuman.edit', ['pengumuman' => $pengumuman->id]) }}"
+                                        <a href="/balai/bbwsserayuopak/dashboard/pengumuman/{{ $pengumuman->id }}/edit"
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
 
-                                        <form action="{{ route('pengumuman.destroy', ['pengumuman' => $pengumuman->id]) }}" class="d-inline "
-                                            method="POST">
+                                        <form action="/balai/bbwsserayuopak/dashboard/pengumuman/{{ $pengumuman->id }}"
+                                            class="d-inline " method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn badge bg-danger show-DI-modal "
@@ -134,24 +134,6 @@
             });
         });
     </script>
-    {{-- <script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-            @if (Session::has('success'))
-                iziToast.success({
-                    title: 'Success',
-                    message: '{{ Session::get('success') }}',
-                    position: 'bottomRight',
-                });
-            @endif
-            @if (Session::has('fail'))
-                iziToast.warning({
-                    title: 'Warning',
-                    message: '{{ Session::get('fail') }}',
-                    position: 'bottomRight',
-                });
-            @endif
-        });
-</script> --}}
+   
     <x-notif />
 @endsection

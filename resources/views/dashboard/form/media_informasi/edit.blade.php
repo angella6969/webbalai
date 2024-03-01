@@ -9,7 +9,7 @@
                 <div class="card">
                     <div class="card-body">
                         <form method="post"
-                            action="{{ route('media-informasi.update', ['media_informasi' => $Infografis->id]) }}"
+                            action="/balai/bbwsserayuopak/dashboard/media/media-informasi/{{ $Infografis->id }}"
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT')

@@ -6,7 +6,8 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">Perencanaan Pola WS dan RPSDA</h5>
-                <form method="post" action="{{ route('pola-ws-dan-rpsda.store') }}" enctype="multipart/form-data">
+                <form method="post" action="/balai/bbwsserayuopak/dashboard/perencanaan/pola-ws-dan-rpsda"
+                    enctype="multipart/form-data">
                     @csrf
 
                     <x-input nama="nama" judul="Nama" nilai="" />
@@ -15,7 +16,8 @@
                         <select class="form-select" aria-label="Default select example" name="jenis" id="jenis">
                             <option value="" @if (old('jenis') == '') selected @endif disabled>Kategori
                             </option>
-                            <option value="Pola" @if (old('jenis') == 'Pola') selected @endif>Pola Wilayah Sungai</option>
+                            <option value="Pola" @if (old('jenis') == 'Pola') selected @endif>Pola Wilayah Sungai
+                            </option>
                             <option value="RPSDA" @if (old('jenis') == 'RPSDA') selected @endif>RPSDA</option>
                         </select>
                     </div>

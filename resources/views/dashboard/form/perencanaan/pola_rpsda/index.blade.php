@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-4">Daftar Pola WS dan RPSDA</h5>
-                <form action="{{ route('pola-ws-dan-rpsda.index') }}">
+                <form action="/balai/bbwsserayuopak/dashboard/perencanaan/pola-ws-dan-rpsda">
                     <div class="row">
                         <div class="col-12 col-sm-12">
                             <div class="input-group mb-3">
@@ -19,7 +19,8 @@
                     </div>
                 </form>
                 <div class="mt-2 mb-2">
-                    <a href="{{ route('pola-ws-dan-rpsda.create') }}" class="btn btn-info">Tambah Pola WS dan
+                    <a href="/balai/bbwsserayuopak/dashboard/perencanaan/pola-ws-dan-rpsda/create"
+                        class="btn btn-info">Tambah Pola WS dan
                         RPSDA</a>
                 </div>
                 <div class="table-responsive-sm">
@@ -38,11 +39,12 @@
                                     <td> {{ $rpsda->nama }}</td>
 
                                     <td>
-                                        <a href="{{ route('pola-ws-dan-rpsda.edit', ['pola_ws_dan_rpsda' => $pengumuman->id]) }}"
+                                        <a href="/balai/bbwsserayuopak/dashboard/perencanaan/pola-ws-dan-rpsda/{{ $pengumuman->id }}/edit"
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
 
-                                        <form action="{{ route('pola-ws-dan-rpsda.destroy', ['pola_ws_dan_rpsda' => $pengumuman->id]) }}"
+                                        <form
+                                            action="/balai/bbwsserayuopak/dashboard/perencanaan/pola-ws-dan-rpsda/{{ $pengumuman->id }}"
                                             class="d-inline " method="POST">
                                             @csrf
                                             @method('DELETE')
