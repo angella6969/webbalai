@@ -20,7 +20,7 @@
                 </div>
             </form> --}}
                 <div class="mt-2 mb-2">
-                    <a href="{{ route('foto-beranda.create') }}" class="btn btn-info">Tambah Foto</a>
+                    <a href="/balai/bbwsserayuopak/dashboard/foto-beranda/create" class="btn btn-info">Tambah Foto</a>
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">

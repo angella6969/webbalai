@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-4">Daftar Foto</h5>
-                <form action="{{ route('foto.index') }}">
+                <form action="/balai/bbwsserayuopak/dashboard/galeri/foto">
                     <div class="row">
                         <div class="col-12 col-sm-12">
                             <div class="input-group mb-3">
@@ -19,7 +19,7 @@
                     </div>
                 </form>
                 <div class="mt-2 mb-2">
-                    <a href="{{ route('foto.create') }}" class="btn btn-info">Tambah Album Foto</a>
+                    <a href="/balai/bbwsserayuopak/dashboard/galeri/foto/create" class="btn btn-info">Tambah Album Foto</a>
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">

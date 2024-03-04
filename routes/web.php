@@ -185,7 +185,7 @@ Route::middleware(['throttle:150,1', 'throttle:10000,1,global'])->group(function
 
     // Route::resource('', HomeController::class);
     Route::get('all-data', [HomeController::class, 'all_data'])->name('all_data');
-    Route::get('home', [HomeController::class, 'index'])->name('home');
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
     //=========================================== Route beritas  ===========================================\\

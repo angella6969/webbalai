@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-3">Daftar Foto Beranda</h5>
-            <form method="post" action="{{ route('foto-beranda.store') }}" enctype="multipart/form-data">
+            <form method="post" action="/balai/bbwsserayuopak/dashboard/foto-beranda" enctype="multipart/form-data">
                 @csrf
                 <x-input nama="nama" judul="Nama" nilai="" />
                 <x-i_img nama="image" judul="Foto Beranda" nilai="" />

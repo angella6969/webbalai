@@ -107,36 +107,6 @@
             </script>
             <x-notif />
 
-            {{-- <script>
-    document.addEventListener('DOMContentLoaded', function() {
-            @if (Session::has('success'))
-                iziToast.success({
-                    title: 'Success',
-                    message: '{{ Session::get('success') }}',
-                    position: 'topRight',
-                });
-            @endif
-            @if (Session::has('fail'))
-                iziToast.warning({
-                    title: 'Warning',
-                    message: '{{ Session::get('fail') }}',
-                    position: 'topRight',
-                });
-            @endif
-        });
-</script> --}}
-            {{--
-<script>
-    const nama = document.querySelector('#nama');
-        const slug = document.querySelector('#slug');
-
-        nama.addEventListener('change', function() {
-            fetch('/dashboard/infrastruktur/bendungans/checkSlug?nama=' + nama.value)
-                .then(response => response.json())
-                .then(data => slug.value = data.slug)
-        });
-</script> --}}
-
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
                     const linkInput = document.getElementById('link');

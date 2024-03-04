@@ -1,38 +1,37 @@
 @extends('layout.dashboard.main')
 @section('container')
-<script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
 
-<link rel="stylesheet" href="{{ asset('css\myCss.css') }}">
+    <link rel="stylesheet" href="{{ asset('css\myCss.css') }}">
 
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-3">Berita</h5>
-            <form method="POST" action="{{ route('beritas.update', ['berita' => $berita->id]) }}" enctype="multipart/form-data">
+            <form method="POST" action="/balai/bbwsserayuopak/dashboard/beritas/{{ $berita->id }}" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
-                <x-input nama="judul" judul="judul" nilai="{{ $berita->judul }}" />
-                <x-slug judul="judul" nilai="{{ $berita->slug }}" rute="beritas"/>
+                    <x-input nama="judul" judul="judul" nilai="{{ $berita->judul }}" />
+                    <x-slug judul="judul" nilai="{{ $berita->slug }}" rute="beritas" />
 
-                <div class="mb-3">
-                    <div style="z-index: 999">
-                        <textarea id="body" name="body"
-                            style="width: 100px;">{{ old('body', $berita->body) }}</textarea>
+                    <div class="mb-3">
+                        <div style="z-index: 999">
+                            <textarea id="body" name="body" style="width: 100px;">{{ old('body', $berita->body) }}</textarea>
+                        </div>
                     </div>
-                </div>
 
-                <x-garis />
-                <x-i_img nama="url_foto" judul="Foto Berita" nilai="{{ $berita->url_foto }}" />
+                    <x-garis />
+                    <x-i_img nama="url_foto" judul="Foto Berita" nilai="{{ $berita->url_foto }}" />
 
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-    ClassicEditor
+    <script>
+        ClassicEditor
             .create(document.querySelector('#body'), {
                 toolbar: ['heading', '|', 'bold', 'italic', 'numberedList', 'insertTable', 'blockQuote', 'redo', '|',
                     'undo'
@@ -61,7 +60,6 @@
             .catch(error => {
                 console.log(error);
             });
-</script>
-<x-notif />
-
+    </script>
+    <x-notif />
 @endsection

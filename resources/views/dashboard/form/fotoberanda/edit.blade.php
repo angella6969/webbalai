@@ -6,7 +6,8 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">Edit Foto Beranda</h5>
-                <form method="post" action="{{ route('foto-beranda.update', ['foto_beranda' => $image->id]) }}" enctype="multipart/form-data">
+                <form method="post" action="/balai/bbwsserayuopak/dashboard/foto-beranda/{{ $image->id }}"
+                    enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <x-input nama="nama" judul="Nama" nilai="{{ $image->nama }}" />

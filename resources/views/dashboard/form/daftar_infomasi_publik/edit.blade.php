@@ -9,7 +9,7 @@
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">Daftar Informasi Publik</h5>
                 <form method="post"
-                    action="{{ route('daftar-informasi-publik.update', ['daftar_informasi_publik' => $daftar_informasi_publik->id]) }}"
+                    action="/balai/bbwsserayuopak/dashboard/daftar-informasi-publik/{{ $daftar_informasi_publik->id }}"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
