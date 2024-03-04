@@ -3,7 +3,7 @@
 
 @if ($nilai)
     <!-- Tampilkan link ke PDF yang sudah ada -->
-    <a href="{{ asset('/balai/bbwsserayuopak/storage/' . substr($nilai, 6)) }}" target="_blank">View PDF</a>
+    <a href="{{ asset('storage/' . substr($nilai, 6)) }}" target="_blank">View PDF</a>
 @else
     <!-- Tampilkan pesan jika tidak ada PDF yang sudah ada -->
     {{-- <p>No PDF uploaded</p> --}}

@@ -38,12 +38,12 @@
                                     <td> <img style="height: 150px" src={{ asset('storage/' . substr($image->image, 6)) }}
                                             alt=""></td>
                                     <td>
-                                        <a href="{{ route('foto-beranda.edit', ['foto_beranda' => $image->id]) }}"
+                                        <a href="/balai/bbwsserayuopak/dashboard/foto-beranda/{{ $image->id }}/edit"
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
 
-                                        <form action="{{ route('foto-beranda.destroy', ['foto_beranda' => $image->id]) }}" class="d-inline "
-                                            method="POST">
+                                        <form action="/balai/bbwsserayuopak/dashboard/foto-beranda/{{ $image->id }}"
+                                            class="d-inline " method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn badge bg-danger show-DI-modal "
