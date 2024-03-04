@@ -6,6 +6,7 @@ use App\Models\Visitor;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Carbon;
 
 class SaveVisitor
 {
@@ -16,11 +17,20 @@ class SaveVisitor
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Simpan informasi pengunjung ke database
-        Visitor::create([
-            'ip_address' => $request->ip(),
-            'user_agent' => $request->header('User-Agent'),
-        ]);
+        $ipAddress = $request->ip();
+
+        // Cek apakah ada kunjungan sebelumnya dari IP yang sama dalam rentang waktu 2 jam terakhir
+        $previousVisit = Visitor::where('ip_address', $ipAddress)
+            ->where('created_at', '>=', Carbon::now()->subHours(2))
+            ->exists();
+
+        // Jika tidak ada kunjungan sebelumnya, simpan informasi pengunjung ke database
+        if (!$previousVisit) {
+            Visitor::create([
+                'ip_address' => $ipAddress,
+                'user_agent' => $request->header('User-Agent'),
+            ]);
+        }
 
         return $next($request);
     }

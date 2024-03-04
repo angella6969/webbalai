@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-4">Berita</h5>
-                <form action="/dashboard/daerah-irigasi">
+                <form action="/balai/bbwsserayuopak/dashboard/daerah-irigasi">
                     <div class="row">
                         <div class="col-12 col-sm-12">
                             <div class="input-group mb-3">
@@ -20,7 +20,7 @@
 
                 </form>
                 <div class="mt-2 mb-2">
-                    <a href="/dashboard/beritas/create" class="btn btn-info">Tambah Berita</a>
+                    <a href="/balai/bbwsserayuopak/dashboard/beritas/create" class="btn btn-info">Tambah Berita</a>
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">
@@ -42,7 +42,7 @@
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
 
-                                        <form action="/dashboard/beritas/{{ $berita->id }}" class="d-inline "
+                                        <form action="/balai/bbwsserayuopak/dashboard/beritas/{{ $berita->id }}" class="d-inline "
                                             method="POST">
                                             @csrf
                                             @method('DELETE')
