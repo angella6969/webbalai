@@ -6,11 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">Video Youtube</h5>
-<<<<<<< HEAD
-                <form method="post" action="dashboard/galeri/foto/{{ $foto->id }}" enctype="multipart/form-data">
-=======
                 <form method="post" action="/dashboard/galeri/foto/{{ $foto->id }}" enctype="multipart/form-data">
->>>>>>> parent of 71e58e0 (awd awdawdwd1)
                     @csrf
                     @method('PUT')
 

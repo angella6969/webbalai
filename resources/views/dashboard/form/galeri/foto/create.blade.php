@@ -5,13 +5,8 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-<<<<<<< HEAD
-                <h5 class="card-title fw-semibold mb-3">Tambah Foto</h5>
-                <form method="post" action="dashboard/galeri/foto" enctype="multipart/form-data">
-=======
                 <h5 class="card-title fw-semibold mb-3">Tambah Video</h5>
                 <form method="post" action="/dashboard/galeri/foto" enctype="multipart/form-data">
->>>>>>> parent of 71e58e0 (awd awdawdwd1)
                     @csrf
 
                     <x-input nama="nama" judul="Nama Album" nilai="" />
