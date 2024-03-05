@@ -36,7 +36,8 @@
                             </article>
                         @endif
                     @endforeach
-                    <div class="d-flex justify-content-center"> {{ $beritas->links() }}</div>
+                    <div class="d-flex justify-content-center">
+                        {{ $beritas->withPath('/balai/bbwsserayuopak/beritas')->links() }}</div>
                 </div>
                 {{-- End Main Content --}}
 

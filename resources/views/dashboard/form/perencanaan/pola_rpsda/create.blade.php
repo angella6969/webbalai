@@ -24,7 +24,13 @@
 
                     <x-garis />
 
-                    <x-I_pdf nama="url_pdf" judul="File Pdf" nilai="" />
+                    {{-- <x-I_pdf nama="url_pdf" judul="File Pdf" nilai="" /> --}}
+
+                    <div class="mt-3 mb-3">
+                        <label for="url_pdf">PDF</label>
+                        <input type="file" class="form-control" id="url_pdf" name="url_pdf" accept=".pdf">
+                        <h6>PDF Max 5 MB</h6>
+                    </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

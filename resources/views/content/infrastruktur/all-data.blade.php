@@ -30,7 +30,7 @@
                     <div class="col-lg-4 entries" style="margin-top:20px">
                         <article class="entry entry-single">
                             <a style="color: var(--bs-light-text)"
-                                href="/informasi-publik/infrastruktur/{{ $infrastrukturs->jenis }}/{{ $infrastrukturs->slug }}">
+                                href="/balai/bbwsserayuopak/informasi-publik/infrastruktur/{{ $infrastrukturs->jenis }}/{{ $infrastrukturs->slug }}">
                                 <div class="entry-img d-flex justify-content-center">
                                     <img src="{{ asset('storage/' . substr($infrastrukturs->url_foto1, 6)) }}"
                                         alt="" class="img-fluid"

@@ -181,6 +181,7 @@
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Galeri</span>
                 </li>
+                
 
                 @can('AdminSisda')
                     <li class="sidebar-item">

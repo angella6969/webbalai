@@ -46,9 +46,9 @@
         }
 
         /* .btn1.active-button {
-            background-color: rgba(53, 71, 119, 0.8);
-            color: white;
-        } */
+                background-color: rgba(53, 71, 119, 0.8);
+                color: white;
+            } */
     </style>
     {{-- <section
         style="background-color:rgba(3,15,107,0.2) ;background-size: cover; background-position: center center; background-repeat: no-repeat;">
@@ -68,9 +68,9 @@
         </div>
     </section> --}}
 
-        {{-- Header Content --}}
-        <x-h_content judul="Daftar Informasi Publik" posisi1="Beranda" posisi2="Daftar Informasi Publik" link="" />
-        {{-- End Header Content --}}
+    {{-- Header Content --}}
+    <x-h_content judul="Daftar Informasi Publik" posisi1="Beranda" posisi2="Daftar Informasi Publik" link="" />
+    {{-- End Header Content --}}
 
     <section class="section section-height-3">
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -191,28 +191,6 @@
     </section>
 
     <script>
-        // function toggleImage(index) {
-        //     var tables = document.querySelectorAll('.paragraf-container table');
-        //     var tbodyElements = document.querySelectorAll('.paragraf-container tbody');
-
-        //     tables.forEach(function(table, i) {
-        //         if (i === index) {
-        //             table.classList.add('active');
-        //             tbodyElements[i].classList.add('active');
-        //             localStorage.setItem('activeImageIndex', index);
-        //         } else {
-        //             table.classList.remove('active');
-        //             tbodyElements[i].classList.remove('active');
-        //         }
-        //     });
-        // }
-
-        // // Check for stored active image index
-        // var storedIndex = localStorage.getItem('activeImageIndex');
-        // if (storedIndex !== null) {
-        //     toggleImage(parseInt(storedIndex));
-        // }
-
         function toggleImage(index) {
             var tables = document.querySelectorAll('.paragraf-container table');
             var tbodyElements = document.querySelectorAll('.paragraf-container tbody');

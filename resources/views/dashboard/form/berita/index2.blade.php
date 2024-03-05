@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-4">Berita</h5>
-                <form action="/balai/bbwsserayuopak/dashboard/daerah-irigasi">
+                <form action="/balai/bbwsserayuopak/dashboard/beritas/">
                     <div class="row">
                         <div class="col-12 col-sm-12">
                             <div class="input-group mb-3">
@@ -56,7 +56,9 @@
                         </tbody>
 
                     </table>
-                    {{ $beritas->links() }}
+                    {{-- {{ $beritas->links() }} --}}
+                    {{ $beritas->withPath('/balai/bbwsserayuopak/dashboard/beritas/')->links() }}
+
                 </div>
             </div>
         </div>

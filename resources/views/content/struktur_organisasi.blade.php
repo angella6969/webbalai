@@ -1,6 +1,6 @@
 @extends('layout.content.main')
 @section('container')
-    <style>
+    {{-- <style>
         .image-container {
             white-space: nowrap;
             overflow-x: auto;
@@ -36,7 +36,7 @@
             background-color: rgba(53, 71, 1190.8);
             color: white;
         }
-    </style>
+    </style> --}}
     <section
         style="background-color:rgba(3,15,107,0.2) ;background-size: cover; background-position: center center; background-repeat: no-repeat;">
         <div class="container"><br>
@@ -86,73 +86,105 @@
                             <strong>Struktur Organisasi
                                 Balai Besar Wilayah Sungai Serayu Opak</strong>
                         </h2>
-                        <div data-aos="fade-up" data-aos-delay="100"
-                            class="image-container d-flex justify-content-center mb-3">
-                            <button class="btn btn-light" onclick="toggleImage(0)">BBWS</button>
-                            <button class="btn btn-light" onclick="toggleImage(1)">Satker Balai</button>
-                            <button class="btn btn-light" onclick="toggleImage(2)">PJSA</button>
-                            <button class="btn btn-light" onclick="toggleImage(3)">PJPA</button>
-                            <button class="btn btn-light" onclick="toggleImage(4)">Satker OP</button>
-                            <button class="btn btn-light" onclick="toggleImage(5)">Satker Bendungan</button>
-                            <button class="btn btn-light" onclick="toggleImage(6)">Satker Pengadaan Tanah</button>
-                        </div>
 
-                        <div class="image-container" data-aos="fade-up" data-aos-delay="100">
-                            <img class="image-element background-element" data-index="0"
-                                src="{{ asset('images\image\struktur_organisasi\STRUKTUR-ORGANISASI-BBWSSO.jpg') }}"
-                                alt="">
-                            <img class="image-element background-element" data-index="1"
-                                src="{{ asset('images\image\struktur_organisasi\2.-Satker-Balai-2021-2048x1393.jpg') }}"
-                                alt="">
-                            <img class="image-element background-element" data-index="2"
-                                src="{{ asset('images\image\struktur_organisasi\3.-SNVT-PJSA-2021-2048x1393.jpg') }}"
-                                alt="">
-                            <img class="image-element background-element" data-index="3"
-                                src="{{ asset('images\image\struktur_organisasi\4.-SNVT-PJPA-2021-2048x1393.jpg') }}"
-                                alt="">
-                            <img class="image-element background-element" data-index="4"
-                                src="{{ asset('images\image\struktur_organisasi\5.-Satker-OP-2021-2048x1393.jpg') }}"
-                                alt="">
-                            <img class="image-element background-element" data-index="5"
-                                src="{{ asset('images\image\struktur_organisasi\6.-Satker-Pembangunan-Bendungan-2021-2048x1393.jpg') }}"
-                                alt="">
-                            <img class="image-element background-element" data-index="6"
-                                src="{{ asset('images\image\struktur_organisasi\7.-Satker-Pengadaan-Tanah-2021-2048x1393.jpg') }}"
-                                alt="">
+                        {{--  --}}
+                        <div class="col-xl-12" data-aos="fade-up" data-aos-delay="100">
+                            <div class="nav-align-top mb-4">
+                                <ul class="nav nav-pills mb-3 nav-fill" role="tablist">
+                                    <li class="nav-item">
+                                        <button type="button" class="btn nav-link active btn-light" role="tab"
+                                            data-bs-toggle="tab" data-bs-target="#navs-pills-justified-bbws"
+                                            aria-controls="navs-pills-justified-bbws" aria-selected="true">
+                                            BBWS
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="btn nav-link btn-light " role="tab"
+                                            data-bs-toggle="tab" data-bs-target="#navs-pills-justified-balai"
+                                            aria-controls="navs-pills-justified-balai" aria-selected="false">
+                                            Satker Balai
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="btn nav-link btn-light " role="tab"
+                                            data-bs-toggle="tab" data-bs-target="#navs-pills-justified-pjsa"
+                                            aria-controls="navs-pills-justified-pjsa" aria-selected="false">
+                                            PJSA
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="btn nav-link btn-light " role="tab"
+                                            data-bs-toggle="tab" data-bs-target="#navs-pills-justified-pjpa"
+                                            aria-controls="navs-pills-justified-pjpa" aria-selected="false">
+                                            PJPA
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="btn nav-link btn-light " role="tab"
+                                            data-bs-toggle="tab" data-bs-target="#navs-pills-justified-op"
+                                            aria-controls="navs-pills-justified-op" aria-selected="false">
+                                            Satker OP
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="btn nav-link btn-light " role="tab"
+                                            data-bs-toggle="tab" data-bs-target="#navs-pills-justified-bendungan"
+                                            aria-controls="navs-pills-justified-bendungan" aria-selected="false">
+                                            Satker Bendungan
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="btn nav-link btn-light " role="tab"
+                                            data-bs-toggle="tab" data-bs-target="#navs-pills-justified-tanah"
+                                            aria-controls="navs-pills-justified-tanah" aria-selected="false">
+                                            Satker Pengadaan Tanah
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="navs-pills-justified-bbws" role="tabpanel"
+                                        data-aos="fade-up" data-aos-delay="100">
+                                        <img class="img-fluid"
+                                            src="{{ asset('images\image\struktur_organisasi\STRUKTUR-ORGANISASI-BBWSSO.jpg') }}"
+                                            alt="">
+                                    </div>
+                                    <div class="tab-pane fade" id="navs-pills-justified-balai" role="tabpanel">
+                                        <img class="img-fluid"
+                                            src="{{ asset('images\image\struktur_organisasi\2.-Satker-Balai-2021-2048x1393.jpg') }}"
+                                            alt="">
+                                    </div>
+                                    <div class="tab-pane fade" id="navs-pills-justified-pjsa" role="tabpanel">
+                                        <img class="img-fluid"
+                                            src="{{ asset('images\image\struktur_organisasi\3.-SNVT-PJSA-2021-2048x1393.jpg') }}"
+                                            alt="">
+                                    </div>
+                                    <div class="tab-pane fade" id="navs-pills-justified-pjpa" role="tabpanel">
+                                        <img class="img-fluid"
+                                            src="{{ asset('images\image\struktur_organisasi\4.-SNVT-PJPA-2021-2048x1393.jpg') }}"
+                                            alt="">
+                                    </div>
+                                    <div class="tab-pane fade" id="navs-pills-justified-op" role="tabpanel">
+                                        <img class="img-fluid"
+                                            src="{{ asset('images\image\struktur_organisasi\5.-Satker-OP-2021-2048x1393.jpg') }}"
+                                            alt="">
+                                    </div>
+                                    <div class="tab-pane fade" id="navs-pills-justified-bendungan" role="tabpanel">
+                                        <img class="img-fluid"
+                                            src="{{ asset('images\image\struktur_organisasi\6.-Satker-Pembangunan-Bendungan-2021-2048x1393.jpg') }}"
+                                            alt="">
+                                    </div>
+                                    <div class="tab-pane fade" id="navs-pills-justified-tanah" role="tabpanel">
+                                        <img class="img-fluid"
+                                            src="{{ asset('images\image\struktur_organisasi\7.-Satker-Pengadaan-Tanah-2021-2048x1393.jpg') }}"
+                                            alt="">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        {{--  --}}
                     </article>
                 </div>
             </div>
         </div>
     </section>
-
-    <script>
-        function toggleImage(index) {
-            var images = document.querySelectorAll('.image-element');
-            images.forEach(function(image) {
-                var dataIndex = image.getAttribute('data-index');
-                if (dataIndex == index) {
-                    image.classList.remove('hidden');
-                    localStorage.setItem('activeImageIndex', index);
-                } else {
-                    image.classList.add('hidden');
-                }
-            });
-
-            // Mengubah warna tombol yang aktif
-            var buttons = document.querySelectorAll('.btn');
-            buttons.forEach(function(button, i) {
-                if (i == index) {
-                    button.classList.add('active-button');
-                } else {
-                    button.classList.remove('active-button');
-                }
-            });
-        }
-
-        var storedIndex = localStorage.getItem('activeImageIndex');
-        if (storedIndex !== null) {
-            toggleImage(parseInt(storedIndex));
-        }
-    </script>
 @endsection

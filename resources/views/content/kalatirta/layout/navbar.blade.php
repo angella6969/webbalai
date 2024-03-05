@@ -4,15 +4,15 @@
         <div class="navbar">
             <ul>
                 <li>
-                    <a href="{{ route('kalatirta') }}" class="nav-link active">Beranda</a>
+                    <a href="/balai/bbwsserayuopak/kalatirta-so" class="nav-link active">Beranda</a>
                 </li>
                 <li class="dropdown">
                     <a href="#internal" class="nav-link">Informasi&nbsp;></a>
                     <ul>
-                        <li><a href="{{ route('daftar-informasi-publik') }}">Daftar Informasi Publik</a></li>
+                        <li><a href="/balai/bbwsserayuopak/informasi-publik/daftar-informasi-publik">Daftar Informasi Publik</a></li>
                         <li><a href="#prosedur">Prosedur Layanan</a></li>
-                        <li><a href="{{ route('kalatirta.formKeberatan') }}">Pengajuan Keberatan</a></li>
-                        <li><a href="{{ route('kalatirta.status') }}">Status Permohonan Informasi & Data</a></li>
+                        <li><a href="/balai/bbwsserayuopak/kalatirta-so/form-keberatan">Pengajuan Keberatan</a></li>
+                        <li><a href="/balai/bbwsserayuopak/kalatirta-so/permohonan-data">Status Permohonan Informasi & Data</a></li>
                     </ul>
                 </li>
                 <li>

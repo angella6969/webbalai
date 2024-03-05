@@ -117,7 +117,7 @@
         <section id="">
             <div class="container animated fadeIn">
                 <div class="section-cap1">
-                    <form method="post" action="{{ route('kalatirta.formKeberatan_search') }}"
+                    <form method="post" action="/balai/bbwsserayuopak/kalatirta-so/form-keberatan"
                         enctype="multipart/form-data">
                         @csrf
                         <div class="card">

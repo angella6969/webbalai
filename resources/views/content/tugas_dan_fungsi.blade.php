@@ -21,11 +21,11 @@
         }
 
         /* .btn {
-                                        margin: 5px;
-                                        background-color: rgba(255, 201, 40, 0.8);
-                                        width: 20%;
-                                        padding: 10px 20px;
-                                    } */
+                                                                            margin: 5px;
+                                                                            background-color: rgba(255, 201, 40, 0.8);
+                                                                            width: 20%;
+                                                                            padding: 10px 20px;
+                                                                        } */
 
         @media (max-width: 768px) {
             .btn {
@@ -133,88 +133,169 @@
                         </h6>
                         <h1 class="mt-3 mb-3 text-center" style="padding-top: 50px" data-aos="fade-up" data-aos-delay="100">
                             Profil Organisasi</h1>
-                        <div class="btn-group d-flex justify-content-center mb-3" data-aos="fade-up" data-aos-delay="100">
-                            <button class="btn btn-light" onclick="toggleImage(0)">Bagian Umum dan Tata Usaha</button>
-                            <button class="btn btn-light" onclick="toggleImage(1)">Bidang Keterpaduan Pembangunan
-                                Infrastruktur Sumber Daya Air</button>
-                            <button class="btn btn-light" onclick="toggleImage(2)">Bidang Pelaksanaan Jaringan Sumber
-                                Air</button>
-                            <button class="btn btn-light" onclick="toggleImage(3)">Bidang Pelaksanaan Jaringan Pemanfaatan
-                                Air</button>
-                            <button class="btn btn-light" onclick="toggleImage(4)">Bidang Operasi Dan Pemeliharaan</button>
-                        </div>
-
-                        <div class="image-container container" data-aos="fade-up" data-aos-delay="100"
-                            style="text-align: justify">
-                            <ul>
-                                <li class="active" data-index="0">
-                                    <p>Bagian Umum dan Tata Usaha mempunyai tugas melaksanakan
-                                        urusan administrasi kepegawaian, organisasi, dan tata laksana, pelaksanaan pembinaan
-                                        pegawai, pelaksanaan fasilitasi kegiatan reformasi birokrasi di balai, penyusunan
-                                        rencana dan pengelolaan urusan kas dan perbendaharaan, administrasi dan akuntansi
-                                        keuangan, administrasi dan fasilitasi penyelesaian laporan hasil pemeriksaan dan
-                                        pengaduan masyarakat, pelaksanaan pemungutan, penerimaan dan penggunaan biaya jasa
-                                        pengelolaan sumber daya air, pelaksanaan urusan tata usaha, kearsipan, dan rumah
-                                        tangga,
-                                        pelaksanaan komunikasi publik dan hukum, penatausahaan, pengelolaan, administrasi,
-                                        dan
-                                        akuntansi barang milik negara, pengamanan fisik barang milik negara, pengelolaan
-                                        kekayaan negara lainnya, koordinasi kegiatan terkait penanganan bencana, serta
-                                        koordinasi administrasi penerapan sistem pengendalian intern balai besar.</p>
-                                </li>
-                                <li data-index="1">Bidang Keterpaduan Pembangunan Infrastruktur Sumber Daya Air mempunyai
-                                    tugas melaksanakan penyusunan keterpaduan pola, program dan rencana kegiatan pengelolaan
-                                    sumber daya air, analisis dan evaluasi kelayakan program dan kegiatan pengelolaan sumber
-                                    daya air, analisis dampak lingkungan, penyusunan perjanjian kinerja dan laporan kinerja
-                                    Balai, koordinasi dan fasilitasi penerapan sistem manajemen keselamatan dan kesehatan
-                                    kerja, fasilitasi pengadaan barang dan jasa, pelaksanaan koordinasi terkait pengadaan
-                                    tanah, pelaksanaan pemberdayaan masyarakat di bidang program dan perencanaan umum
-                                    pengelolaan sumber daya air, pengelolaan sistem hidrologi serta sistem informasi dan
-                                    data sumber daya air, dan pelaksanaan koordinasi terkait pengadaan tanah.</li>
-                                <li data-index="2">Bidang Pelaksanaan Jaringan Sumber Air mempunyai tugas penyusunan rencana
-                                    kegiatan, penyusunan perencanaan teknik, pengendalian dan pengawasan pelaksanaan
-                                    perencanaan teknik bidang sungai, pantai, drainase utama perkotaan, bendungan, danau,
-                                    situ, embung, dan tampungan air lainnya, pelaksanaan konstruksi dan non konstruksi,
-                                    persiapan penyerahan operasi dan pemeliharaan, fasilitasi penerapan sistem manajemen
-                                    keselamatan dan kesehatan kerja, fasilitasi pengadaan barang dan jasa, pelaksanaan
-                                    pemberdayaan masyarakat di bidang pelaksanaan jaringan sumber air, serta pelaksanaan
-                                    pemberian bimbingan teknis kepada pemerintah daerah provinsi dan pemerintah daerah
-                                    kabupaten/kota dalam pelaksanaan konstruksi sarana dan prasarana jaringan sumber air di
-                                    bidang sungai, pantai, drainase utama perkotaan, bendungan, danau, situ, embung, dan
-                                    tampungan air lainnya, serta pelaksanaan penyusunan saran teknis untuk pengalihan alur
-                                    sungai dan pemanfaatan bekas sungai.</li>
-                                <li data-index="3">Bidang Pelaksanaan Jaringan Pemanfaatan Air mempunyai tugas melaksanakan
-                                    penyusunan rencana kegiatan, penyusunan perencanaan teknik, pengendalian dan pengawasan
-                                    pelaksanaan perencanaan teknik bidang irigasi, rawa, dan tambak, air tanah dan air baku,
-                                    konservasi tampungan air, air tanah, dan air baku, serta sarana dan prasarana konservasi
-                                    air tanah dan air baku, pelaksanaan konstruksi dan non konstruksi, persiapan penyerahan
-                                    operasi dan pemeliharaan, fasilitasi penerapan sistem manajemen keselamatan dan
-                                    kesehatan kerja, fasilitasi pengadaan barang dan jasa, pelaksanaan pemberdayaan
-                                    masyarakat di bidang pelaksanaan jaringan pemanfaatan air, serta pelaksanaan pemberian
-                                    bimbingan teknis kepada Pemerintah Daerah provinsi dan Pemerintah Daerah kabupaten/kota
-                                    dalam pelaksanaan konstruksi sarana dan prasarana jaringan sumber air di bidang irigasi,
-                                    rawa, dan tambak, air tanah dan air baku, konservasi tampungan air, air tanah, dan air
-                                    baku, serta sarana dan prasarana konservasi air tanah dan air baku.</li>
-                                <li data-index="4">Bidang Operasi dan Pemeliharaan mempunyai tugas melaksanakan penyusunan
-                                    rencana kegiatan, pengendalian dan pengawasan pelaksanaan perencanaan teknik, persiapan
-                                    pelaksanaan operasi dan pemeliharaan dan pelaksanaan operasi dan pemeliharaan,
-                                    fasilitasi penerapan sistem manajemen keselamatan dan kesehatan kerja, fasilitasi
-                                    pengadaan barang dan jasa, serta pelaksanaan pemberdayaan masyarakat di bidang operasi
-                                    dan pemeliharaan, pelaksanaan penanggulangan kerusakan akibat bencana, pengelolaan
-                                    sistem peringatan dini, pelaksanaan penyusunan rencana alokasi air tahunan, pelaksanaan
-                                    penyusunan kajian penetapan garis sempadan sungai, garis sempadan danau, garis sempadan
-                                    situ dan garis sempadan jaringan irigasi, fasilitasi kegiatan tim koordinasi pengelolaan
-                                    sumber daya air pada wilayah sungai, pelaksanaan penyusunan rekomendasi teknis dalam
-                                    pemberian izin penggunaan sumber daya air serta penyidikan tindak pidana bidang sumber
-                                    daya air.</li>
-                            </ul>
+                        <div class="col-xl-12" data-aos="fade-up" data-aos-delay="100">
+                            <div class="nav-align-top mb-4">
+                                <ul class="nav nav-pills mb-3 nav-fill" role="tablist">
+                                    <li class="nav-item">
+                                        <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab"
+                                            data-bs-target="#navs-pills-justified-home"
+                                            aria-controls="navs-pills-justified-home" aria-selected="true">
+                                            Bagian Umum dan Tata Usaha
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="nav-link" role="tab" data-bs-toggle="tab"
+                                            data-bs-target="#navs-pills-justified-profile"
+                                            aria-controls="navs-pills-justified-profile" aria-selected="false">
+                                            Bidang Keterpaduan Pembangunan
+                                            Infrastruktur Sumber Daya Air
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="nav-link" role="tab" data-bs-toggle="tab"
+                                            data-bs-target="#navs-pills-justified-messages"
+                                            aria-controls="navs-pills-justified-messages" aria-selected="false">
+                                            Bidang Pelaksanaan Jaringan Sumber
+                                            Air
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="nav-link" role="tab" data-bs-toggle="tab"
+                                            data-bs-target="#navs-pills-justified-pjpa"
+                                            aria-controls="navs-pills-justified-pjpa" aria-selected="false">
+                                            Bidang Pelaksanaan Jaringan Pemanfaatan
+                                            Air
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="nav-link" role="tab" data-bs-toggle="tab"
+                                            data-bs-target="#navs-pills-justified-op"
+                                            aria-controls="navs-pills-justified-op" aria-selected="false">
+                                            Bidang Operasi Dan Pemeliharaan
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="navs-pills-justified-home" role="tabpanel"
+                                        data-aos="fade-up" data-aos-delay="100">
+                                        <p>
+                                            Bagian Umum dan Tata Usaha mempunyai tugas melaksanakan
+                                            urusan administrasi kepegawaian, organisasi, dan tata laksana, pelaksanaan
+                                            pembinaan
+                                            pegawai, pelaksanaan fasilitasi kegiatan reformasi birokrasi di balai,
+                                            penyusunan
+                                            rencana dan pengelolaan urusan kas dan perbendaharaan, administrasi dan
+                                            akuntansi
+                                            keuangan, administrasi dan fasilitasi penyelesaian laporan hasil pemeriksaan dan
+                                            pengaduan masyarakat, pelaksanaan pemungutan, penerimaan dan penggunaan biaya
+                                            jasa
+                                            pengelolaan sumber daya air, pelaksanaan urusan tata usaha, kearsipan, dan rumah
+                                            tangga,
+                                            pelaksanaan komunikasi publik dan hukum, penatausahaan, pengelolaan,
+                                            administrasi,
+                                            dan
+                                            akuntansi barang milik negara, pengamanan fisik barang milik negara, pengelolaan
+                                            kekayaan negara lainnya, koordinasi kegiatan terkait penanganan bencana, serta
+                                            koordinasi administrasi penerapan sistem pengendalian intern balai besar.
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="navs-pills-justified-profile" role="tabpanel">
+                                        <p>Bidang Keterpaduan Pembangunan Infrastruktur Sumber Daya Air mempunyai
+                                            tugas melaksanakan penyusunan keterpaduan pola, program dan rencana kegiatan
+                                            pengelolaan
+                                            sumber daya air, analisis dan evaluasi kelayakan program dan kegiatan
+                                            pengelolaan sumber
+                                            daya air, analisis dampak lingkungan, penyusunan perjanjian kinerja dan laporan
+                                            kinerja
+                                            Balai, koordinasi dan fasilitasi penerapan sistem manajemen keselamatan dan
+                                            kesehatan
+                                            kerja, fasilitasi pengadaan barang dan jasa, pelaksanaan koordinasi terkait
+                                            pengadaan
+                                            tanah, pelaksanaan pemberdayaan masyarakat di bidang program dan perencanaan
+                                            umum
+                                            pengelolaan sumber daya air, pengelolaan sistem hidrologi serta sistem informasi
+                                            dan
+                                            data sumber daya air, dan pelaksanaan koordinasi terkait pengadaan tanah.
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="navs-pills-justified-messages" role="tabpanel">
+                                        <p>Bidang Pelaksanaan Jaringan Pemanfaatan Air mempunyai tugas melaksanakan
+                                            penyusunan rencana kegiatan, penyusunan perencanaan teknik, pengendalian dan
+                                            pengawasan
+                                            pelaksanaan perencanaan teknik bidang irigasi, rawa, dan tambak, air tanah dan
+                                            air baku,
+                                            konservasi tampungan air, air tanah, dan air baku, serta sarana dan prasarana
+                                            konservasi
+                                            air tanah dan air baku, pelaksanaan konstruksi dan non konstruksi, persiapan
+                                            penyerahan
+                                            operasi dan pemeliharaan, fasilitasi penerapan sistem manajemen keselamatan dan
+                                            kesehatan kerja, fasilitasi pengadaan barang dan jasa, pelaksanaan pemberdayaan
+                                            masyarakat di bidang pelaksanaan jaringan pemanfaatan air, serta pelaksanaan
+                                            pemberian
+                                            bimbingan teknis kepada Pemerintah Daerah provinsi dan Pemerintah Daerah
+                                            kabupaten/kota
+                                            dalam pelaksanaan konstruksi sarana dan prasarana jaringan sumber air di bidang
+                                            irigasi,
+                                            rawa, dan tambak, air tanah dan air baku, konservasi tampungan air, air tanah,
+                                            dan air
+                                            baku, serta sarana dan prasarana konservasi air tanah dan air baku.
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="navs-pills-justified-pjpa" role="tabpanel">
+                                        <p>Bidang Pelaksanaan Jaringan Pemanfaatan Air mempunyai tugas melaksanakan
+                                            penyusunan rencana kegiatan, penyusunan perencanaan teknik, pengendalian dan
+                                            pengawasan
+                                            pelaksanaan perencanaan teknik bidang irigasi, rawa, dan tambak, air tanah dan
+                                            air baku,
+                                            konservasi tampungan air, air tanah, dan air baku, serta sarana dan prasarana
+                                            konservasi
+                                            air tanah dan air baku, pelaksanaan konstruksi dan non konstruksi, persiapan
+                                            penyerahan
+                                            operasi dan pemeliharaan, fasilitasi penerapan sistem manajemen keselamatan dan
+                                            kesehatan kerja, fasilitasi pengadaan barang dan jasa, pelaksanaan pemberdayaan
+                                            masyarakat di bidang pelaksanaan jaringan pemanfaatan air, serta pelaksanaan
+                                            pemberian
+                                            bimbingan teknis kepada Pemerintah Daerah provinsi dan Pemerintah Daerah
+                                            kabupaten/kota
+                                            dalam pelaksanaan konstruksi sarana dan prasarana jaringan sumber air di bidang
+                                            irigasi,
+                                            rawa, dan tambak, air tanah dan air baku, konservasi tampungan air, air tanah,
+                                            dan air
+                                            baku, serta sarana dan prasarana konservasi air tanah dan air baku.
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="navs-pills-justified-op" role="tabpanel">
+                                        <p>Bidang Operasi dan Pemeliharaan mempunyai tugas melaksanakan penyusunan
+                                            rencana kegiatan, pengendalian dan pengawasan pelaksanaan perencanaan teknik,
+                                            persiapan
+                                            pelaksanaan operasi dan pemeliharaan dan pelaksanaan operasi dan pemeliharaan,
+                                            fasilitasi penerapan sistem manajemen keselamatan dan kesehatan kerja,
+                                            fasilitasi
+                                            pengadaan barang dan jasa, serta pelaksanaan pemberdayaan masyarakat di bidang
+                                            operasi
+                                            dan pemeliharaan, pelaksanaan penanggulangan kerusakan akibat bencana,
+                                            pengelolaan
+                                            sistem peringatan dini, pelaksanaan penyusunan rencana alokasi air tahunan,
+                                            pelaksanaan
+                                            penyusunan kajian penetapan garis sempadan sungai, garis sempadan danau, garis
+                                            sempadan
+                                            situ dan garis sempadan jaringan irigasi, fasilitasi kegiatan tim koordinasi
+                                            pengelolaan
+                                            sumber daya air pada wilayah sungai, pelaksanaan penyusunan rekomendasi teknis
+                                            dalam
+                                            pemberian izin penggunaan sumber daya air serta penyidikan tindak pidana bidang
+                                            sumber
+                                            daya air.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </article>
                 </div>
             </div>
         </div>
     </section>
-
     <script>
         function toggleImage(index) {
             var images = document.querySelectorAll('.image-container ul li');

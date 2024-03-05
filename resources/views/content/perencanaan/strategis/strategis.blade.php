@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="breadcrumb justify-content-start text-color-light justify-content-md-end">
-                        <li><a class="text-color-light" style="color: black" href="/">Beranda</a> / <a href=""
+                        <li><a class="text-color-light" style="color: black" href="/balai/bbwsserayuopak/">Beranda</a> / <a href=""
                                 style="color: black" class="active">Media</a></li>
                         {{-- <li class="active"> Profil</li> --}}
                     </ul>

@@ -35,10 +35,10 @@
                 </div> --}}
 
                     <div class="mt-3 mb-3">
-                        <label for="url_file">PDF</label>
+                        <label for="url_file">PDF/Image</label>
                         <input type="file" class="form-control" id="url_file" name="url_file"
                             accept=".pdf, .xls, .xlsx, .jpg, .jpeg, .png">
-                        <h6>PDF Max 5 MB</h6>
+                        <h6>PDF/Image Max 5 MB</h6>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

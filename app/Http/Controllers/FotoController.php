@@ -41,7 +41,7 @@ class FotoController extends Controller
         // dd($request->all());
         $validatedData = $request->validate([
             'nama' => ['required'],
-            'slug' => ['required', 'Unique:Fotos'],
+            'slug' => ['required', 'Unique:fotos'],
             'url_foto1' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
             'url_foto2' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
             'url_foto3' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],

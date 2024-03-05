@@ -39,12 +39,12 @@
                                     <td> </td>
 
                                     <td>
-                                        <a href="{{ route('foto.edit', ['foto' => $foto->id]) }}"
+                                        <a href="/balai/bbwsserayuopak/dashboard/galeri/foto/{{ $foto->id }}/edit"
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
 
-                                        <form action="{{ route('foto.destroy', ['foto' => $foto->id]) }}" class="d-inline "
-                                            method="POST">
+                                        <form action="/balai/bbwsserayuopak/dashboard/galeri/foto/{{ $foto->id }}"
+                                            class="d-inline " method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn badge bg-danger show-DI-modal "

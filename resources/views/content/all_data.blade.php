@@ -13,7 +13,7 @@
             <h2>Berita Terbaru</h2>
 
             <ol>
-                <li><a style="color: black" href="/">Beranda</a></li>
+                <li><a style="color: black" href="/balai/bbwsserayuopak/">Beranda</a></li>
                 <li style="color: black">Berita</li>
             </ol>
         </div>
@@ -35,7 +35,7 @@
                         <div class="post-item clearfix">
                             <div>
                                 <a style="background-color: var(--bg-bs-body); color: var(--bg-bs-text)"
-                                    href="/informasi-publik/infrastruktur/{{ $infrastruktur->jenis }}/{{ $infrastruktur->slug }}"><img
+                                    href="/balai/bbwsserayuopak/informasi-publik/infrastruktur/{{ $infrastruktur->jenis }}/{{ $infrastruktur->slug }}"><img
                                         style="width: 40px" src="{{ asset('images\icon\snowplow.png') }}" alt="">
                                     {{ $infrastruktur->nama }}
                                 </a>
@@ -72,7 +72,7 @@
                         <div class="post-item clearfix">
                             <div>
                                 <a style="background-color: var(--bg-bs-body); color: var(--bg-bs-text)"
-                                    href="/beritas/{{ $berit->slug }}"><img style="width: 40px"
+                                    href="/balai/bbwsserayuopak/beritas/{{ $berit->slug }}"><img style="width: 40px"
                                         src="{{ asset('images\icon\form.png') }}" alt="">
                                     {{ $berit->judul }}
                                 </a>
@@ -98,7 +98,7 @@
                         <div class="post-item clearfix">
                             <div>
                                 <a style="background-color: var(--bg-bs-body); color: var(--bg-bs-text)"
-                                    href="/media/media-informasi/{{ $infografi->jenis }}/{{ $infografi->slug }}"><img
+                                    href="/balai/bbwsserayuopak/media/media-informasi/{{ $infografi->jenis }}/{{ $infografi->slug }}"><img
                                         style="width: 40px" src="{{ asset('images\icon\catalog-magazine.png') }}"
                                         alt="">
                                     {{ $infografi->nama }}
@@ -137,7 +137,7 @@
                         <div class="post-item clearfix">
                             <div>
                                 <a style="background-color: var(--bg-bs-body); color: var(--bg-bs-text)"
-                                    href="/media/galeri/video/{{ $galeri->slug }}"><img style="width: 40px"
+                                    href="/balai/bbwsserayuopak/media/galeri/video/{{ $galeri->slug }}"><img style="width: 40px"
                                         src="{{ asset('images\icon\youtube.png') }}" alt="">
                                     {{ $galeri->nama }}
                                 </a>

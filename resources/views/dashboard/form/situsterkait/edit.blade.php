@@ -23,7 +23,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">update Situs Terkait</h5>
-                <form method="post" action="/balai/bbwsserayuopak/dashboard/situs-terkait/{{ $situs->id }}"
+                <form method="post" action="/balai/bbwsserayuopak/dashboard/situs-terkait/{{ $situsterkaits->id }}"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')

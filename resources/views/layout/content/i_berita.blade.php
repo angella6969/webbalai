@@ -4,13 +4,13 @@
         @foreach ($beritas as $berita)
             <div class="swiper-slide">
                 <div class="card " style="border: 10px">
-                    <a href="{{ route('beritas.slug', ['slug' => $berita->slug]) }}"><img 
+                    <a href="/balai/bbwsserayuopak/beritas/{{ $berita->slug }}"><img 
                             src="{{ asset('storage/' . substr($berita->url_foto, 6)) }}"
                             class="card-img-top hover-effect-2 card-img-top img-fluid" alt=""
                             style="height: 200px;  border-radius: 0 0 100px 0; border-bottom: 5px solid #fbb717;"></a>
 
                     <div class="card-body">
-                        <h6 class="font-weight-bold text-4 mb-1"><a href="beritas/{{ $berita->slug }}"
+                        <h6 class="font-weight-bold text-4 mb-1"><a href="/balai/bbwsserayuopak/beritas/{{ $berita->slug }}"
                                 style="color:var(--bs-bg-body)"><strong>{{ $berita->judul }}</strong></a></h6>
                         <span style="font-size: 12px" class="text-color-dark mb-3"><i class="bi bi-clock"></i>
                             {{ Carbon\Carbon::createFromTimeString($berita->created_at)->format('d F Y') }}
