@@ -6,7 +6,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-4">Daftar Rencana Strategis</h5>
-                <form action="/dashboard/perencanaan/rencana-strategis">
+                <form action="/balai/bbwsserayuopak/dashboard/perencanaan/rencana-strategis">
                     <div class="row">
                         <div class="col-12 col-sm-12">
                             <div class="input-group mb-3">
@@ -19,7 +19,8 @@
                     </div>
                 </form>
                 <div class="mt-2 mb-2">
-                    <a href="/dashboard/perencanaan/rencana-strategis/create" class="btn btn-info">Tambah Rencana</a>
+                    <a href="/balai/bbwsserayuopak/dashboard/perencanaan/rencana-strategis/create"
+                        class="btn btn-info">Tambah Rencana</a>
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">
@@ -37,12 +38,12 @@
                                     <td> {{ $rencana_starategis->nama }}</td>
 
                                     <td>
-                                        <a href="/dashboard/perencanaan/rencana-strategis/{{ $rencana_starategis->id }}/edit"
+                                        <a href="/balai/bbwsserayuopak/dashboard/perencanaan/rencana-strategis/{{ $rencana_starategis->id }}/edit"
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
 
                                         <form
-                                            action="/dashboard/perencanaan/rencana-strategis/{{ $rencana_starategis->id }}"
+                                            action="/balai/bbwsserayuopak/dashboard/perencanaan/rencana-strategis/{{ $rencana_starategis->id }}"
                                             class="d-inline " method="POST">
                                             @csrf
                                             @method('DELETE')

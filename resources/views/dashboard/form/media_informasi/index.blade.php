@@ -52,7 +52,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-4">Media Informasi</h5>
-                <form action="/dashboard/media/media-informasi">
+                <form action="/balai/bbwsserayuopak/dashboard/media/media-informasi">
                     <div class="row">
                         <div class="col-12 col-sm-12">
                             <div class="input-group mb-3">
@@ -65,7 +65,8 @@
                     </div>
                 </form>
                 <div class="mt-2 mb-2">
-                    <a href="/dashboard/media/media-informasi/create" class="btn btn-info">Tambah Data</a>
+                    <a href="/balai/bbwsserayuopak/dashboard/media/media-informasi/create" class="btn btn-info">Tambah
+                        Data</a>
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">
@@ -86,11 +87,12 @@
                                             src={{ asset('storage/' . substr($Infografis->url_foto1, 6)) }} alt="">
                                     </td>
                                     <td>
-                                        <a href="{{ route('media-informasi.edit', ['media_informasi' => $Infografis->id]) }}"
+                                        <a href="/balai/bbwsserayuopak/dashboard/media/media-informasi/{{ $Infografis->id }}/edit"
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
 
-                                        <form action="{{ route('media-informasi.destroy', ['media_informasi' => $Infografis->id]) }}"
+                                        <form
+                                            action="/balai/bbwsserayuopak/dashboard/media/media-informasi/{{ $Infografis->id }}"
                                             class="d-inline " method="POST">
                                             @csrf
                                             @method('DELETE')
@@ -112,24 +114,4 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <x-notif />
-
-    {{-- <script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-            @if (Session::has('success'))
-                iziToast.success({
-                    title: 'Success',
-                    message: '{{ Session::get('success') }}',
-                    position: 'bottomRight',
-                });
-            @endif
-            @if (Session::has('fail'))
-                iziToast.warning({
-                    title: 'Warning',
-                    message: '{{ Session::get('fail') }}',
-                    position: 'bottomRight',
-                });
-            @endif
-        });
-</script> --}}
 @endsection

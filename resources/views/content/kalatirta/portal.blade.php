@@ -146,7 +146,7 @@
                         {{-- <p>Permohonan Informasi dan Data</p> --}}
                     </div>
                     <div class="col icon-box">
-                        <a href="{{ route('kalatirta.create') }}">
+                        <a href="/balai/bbwsserayuopak/kalatirta-so/form-permohonan-data">
                             <svg class="icon">
                                 <use xlink:href="#form"></use>
                             </svg>

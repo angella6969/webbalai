@@ -115,7 +115,7 @@
         </section>
 
         <section id="">
-            <form method="post" action="kalatirta-so/form-data-keberatan" enctype="multipart/form-data">
+            <form method="post" action="/balai/bbwsserayuopak/kalatirta-so/form-data-keberatan" enctype="multipart/form-data">
                 @csrf
                 <div class="container animated fadeIn">
                     <div class="section-cap1">

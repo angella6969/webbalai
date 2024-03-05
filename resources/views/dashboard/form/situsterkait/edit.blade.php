@@ -23,7 +23,8 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">update Situs Terkait</h5>
-                <form method="post" action="/dashboard/situs-terkait/{{ $situsterkaits->id }}" enctype="multipart/form-data">
+                <form method="post" action="/balai/bbwsserayuopak/dashboard/situs-terkait/{{ $situsterkaits->id }}"
+                    enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
 
@@ -112,35 +113,6 @@
     </script>
     <x-notif />
 
-    {{-- <script>
-    document.addEventListener('DOMContentLoaded', function() {
-            @if (Session::has('success'))
-                iziToast.success({
-                    title: 'Success',
-                    message: '{{ Session::get('success') }}',
-                    position: 'topRight',
-                });
-            @endif
-            @if (Session::has('fail'))
-                iziToast.warning({
-                    title: 'Warning',
-                    message: '{{ Session::get('fail') }}',
-                    position: 'topRight',
-                });
-            @endif
-        });
-</script> --}}
-    {{--
-<script>
-    const nama = document.querySelector('#nama');
-        const slug = document.querySelector('#slug');
-
-        nama.addEventListener('change', function() {
-            fetch('/dashboard/infrastruktur/bendungans/checkSlug?nama=' + nama.value)
-                .then(response => response.json())
-                .then(data => slug.value = data.slug)
-        });
-</script> --}}
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

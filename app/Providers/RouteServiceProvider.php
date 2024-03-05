@@ -39,11 +39,4 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
         });
     }
-    // protected function mapWebRoutes()
-    // {
-    //     Route::middleware('web')
-    //         ->namespace($this->namespace)
-    //         ->prefix('balai/bbwsserayuopak') // Tambahkan prefix di sini
-    //         ->group(base_path('routes/web.php'));
-    // }
 }

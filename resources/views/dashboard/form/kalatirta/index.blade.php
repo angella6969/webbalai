@@ -48,12 +48,12 @@
                                     <td> {{ $data->status }}</td>
 
                                     <td>
-                                        <a href="/dashboard/kalatirta-so/{{ $data->id }}"
+                                        <a href="/balai/bbwsserayuopak/dashboard/kalatirta-so/{{ $data->id }}"
                                             class="bg badge bg-warning"><span data-feather="eye">
                                             </span></a>
 
-                                        <form action="/dashboard/kalatirta-so/{{ $data->id }}" class="d-inline "
-                                            method="POST">
+                                        <form action="/balai/bbwsserayuopak/dashboard/kalatirta-so/{{ $data->id }}"
+                                            class="d-inline " method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn badge bg-danger show-DI-modal "

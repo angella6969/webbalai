@@ -34,7 +34,7 @@
         <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
             <ul id="sidebarnav">
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="{{ route('dashboard') }}" aria-expanded="false">
+                    <a class="sidebar-link" href="/balai/bbwsserayuopak/dashboard" aria-expanded="false">
                         <span>
                             <i class="ti ti-layout-dashboard"></i>
                         </span>
@@ -51,7 +51,7 @@
 
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/foto-beranda*') ? 'active' : '' }}"
-                            href="{{ route('foto-beranda.index') }}" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/foto-beranda" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -60,7 +60,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/profil/sejarah*') ? 'active' : '' }}"
-                            href="{{ route('sejarah.index') }}" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/profil/sejarah" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -74,7 +74,7 @@
 
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/kalatirta-so*') ? 'active' : '' }}"
-                            href="{{ route('kalatirta-so.index') }}" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/kalatirta-so" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -82,7 +82,7 @@
                         </a>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/kalatirta/keberatan*') ? 'active' : '' }}"
-                            href="{{ route('keberatan.index') }}" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/kalatirta/keberatan" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -96,7 +96,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/beritas*') ? 'active' : '' }}"
-                            href="{{ route('beritas.index') }}" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/beritas" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -105,7 +105,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/pengumuman*') ? 'active' : '' }}"
-                            href="/dashboard/pengumuman" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/pengumuman" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -118,7 +118,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/daftar-informasi-publik*') ? 'active' : '' }}"
-                            href="/dashboard/daftar-informasi-publik" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/daftar-informasi-publik" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-cards"></i> --}}
                             </span>
@@ -127,7 +127,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/perencanaan/rencana-strategis*') ? 'active' : '' }}"
-                            href="/dashboard/perencanaan/rencana-strategis" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/perencanaan/rencana-strategis" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-cards"></i> --}}
                             </span>
@@ -136,7 +136,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/perencanaan/pola-ws-dan-rpsda*') ? 'active' : '' }}"
-                            href="/dashboard/perencanaan/pola-ws-dan-rpsda" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/perencanaan/pola-ws-dan-rpsda" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-cards"></i> --}}
                             </span>
@@ -145,7 +145,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/kinerja/lakip*') ? 'active' : '' }}"
-                            href="/dashboard/kinerja/lakip" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/kinerja/lakip" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-cards"></i> --}}
                             </span>
@@ -165,7 +165,7 @@
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link {{ Request::is('dashboard/media/media-informasi*') ? 'active' : '' }}"
-                        href="/dashboard/media/media-informasi" aria-expanded="false">
+                        href="/balai/bbwsserayuopak/dashboard/media/media-informasi" aria-expanded="false">
                         <span>
                             {{-- <i class="ti ti-cards"></i> --}}
                         </span>
@@ -181,11 +181,12 @@
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Galeri</span>
                 </li>
+                
 
                 @can('AdminSisda')
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/galeri/video*') ? 'active' : '' }}"
-                            href="/dashboard/galeri/video" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/galeri/video" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -197,7 +198,7 @@
                 @can('Admin')
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/galeri/foto*') ? 'active' : '' }}"
-                            href="/dashboard/galeri/foto" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/galeri/foto" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -216,7 +217,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/situs-terkait*') ? 'active' : '' }}"
-                            href="/dashboard/situs-terkait" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/situs-terkait" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-article"></i> --}}
                             </span>
@@ -229,7 +230,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/infrastruktur/bendungans*') ? 'active' : '' }}"
-                            href="/dashboard/infrastruktur/bendungans" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/infrastruktur/bendungans" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-cards"></i> --}}
                             </span>
@@ -238,7 +239,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/infrastruktur/bendungs*') ? 'active' : '' }}"
-                            href="/dashboard/infrastruktur/bendungs" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/infrastruktur/bendungs" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-file-description"></i> --}}
                             </span>
@@ -247,7 +248,7 @@
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link {{ Request::is('dashboard/infrastruktur/embungs*') ? 'active' : '' }}"
-                            href="/dashboard/infrastruktur/embungs" aria-expanded="false">
+                            href="/balai/bbwsserayuopak/dashboard/infrastruktur/embungs" aria-expanded="false">
                             <span>
                                 {{-- <i class="ti ti-typography"></i> --}}
                             </span>
@@ -256,7 +257,6 @@
                     </li>
                 @endcan
                 {{-- ================================ End Admin SISDA ================================ --}}
-
             </ul>
         </nav>
     </div>

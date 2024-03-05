@@ -20,7 +20,7 @@
                 </div>
             </form> --}}
                 <div class="mt-2 mb-2">
-                    <a href="/dashboard/foto-beranda/create" class="btn btn-info">Tambah Foto</a>
+                    <a href="/balai/bbwsserayuopak/dashboard/foto-beranda/create" class="btn btn-info">Tambah Foto</a>
                 </div>
                 <div class="table-responsive-sm">
                     <table class="table table-striped table-sm">
@@ -38,12 +38,12 @@
                                     <td> <img style="height: 150px" src={{ asset('storage/' . substr($image->image, 6)) }}
                                             alt=""></td>
                                     <td>
-                                        <a href="/dashboard/foto-beranda/{{ $image->id }}/edit"
+                                        <a href="/balai/bbwsserayuopak/dashboard/foto-beranda/{{ $image->id }}/edit"
                                             class="bg badge bg-warning"><span data-feather="edit">
                                             </span></a>
 
-                                        <form action="/dashboard/foto-beranda/{{ $image->id }}" class="d-inline "
-                                            method="POST">
+                                        <form action="/balai/bbwsserayuopak/dashboard/foto-beranda/{{ $image->id }}"
+                                            class="d-inline " method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn badge bg-danger show-DI-modal "

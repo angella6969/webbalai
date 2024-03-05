@@ -8,13 +8,8 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title fw-semibold mb-3">Daftar Informasi Publik</h5>
-<<<<<<< HEAD
-                <form method="post" action="dashboard/daftar-informasi-publik" enctype="multipart/form-data">
-                    @csrf 
-=======
-                <form method="post" action="/dashboard/daftar-informasi-publik" enctype="multipart/form-data">
+                <form method="post" action="/balai/bbwsserayuopak/dashboard/daftar-informasi-publik" enctype="multipart/form-data">
                     @csrf
->>>>>>> parent of 71e58e0 (awd awdawdwd1)
                     <x-input nama="nama" judul="Judul Informasi Publik" nilai="" />
                     <div class="mt-3">
                         <label for="jenis" class="form-label">Klasifikasi Informasi Publik</label>
@@ -40,10 +35,10 @@
                 </div> --}}
 
                     <div class="mt-3 mb-3">
-                        <label for="url_file">PDF</label>
+                        <label for="url_file">PDF/Image</label>
                         <input type="file" class="form-control" id="url_file" name="url_file"
                             accept=".pdf, .xls, .xlsx, .jpg, .jpeg, .png">
-                        <h6>PDF Max 5 MB</h6>
+                        <h6>PDF/Image Max 5 MB</h6>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

@@ -20,7 +20,7 @@
 </section> --}}
 
     {{-- Header Content --}}
-    <x-h_content judul="Embung" posisi1="Beranda" posisi2="Infrastruktur" link="informasi-publik/infrastruktur" />
+    <x-h_content judul="Embung" posisi1="Beranda" posisi2="Infrastruktur" link="/balai/bbwsserayuopak/informasi-publik/infrastruktur" />
     {{-- End Header Content --}}
     <section id="" class="blog">
         <div class="container" data-aos="fade-up">

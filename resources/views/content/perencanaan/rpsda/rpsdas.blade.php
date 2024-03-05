@@ -10,8 +10,8 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="breadcrumb justify-content-start text-color-light justify-content-md-end">
-                        <li><a style="color: black" href="/">Beranda</a> / <a href="" style="color: black"
-                                class="active"><strong>Perencanaan</strong></a></li>
+                        <li><a style="color: black" href="/balai/bbwsserayuopak/">Beranda</a> / <a href=""
+                                style="color: black" class="active"><strong>Perencanaan</strong></a></li>
                         {{-- <li class="active"> Profil</li> --}}
                     </ul>
                 </div>

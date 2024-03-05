@@ -33,6 +33,6 @@
         <img class="img-fluid" src="{{ asset('images\404.png') }}" alt="">
         <h1>TIDAK KETEMU !</h1>
         <p>Halaman yang Anda cari sudah dipindah atau sedang tidak available</p>
-        <a href="/"> MONGGO KEMBALI KE BERANDA</a>
+        <a href="/balai/bbwsserayuopak/"> MONGGO KEMBALI KE BERANDA</a>
     </div>
 @endsection
