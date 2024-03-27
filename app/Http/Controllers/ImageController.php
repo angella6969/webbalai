@@ -47,7 +47,7 @@ class ImageController extends Controller
             }
             Image::create($validatedData);
             DB::commit();
-            return redirect('/dashboard/foto-beranda')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/foto-beranda')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -99,7 +99,7 @@ class ImageController extends Controller
             }
             Image::where('id', $id)->update($validatedData);
             DB::commit();
-            return redirect('/dashboard/foto-beranda')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/foto-beranda')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());

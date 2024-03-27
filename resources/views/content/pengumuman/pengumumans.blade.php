@@ -29,8 +29,7 @@
                     @endforeach
                 </div>
             </div>
-            {{ $pengumumans->links() }}
-
+            {{ $pengumumans->withPath('/balai/bbwsserayuopak/pengumumans')->links() }}
         </div>
     </section><!-- End Blog Section -->
 @endsection

@@ -59,7 +59,7 @@ class RencanaStrategisController extends Controller
             Rencana_strategis::create($validatedData);
 
             DB::commit();
-            return redirect('/dashboard/perencanaan/rencana-strategis')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/perencanaan/rencana-strategis')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());

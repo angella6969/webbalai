@@ -24,7 +24,7 @@
                 <p>Permohonan Rekomendasi Teknis</p>
             </div>
             <div class="col icon-box">
-                <a href="{{ route('kalatirta.showPortal') }}">
+                <a href="/balai/bbwsserayuopak/kalatirta-so/portal">
                     <svg class="icon">
                         <use xlink:href="#data"></use>
                     </svg>
@@ -33,7 +33,7 @@
                 <p>Permohonan Informasi dan Data</p>
             </div>
             <div class="col icon-box">
-                <a href="http://202.169.239.20/perpustakaanso/"> 
+                <a href="http://202.169.239.20/perpustakaanso/">
                     <svg class="icon">
                         <use xlink:href="#pustaka"></use>
                     </svg>

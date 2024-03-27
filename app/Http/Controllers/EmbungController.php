@@ -55,7 +55,7 @@ class EmbungController extends Controller
             "tahun_pembangunan" => ['required'],
             "volume_tampung" => ['required'],
             "body" => ['required'],
-            'slug' => ['required', 'unique:Embungs'],
+            'slug' => ['required', 'unique:embungs'],
             'url_foto1' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
             'url_foto2' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
             'url_foto3' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
@@ -86,7 +86,7 @@ class EmbungController extends Controller
             Embung::create($validatedData);
 
             DB::commit();
-            return redirect('/dashboard/infrastruktur/embungs')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/infrastruktur/embungs')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -203,7 +203,7 @@ class EmbungController extends Controller
 
             DB::commit();
 
-            return redirect('/dashboard/infrastruktur/embungs')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/infrastruktur/embungs')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());

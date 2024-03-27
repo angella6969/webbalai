@@ -67,7 +67,7 @@ class InfografisController extends Controller
             }
             Infografis::create($validatedData);
             DB::commit();
-            return redirect('/dashboard/media/media-informasi')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/media/media-informasi')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -159,7 +159,7 @@ class InfografisController extends Controller
             Infografis::where('id', $id)->update($validatedData);
 
             DB::commit();
-            return redirect('/dashboard/media/media-informasi')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/media/media-informasi')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());

@@ -66,7 +66,7 @@ class PengumumanController extends Controller
 
             Pengumuman::create($validatedData);
             DB::commit();
-            return redirect('/dashboard/pengumuman')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/pengumuman')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -126,7 +126,7 @@ class PengumumanController extends Controller
 
             Pengumuman::where('id', $id)->update($validatedData);
             DB::commit();
-            return redirect('/dashboard/pengumuman')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/pengumuman')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());

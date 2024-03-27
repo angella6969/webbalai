@@ -16,7 +16,7 @@
         padding-left: 40px;
     }
 </style>
-<x-h_content judul="Sejarah" posisi1="" posisi2="" link="/"> </x-h_content>
+<x-h_content judul="Sejarah" posisi1="" posisi2="" link="/balai/bbwsserayuopak/"> </x-h_content>
 
 <div class="container">
     <div class="row">

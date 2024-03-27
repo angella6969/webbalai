@@ -25,9 +25,9 @@ class UserController extends Controller
         ]);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('dashboard');
+            return redirect()->route('/balai/bbwsserayuopak/dashboard');
         } else {
-            return redirect()->route('login')->with('loginError', 'Email atau Password invalid');
+            return redirect()->route('/balai/bbwsserayuopak/login')->with('loginError', 'Email atau Password invalid');
         }
     }
     public function logout(Request $request)
@@ -35,6 +35,6 @@ class UserController extends Controller
         auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/');
+        return redirect('/balai/bbwsserayuopak/login');
     }
 }

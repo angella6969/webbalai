@@ -68,10 +68,10 @@ class GaleryController extends Controller
                 // Thumbnail tersedia
                 Galery::create($validatedData);
                 DB::commit();
-                return redirect('/dashboard/galeri/video')->with('success', 'Berhasil Menambahkan Daftar Video');
+                return redirect('/balai/bbwsserayuopak/dashboard/galeri/video')->with('success', 'Berhasil Menambahkan Daftar Video');
             } else {
                 // Thumbnail tidak tersedia atau ada masalah lain
-                return redirect('/dashboard/galeri/video/create')->with('fail', 'Code Tidak Valid');
+                return redirect('/balai/bbwsserayuopak/dashboard/galeri/video/create')->with('fail', 'Code Tidak Valid');
             }
         } catch (\Exception $e) {
             DB::rollBack();
@@ -114,7 +114,7 @@ class GaleryController extends Controller
         try {
             Galery::where('id', $id)->update($validatedData);
             DB::commit();
-            return redirect('/dashboard/galeri/video')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/galeri/video')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());

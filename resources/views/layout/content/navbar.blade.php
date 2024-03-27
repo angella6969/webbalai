@@ -37,11 +37,14 @@
         </li>
         <li class="dropdown"><a href="#"><span>Info Publik</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><a href="/balai/bbwsserayuopak/informasi-publik/daftar-informasi-publik">Daftar Informasi Publik</a></li>
+                <li><a href="/balai/bbwsserayuopak/informasi-publik/daftar-informasi-publik">Daftar Informasi Publik</a>
+                </li>
                 <li class="dropdown"><a href="#"><span>Perencanaan</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
-                        <li><a href="/balai/bbwsserayuopak/informasi-publik/perencanaan/rencana-strategis">Rencana Strategis</a></li>
-                        <li><a href="/balai/bbwsserayuopak/informasi-publik/perencanaan/pola-ws-dan-rpsda">Pola WS dan RPSDA</a></li>
+                        <li><a href="/balai/bbwsserayuopak/informasi-publik/perencanaan/rencana-strategis">Rencana
+                                Strategis</a></li>
+                        <li><a href="/balai/bbwsserayuopak/informasi-publik/perencanaan/pola-ws-dan-rpsda">Pola WS dan
+                                RPSDA</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#"><span>Kinerja</span> <i class="bi bi-chevron-right"></i></a>
@@ -55,9 +58,13 @@
                         <li class="dropdown"><a href="#"><span>Informasi</span> <i
                                     class="bi bi-chevron-right"></i></a>
                             <ul>
-                                <li><a href="/balai/bbwsserayuopak/informasi-publik/infrastruktur/bendungans">Bendungan</a></li>
-                                <li><a href="/balai/bbwsserayuopak/informasi-publik/infrastruktur/bendungs">Bendung</a></li>
-                                <li><a href="/balai/bbwsserayuopak/informasi-publik/infrastruktur/embungs">Embung</a></li>
+                                <li><a
+                                        href="/balai/bbwsserayuopak/informasi-publik/infrastruktur/bendungans">Bendungan</a>
+                                </li>
+                                <li><a href="/balai/bbwsserayuopak/informasi-publik/infrastruktur/bendungs">Bendung</a>
+                                </li>
+                                <li><a href="/balai/bbwsserayuopak/informasi-publik/infrastruktur/embungs">Embung</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="dropdown"><a href="#"><span>Data</span> <i class="bi bi-chevron-right"></i></a>
@@ -73,7 +80,15 @@
         </li>
         <li class="dropdown"><a href="#"><span>Media</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><a href="/balai/bbwsserayuopak/media/media-informasi/">Media Informasi</a></li>
+                {{-- <li><a href="/balai/bbwsserayuopak/media/media-informasi/">Media Informasi</a></li> --}}
+                <li class="dropdown"><a href="#"><span>Media Informasi</span> <i
+                            class="bi bi-chevron-right"></i></a>
+                    <ul>
+                        <li><a href="/balai/bbwsserayuopak/media/media-informasi/majalah">Majalah</a></li>
+                        <li><a href="/balai/bbwsserayuopak/media/media-informasi/leaflet">Leaflet</a></li>
+                        <li><a href="/balai/bbwsserayuopak/media/media-informasi/infografis">Infografis</a></li>
+                    </ul>
+                </li>
                 <li class="dropdown"><a href="#"><span>Galeri</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
                         <li><a href="/balai/bbwsserayuopak/media/galeri/fotos">Foto</a></li>
@@ -87,7 +102,8 @@
                 <li class="dropdown"><a href="#"><span>PPID BBWS SO</span> <i class="bi bi-chevron-right"></i></a>
                     <ul>
                         <li><a href="/balai/bbwsserayuopak/layanan/ppid-bbws-so/profil">Profil</a></li>
-                        <li><a href="/balai/bbwsserayuopak/layanan/ppid-bbws-so/prosedur_pelayanan">Prosedur Pelayanan</a></li>
+                        <li><a href="/balai/bbwsserayuopak/layanan/ppid-bbws-so/prosedur_pelayanan">Prosedur
+                                Pelayanan</a></li>
                         <li><a href="/balai/bbwsserayuopak/kalatirta-so" target="_blank">KALATIRTA</a></li>
                     </ul>
                 </li>
@@ -120,7 +136,8 @@
                     </button>
                 </li>
                 <li>
-                    <button class="dropdown-item d-flex align-items-center" type="button" data-bs-theme-value="dark">
+                    <button class="dropdown-item d-flex align-items-center" type="button"
+                        data-bs-theme-value="dark">
                         <i class="bi bi-moon-stars-fill me-3 opacity-50" data-theme-icon="bi-moon-stars-fill"></i>Dark
                     </button>
                 </li>

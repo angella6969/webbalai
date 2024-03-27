@@ -111,7 +111,7 @@ class KalatirtaController extends Controller
             Kalatirta_pengaduan::create($validatedData);
             DB::commit();
 
-            return redirect('/kalatirta-so/form-data-keberatan/list')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/kalatirta-so/form-data-keberatan/list')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -181,7 +181,7 @@ class KalatirtaController extends Controller
                 $validatedData['ktp'] = $petaPdfPath;
             }
             // db::commit();
-            return redirect('/kalatirta-so/form-permohonan-data/survey')->with('data', $validatedData);
+            return redirect('/balai/bbwsserayuopak/kalatirta-so/form-permohonan-data/survey')->with('data', $validatedData);
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -191,7 +191,7 @@ class KalatirtaController extends Controller
     {
         $data = json_decode($request->input('data'), true);
         if ($data === null) {
-            return redirect()->route('kalatirta.create')->with('fail', 'Data Kosong / Silahkan Isi Data Terlebih dahulu');
+            return redirect()->route('/balai/bbwsserayuopak/kalatirta-so/form-permohonan-data')->with('fail', 'Data Kosong / Silahkan Isi Data Terlebih dahulu');
         }
         $nama = $data['nama'];
         $alamat = $data['alamat'];
@@ -243,7 +243,7 @@ class KalatirtaController extends Controller
             Survey::create($validatedData);
             DB::commit();
 
-            return redirect('/kalatirta-so/permohonan-data')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/kalatirta-so/permohonan-data')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -299,7 +299,7 @@ class KalatirtaController extends Controller
         try {
             Kalatirta::where('id', $id)->update($validatedData);
             DB::commit();
-            return redirect('/dashboard/kalatirta-so/')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/kalatirta-so/')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());

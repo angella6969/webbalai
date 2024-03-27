@@ -60,7 +60,7 @@ class BendunganController extends Controller
             "volume_tampung_total" => ['required'],
             // "irigasi" => ['required'],
             "body" => ['required'],
-            'slug' => ['required', 'unique:Bendungans'],
+            'slug' => ['required', 'unique:bendungans'],
             'url_foto1' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
             'url_foto2' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
             'url_foto3' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
@@ -89,7 +89,7 @@ class BendunganController extends Controller
             Bendungan::create($validatedData);
             DB::commit();
             // dd( $validatedData);
-            return redirect('/dashboard/infrastruktur/bendungans')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/infrastruktur/bendungans')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -216,7 +216,7 @@ class BendunganController extends Controller
 
             DB::commit();
             // dd($validatedData);
-            return redirect('/dashboard/infrastruktur/bendungans')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/infrastruktur/bendungans')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());

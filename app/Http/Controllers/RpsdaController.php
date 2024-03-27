@@ -58,7 +58,7 @@ class RpsdaController extends Controller
 
             Rpsda::create($validatedData);
             DB::commit();
-            return redirect('/dashboard/perencanaan/pola-ws-dan-rpsda')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/perencanaan/pola-ws-dan-rpsda')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());

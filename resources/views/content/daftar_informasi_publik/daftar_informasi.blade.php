@@ -46,9 +46,9 @@
         }
 
         /* .btn1.active-button {
-                background-color: rgba(53, 71, 119, 0.8);
-                color: white;
-            } */
+                    background-color: rgba(53, 71, 119, 0.8);
+                    color: white;
+                } */
     </style>
     {{-- <section
         style="background-color:rgba(3,15,107,0.2) ;background-size: cover; background-position: center center; background-repeat: no-repeat;">
@@ -180,7 +180,6 @@
                                             </tr>
                                         @endforeach
                                     </tbody>
-
                                 </table>
                             </div>
                         </div>

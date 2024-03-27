@@ -58,7 +58,7 @@ class LakipController extends Controller
             Lakip::create($validatedData);
 
             DB::commit();
-            return redirect('/dashboard/kinerja/lakip')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/kinerja/lakip')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -110,7 +110,7 @@ class LakipController extends Controller
             Lakip::where('id', $id)->update($validatedData);
 
             DB::commit();
-            return redirect('/dashboard/kinerja/lakip')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/kinerja/lakip')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());

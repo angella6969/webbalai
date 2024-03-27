@@ -65,7 +65,7 @@ class DaftarInformasiPublikController extends Controller
 
             Daftar_informasi_publik::create($validatedData);
             DB::commit();
-            return redirect('/dashboard/daftar-informasi-publik')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/daftar-informasi-publik')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -123,7 +123,7 @@ class DaftarInformasiPublikController extends Controller
 
             DB::commit();
             // dd($validatedData);
-            return redirect('/dashboard/daftar-informasi-publik')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/daftar-informasi-publik')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());

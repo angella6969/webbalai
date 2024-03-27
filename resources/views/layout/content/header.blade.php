@@ -124,7 +124,15 @@
                 </li>
                 <li class="dropdown"><a href="#"><span>Media</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                        <li><a href="/balai/bbwsserayuopak/media/media-informasi/">Media Informasi</a></li>
+                        {{-- <li><a href="/balai/bbwsserayuopak/media/media-informasi/">Media Informasi</a></li> --}}
+                        <li class="dropdown"><a href="#"><span>Media Informasi</span> <i
+                                    class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="/balai/bbwsserayuopak/media/media-informasi/majalah">Majalah</a></li>
+                                <li><a href="/balai/bbwsserayuopak/media/media-informasi/leaflet">Leaflet</a></li>
+                                <li><a href="/balai/bbwsserayuopak/media/media-informasi/infografis">Infografis</a></li>
+                            </ul>
+                        </li>
                         <li class="dropdown"><a href="#"><span>Galeri</span> <i
                                     class="bi bi-chevron-right"></i></a>
                             <ul>

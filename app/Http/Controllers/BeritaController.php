@@ -51,7 +51,7 @@ class BeritaController extends Controller
         // dd($request);
         $validatedData = $request->validate([
             'judul' => ['required'],
-            'slug' => ['required', 'Unique:Beritas'],
+            'slug' => ['required', 'Unique:beritas'],
             'body' => ['required'],
             'url_foto' => ['file', 'max:5120', 'mimetypes:image/jpeg,image/png,image/gif,application/pdf', 'nullable'],
         ]);
@@ -69,7 +69,7 @@ class BeritaController extends Controller
             // $user->notify(new NewDataNotification());
             // $user->notify(new NewDataNotification());
             DB::commit();
-            return redirect('/dashboard/beritas/')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/beritas/')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -139,7 +139,7 @@ class BeritaController extends Controller
 
             Berita::where('id', $id)->update($validatedData);
             DB::commit();
-            return redirect('/dashboard/beritas/')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/beritas/')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());

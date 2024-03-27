@@ -46,7 +46,7 @@ class SitusterkaitController extends Controller
             }
             Situsterkait::create($validatedData);
             DB::commit();
-            return redirect('/dashboard/situs-terkait')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/situs-terkait')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
@@ -97,7 +97,7 @@ class SitusterkaitController extends Controller
             }
             Situsterkait::where('id', $id)->update($validatedData);
             DB::commit();
-            return redirect('/dashboard/situs-terkait')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/situs-terkait')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());

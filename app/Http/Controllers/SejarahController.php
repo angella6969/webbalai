@@ -111,7 +111,7 @@ class SejarahController extends Controller
             Sejarah::where('id', $id)->update($validatedData);
 
             DB::commit();
-            return redirect('dashboard/profil/sejarah')->with('success', 'Data berhasil disimpan.');
+            return redirect('/balai/bbwsserayuopak/dashboard/profil/sejarah')->with('success', 'Data berhasil disimpan.');
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('fail', 'Terjadi kesalahan: ' . $e->getMessage());
